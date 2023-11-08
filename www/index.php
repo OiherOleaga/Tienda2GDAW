@@ -1,8 +1,7 @@
 <?php
-require("baseDeDatos.php");
-$db = connect();
+require("php/baseDeDatos.php");
 
-$productos = getProductos($db);
-echo
+
+$productos = consultarProductos();
 
 require("php/views/index.viewUsuario.php");
