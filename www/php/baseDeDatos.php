@@ -21,5 +21,7 @@ function consultarProductos()
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Productos");
     $stmt->execute();
-    return $stmt;
+    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $result;
 }
+
