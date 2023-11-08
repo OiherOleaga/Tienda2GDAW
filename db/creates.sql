@@ -2,6 +2,7 @@ CREATE TABLE Clientes (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Avatar VARCHAR(255),
     Nombre VARCHAR(255),
+    username VARCHAR(255) unique,
     Apellidos VARCHAR(255),
     Contrasenia VARCHAR(255),
     Correo VARCHAR(255),
@@ -9,10 +10,11 @@ CREATE TABLE Clientes (
     Direccion TEXT
 );
 
-CREATE TABLE Comerciante (
+CREATE TABLE Comerciantes (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Avatar VARCHAR(255),
     Nombre_empresa VARCHAR(255),
+    username VARCHAR(255) unique,
     Contrasenia VARCHAR(255),
     Correo VARCHAR(255),
     Telefono VARCHAR(15),
