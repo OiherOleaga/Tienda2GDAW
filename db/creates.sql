@@ -1,4 +1,3 @@
--- Creación de la tabla Clientes
 CREATE TABLE Clientes (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Avatar VARCHAR(255),
@@ -10,7 +9,6 @@ CREATE TABLE Clientes (
     Direccion TEXT
 );
 
--- Creación de la tabla Comerciante
 CREATE TABLE Comerciante (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Avatar VARCHAR(255),
@@ -21,7 +19,6 @@ CREATE TABLE Comerciante (
     Direccion TEXT
 );
 
--- Creación de la tabla Productos
 CREATE TABLE Productos (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Titulo VARCHAR(255),
@@ -32,13 +29,11 @@ CREATE TABLE Productos (
     FOREIGN KEY (ID_Comerciante) REFERENCES Comerciante(ID)
 );
 
--- Creación de la tabla Categorias
 CREATE TABLE Categorias (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Nombre VARCHAR(255)
 );
 
--- Creación de la tabla Categorias_Productos para relaciones entre Productos y Categorias
 CREATE TABLE Categorias_Productos (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Categorias INT,
@@ -47,7 +42,6 @@ CREATE TABLE Categorias_Productos (
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
 );
 
--- Creación de la tabla Comprar
 CREATE TABLE Comprar (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Fecha_Publicacion DATE,
@@ -57,7 +51,6 @@ CREATE TABLE Comprar (
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
 );
 
--- Creación de la tabla Likes para seguimiento de "Me gusta"
 CREATE TABLE Likes (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Cliente INT,
@@ -66,6 +59,27 @@ CREATE TABLE Likes (
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
 );
 
+CREATE TABLE Resenna_producto (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Cliente INT,
+    ID_Producto INT,
+    puntuacion INT,
+    comentario TEXT,
+    fecha DATE,
+    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
+    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+);
+
+CREATE TABLE Resenna_comerciante (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    ID_Cliente INT,
+    ID_Comerciante INT,
+    puntuacion INT,
+    comentario TEXT,
+    fecha DATE,
+    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciante(ID)
+);
 -- Insertar 10 comerciantes de ejemplo
 INSERT INTO Comerciante (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
