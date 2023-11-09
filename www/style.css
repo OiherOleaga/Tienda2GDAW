@@ -80,7 +80,7 @@ a {
     width: 100%;
     left: 0;
     height: 3px;
-    background: #13c1ac;
+    background: #0a3093;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform .3s;
@@ -104,7 +104,7 @@ a {
     justify-content: center;
     color: white;
     align-items: center;
-    background-color: #13c1ac;
+    background-color: #0a3093;
     font-weight: 700;
     border-radius: 51px;
     border: 0;
@@ -136,7 +136,7 @@ a {
 
 .btn:hover {
     cursor: pointer;
-    background-color: #11aa98;
+    background-color: #051a4e;
 }
 
 main {
@@ -208,7 +208,7 @@ form {
 
 .button {
     color: white;
-    background-color: #13c1ac;
+    background-color: #0a3093;
     width: 113px;
     height: 48px;
     font-size: 1rem;
@@ -220,7 +220,7 @@ form {
 
 .button:hover {
     cursor: pointer;
-    background-color: #11aa98;
+    background-color: #051a4e;
 }
 
 .seccion2,
@@ -387,7 +387,6 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
-
     .productos{
         display: grid;
         grid-template-columns: none;
@@ -435,7 +434,7 @@ footer img {
         bottom: -6px;
         left: 0;
         height: 3px;
-        background: #13c1ac;
+        background: #0a3093;
         transform: scaleX(0);
         transform-origin: right;
         transition: transform .3s;
