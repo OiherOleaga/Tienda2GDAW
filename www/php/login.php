@@ -5,11 +5,13 @@ if (isset($_COOKIE[session_name()])) {
     exit;
 }
 
-// sin probar
-$error = "";
+require "exceptionControlada.php";
+require "methods.php";
+
+$errorUsuario = "";
+$errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "methods.php";
     require "baseDeDatos.php";
     try {
         $username = strtoupper(POST("usuario"));
@@ -21,18 +23,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $cliente = false;
             $id = select("select id from Comerciantes where nombre_empresa = upper(?) and contrasenia = ?", [$username, $password]);
             if ($id == null) {
-                throw new Exception("nombre o contraseña incorrecto");
+                throw new ExecptionControlada("nombre o contraseña incorrecto");
             }
         }
         closeCon();
         session_start();
-        $_SESSION["id"] = $id[0];
+        $_SESSION["id"] = $id[0]["id"]; // ver bien ["id"]?
         $_SESSION["tipoCliente"] = $cliente;
         header("Location: /");
         exit;
+    } catch (ExecptionControlada $e) {
+        closeCon();
+        $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
         closeCon();
-        $error = $e->getMessage();
+        $errorUsuario = "error al iniciar sesion";
+        $errorDev = $e->getMessage();
     }
 }
 

@@ -25,15 +25,16 @@
                         <label for="ck"><input type="checkbox" id="ck">Recordar <a href="#">Olvide mi
                                 contraseña</a></label>
                     </div>
-                    <p><?= $error !== "" ? $error : ""?></p> 
+                    <p><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">
-                        <p>No tengo una cuenta <a href="phph/registro.php">Registrarse</a></p>
+                        <p>No tengo una cuenta <a href="/php/registro.php">Registrarse</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </section>
+    <?php require "partials/scriptError.php" ?>
 </body>
 
 </html>

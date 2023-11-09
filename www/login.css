@@ -143,7 +143,31 @@ button {
 }
 
 #fotoPerfil {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+#fotoPerfil:hover {
+    opacity: 50%;
+}
+
+#divFotoPerfil:hover > p {
+    opacity: 1;
+}
+
+#inputFoto {
+    visibility: hidden;
+}
+
+#divFotoPerfil {
+    text-align: center;
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
+
+#divFotoPerfil p{
+    opacity: 0;
+}
+

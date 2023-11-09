@@ -30,10 +30,10 @@ function consultarProductos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function select($sentencia, $objeto) {
+function select($sentencia, $objeto = null) {
     global $conn;
     $stmt = $conn->prepare($sentencia);
-    if (is_array($objeto)) {
+    if (is_array($objeto) || $objeto === null) {
         $stmt->execute($objeto);
     } else {
         $stmt->bindParam(1, $objeto);   
@@ -42,11 +42,11 @@ function select($sentencia, $objeto) {
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function execute($sentencia, $objeto) {
+function execute($sentencia, $objeto = null) {
     global $conn;
     $stmt = $conn->prepare($sentencia);
-    if (is_array($objeto)) {
-        $result = $stmt->execute($array); // si el false $st->errorInfo()[2]   si da error hacer un throw
+    if (is_array($objeto) || $objeto === null) {
+        $result = $stmt->execute($objeto); // si el false $st->errorInfo()[2]
     } else {
         $stmt->bindParam(1, $objeto);   
         $result = $stmt->execute();
