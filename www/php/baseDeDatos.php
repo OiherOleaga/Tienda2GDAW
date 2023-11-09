@@ -28,12 +28,3 @@ function consultarProductos()
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function select ($select, $arrayDatos = null) {
-    global $conn;
-    $stmt = $conn->prepare($select);
-    $stmt->execute($arrayDatos);
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
-

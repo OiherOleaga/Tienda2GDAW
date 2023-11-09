@@ -1,9 +1,6 @@
 FROM php:8.0.0-apache
 ARG DEBIAN_FRONTEND=noninteractive
-RUN docker-php-ext-install pdo
-# Include alternative DB driver
-# RUN docker-php-ext-install pdo
-# RUN docker-php-ext-install pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql
 RUN apt-get update \
     && apt-get install -y sendmail libpng-dev \
     && apt-get install -y libzip-dev \

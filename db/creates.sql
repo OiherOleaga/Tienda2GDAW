@@ -28,7 +28,7 @@ CREATE TABLE Productos (
     Descripcion TEXT,
     Foto VARCHAR(255),
     ID_Comerciante INT,
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciante(ID)
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
 );
 
 CREATE TABLE Categorias (
@@ -80,10 +80,10 @@ CREATE TABLE Resenna_comerciante (
     comentario TEXT,
     fecha DATE,
     FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciante(ID)
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
 );
 -- Insertar 10 comerciantes de ejemplo
-INSERT INTO Comerciante (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
+INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
     ('avatar1.jpg', 'Empresa 1', 'contrasenia1', 'correo1@example.com', '123-456-7890', 'Dirección 1'),
     ('avatar2.jpg', 'Empresa 2', 'contrasenia2', 'correo2@example.com', '234-567-8901', 'Dirección 2'),
