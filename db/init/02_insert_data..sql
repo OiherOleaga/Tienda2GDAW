@@ -1,26 +1,17 @@
 INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
-    ('avatar1.jpg', 'Empresa 1', 'contrasenia1', 'correo1@example.com', '123-456-7890', 'Dirección 1'),
-    ('avatar2.jpg', 'Empresa 2', 'contrasenia2', 'correo2@example.com', '234-567-8901', 'Dirección 2'),
-    ('avatar3.jpg', 'Empresa 3', 'contrasenia3', 'correo3@example.com', '345-678-9012', 'Dirección 3'),
-    ('avatar4.jpg', 'Empresa 4', 'contrasenia4', 'correo4@example.com', '456-789-0123', 'Dirección 4'),
-    ('avatar5.jpg', 'Empresa 5', 'contrasenia5', 'correo5@example.com', '567-890-1234', 'Dirección 5'),
-    ('avatar6.jpg', 'Empresa 6', 'contrasenia6', 'correo6@example.com', '678-901-2345', 'Dirección 6'),
-    ('avatar7.jpg', 'Empresa 7', 'contrasenia7', 'correo7@example.com', '789-012-3456', 'Dirección 7'),
-    ('avatar8.jpg', 'Empresa 8', 'contrasenia8', 'correo8@example.com', '890-123-4567', 'Dirección 8'),
-    ('avatar9.jpg', 'Empresa 9', 'contrasenia9', 'correo9@example.com', '901-234-5678', 'Dirección 9'),
-    ('avatar10.jpg', 'Empresa 10', 'contrasenia10', 'correo10@example.com', '012-345-6789', 'Dirección 10');
+    ('avatar1.jpg', 'GAME', 'contrasenia1', 'correo1@example.com', '123-456-7890', 'Dirección 1');
 
 
 INSERT INTO Productos (Titulo, Precio, Descripcion, Foto, ID_Comerciante)
 VALUES
-    ('Ordenador de torre', 19.99, 'Ordenador', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 1),
-    ('Portatil', 24.99, 'Descripción del Producto 2', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 2),
-    ('PlayStation 5', 99.99, 'Descripción del Producto 3', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 1),
-    ('Nintendo Switch', 29.99, 'Descripción del Producto 4', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 3),
-    ('PlayStation 4', 39.99, 'Descripción del Producto 5', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 2),
-    ('Portatil MSI', 19.99, 'Descripción del Producto 6', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 3),
-    ('NintendoDS', 12.99, 'Descripción del Producto 7', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 1),
-    ('MAC', 27.99, 'Descripción del Producto 8', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 2),
-    ('PlayStation 3', 34.99, 'Descripción del Producto 9', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 1),
-    ('Videojuegos PS5', 21.99, 'Descripción del Producto 10', 'https://pbs.twimg.com/media/EjqnvlAXYAAi5DF.jpg', 3);
+    ('Ordenador de torre', 19.99, 'Descripción del Producto 1', 'https://ventor.mobi/1318-thickbox_default/torre-pc-gaming.jpg', 1),
+    ('Portatil', 24.99, 'Descripción del Producto 2', 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_106496945?x=480&y=334&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=480&ey=334&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=480&cdy=334', 1),
+    ('PlayStation 5', 399.99, 'Descripción del Producto 3', 'https://static.carrefour.es/hd_510x_/crs/cdn_static/catalog/hd/579679_00_1.jpg', 1),
+    ('Nintendo Switch', 129.99, 'Descripción del Producto 4', 'https://oechsle.vteximg.com.br/arquivos/ids/6372337-1000-1000/image-ea547ea58f7b4c4fa7fbe1986b447cee.jpg?v=637756182589030000', 1),
+    ('PlayStation 4', 299.99, 'Descripción del Producto 5', 'https://m.media-amazon.com/images/I/71GWJXGeZsL._AC_UF894,1000_QL80_.jpg', 1),
+    ('Portatil MSI', 199.99, 'Descripción del Producto 6', 'https://ultimainformatica.com/1240590-thickbox_default/portatil-msi-raider-ge67hx-12ugs-024es.jpg', 1),
+    ('NintendoDS', 12.99, 'Descripción del Producto 7', 'https://media3.gameplaystores.es/82311-large_default/nintendo-ds-lite-roja-con-caja-nds.jpg', 1),
+    ('MAC', 27.99, 'Descripción del Producto 8', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuIhpCHI9MAaEcjRAbGTMtlX3mtp8QeGEmKQ14RSpFeVPsaTKI6ZPWdhYpMkr3NEzLDDE&usqp=CAU', 1),
+    ('PlayStation 3', 34.99, 'Descripción del Producto 9', 'https://m.media-amazon.com/images/I/61AlsXa+zdL.jpg', 1),
+    ('Videojuego PS5', 21.99, 'Descripción del Producto 10', 'https://m.media-amazon.com/images/I/814wINlWcrL.jpg', 1);
