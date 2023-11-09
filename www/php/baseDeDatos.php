@@ -53,10 +53,12 @@ function execute($sentencia, $objeto) {
     }
     return $result;
 }
-function getCliente($data)
+
+function getCliente()
+
 {
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Clientes where ID = :id");
-    $stmt->execute($data);
-    return $stmt->setFetchMode(PDO::FETCH_OBJ);
+    $stmt = $conn->prepare("SELECT * FROM Clientes where ID = 1");
+    $stmt->execute();
+    return $stmt;
 }
