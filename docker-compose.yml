@@ -10,7 +10,7 @@ services:
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 
         volumes:
-            - ./db/init:/docker-entrypoint-initdb.d
+            - ./db:/docker-entrypoint-initdb.d
             - ./conf:/etc/mysql/conf.d
             - persistent:/var/lib/mysql
         networks:
@@ -31,7 +31,7 @@ services:
             - db:db
         ports:
             - 8000:80
-        environment:
+        environment: 
             MYSQL_USER: root
             MYSQL_PASSWORD: test
             MYSQL_ROOT_PASSWORD: test 

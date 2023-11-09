@@ -1,4 +1,6 @@
-<?php require("php/views/partials/headInicio.php") ?>
+<?php
+    require("php/views/partials/headUsuario.php")
+?>
 <div class="seccion1">
     <h3>Compra y vende artículos de segunda mano en Wallapop</h3>
     <p>una comunidad que lleva años generando impacto del bueno</p>
@@ -16,10 +18,14 @@
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
-                        <h5><?= $productos[$i]["Precio"]."€" ?></h5>
+                        <h5>
+                            <?= $productos[$i]["Precio"] . "€" ?>
+                        </h5>
                     </div>
                     <div class="top">
-                        <p><?= $productos[$i]["Titulo"] ?></p>
+                        <p>
+                            <?= $productos[$i]["Titulo"] ?>
+                        </p>
                     </div>
                 </div>
             </a>
@@ -34,10 +40,14 @@
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
-                        <h5><?= $productos[$i]["Precio"]."€" ?></h5>
+                        <h5>
+                            <?= $productos[$i]["Precio"] . "€" ?>
+                        </h5>
                     </div>
                     <div class="top">
-                        <p><?= $productos[$i]["Titulo"] ?></p>
+                        <p>
+                            <?= $productos[$i]["Titulo"] ?>
+                        </p>
                     </div>
                 </div>
             </a>
