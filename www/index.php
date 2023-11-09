@@ -1,8 +1,6 @@
 <?php
 require("php/baseDeDatos.php");
 
-
-
 $cliente= getCliente();
 $productos = consultarProductos();
 

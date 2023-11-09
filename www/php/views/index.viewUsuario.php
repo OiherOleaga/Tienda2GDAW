@@ -1,6 +1,6 @@
-<?php require("php/views/partials/headInicio.php") ?>
+<?php require("php/views/partials/headUsuario.php") ?>
 <div class="seccion1">
-    <h3>Compra y vende artículos de segunda mano en Wallapop</h3>
+    <h3>Compra y vende artículos en InfiniteChoice</h3>
     <p>una comunidad que lleva años generando impacto del bueno</p>
     <form>
         <div class="buscar"> <input class="search" type="search" placeholder="" name="categoria">

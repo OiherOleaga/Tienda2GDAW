@@ -159,7 +159,6 @@ form {
     justify-content: center;
     text-align: center;
     padding: 1em;
-
     font-size: 1.3rem;
 }
 
@@ -297,6 +296,7 @@ footer {
     grid-area: footer;
     text-align: center;
     display: flex;
+    gap: 5px;
     justify-content: center;
     align-items: center;
     background-color: white;
@@ -310,7 +310,6 @@ footer img {
 
 /*MOVILES DE PANTALLA REDUCIDA*/
 @media (max-width:350px) {
-
     header,
     main,
     .btn,
@@ -444,8 +443,6 @@ footer img {
         height: 45px;
     }
 
-
-
     .navegacion {
         width: 100%;
         gap: 10px;
@@ -489,57 +486,4 @@ footer img {
     footer {
         flex-direction: row;
     }
-}
-
-
-
-/* ver producto */
-
-.productoCaja {
-    background-color: #11aa98;
-    display: grid;
-    align-items: center;
-    width: 60%;
-    height: 90%;
-    border: 1px solid lightgrey;
-    box-shadow: 7px 6px 5px lightgrey;
-    padding: 10px;
-    column-gap: 10px;
-    border-radius: 10px;
-    text-align: center;
-    grid-template-areas:
-        "vendedor likes"
-        "titulo titulo"
-        "imagen imagen"
-        "precio precio"
-        "desc desc";
-    grid-template-columns: 5fr 5fr;
-    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
-    border: 1px solid black;
-}
-
-.titulo {
-    grid-area: "titulo";
-    width: 40%;
-    border: 1px solid black;
-}
-
-.foto {
-    grid-area: "imagen";
-    width: 100%;
-    height: 100%;
-    border: 1px solid black;
-}
-
-.precio {
-    grid-area: "precio";
-    text-align: center;
-    width: 100%;
-    border: 1px solid black;
-}
-
-.desc {
-    grid-area: desc;
-    width: 80%;
-    border: 1px solid black;
 }

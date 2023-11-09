@@ -7,7 +7,7 @@ if (isset($_COOKIE[session_name()])) {
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "baseDeDatos.php";
-    execute("insert into");
+    execute("insert", "into");
 }
 
 require "views/registro.view.php";
