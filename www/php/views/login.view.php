@@ -28,7 +28,7 @@
                     <p><?= $error !== "" ? $error : ""?></p> 
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">
-                        <p>No tengo una cuenta <a href="registro.view.php">Registrarse</a></p>
+                        <p>No tengo una cuenta <a href="phph/registro.php">Registrarse</a></p>
                     </div>
                 </form>
             </div>

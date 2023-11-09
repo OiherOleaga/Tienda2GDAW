@@ -12,14 +12,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "methods.php";
     require "baseDeDatos.php";
     try {
-        $username = POST("usuario");
-        $password = POST("password");
-        $id = select("select id from Clientes where username = ? and contrasenia = ?", [$username, $password]);
+        $username = strtoupper(POST("usuario"));
+        $password = /*hash('sha250',*/ POST("password");//);
+        
+        $id = select("select id from Clientes where username = upper(?) and contrasenia = ?", [$username, $password]);
         $cliente = true;
-        if ($id[0] == null) {
+        if ($id == null) {
             $cliente = false;
-            $id = select("select id from comerciantes where username = ? and contrasenia = ?", [$username, $password]);
-            if ($id[0] == null) {
+            $id = select("select id from Comerciantes where nombre_empresa = upper(?) and contrasenia = ?", [$username, $password]);
+            if ($id == null) {
                 throw new Exception("nombre o contraseña incorrecto");
             }
         }
