@@ -9,8 +9,7 @@
     <!-- CSS Style -->
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
-    <link rel="icon"
-        href="https://i0.wp.com/about.wallapop.com/wp-content/uploads/2021/07/brand-motion.png?fit=690%2C690&ssl=1">
+    <link rel="icon" href="https://i0.wp.com/about.wallapop.com/wp-content/uploads/2021/07/brand-motion.png?fit=690%2C690&ssl=1">
     <title>Inicio</title>
 </head>
 
@@ -20,7 +19,7 @@
             <a href="index.php"> <img src="https://es.wallapop.com/next-assets/images/logo-wallapop-home-v2.svg" alt="logo"></a>
         </div>
         <div class="botones">
-            <a href="php/views/login.view.php"><button class="btn">Inicar Sesion o Registrarse</button></a>
+            <a href="php/login.php"><button class="btn">Inicar Sesion o Registrarse</button></a>
         </div>
     </header>
     <main>
