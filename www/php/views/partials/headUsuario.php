@@ -9,8 +9,7 @@
     <!-- CSS Style -->
     <link rel="stylesheet" href="style.css">
     <!-- Favicon -->
-    <link rel="icon"
-        href="https://i0.wp.com/about.wallapop.com/wp-content/uploads/2021/07/brand-motion.png?fit=690%2C690&ssl=1">
+    <link rel="icon" href="https://i0.wp.com/about.wallapop.com/wp-content/uploads/2021/07/brand-motion.png?fit=690%2C690&ssl=1">
     <title>Inicio</title>
 </head>
 
@@ -25,7 +24,7 @@
             <a href="index.php">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
-            <button class="avatar"><img src="https://i.pinimg.com/236x/35/f5/c0/35f5c0d93bd76008aa863f938f0ad14b.jpg"></button>
+            <button class="avatar"><img src=<?= $cliente["avatar"] ?>></button>
         </div>
     </header>
     <main>

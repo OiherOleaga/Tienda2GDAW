@@ -5,7 +5,7 @@ if (isset($_COOKIE[session_name()])) {
     exit;
 }
 
-// si provar
+// sin probar
 $error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $username = POST("usuario");
         $password = POST("password");
-        $id = select("select id from usuarios where username = ? and contrasenia = ?", [$username, $password]);
+        $id = select("select id from Clientes where username = ? and contrasenia = ?", [$username, $password]);
         $cliente = true;
         if ($id[0] == null) {
             $cliente = false;
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["id"] = $id[0];
         $_SESSION["tipoCliente"] = $cliente;
         header("Location: /");
-        exit;     
+        exit;
     } catch (Exception $e) {
         closeCon();
         $error = $e->getMessage();

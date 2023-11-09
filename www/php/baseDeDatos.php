@@ -16,7 +16,8 @@ function connect()
     }
 }
 
-function closeCon() {
+function closeCon()
+{
     global $conn;
     $conn = null;
 }
@@ -27,4 +28,20 @@ function consultarProductos()
     $stmt = $conn->prepare("SELECT * FROM Productos");
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function Select($sentencia, $objeto)
+{
+    global $conn;
+    $stmt = $conn->prepare($sentencia);
+    $stmt->execute($objeto);
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getCliente($data)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Clientes where ID = :id");
+    $stmt->execute($data);
+    return $stmt->setFetchMode(PDO::FETCH_OBJ);
 }
