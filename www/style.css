@@ -63,7 +63,7 @@ a {
 .navegacion {
     display: flex;
     align-items: center;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 100%;
     gap: 5%;
     padding: .3rem;
@@ -114,7 +114,7 @@ a {
     font-size: .9rem;
 }
 
-.avatar{
+.avatar {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -123,11 +123,11 @@ a {
     padding: .4em;
 }
 
-.avatar img:hover{
+.avatar img:hover {
     cursor: pointer;
 }
 
-.avatar img{
+.avatar img {
     border-radius: 50%;
     object-fit: cover;
     width: 55px;
@@ -252,10 +252,10 @@ form {
 
 .productos .caja {
     display: grid;
-    grid-template: 
-    "img top"
-    "img bottom";
-    grid-template-columns:  195px minmax(0, 1fr);
+    grid-template:
+        "img top"
+        "img bottom";
+    grid-template-columns: 195px minmax(0, 1fr);
     grid-template-rows: 1fr auto;
     border: 1px solid lightgrey;
     box-shadow: 7px 6px 5px lightgrey;
@@ -265,17 +265,20 @@ form {
     text-align: center;
 }
 
-.productos .caja .img{
+.productos .caja .img {
     grid-area: img;
 }
-.productos .caja .top{
+
+.productos .caja .top {
     grid-area: top;
 }
-.productos .caja .bottom{
+
+.productos .caja .bottom {
     grid-area: bottom;
 }
 
-.productos p, h5 {
+.productos p,
+h5 {
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -306,28 +309,42 @@ footer img {
 }
 
 /*MOVILES DE PANTALLA REDUCIDA*/
-@media (max-width:350px){
-    header, main, .btn, .seccion1, .button, .seccion2, .seccion3, footer{
+@media (max-width:350px) {
+
+    header,
+    main,
+    .btn,
+    .seccion1,
+    .button,
+    .seccion2,
+    .seccion3,
+    footer {
         font-size: 10px;
     }
-    .btn{
+
+    .btn {
         width: 80px;
         height: 10px;
         font-size: .5rem;
     }
-    .btn img{
-        width:15px;
+
+    .btn img {
+        width: 15px;
     }
-    .button{
+
+    .button {
         width: 70px;
         height: 35px;
     }
-    .buscar{
+
+    .buscar {
         height: 35px;
     }
+
     .productos .caja {
-        grid-template-columns:  96px minmax(0, 1fr);
+        grid-template-columns: 96px minmax(0, 1fr);
     }
+
     .productos img {
         width: 100px;
         height: 100px;
@@ -350,7 +367,7 @@ footer img {
             100%;
     }
 
-    .productos .caja{
+    .productos .caja {
         grid-template: none;
         grid-template-columns: none;
         grid-template-rows: none;
@@ -359,27 +376,33 @@ footer img {
         justify-content: center;
         gap: none;
     }
-    .productos .caja .img{
+
+    .productos .caja .img {
         grid-area: none;
     }
-    .productos .caja .top{
+
+    .productos .caja .top {
         overflow: hidden;
         text-overflow: ellipsis;
         grid-area: none;
     }
-    .productos .caja .bottom{
+
+    .productos .caja .bottom {
         grid-area: none;
     }
-    .productos img{
+
+    .productos img {
         width: 260px;
         height: 350px;
     }
-    .productos{
+
+    .productos {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
     }
-    footer{
+
+    footer {
         flex-direction: row;
     }
 }
@@ -388,23 +411,24 @@ footer img {
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
 
-    .productos{
+    .productos {
         display: grid;
         grid-template-columns: none;
         grid-auto-flow: column;
         overflow-y: hidden;
         overflow-x: scroll;
         scroll-behavior: smooth;
-        grid-gap: 64px; /*PONER 64px PARA OCUPAR TODO*/ 
+        grid-gap: 64px;
+        /*PONER 64px PARA OCUPAR TODO*/
         margin: 0px 30px;
     }
 
     .productos .caja {
-       margin: 15px;
-       transition: transform .1s ease;
+        margin: 15px;
+        transition: transform .1s ease;
     }
 
-    .productos .caja:hover{
+    .productos .caja:hover {
         transform: translateY(-10px);
     }
 
@@ -420,7 +444,7 @@ footer img {
         height: 45px;
     }
 
-    
+
 
     .navegacion {
         width: 100%;
@@ -467,3 +491,55 @@ footer img {
     }
 }
 
+
+
+/* ver producto */
+
+.productoCaja {
+    background-color: #11aa98;
+    display: grid;
+    align-items: center;
+    width: 60%;
+    height: 90%;
+    border: 1px solid lightgrey;
+    box-shadow: 7px 6px 5px lightgrey;
+    padding: 10px;
+    column-gap: 10px;
+    border-radius: 10px;
+    text-align: center;
+    grid-template-areas:
+        "vendedor likes"
+        "titulo titulo"
+        "imagen imagen"
+        "precio precio"
+        "desc desc";
+    grid-template-columns: 5fr 5fr;
+    grid-template-rows: 1fr 1fr 5fr 1fr 1fr;
+    border: 1px solid black;
+}
+
+.titulo {
+    grid-area: "titulo";
+    width: 40%;
+    border: 1px solid black;
+}
+
+.foto {
+    grid-area: "imagen";
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+}
+
+.precio {
+    grid-area: "precio";
+    text-align: center;
+    width: 100%;
+    border: 1px solid black;
+}
+
+.desc {
+    grid-area: desc;
+    width: 80%;
+    border: 1px solid black;
+}
