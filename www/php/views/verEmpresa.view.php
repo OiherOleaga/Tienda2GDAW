@@ -1,4 +1,4 @@
-<?php require("partials/headUsuario.php");
+<?php
 require("./mapa.php"); ?>
 <style>
     <?php include('../css/verEmpresa.css') ?>
