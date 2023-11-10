@@ -27,7 +27,13 @@
             <a href="index.php">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
-            <button class="avatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
+            <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
+        </div>
+        <div id="menuDesp" class="menuDesp">
+            <a href="#">Ver perfil</a>
+            <a href="#">Preferencias</a>
+            <a href="#">Cerrar Sesi&oacute;n</a>
         </div>
     </header>
+    <script src="/js/headerUsuario.js"></script>
     <main>

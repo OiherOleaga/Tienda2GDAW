@@ -134,6 +134,10 @@ a {
     height: 55px;
 }
 
+.menuDesp {
+    display: none;
+}
+
 .btn:hover {
     cursor: pointer;
     background-color: #051a4e;
@@ -310,6 +314,7 @@ footer img {
 
 /*MOVILES DE PANTALLA REDUCIDA*/
 @media (max-width:350px) {
+
     header,
     main,
     .btn,
@@ -366,6 +371,41 @@ footer img {
             100%;
     }
 
+    .menuDesp {
+        position: absolute;
+        right: 5px;
+        bottom: -108px;
+        background-color: white;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: -1;
+        border-radius: 5px;
+    }
+
+    .menuDesp a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    .menuDesp a:hover {
+        background-color: #f1f1f1;
+        border-radius: 5px;
+    }
+
+    .show {
+        display: block;
+    }
+
+    .btn {
+        width: 140px;
+        font-size: .875rem;
+        padding: 0;
+        width: 210px;
+        height: 45px;
+    }
+
     .productos .caja {
         grid-template: none;
         grid-template-columns: none;
@@ -409,7 +449,6 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
-
     .productos {
         display: grid;
         grid-template-columns: none;
@@ -418,7 +457,6 @@ footer img {
         overflow-x: scroll;
         scroll-behavior: smooth;
         grid-gap: 64px;
-        /*PONER 64px PARA OCUPAR TODO*/
         margin: 0px 30px;
     }
 
@@ -433,14 +471,6 @@ footer img {
 
     .botones {
         margin-top: 0;
-    }
-
-    .btn {
-        width: 140px;
-        font-size: .875rem;
-        padding: 0;
-        width: 210px;
-        height: 45px;
     }
 
     .navegacion {

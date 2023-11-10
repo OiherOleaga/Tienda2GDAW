@@ -8,8 +8,5 @@ if (isset($_COOKIE[session_name()])) {
     require("php/views/partials/headUsuario.php");
 } else require("php/views/partials/headInicio.php");
 
-/*session_start();
-echo $_SESSION["id"];*/
-$cliente= getCliente();
 $productos = consultarProductos();
 require("php/views/index.viewUsuario.php");

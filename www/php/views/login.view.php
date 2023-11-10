@@ -15,7 +15,7 @@
 <div class="content">
 <div class="form-box">
             <div class="form-value">
-                <form action="/php/login.php" method="post">
+                <form action="/php/login.php" method="post" autocomplete="off">
                     <h2>¡Te damos la bienvenida!</h2>
                     <div class="inputbox">
                         <input type="text" name="usuario" required>
