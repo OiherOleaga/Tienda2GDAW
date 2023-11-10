@@ -59,8 +59,8 @@ function execute($sentencia, $objeto) {
 function getCliente()
 {
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Clientes where ID = 1");
+    $stmt = $conn->prepare("SELECT avatar FROM Clientes WHERE ID = 1");
     $stmt->execute();
-    $cliente = $stmt->fetch(PDO::FETCH_OBJ);
+    $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
     return $cliente;
 }
