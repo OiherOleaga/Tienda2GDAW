@@ -41,8 +41,8 @@ function select($sentencia, $objeto = null) {
     }
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
-
-function execute($sentencia, $objeto = null) {
+/*
+function execute($sentencia, $objeto) {
     global $conn;
     $stmt = $conn->prepare($sentencia);
     if (is_array($objeto) || $objeto === null) {
@@ -53,7 +53,7 @@ function execute($sentencia, $objeto = null) {
     }
     return $result;
 }
-
+*/
 function getCliente()
 
 {
