@@ -27,7 +27,7 @@
             <a href="index.php">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
-            <button class="avatar"><img src=<?=' $cliente["avatar"] ' ?>></button>
+            <button class="avatar"><img src='<?= $cliente['avatar']?>' alt="avatar del cliente"></button>
         </div>
     </header>
     <main>

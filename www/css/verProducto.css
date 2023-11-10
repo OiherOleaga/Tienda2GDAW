@@ -90,7 +90,7 @@
 /*TABLET Y ORDERNADOR*/
 @media (min-width: 600px) {
     .verProductoCaja{
-        width: 700px;
+        width: 650px;
     }
 
     .producto img{

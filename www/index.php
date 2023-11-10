@@ -1,8 +1,8 @@
 <?php
 require("php/baseDeDatos.php");
 if (isset($_COOKIE[session_name()])) {
-    require("php/views/partials/headUsuario.php");
     $cliente= getCliente();
+    require("php/views/partials/headUsuario.php");
 }else require("php/views/partials/headInicio.php");
 
 $productos = consultarProductos();
