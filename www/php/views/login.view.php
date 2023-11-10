@@ -3,16 +3,20 @@
 
 <head>
     <link rel="stylesheet" href="../../login.css">
+    <meta http-equiv="Pragma" content="no-cache">
     <title>Login</title>
 
 </head>
 
 <body>
-    <section>
-        <div class="form-box">
+<div class="bg"></div>
+<div class="bg bg2"></div>
+<div class="bg bg3"></div>
+<div class="content">
+<div class="form-box">
             <div class="form-value">
                 <form action="/php/login.php" method="post">
-                    <h2>Inicio de sesi&oacute;n</h2>
+                    <h2>¡Te damos la bienvenida!</h2>
                     <div class="inputbox">
                         <input type="text" name="usuario" required>
                         <label for="">Usuario</label>
@@ -22,18 +26,18 @@
                         <label for="">Contraseña</label>
                     </div>
                     <div class="forget">
-                        <label for="ck"><input type="checkbox" id="ck">Recordar <a href="#">Olvide mi
+                        <label for="ck"><input type="checkbox" id="ck">Recordar <a href="#">Olvid&eacute; mi
                                 contraseña</a></label>
                     </div>
                     <p><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">
-                        <p>No tengo una cuenta <a href="/php/registro.php">Registrarse</a></p>
+                        <p><a href="/php/registro.php">Registrarse</a></p>
                     </div>
                 </form>
             </div>
         </div>
-    </section>
+</div>
     <?php require "partials/scriptError.php" ?>
 </body>
 

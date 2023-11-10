@@ -9,6 +9,7 @@ $ubi = "Zaramaga Kalea, 1, 01013 Gasteiz, Araba";
 $imgLike = "https://cdn-icons-png.flaticon.com/512/1077/1077035.png";
 
 require("baseDeDatos.php");
+
 if (isset($_COOKIE[session_name()])) {
     $cliente= getCliente();
     require("views/partials/headUsuario.php");
