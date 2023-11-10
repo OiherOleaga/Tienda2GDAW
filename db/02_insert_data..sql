@@ -15,3 +15,9 @@ VALUES
     ('MAC', 27.99, 'Descripción del Producto 8', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuIhpCHI9MAaEcjRAbGTMtlX3mtp8QeGEmKQ14RSpFeVPsaTKI6ZPWdhYpMkr3NEzLDDE&usqp=CAU', 1),
     ('PlayStation 3', 34.99, 'Descripción del Producto 9', 'https://m.media-amazon.com/images/I/61AlsXa+zdL.jpg', 1),
     ('Videojuego PS5', 21.99, 'Descripción del Producto 10', 'https://m.media-amazon.com/images/I/814wINlWcrL.jpg', 1);
+
+INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
+VALUES
+('https://i.blogs.es/1039bf/langostinos/450_1000.jpg', 'Oiher', 'oiherPerron', 'Oleaga Guerrero', '12345', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'DavidMamalon', 'Moreno Alonso', '12345', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'a', 'Pagaldai', 'a', 'pedro@email.com', '5555555555', 'Albacete');

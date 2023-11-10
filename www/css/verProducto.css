@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.pagina {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    gap: 20px;
+}
+
+.verProductoCaja {
+    border: 1px solid lightgray;
+    width: 350px;
+    box-shadow: 7px 6px 5px lightgrey;
+    border-radius: 20px;
+    padding: 1rem 0;
+}
+
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.vendedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+    position: sticky;
+    top: 150px;
+    background-color: white;
+    padding: 0 1rem;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.avatarEmpresa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    padding: .4em;
+}
+
+.avatarEmpresa img:hover {
+    cursor: pointer;
+}
+
+.avatarEmpresa img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 55px;
+    height: 55px;
+}
+
+.corazon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.producto img {
+    object-fit: cover;
+    border-radius: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+.desc {
+    padding: 0 1rem;
+    text-align: justify;
+    font-size: 12px;
+}
+
+.mapa {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+}
+
+#map {
+    width: 300px;
+    height: 300px;
+    border: 1px solid lightgrey;
+    box-shadow: 7px 6px 5px lightgrey;
+    border-radius: 10px;
+}
+
+
+
+/*TABLET Y ORDERNADOR*/
+@media (min-width: 600px) {
+    .verProductoCaja {
+        width: 650px;
+    }
+
+    .producto img {
+        width: 500px;
+        height: 500px;
+    }
+
+    .vendedor {
+        top: 100px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .precio {
+        font-size: 26px;
+    }
+
+    .desc {
+        font-size: 16px;
+        padding: 0 2rem;
+    }
+
+    #map {
+        width: 630px;
+        height: 500px;
+    }
+}
+
+@media (min-width: 900px) {
+    .verProductoCaja {
+        width: 900px;
+    }
+
+    .producto img {
+        width: 600px;
+        height: 600px;
+    }
+
+    .vendedor {
+        top: 100px;
+    }
+
+    .titulo {
+        font-size: 30px;
+    }
+
+    .precio {
+        font-size: 26px;
+    }
+
+    .desc {
+        font-size: 16px;
+        padding: 0 2rem;
+    }
+
+    #map {
+        width: 700px;
+        height: 550px;
+    }
+
+}
+
+@keyframes reducir {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reducir {
+    animation-name: reducir;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+}
+
+.aumentar {
+    animation-name: aumentar;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+
+}

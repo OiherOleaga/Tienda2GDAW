@@ -30,19 +30,21 @@ function consultarProductos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function select($sentencia, $objeto = null) {
+function select($sentencia, $objeto = null)
+{
     global $conn;
     $stmt = $conn->prepare($sentencia);
     if (is_array($objeto) || $objeto === null) {
         $stmt->execute($objeto);
     } else {
-        $stmt->bindParam(1, $objeto);   
+        $stmt->bindParam(1, $objeto);
         $stmt->execute();
     }
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function execute($sentencia, $objeto = null) {
+/*
+function execute($sentencia, $objeto) {
     global $conn;
     $stmt = $conn->prepare($sentencia);
     if (is_array($objeto) || $objeto === null) {
@@ -53,11 +55,13 @@ function execute($sentencia, $objeto = null) {
     }
     return $result;
 }
+*/
 
-function getCliente()
+function getCliente($data)
 {
     global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Clientes where ID = 1");
-    $stmt->execute();
-    return $stmt;
+    $stmt = $conn->prepare("SELECT * FROM Clientes WHERE ID = :id");
+    $stmt->execute($data);
+    $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $cliente;
 }

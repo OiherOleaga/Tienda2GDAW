@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
         closeCon();
-        $errorUsuario = "error al registrar";
+        $errorUsuario = "Error al registrar";
         $errorDev = $e->getMessage();
     }
 }
