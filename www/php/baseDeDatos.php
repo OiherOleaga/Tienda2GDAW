@@ -41,6 +41,7 @@ function select($sentencia, $objeto = null) {
     }
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
 /*
 function execute($sentencia, $objeto) {
     global $conn;
@@ -54,11 +55,12 @@ function execute($sentencia, $objeto) {
     return $result;
 }
 */
-function getCliente()
 
+function getCliente()
 {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Clientes where ID = 1");
     $stmt->execute();
-    return $stmt;
+    $cliente = $stmt->fetch(PDO::FETCH_OBJ);
+    return $cliente;
 }

@@ -1,4 +1,4 @@
-<?php require("php/views/partials/headUsuario.php") ?>
+
 <div class="seccion1">
     <h3>Compra y vende artículos en InfiniteChoice</h3>
     <p>una comunidad que lleva años generando impacto del bueno</p>
