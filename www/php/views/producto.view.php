@@ -1,4 +1,5 @@
 <?php require("./mapa.php"); ?>
+
 <style>
     <?php include('../css/verProducto.css') ?>
 </style>
@@ -11,8 +12,7 @@
                     <p><?= $empresa ?></p>
                 </div>
         </a>
-
-        <img src=<?= $imgLike ?> class="corazon">
+        <img src="/assets/amor.png" class="corazon" id="corazon">
     </div>
     <div class="producto">
         <div class="foto"><img src=<?= $imagen ?>></div>
@@ -36,4 +36,5 @@
 </div>
 </div>
 <script src="/js/scriptMapa.js"></script>
+<script src="/js/scriptVerProducto.js"></script>
 <?php require("../php/views/partials/footer.php") ?>

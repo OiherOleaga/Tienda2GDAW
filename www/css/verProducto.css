@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 .pagina {
     display: flex;
     flex-direction: column;
@@ -21,7 +22,7 @@
     padding: 1rem 0;
 }
 
-.producto{
+.producto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,38 +43,51 @@
     border-top-right-radius: 20px;
 }
 
-.avatar {
-    gap: 10px;
+.avatarEmpresa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border: 0;
+    padding: .4em;
 }
 
-.avatar img{
-    object-fit: contain;
+.avatarEmpresa img:hover {
+    cursor: pointer;
+}
+
+.avatarEmpresa img {
+    border-radius: 50%;
+    object-fit: cover;
+    width: 55px;
+    height: 55px;
 }
 
 .corazon {
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 
-.producto img{
+.producto img {
     object-fit: cover;
     border-radius: 10px;
     width: 200px;
     height: 200px;
 }
 
-.desc{
+.desc {
     padding: 0 1rem;
     text-align: justify;
     font-size: 12px;
 }
 
-.mapa{
+.mapa {
     display: flex;
     flex-direction: column;
     gap: 5px;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
 
 #map {
@@ -86,71 +100,103 @@
 
 
 
-
 /*TABLET Y ORDERNADOR*/
 @media (min-width: 600px) {
-    .verProductoCaja{
+    .verProductoCaja {
         width: 650px;
     }
 
-    .producto img{
+    .producto img {
         width: 500px;
         height: 500px;
     }
 
-    .vendedor{
+    .vendedor {
         top: 100px;
     }
 
-    .titulo{
+    .titulo {
         font-size: 30px;
     }
 
-    .precio{
+    .precio {
         font-size: 26px;
     }
 
-    .desc{
+    .desc {
         font-size: 16px;
         padding: 0 2rem;
     }
 
-    #map{
+    #map {
         width: 630px;
         height: 500px;
     }
 }
 
 @media (min-width: 900px) {
-    .verProductoCaja{
+    .verProductoCaja {
         width: 900px;
     }
 
-    .producto img{
+    .producto img {
         width: 600px;
         height: 600px;
     }
 
-    .vendedor{
+    .vendedor {
         top: 100px;
     }
 
-    .titulo{
+    .titulo {
         font-size: 30px;
     }
 
-    .precio{
+    .precio {
         font-size: 26px;
     }
 
-    .desc{
+    .desc {
         font-size: 16px;
         padding: 0 2rem;
     }
 
-    #map{
+    #map {
         width: 700px;
         height: 550px;
     }
+
+}
+
+@keyframes reducir {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reducir {
+    animation-name: reducir;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+}
+
+.aumentar {
+    animation-name: aumentar;
+    animation-duration: .2s;
+    animation-timing-function: ease;
 
 }
