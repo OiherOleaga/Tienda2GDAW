@@ -8,6 +8,7 @@ $desc = "oña Uzeada de Ribera Maldonado de Bracamonte y Anaya era baja, rechonc
 $ubi = "Zaramaga Kalea, 1, 01013 Gasteiz, Araba";
 $imgLike = "/assets/amor.png";
 require("baseDeDatos.php");
+
 if (isset($_COOKIE[session_name()])) {
     session_start();
     $id = $_SESSION["id"];

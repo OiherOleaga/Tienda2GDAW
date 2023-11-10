@@ -4,48 +4,66 @@
     font-family: 'poppins', sans-serif;
 }
 
-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    width: 100%;
-    background: url(assets/descarga.jpg) no-repeat;
-    background-size: cover;
-    animation: moveBackground ease 16s infinite;
-}
 
-@keyframes moveBackground {
+.bg {
+    animation:slide 3s ease-in-out infinite alternate;
+    background-image: linear-gradient(60deg,rgb(4,215,211), rgb(67,147,228), rgb(0, 79, 132));
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index:-1;
+  }
+  
+  .bg2 {
+    animation-duration:4s;
+  }
+  
+  .bg3 {
+    animation-duration:5s;
+  }
+  
+  .content {
+    background-color:transparent;
+    box-sizing:border-box;
+    left:50%;
+    position:fixed;
+    text-align:center;
+    top:50%;
+    transform:translate(-50%, -50%);
+  }
+  
+  h1 {
+    font-family:monospace;
+  }
+  
+  @keyframes slide {
     0% {
-        background-position: 0 0;
-
+      transform:translateX(-25%);
     }
-
-    50% {
-        background-position: 100% 100%;
-    }
-
     100% {
-        background-position: 0 0;
+      transform:translateX(25%);
     }
-}
+  }
 
 .form-box {
     position: relative;
     width: 400px;
     height: 450px;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .5);
+    background: white;
+    border: 2px solid white;
     border-radius: 50px;
-    backdrop-filter: blur(15px);
+    backdrop-filter: blur(100px);
     display: flex;
     justify-content: center;
     align-items: center;
+    color: black;
 }
 
 h2 {
-    font-size: 2em;
-    color: #fff;
+    font-size: 26px;
     text-align: center;
 }
 
@@ -53,7 +71,7 @@ h2 {
     position: relative;
     margin: 30px 0;
     width: 310px;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid black;
 }
 
 .inputbox label {
@@ -61,10 +79,10 @@ h2 {
     top: 50%;
     left: 5px;
     transform: translateY(-50%);
-    color: #fff;
+    color: black;
     font-size: 1em;
     pointer-events: none;
-    transition: .5s;
+    transition: .2s;
 }
 
 input:focus~label,
@@ -80,14 +98,13 @@ input:valid~label {
     outline: none;
     font-size: 1em;
     padding: 0 35px 0 5px;
-    color: #fff;
+    color: black;
 }
-
 
 .forget {
     margin: -15px 0 15px;
     font-size: .9em;
-    color: #fff;
+    color: black;
     display: flex;
     justify-content: space-between;
 }
@@ -97,7 +114,7 @@ input:valid~label {
 }
 
 .forget label a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     margin-left: 60px;
 }
@@ -114,9 +131,10 @@ button {
     width: 100%;
     height: 40px;
     border-radius: 40px;
-    background: #fff;
+    background: #0a3093;
     border: none;
     outline: none;
+    color: white;
     cursor: pointer;
     font-size: 1em;
     font-weight: 600;
@@ -124,7 +142,7 @@ button {
 
 .register {
     font-size: .9em;
-    color: #fff;
+    color: white;
     text-align: center;
     margin: 25px 0 10px;
 
@@ -132,7 +150,7 @@ button {
 
 .register p a {
     text-decoration: none;
-    color: white;
+    color: black;
     font-weight: 600;
     padding: 1em;
 
