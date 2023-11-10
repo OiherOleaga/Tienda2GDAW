@@ -47,8 +47,9 @@
                     </div>
                     <div id="divFotoPerfil">
                         <p>Elige tu foto</p>
+                        <canvas id="canvasFotoPerfil" width="200" height="200"></canvas>
                         <img src="" id="fotoPerfil" alt="fotoPerfil" onerror="ponerPredeterminado(this)">
-                        <input type="file" name="avatar" id="inputFoto">
+                        <input type="file" name="avatar" id="inputFoto" accept="image/*">
                     </div>
                     <button type="submit">Crear cuenta</button>
 

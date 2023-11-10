@@ -14,6 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "baseDeDatos.php";
     try {
         // TODO hacer todas las comprovaciones y descargar foto
+        /*
         if (!execute("insert into Clientes (avatar, username, nombre, apellidos, contrasenia, correo)" .
                     "values (:avatar, :username, :nombre, :apellidos, :contrasenia, :correo)", 
                     [
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     ]
             )) {
             throw new ExecptionControlada("fallo la insercion");
-        }
+        }*/
         closeCon();
         session_start();
         $_SESSION["id"] = $id[0]["id"]; // ver bien ["id"]?

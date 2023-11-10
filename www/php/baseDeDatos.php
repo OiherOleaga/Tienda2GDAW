@@ -55,7 +55,6 @@ function execute($sentencia, $objeto = null) {
 }
 
 function getCliente()
-
 {
     global $conn;
     $stmt = $conn->prepare("SELECT * FROM Clientes where ID = 1");

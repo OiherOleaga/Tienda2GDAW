@@ -15,11 +15,11 @@
                     <h2>Inicio de sesi&oacute;n</h2>
                     <div class="inputbox">
                         <input type="text" name="usuario" required>
-                        <label for="">Usuario</label>
+                        <label>Usuario</label>
                     </div>
                     <div class="inputbox">
                         <input type="password" name="password" required>
-                        <label for="">Contraseña</label>
+                        <label>Contraseña</label>
                     </div>
                     <div class="forget">
                         <label for="ck"><input type="checkbox" id="ck">Recordar <a href="#">Olvide mi
