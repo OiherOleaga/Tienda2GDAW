@@ -13,7 +13,7 @@
     <link rel="icon" href="/assets/Logo/favicon.png">
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js"></script>
     <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
-    <title>Inicio</title>
+    <title>InfiniteChoice</title>
 </head>
 
 <body>

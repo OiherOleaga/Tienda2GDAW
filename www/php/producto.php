@@ -7,4 +7,11 @@ $titulo = "PlayStation 5 Black Box";
 $desc = "oña Uzeada de Ribera Maldonado de Bracamonte y Anaya era baja, rechoncha, abigotada. Ya no existia razon para llamar talle al suyo. Sus colores vivos, sanos, podian mas que el albayalde y el soliman del afeite, con que se blanqueaba por simular melancolias. Gastaba dos parches oscuros, adheridos a las sienes y que fingian medicamentos. Tenia los ojitos ratoniles, maliciosos. Sabia dilatarlos duramente o des";
 $ubi = "Zaramaga Kalea, 1, 01013 Gasteiz, Araba";
 $imgLike = "https://cdn-icons-png.flaticon.com/512/1077/1077035.png";
+
+require("baseDeDatos.php");
+if (isset($_COOKIE[session_name()])) {
+    $cliente= getCliente();
+    require("views/partials/headUsuario.php");
+}else require("views/partials/headInicio.php");
+
 require("views/producto.view.php");
