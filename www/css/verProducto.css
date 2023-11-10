@@ -84,6 +84,10 @@
     border-radius: 10px;
 }
 
+
+
+
+/*TABLET Y ORDERNADOR*/
 @media (min-width: 600px) {
     .verProductoCaja{
         width: 700px;
@@ -108,10 +112,45 @@
 
     .desc{
         font-size: 16px;
+        padding: 0 2rem;
     }
 
     #map{
         width: 630px;
         height: 500px;
     }
+}
+
+@media (min-width: 900px) {
+    .verProductoCaja{
+        width: 900px;
+    }
+
+    .producto img{
+        width: 500px;
+        height: 500px;
+    }
+
+    .vendedor{
+        top: 100px;
+    }
+
+    .titulo{
+        font-size: 30px;
+    }
+
+    .precio{
+        font-size: 26px;
+    }
+
+    .desc{
+        font-size: 16px;
+        padding: 0 2rem;
+    }
+
+    #map{
+        width: 700px;
+        height: 550px;
+    }
+
 }
