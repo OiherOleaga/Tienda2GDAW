@@ -18,13 +18,6 @@ VALUES
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
-('https://i.blogs.es/1039bf/langostinos/450_1000.jpg', 'a', 'a', 'a', 'a', 'a@email.com', '1234567890', 'portal de foronda, vitoria-gasteiz'),
-('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'María', 'maria456', 'González', 'password456', 'maria@email.com', '9876543210', 'Avenida 456, Ciudad'),
-('avatar3.jpg', 'Pedro', 'pedro789', 'López', 'mysecret789', 'pedro@email.com', '5555555555', 'Calle Principal, Ciudad'),
-('avatar4.jpg', 'Ana', 'ana123', 'Martínez', 'securepwd123', 'ana@email.com', '3333333333', 'Calle Secundaria, Ciudad'),
-('avatar5.jpg', 'Luis', 'luis456', 'Ramírez', 'mypassword456', 'luis@email.com', '7777777777', 'Calle 789, Ciudad'),
-('avatar6.jpg', 'Laura', 'laura123', 'Sánchez', 'laurapwd123', 'laura@email.com', '9999999999', 'Avenida 789, Ciudad'),
-('avatar7.jpg', 'Carlos', 'carlos789', 'García', 'carlospwd789', 'carlos@email.com', '6666666666', 'Calle 456, Ciudad'),
-('avatar8.jpg', 'Sofía', 'sofia123', 'Hernández', 'sofiapwd123', 'sofia@email.com', '2222222222', 'Avenida 123, Ciudad'),
-('avatar9.jpg', 'Miguel', 'miguel456', 'Torres', 'miguelpwd456', 'miguel@email.com', '8888888888', 'Calle 789, Ciudad'),
-('avatar10.jpg', 'Elena', 'elena123', 'Fernández', 'elenapwd123', 'elena@email.com', '1111111111', 'Avenida 456, Ciudad');
+('https://i.blogs.es/1039bf/langostinos/450_1000.jpg', 'Oiher', 'oiherPerron', 'Oleaga Guerrero', '12345', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'DavidMamalon', 'Moreno Alonso', '12345', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'a', 'Pagaldai', 'a', 'pedro@email.com', '5555555555', 'Albacete');
