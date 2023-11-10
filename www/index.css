@@ -115,12 +115,7 @@ a {
 }
 
 .avatar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    border: 0;
-    padding: .4em;
+    display: none;
 }
 
 .avatar img:hover {
@@ -371,6 +366,15 @@ footer img {
             100%;
     }
 
+    .avatar{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 0;
+        padding: .4em;
+    }
+
     .menuDesp {
         position: absolute;
         right: 5px;
@@ -380,6 +384,7 @@ footer img {
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
         z-index: -1;
         border-radius: 5px;
+        text-align: center;
     }
 
     .menuDesp a {
