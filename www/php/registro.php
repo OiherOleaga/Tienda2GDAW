@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }*/
         closeCon();
         session_start();
-        $_SESSION["id"] = $id[0]["id"]; // ver bien ["id"]?
+        $_SESSION["id"] = $id[0]["id"]; 
         $_SESSION["tipoCliente"] = $cliente;
         header("Location: /");
         exit;
