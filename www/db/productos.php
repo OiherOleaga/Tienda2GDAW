@@ -2,8 +2,13 @@
 require_once __DIR__ . "/baseDeDatos.php";
 
 function consultarProductos() {
-    global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Productos");
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return select("SELECT * FROM Productos");
+}
+
+function consultarProductoID($data) {
+    return select("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
+                            Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
+                            FROM Productos
+                            INNER JOIN Comerciantes ON Productos.ID_Comerciante = Comerciantes.ID
+                            WHERE Productos.ID = :id");
 }

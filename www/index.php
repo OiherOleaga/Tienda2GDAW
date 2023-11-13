@@ -2,7 +2,7 @@
 $uri = $_SERVER["REQUEST_URI"];
 
 if ($uri != "/") {
-    $path = "./php$uri.php";
+    $path = "./controladores$uri.php";
     if (file_exists($path)) {
         require "$path";
     } else {
@@ -16,6 +16,7 @@ require "db/productos.php";
 
 if (isset($_COOKIE[session_name()])) {
     session_start();
+    // TODO comprobar sesion
     $id = $_SESSION["id"];
     $cliente = getCliente($id);
     require("php/views/partials/headUsuario.php");
