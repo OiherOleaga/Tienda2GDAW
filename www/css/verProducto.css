@@ -61,6 +61,7 @@
     object-fit: cover;
     width: 55px;
     height: 55px;
+    margin-right: 5px;
 }
 
 .corazon {
@@ -75,13 +76,6 @@
     height: 200px;
     border-radius: 20px;
     margin: 0.5rem 0;
-}
-
-.cajaAvatarEmpresa{
-    border-radius: 50%;
-    object-fit: cover;
-    width: 55px;
-    height: 55px;
 }
 
 .foto{
