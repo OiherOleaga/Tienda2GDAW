@@ -67,10 +67,10 @@ require("./mapa.php");
 <div class="mapa">
     <h2>Localicazi&oacute;n del local</h2>
     <div id="map">
-        <p id="latitud" hidden>
+        <p id="latitud">
             <?= $latitude ?>
         </p>
-        <p id="longi" hidden>
+        <p id="longi">
             <?= $longitude ?>
         </p>
     </div>
