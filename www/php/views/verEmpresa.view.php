@@ -9,14 +9,17 @@ require("./mapa.php");
         <img src=<?= $empresa["Avatar"] ?>>
     </div>
     <div class="datosPc">
-        <p>Nombre de la empresa:
+        <p>Nombre:
             <?= $empresa["Nombre_empresa"] ?>
         </p>
-        <p>Correo de contacto:
+        <p>Correo:
             <?= $empresa["Correo"] ?>
         </p>
-        <p>Numero de telefono:
+        <p>Telefono:
             <?= $empresa["Telefono"] ?>
+        </p>
+        <p>Direccion:
+            <?= $empresa["Direccion"] ?>
         </p>
     </div>
 </div>
