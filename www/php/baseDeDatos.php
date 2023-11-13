@@ -34,7 +34,7 @@ function consultarProductoID($data)
 {
     global $conn;
     $stmt = $conn->prepare("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
-                            Comerciantes.ID as ComercianteID, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
+                            Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
                             FROM Productos
                             INNER JOIN Comerciantes ON Productos.ID_Comerciante = Comerciantes.ID
                             WHERE Productos.ID = :id");

@@ -5,11 +5,10 @@
 </style>
 <div class="pagina">
     <div class="verProductoCaja">
-        <a href="verEmpresa.php">
+        <a href="verEmpresa.php?idEmpresa=<?= $producto["idEmpresa"] ?>">
             <div class="vendedor">
-                <div class="avatar">
-                    <a href="/php/verEmmpresa.php?idEmpresa="><img src=<?= $logoEmpresa ?> class="avatarEmpresa"></a>
-                    <p><?= $empresa ?></p>
+                <div class="avatarEmpresa">
+                    <img src=<?= $producto["avatar_empresa"] ?> <p><?= $producto["Nombre_empresa"] ?></p>
                 </div>
         </a>
         <img src="/assets/amor.png" class="corazon" id="corazon">
