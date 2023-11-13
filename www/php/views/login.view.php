@@ -14,9 +14,7 @@
     <div class="bg bg3"></div>
     <div class="content">
         <div class="form-box">
-            <div class="form-value">
-                <form action="/php/login.php" method="post" autocomplete="off">
-                    <div class="cancelar"><a href="/"><svg class="btnCancelar" width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none">
+        <div class="cancelar"><a href="/"><svg class="btnCancelar" width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
                             <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
                             <g id="SVGRepo_iconCarrier">
@@ -26,6 +24,9 @@
                         </svg> 
                         </a>
                     </div>
+            <div class="form-value">
+                <form action="/php/login.php" method="post" autocomplete="off">
+                   
                     <div class="imagen">
                         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" width="160px" height="160px" fill="#000000" stroke="#000000" stroke-width="0.00512" transform="rotate(0)">
                             <g id="SVGRepo_bgCarrier" stroke-width="0"></g>

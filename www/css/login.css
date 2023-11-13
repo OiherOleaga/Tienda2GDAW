@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: end;
+    width: 100%;
 }
 
 .btnCancelar:hover{
@@ -73,6 +74,7 @@ h1 {
     border: 2px solid white;
     border-radius: 16px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: black;
