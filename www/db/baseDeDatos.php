@@ -34,27 +34,27 @@ function select($sentencia, $objeto = null)
 {
     global $conn;
     $stmt = $conn->prepare($sentencia);
-    if (is_array($objeto) || $objeto === null) {
-        $stmt->execute($objeto);
-    } else {
-        $stmt->execute([$objeto]);
+    if (!is_array($objeto) && $objeto !== null) {
+        $objeto = [$objeto];
+    }  
+    if (!$stmt->execute($objeto)) {
+        throw new Exception($stmt->errorInfo()[2]);
     } 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-/*
-function execute($sentencia, $objeto) {
+
+function execute($sentencia, $objeto = null) {
     global $conn;
     $stmt = $conn->prepare($sentencia);
-    if (is_array($objeto) || $objeto === null) {
-        $result = $stmt->execute($objeto); // si el false $st->errorInfo()[2]
-    } else {
-        $stmt->bindParam(1, $objeto);   
-        $result = $stmt->execute();
-    }
-    return $result;
+    if (!is_array($objeto) && $objeto !== null) {
+        $objeto = [$objeto];
+    }  
+    if (!$stmt->execute($objeto)) {
+        throw new Exception($stmt->errorInfo()[2]);
+    } 
 }
-*/
+
 
 function getCliente($id)
 {
