@@ -46,30 +46,11 @@
     margin-right: 3rem;
 }
 
-
-.logoEmp {
-    grid-area: "logo";
-}
-
 .logoEmp img {
     width: 200px;
     height: 200px;
     border-radius: 50%;
-}
-
-.nombre {
-    text-align: center;
-    grid-area: "nombre";
-}
-
-.correo {
-    text-align: center;
-    grid-area: "correo";
-}
-
-.tel {
-    text-align: center;
-    grid-area: "tel";
+    object-fit: cover;
 }
 
 .mapa {
@@ -146,7 +127,7 @@
 
     .logoEmp img {
         width: 150px;
-        height: auto;
+        height: 150px;
     }
 
     .datosEmpresa {

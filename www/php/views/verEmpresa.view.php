@@ -1,9 +1,5 @@
 <?php
 require("./mapa.php");
-$imagen = "https://content.wepik.com/statics/30190099/preview-page0.jpg";
-$nombre = "Nombre Epico";
-$correo = "CorreoChingon@gmail.com";
-$tel = "000000000";
 ?>
 <style>
     <?php include('../css/verEmpresa.css') ?>
@@ -12,17 +8,17 @@ $tel = "000000000";
 <div class="contenedor">
     <div class="datosEmpresa">
         <div class="logoEmp">
-            <img src=<?= $imagen ?>>
+            <img src=<?= $empresa["Avatar"] ?>>
         </div>
         <div class="datosPc">
-            <p>Nombre de la empresa: <?= $nombre ?></p>
-            <p>Correo de contacto: <?= $correo ?></p>
-            <p>Numero de telefono: <?= $tel ?></p>
+            <p>Nombre de la empresa: <?= $empresa["Nombre_empresa"] ?></p>
+            <p>Correo de contacto: <?= $empresa["Correo"]  ?></p>
+            <p>Numero de telefono: <?= $empresa["Telefono"] ?></p>
         </div>
         <div class="datosMovil">
-            <p><?= $nombre ?></p>
-            <p><?= $correo ?></p>
-            <p><?= $tel ?></p>
+            <p><?= $empresa["Nombre_empresa"] ?></p>
+            <p><?= $empresa["Correo"] ?></p>
+            <p><?= $empresa["Telefono"] ?></p>
         </div>
 
     </div>
