@@ -5,47 +5,48 @@
 }
 
 .bg {
-    animation:slide 3s ease-in-out infinite alternate;
-    background-image: linear-gradient(60deg,rgb(4,215,211), rgb(67,147,228), rgb(0, 79, 132));
-    bottom:0;
-    left:-50%;
-    opacity:.5;
-    position:fixed;
-    right:-50%;
-    top:0;
-    z-index:-1;
-  }
-  
-  .bg2 {
-    animation-duration:4s;
-  }
-  
-  .bg3 {
-    animation-duration:5s;
-  }
-  
-  .content {
-    background-color:transparent;
-    box-sizing:border-box;
-    left:50%;
-    position:fixed;
-    text-align:center;
-    top:50%;
-    transform:translate(-50%, -50%);
-  }
-  
-  h1 {
-    font-family:monospace;
-  }
-  
-  @keyframes slide {
+    animation: slide 2s ease-in-out infinite alternate;
+    background-image: linear-gradient(60deg, rgb(4, 215, 211), rgb(67, 147, 228), rgb(0, 79, 132));
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    background-color: transparent;
+    box-sizing: border-box;
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
     0% {
-      transform:translateX(-25%);
+        transform: translateX(-25%);
     }
+
     100% {
-      transform:translateX(25%);
+        transform: translateX(25%);
     }
-  }
+}
 
 .form-box {
     position: relative;
@@ -158,6 +159,3 @@ button {
 .register p a:hover {
     text-decoration: underline;
 }
-
-
-

@@ -11,3 +11,15 @@ const map = new mapboxgl.Map({
 });
 
 new mapboxgl.Marker().setLngLat([longitud, latitud]).addTo(map);
+
+
+// Función para generar coordenadas aleatorias en Vitoria-Gasteiz
+function getRandomCoordinates() {
+    const latitude = 42.8611 + Math.random() * 0.1;  // Latitud de Vitoria-Gasteiz
+    const longitude = -2.6780 + Math.random() * 0.1;  // Longitud de Vitoria-Gasteiz
+    return [longitude, latitude];
+}
+
+// Crear marcadores con coordenadas aleatorias
+new mapboxgl.Marker().setLngLat(getRandomCoordinates()).addTo(map);
+
