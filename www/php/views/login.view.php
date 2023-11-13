@@ -2,20 +2,67 @@
 <html lang="es">
 
 <head>
-    <link rel="stylesheet" href="../../login.css">
+    <link rel="stylesheet" href="/css/login.css">
     <meta http-equiv="Pragma" content="no-cache">
-    <title>Login</title>
-
+    <link rel="icon" href="/assets/Logo/favicon.png">
+    <title>Iniciar Sesion</title>
 </head>
 
 <body>
-<div class="bg"></div>
-<div class="bg bg2"></div>
-<div class="bg bg3"></div>
-<div class="content">
-<div class="form-box">
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
+        <div class="form-box">
             <div class="form-value">
                 <form action="/php/login.php" method="post" autocomplete="off">
+                    <div class="cancelar"><a href="/"><svg class="btnCancelar" width="20px" height="20px" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" stroke-width="3" stroke="#000000" fill="none">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <line x1="8.06" y1="8.06" x2="55.41" y2="55.94"></line>
+                                <line x1="55.94" y1="8.06" x2="8.59" y2="55.94"></line>
+                            </g>
+                        </svg> 
+                        </a>
+                    </div>
+                    <div class="imagen">
+                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-51.2 -51.2 614.40 614.40" xml:space="preserve" width="160px" height="160px" fill="#000000" stroke="#000000" stroke-width="0.00512" transform="rotate(0)">
+                            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="3.072"></g>
+                            <g id="SVGRepo_iconCarrier">
+                                <rect x="121.616" y="30.86" transform="matrix(-0.9676 0.2524 -0.2524 -0.9676 363.1947 140.8509)" style="fill:#c69a4e;" width="101.894" height="125.722"></rect>
+                                <rect x="202.479" y="47.767" transform="matrix(-0.999 0.0451 -0.0451 -0.999 510.4745 160.4403)" style="fill:#c69a4e;" width="101.898" height="76.423"></rect>
+                                <rect x="322.014" y="20.021" transform="matrix(-0.9473 -0.3204 0.3204 -0.9473 694.0032 315.567)" style="fill:#c69a4e;" width="101.898" height="161.338"></rect>
+                                <rect x="73.44" y="300.242" style="fill:#c69a4e;" width="203.792" height="203.792"></rect>
+                                <rect x="277.231" y="300.242" style="fill:#c69a4e;" width="161.335" height="203.792"></rect>
+                                <rect x="47.966" y="266.277" style="fill:#c69a4e;" width="229.266" height="50.948"></rect>
+                                <rect x="277.231" y="266.277" style="fill:#c69a4e;" width="186.809" height="50.948"></rect>
+                                <rect x="73.44" y="393.647" style="fill:#c69a4e;" width="135.861" height="50.948"></rect>
+                                <path style="fill:#c69a4e;" d="M387.616,393.652h-59.439c-9.38,0-16.983-7.603-16.983-16.983v-25.474h93.405v25.474 C404.599,386.049,396.995,393.652,387.616,393.652z"></path>
+                                <path style="fill:#c69a4e;" d="M383.371,351.195v25.474c0,9.379-7.604,16.983-16.983,16.983h21.228 c9.379,0,16.983-7.604,16.983-16.983v-25.474H383.371z"></path>
+                                <rect x="107.405" y="104.942" style="fill:#c69a4e;" width="169.826" height="161.335"></rect>
+                                <rect x="277.231" y="104.942" style="fill:#c69a4e;" width="161.335" height="161.335"></rect>
+                                <rect x="107.405" y="172.872" style="fill:#c69a4e;" width="101.896" height="50.948"></rect>
+                                <path style="fill:#c69a4e;" d="M387.616,181.369h-59.439c-9.38,0-16.983-7.603-16.983-16.983v-25.474h93.405v25.474 C404.599,173.766,396.995,181.369,387.616,181.369z"></path>
+                                <path style="fill:#c69a4e;" d="M383.371,138.913v25.474c0,9.379-7.604,16.983-16.983,16.983h21.228 c9.379,0,16.983-7.604,16.983-16.983v-25.474H383.371z"></path>
+                                <g>
+                                    <rect x="277.231" y="240.803" style="fill:#c69a4e;" width="161.335" height="25.474"></rect>
+                                    <rect x="277.231" y="317.225" style="fill:#c69a4e;" width="161.335" height="25.474"></rect>
+                                </g>
+                                <g>
+                                    <rect x="107.405" y="240.803" style="fill:#c69a4e;" width="169.826" height="25.474"></rect>
+                                    <rect x="73.44" y="317.225" style="fill:#c69a4e;" width="203.792" height="25.474"></rect>
+                                </g>
+                                <path d="M464.038,258.322h-17.513v-26.005c0-4.397-3.563-7.961-7.961-7.961c-4.397,0-7.961,3.563-7.961,7.961v26.005H285.19V112.908 h145.414v76.952c0,4.397,3.563,7.961,7.961,7.961c4.397,0,7.961-3.563,7.961-7.961v-84.912c0-4.397-3.563-7.961-7.961-7.961h-2.175 l18.206-53.823c1.39-4.111-0.888-8.704-4.99-10.092L353.083,0.422c-4.167-1.41-8.683,0.825-10.092,4.99l-30.203,89.286 l-2.237-49.549c-0.196-4.344-3.977-7.764-8.311-7.593l-82.473,3.723L213.7,18.024c-1.109-4.253-5.452-6.807-9.712-5.692 l-98.596,25.721c-4.254,1.109-6.803,5.458-5.692,9.712l12.84,49.222h-5.138c-4.397,0-7.961,3.563-7.961,7.961v153.374H47.963 c-4.397,0-7.961,3.563-7.961,7.961v50.948c0,4.397,3.563,7.961,7.961,7.961h17.513v178.848c0,4.397,3.563,7.961,7.961,7.961h365.127 c4.397,0,7.961-3.563,7.961-7.961V325.191h17.513c4.397,0,7.961-3.563,7.961-7.961v-50.948 C471.999,261.886,468.435,258.322,464.038,258.322z M355.521,18.054l81.441,27.548l-17.381,51.384h-90.761L355.521,18.054z M296.955,96.987h-86.062l-1.774-39.289l85.887-3.877L296.955,96.987z M200.304,29.747l3.201,12.268 c-1.813,0.082-3.746-0.011-5.469,0.629c-3.205,1.191-5.336,4.401-5.182,7.819l2.101,46.524h-65.961L117.115,51.45L200.304,29.747z M115.364,180.838h85.975v35.027h-85.975V180.838z M115.364,231.786h93.935c4.397,0,7.961-3.563,7.961-7.961v-50.948 c0-4.397-3.563-7.961-7.961-7.961h-93.935v-52.009h153.905v145.414H115.364V231.786z M81.398,401.613h119.94v35.027H81.398V401.613z M81.398,452.561h127.9c4.397,0,7.961-3.563,7.961-7.961v-50.948c0-4.397-3.563-7.961-7.961-7.961h-127.9v-60.501h64.216 c4.397,0,7.961-3.563,7.961-7.961c0-4.397-3.563-7.961-7.961-7.961h-89.69v-35.027h213.344v35.027H188.07 c-4.397,0-7.961,3.563-7.961,7.961c0,4.397,3.563,7.961,7.961,7.961h81.198v170.888H81.398V452.561z M430.604,496.079H285.19 V325.191h145.414V496.079z M456.078,309.27H285.19v-35.027h170.888V309.27z"></path>
+                                <path d="M328.177,401.613h59.439c13.754,0,24.943-11.189,24.943-24.943v-25.474c0-4.397-3.563-7.961-7.961-7.961h-93.405 c-4.397,0-7.961,3.563-7.961,7.961v25.474C303.234,390.423,314.423,401.613,328.177,401.613z M319.155,359.156h77.483v17.513 c0,4.975-4.047,9.022-9.022,9.022h-59.439c-4.975,0-9.022-4.047-9.022-9.022V359.156z"></path>
+                                <path d="M311.195,130.952c-4.397,0-7.961,3.563-7.961,7.961v25.474c0,13.754,11.189,24.943,24.943,24.943h59.439 c13.754,0,24.943-11.189,24.943-24.943v-25.474c0-4.397-3.563-7.961-7.961-7.961H311.195z M396.638,164.386 c0,4.975-4.047,9.022-9.022,9.022h-59.439c-4.975,0-9.022-4.047-9.022-9.022v-17.513h77.483V164.386z"></path>
+                                <path d="M175.333,130.952h-42.457c-4.397,0-7.961,3.563-7.961,7.961s3.563,7.961,7.961,7.961h42.457 c4.397,0,7.961-3.563,7.961-7.961C183.294,134.515,179.73,130.952,175.333,130.952z"></path>
+                                <path d="M158.351,351.726h-50.948c-4.397,0-7.961,3.563-7.961,7.961c0,4.397,3.563,7.961,7.961,7.961h50.948 c4.397,0,7.961-3.563,7.961-7.961C166.311,355.289,162.747,351.726,158.351,351.726z"></path>
+                                <path d="M209.299,351.726h-25.474c-4.397,0-7.961,3.563-7.961,7.961c0,4.397,3.563,7.961,7.961,7.961h25.474 c4.397,0,7.961-3.563,7.961-7.961C217.259,355.289,213.695,351.726,209.299,351.726z"></path>
+                            </g>
+                        </svg>
+                    </div>
                     <h2>¡Te damos la bienvenida!</h2>
                     <div class="inputbox">
                         <input type="text" name="usuario" required>
@@ -25,19 +72,15 @@
                         <input type="password" name="password" required>
                         <label>Contraseña</label>
                     </div>
-                    <div class="forget">
-                        <label for="ck"><input type="checkbox" id="ck">Recordar <a href="#">Olvid&eacute; mi
-                                contraseña</a></label>
-                    </div>
-                    <p><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
+                    <p><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">
-                        <p><a href="/php/registro.php">Registrarse</a></p>
+                        <p><a href="/php/registro.php">¿No tienes cuenta? Registrate ahora</a></p>
                     </div>
                 </form>
             </div>
         </div>
-</div>
+    </div>
     <?php require "partials/scriptError.php" ?>
 </body>
 

@@ -4,6 +4,22 @@
     font-family: 'poppins', sans-serif;
 }
 
+.cancelar{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.btnCancelar:hover{
+    cursor: pointer;
+}
+
+.imagen{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .bg {
     animation: slide 2s ease-in-out infinite alternate;
     background-image: linear-gradient(60deg, rgb(4, 215, 211), rgb(67, 147, 228), rgb(0, 79, 132));
@@ -50,12 +66,12 @@ h1 {
 
 .form-box {
     position: relative;
-    width: 400px;
-    height: 450px;
+    max-width: 500px;
+    padding: 1rem;
+    width: 100%;
     background: white;
     border: 2px solid white;
-    border-radius: 50px;
-    backdrop-filter: blur(100px);
+    border-radius: 16px;
     display: flex;
     justify-content: center;
     align-items: center;
