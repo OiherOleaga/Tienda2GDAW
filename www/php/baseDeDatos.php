@@ -30,6 +30,29 @@ function consultarProductos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function consultarProductoID($data)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
+                            Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
+                            FROM Productos
+                            INNER JOIN Comerciantes ON Productos.ID_Comerciante = Comerciantes.ID
+                            WHERE Productos.ID = :id");
+    $stmt->bindParam(':id', $data['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $producto = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $producto;
+}
+
+function consultarEmpresa($data)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Comerciantes WHERE ID= :id");
+    $stmt->execute($data);
+    $empresa = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $empresa;
+}
+
 function select($sentencia, $objeto = null)
 {
     global $conn;
@@ -56,7 +79,11 @@ function execute($sentencia, $objeto) {
 }
 */
 
-function getCliente($id)
+function getCliente($data)
 {
-    return select("SELECT * FROM Clientes WHERE ID = ?", $id);
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Clientes WHERE ID = :id");
+    $stmt->execute($data);
+    $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $cliente;
 }

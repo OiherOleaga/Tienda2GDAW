@@ -19,10 +19,10 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/index.php"><img src="/assets/Logo/logo.png" alt="logo"></a>
+            <a href="/"><img src="/assets/Logo/logo.png" alt="logo"></a>
         </div>
         <div class="navegacion">
-            <a href="index.php">Inicio</a>
+            <a href="/">Inicio</a>
             <a href="index.php">Categor&iacute;as</a>
             <a href="index.php">Cont&aacute;ctanos</a>
         </div>

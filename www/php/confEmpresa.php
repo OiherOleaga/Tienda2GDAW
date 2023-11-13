@@ -1,6 +1,5 @@
 <?php
 require("baseDeDatos.php");
-
 if (isset($_COOKIE[session_name()])) {
     session_start();
     $id = $_SESSION["id"];
@@ -9,7 +8,8 @@ if (isset($_COOKIE[session_name()])) {
     require("views/partials/headUsuario.php");
 } else require("views/partials/headInicio.php");
 
-$id=isset($_GET["idProducto"]) ? $_GET["idProducto"] :"";
-$data=['id'=>$id];
-$producto=consultarProductoID($data);
-require("views/producto.view.php");
+
+$id = isset($_GET["idEmpresa"]) ? $_GET["idEmpresa"] : "";
+$data = ['id' => $id];
+$empresa = consultarEmpresa($data);
+require "views/confEmpresa.view.php";

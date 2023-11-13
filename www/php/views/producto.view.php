@@ -1,29 +1,27 @@
 <?php require("./mapa.php"); ?>
-
 <style>
     <?php include('../css/verProducto.css') ?>
 </style>
 <div class="pagina">
     <div class="verProductoCaja">
-        <a href="verEmpresa.php">
+        <a href="verEmpresa.php?idEmpresa=<?= $producto["idEmpresa"] ?>">
             <div class="vendedor">
-                <div class="avatar">
-                    <img src=<?= $logoEmpresa ?> class="avatarEmpresa">
-                    <p><?= $empresa ?></p>
+                <div class="avatarEmpresa">
+                    <img src=<?= $producto["avatar_empresa"] ?> <p><?= $producto["Nombre_empresa"] ?></p>
                 </div>
         </a>
         <img src="/assets/amor.png" class="corazon" id="corazon">
     </div>
     <div class="producto">
-        <div class="foto"><img src=<?= $imagen ?>></div>
+        <div class="foto"><img src=<?= $producto["Foto"] ?>></div>
         <div class="titulo">
-            <p><?= $titulo ?></p>
+            <p><?= $producto["Titulo"] ?></p>
         </div>
         <div class="precio">
-            <h5><?= $precio . "€" ?></h5>
+            <h5><?= $producto["Precio"] . "€" ?></h5>
         </div>
         <div class="desc">
-            <p><?= $desc ?></p>
+            <p><?= $producto["Descripcion"] ?></p>
         </div>
     </div>
 </div>

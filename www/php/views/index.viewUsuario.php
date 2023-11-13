@@ -12,7 +12,7 @@
     <h3>Lo mejor, al mejor precio</h3>
     <div class="productos">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="php/producto.php">
+            <a href="php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
