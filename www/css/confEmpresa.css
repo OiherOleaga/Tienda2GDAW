@@ -1,0 +1,85 @@
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+
+    .datosEmpresa {
+        width: 900px;
+        border: 1px solid lightgrey;
+        box-shadow: 7px 6px 5px lightgrey;
+        display: flex;
+        justify-content: center;
+    }
+
+    .logoEmp img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+    }
+
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .imagenes {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 3em;
+
+    }
+
+    .datos {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-left: 1px solid lightgrey;
+    }
+
+    .datos input {
+        padding: .5em;
+        border-radius: 10px;
+        margin: 3em;
+        border: 1px solid lightgrey;
+        box-shadow: 7px 6px 5px lightgrey;
+    }
+
+    .logoEmp {
+        width: 80%;
+        height: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .mapa {
+        margin-top: 4em;
+        width: 100%;
+        height: 250px;
+    }
+
+    #map {
+        height: 100%;
+        width: 100%;
+        border: 1px solid lightgrey;
+        box-shadow: 7px 6px 5px lightgrey;
+    }
