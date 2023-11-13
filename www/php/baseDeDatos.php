@@ -57,7 +57,11 @@ function execute($sentencia, $objeto) {
 }
 */
 
-function getCliente($id)
+function getCliente($data)
 {
-    return select("SELECT * FROM Clientes WHERE ID = ?", $id);
+    global $conn;
+    $stmt = $conn->prepare("SELECT * FROM Clientes WHERE ID = :id");
+    $stmt->execute($data);
+    $cliente = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $cliente;
 }
