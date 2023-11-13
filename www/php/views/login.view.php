@@ -53,7 +53,7 @@
                     </div>
                     <h2>¡Te damos la bienvenida!</h2>
                     <div class="inputbox">
-                        <input type="text" name="usuario" required>
+                        <input type="text" name="usuario" required autofocus>
                         <label>Usuario</label>
                     </div>
                     <div class="inputbox">
