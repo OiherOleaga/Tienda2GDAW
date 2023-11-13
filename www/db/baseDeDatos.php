@@ -22,14 +22,6 @@ function closeCon()
     $conn = null;
 }
 
-function consultarProductos()
-{
-    global $conn;
-    $stmt = $conn->prepare("SELECT * FROM Productos");
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function select($sentencia, $objeto = null)
 {
     global $conn;
@@ -53,10 +45,4 @@ function execute($sentencia, $objeto = null) {
     if (!$stmt->execute($objeto)) {
         throw new Exception($stmt->errorInfo()[2]);
     } 
-}
-
-
-function getCliente($id)
-{
-    return select("SELECT * FROM Clientes WHERE ID = ?", $id);
 }

@@ -1,5 +1,5 @@
 <?php
-require("baseDeDatos.php");
+require "../db/productos.php";
 
 if (isset($_COOKIE[session_name()])) {
     session_start();

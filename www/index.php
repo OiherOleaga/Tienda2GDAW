@@ -11,12 +11,13 @@ if ($uri != "/") {
     exit;
 }
 
-require("php/baseDeDatos.php");
+require "db/clientes.php";
+require "db/productos.php";
+
 if (isset($_COOKIE[session_name()])) {
     session_start();
     $id = $_SESSION["id"];
-    $data = ['id' => $id];
-    $cliente = getCliente($data);
+    $cliente = getCliente($id);
     require("php/views/partials/headUsuario.php");
 } else require("php/views/partials/headInicio.php");
 

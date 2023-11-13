@@ -1,9 +1,9 @@
-INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
+INSERT INTO comerciantes (avatar, nombre_empresa, contrasenia, correo, telefono, direccion)
 VALUES
     ('avatar1.jpg', 'GAME', 'contrasenia1', 'correo1@example.com', '123-456-7890', 'Dirección 1');
 
 
-INSERT INTO Productos (Titulo, Precio, Descripcion, Foto, ID_Comerciante)
+INSERT INTO productos (titulo, precio, descripcion, foto, id_comerciante)
 VALUES
     ('Ordenador de torre', 219.99, 'Descripción del Producto 1', 'https://ventor.mobi/1318-thickbox_default/torre-pc-gaming.jpg', 1),
     ('Portatil', 24.99, 'Descripción del Producto 2', 'https://assets.mmsrg.com/isr/166325/c1/-/ASSET_MMS_106496945?x=480&y=334&format=jpg&quality=80&sp=yes&strip=yes&trim&ex=480&ey=334&align=center&resizesource&unsharp=1.5x1+0.7+0.02&cox=0&coy=0&cdx=480&cdy=334', 1),
@@ -16,7 +16,7 @@ VALUES
     ('PlayStation 3', 34.99, 'Descripción del Producto 9', 'https://m.media-amazon.com/images/I/61AlsXa+zdL.jpg', 1),
     ('Videojuego PS5', 21.99, 'Descripción del Producto 10', 'https://m.media-amazon.com/images/I/814wINlWcrL.jpg', 1);
 
-INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
+INSERT INTO clientes (avatar, nombre, username, apellidos, contrasenia, correo, telefono, direccion) 
 VALUES
 ('https://i.blogs.es/1039bf/langostinos/450_1000.jpg', 'Oiher', 'oiherPerron', 'Oleaga Guerrero', '12345', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
 ('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'DavidMamalon', 'Moreno Alonso', '12345', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),

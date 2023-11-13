@@ -1,83 +1,101 @@
-CREATE TABLE Clientes (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Avatar VARCHAR(255),
-    Nombre VARCHAR(255),
-    username VARCHAR(255) unique,
-    Apellidos VARCHAR(255),
-    Contrasenia VARCHAR(255),
-    Correo VARCHAR(255),
-    Telefono VARCHAR(15),
-    Direccion TEXT
+CREATE TABLE clientes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    avatar VARCHAR(255),
+    nombre VARCHAR(255),
+    username VARCHAR(255) UNIQUE,
+    apellidos VARCHAR(255),
+    contrasenia VARCHAR(255),
+    correo VARCHAR(255),
+    telefono VARCHAR(15),
+    direccion VARCHAR(255)
 );
 
-CREATE TABLE Comerciantes (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Avatar VARCHAR(255),
-    Nombre_empresa VARCHAR(255),
-    Contrasenia VARCHAR(255),
-    Correo VARCHAR(255),
-    Telefono VARCHAR(15),
-    Direccion TEXT
+CREATE TABLE comerciantes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    avatar VARCHAR(255),
+    nombre_empresa VARCHAR(255) UNIQUE,
+    contrasenia VARCHAR(255),
+    correo VARCHAR(255),
+    telefono VARCHAR(15),
+    direccion VARCHAR(255)
 );
 
-CREATE TABLE Productos (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Titulo VARCHAR(255),
-    Precio DECIMAL(10, 2),
-    Descripcion TEXT,
-    Foto VARCHAR(255),
-    ID_Comerciante INT,
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
+CREATE UNIQUE INDEX idx_unique_username_nombre_empresa ON (clientes.username, comerciantes.nombre_empresa);
+
+CREATE TABLE productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    titulo VARCHAR(255),
+    precio DECIMAL(10, 2),
+    descripcion TEXT,
+    foto VARCHAR(255),
+    fecha_publicacion DATE,
+    id_comerciante INT,
+    FOREIGN KEY (id_comerciante) REFERENCES comerciantes(id)
 );
 
-CREATE TABLE Categorias (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Nombre VARCHAR(255)
+CREATE TABLE categorias (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(255)
 );
 
-CREATE TABLE Categorias_Productos (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Categorias INT,
-    ID_Producto INT,
-    FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+CREATE TABLE categorias_productos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_categorias INT,
+    id_producto INT,
+    FOREIGN KEY (id_categorias) REFERENCES categorias(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE Comprar (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Fecha_Publicacion DATE,
-    ID_Cliente INT,
-    ID_Producto INT,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+CREATE TABLE comprar (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    fecha DATE,
+    id_cliente INT,
+    id_producto INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE Likes (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Cliente INT,
-    ID_Producto INT,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+CREATE TABLE likes (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE Resenna_producto (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Cliente INT,
-    ID_Producto INT,
+CREATE TABLE resenna_producto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_producto INT,
     puntuacion INT,
     comentario TEXT,
     fecha DATE,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
 );
 
-CREATE TABLE Resenna_comerciante (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    ID_Cliente INT,
-    ID_Comerciante INT,
+CREATE TABLE resenna_comerciante (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    id_comerciante INT,
     puntuacion INT,
     comentario TEXT,
     fecha DATE,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id),
+    FOREIGN KEY (id_comerciante) REFERENCES comerciantes(id)
 );
+
+CREATE TABLE fotos_producto (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_producto INT,
+    url VARCHAR(255),
+    FOREIGN KEY (id_producto) REFERENCES productos(id)
+);
+
+CREATE TABLE direcciones (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_cliente INT,
+    direccion VARCHAR(255),
+    FOREIGN KEY (id_cliente) REFERENCES clientes(id)
+);
+

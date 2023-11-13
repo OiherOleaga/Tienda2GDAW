@@ -9,3 +9,7 @@ function insertarCliente($datos) {
 function getMaxIdCliente() {
     return select("select max(id) as id from Clientes")[0]["id"];
 }
+
+function getCliente($id) {
+    return select("SELECT * FROM Clientes WHERE ID = ?", $id)[0];
+}
