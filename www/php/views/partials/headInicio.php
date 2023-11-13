@@ -19,7 +19,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/index.php"><img src="/assets/logo/logo.png" alt="logo"></a>
+            <a href="/"><img src="/assets/logo/logo.png" alt="logo"></a>
         </div>
         <div class="botones">
             <a href="/php/login.php"><button class="btn">Inicar Sesion o Registrarse</button></a>

@@ -4,13 +4,15 @@
     box-sizing: border-box;
 }
 
+main{
+    margin: 1rem 0;
+}
 
 .pagina {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
     gap: 20px;
 }
 
@@ -92,6 +94,10 @@
     font-size: 12px;
 }
 
+.desc p{
+    white-space: pre-line;
+}
+
 .mapa {
     display: flex;
     flex-direction: column;
@@ -113,7 +119,7 @@
 /*TABLET Y ORDERNADOR*/
 @media (min-width: 600px) {
     .verProductoCaja {
-        width: 650px;
+        width: 550px;
     }
 
     .producto img {
@@ -139,8 +145,8 @@
     }
 
     #map {
-        width: 630px;
-        height: 500px;
+        width: 530px;
+        height: 400px;
     }
 }
 

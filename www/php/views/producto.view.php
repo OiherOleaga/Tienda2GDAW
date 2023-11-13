@@ -1,5 +1,4 @@
 <?php require("./mapa.php"); ?>
-
 <style>
     <?php include('../css/verProducto.css') ?>
 </style>
