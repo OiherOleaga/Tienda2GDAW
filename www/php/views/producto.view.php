@@ -5,7 +5,7 @@
 </style>
 <div class="pagina">
     <div class="verProductoCaja">
-        <a href="verEmpresa.php'">
+        <a href="verEmpresa.php">
             <div class="vendedor">
                 <div class="avatarEmpresa">
                     <img src=<?= $producto["avatar_empresa"] ?>>
@@ -20,7 +20,7 @@
             <p><?= $producto["Titulo"] ?></p>
         </div>
         <div class="precio">
-            <h5><?= $producto["Precio"]. "€" ?></h5>
+            <h5><?= $producto["Precio"] . "€" ?></h5>
         </div>
         <div class="desc">
             <p><?= $producto["Descripcion"] ?></p>

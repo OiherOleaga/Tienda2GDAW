@@ -42,7 +42,6 @@ function consultarProductoID($data)
     $stmt->execute();
     $producto = $stmt->fetch(PDO::FETCH_ASSOC);
     return $producto;
-    
 }
 
 function select($sentencia, $objeto = null)

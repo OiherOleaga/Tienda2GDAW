@@ -58,7 +58,7 @@
 
 .avatarEmpresa img {
     border-radius: 50%;
-    object-fit: cover;
+    object-fit: contain;
     width: 55px;
     height: 55px;
     margin-right: 5px;
@@ -78,7 +78,7 @@
     margin: 0.5rem 0;
 }
 
-.foto{
+.foto {
     display: flex;
     align-items: center;
     justify-content: center;
