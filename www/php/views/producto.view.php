@@ -7,9 +7,9 @@
     <div class="verProductoCaja">
         <a href="verEmpresa.php">
             <div class="vendedor">
-                <div class="avatarEmpresa">
-                    <img src=<?= $producto["avatar_empresa"] ?>>
-                    <p><?= $producto["Nombre_empresa"] ?></p>
+                <div class="avatar">
+                    <a href="/php/verEmmpresa.php?idEmpresa="><img src=<?= $logoEmpresa ?> class="avatarEmpresa"></a>
+                    <p><?= $empresa ?></p>
                 </div>
         </a>
         <img src="/assets/amor.png" class="corazon" id="corazon">
