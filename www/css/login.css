@@ -42,7 +42,6 @@
 }
 
 .content {
-    background-color: transparent;
     box-sizing: border-box;
     left: 50%;
     position: fixed;
@@ -67,11 +66,9 @@ h1 {
 
 .form-box {
     position: relative;
-    max-width: 500px;
     padding: 1rem;
     width: 100%;
     background: white;
-    border: 2px solid white;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
