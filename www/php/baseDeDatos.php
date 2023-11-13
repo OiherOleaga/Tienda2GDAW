@@ -30,6 +30,21 @@ function consultarProductos()
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function consultarProductoID($data)
+{
+    global $conn;
+    $stmt = $conn->prepare("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
+                            Comerciantes.ID as ComercianteID, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
+                            FROM Productos
+                            INNER JOIN Comerciantes ON Productos.ID_Comerciante = Comerciantes.ID
+                            WHERE Productos.ID = :id");
+    $stmt->bindParam(':id', $data['id'], PDO::PARAM_INT);
+    $stmt->execute();
+    $producto = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $producto;
+    
+}
+
 function select($sentencia, $objeto = null)
 {
     global $conn;

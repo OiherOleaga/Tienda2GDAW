@@ -71,9 +71,25 @@
 
 .producto img {
     object-fit: cover;
-    border-radius: 10px;
     width: 200px;
     height: 200px;
+    border-radius: 20px;
+    margin: 0.5rem 0;
+}
+
+.cajaAvatarEmpresa{
+    border-radius: 50%;
+    object-fit: cover;
+    width: 55px;
+    height: 55px;
+}
+
+.foto{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-bottom: 2px solid lightgray;
 }
 
 .desc {
