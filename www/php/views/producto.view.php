@@ -8,7 +8,7 @@
         <a href="verEmpresa.php">
             <div class="vendedor">
                 <div class="avatar">
-                    <img src=<?= $logoEmpresa ?> class="avatarEmpresa">
+                    <a href="/php/verEmmpresa.php?idEmpresa="><img src=<?= $logoEmpresa ?> class="avatarEmpresa"></a>
                     <p><?= $empresa ?></p>
                 </div>
         </a>
