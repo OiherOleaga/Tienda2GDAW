@@ -12,7 +12,7 @@
     <section>
         <div class="form-box">
             <div class="form-value">
-                <form action="registro.php" method="post">
+                <form action="registro.php" method="post" id="formRegistro">
                     <h2>Crear cuenta</h2>
                     <div>
                         <label for="tipo">Elige el tipo de usuario:</label>
@@ -21,15 +21,15 @@
                             <option value="comerciante">Empresa/Vendedor</option>
                         </select>
                     </div>
-                    <div class="inputbox">
+                    <div class="inputbox" id="inputBoxNombre">
                         <input type="text" name="nombre" required>
                         <label>Nombre</label>
                     </div>
-                    <div class="inputbox">
+                    <div class="inputbox" id="inputBoxApellidos">
                         <input type="text" name="apellidos" required>
                         <label>Apellido</label>
                     </div>
-                    <div class="inputbox">
+                    <div class="inputbox" id="inputBoxUsername">
                         <input type="text" name="username" required>
                         <label>Nombre de usuario</label>
                     </div>
@@ -42,8 +42,16 @@
                         <label>Contraseña</label>
                     </div>
                     <div class="inputbox">
-                        <input type="mail" name="correo" required>
+                        <input type="email" name="correo" required>
                         <label>Mail</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="telefono" required>
+                        <label>Telefono</label>
+                    </div>
+                    <div class="inputbox">
+                        <input type="text" name="direccion" required>
+                        <label>Direccion</label>
                     </div>
                     <div id="divFotoPerfil">
                         <canvas id="canvasFotoPerfil" width="200" height="200"></canvas>

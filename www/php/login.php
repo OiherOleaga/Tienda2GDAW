@@ -5,41 +5,39 @@ if (isset($_COOKIE[session_name()])) {
     exit;
 }
 
-require "exceptionControlada.php";
 require "methods.php";
 
 $errorUsuario = "";
 $errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "baseDeDatos.php";
+    require "../db/clientes.php";
+    require "../db/comerciantes.php";
     try {
-        $username = strtoupper(POST("usuario"));
-        $password = /*hash('sha250',*/ POST("password");//);
-        
-        $id = select("select id from Clientes where username = upper(?) and contrasenia = ?", [$username, $password]);
+        $datos = [
+            "username" => strtoupper(POST("usuario")),
+            "contrasenia" => hash('sha256', POST("password"))
+        ];
+        $id = getIdCliente($datos); 
         $cliente = true;
         if ($id == null) {
             $cliente = false;
-            $id = select("select id from Comerciantes where nombre_empresa = upper(?) and contrasenia = ?", [$username, $password]);
+            $id = getIdComerciante($datos);
             if ($id == null) {
-                throw new ExecptionControlada("nombre o contraseña incorrecto");
+                $errorUsuario = "nombre o contraseña incorrecto";
+                goto fin;
             }
         }
-        closeCon();
         session_start();
-        $_SESSION["id"] = $id[0]["id"]; 
+        $_SESSION["id"] = $id;
         $_SESSION["tipoCliente"] = $cliente;
         header("Location: /");
         exit;
-    } catch (ExecptionControlada $e) {
-        closeCon();
-        $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
-        closeCon();
         $errorUsuario = "error al iniciar sesion";
-        $errorDev = $e->getMessage();
+        $errorDev = $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine();
     }
+    fin:
+    closeCon();
 }
-
 require "./views/login.view.php";

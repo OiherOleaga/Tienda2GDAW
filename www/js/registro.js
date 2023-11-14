@@ -1,4 +1,8 @@
 let tipo = document.getElementById("tipo");
+let inputBoxNombre = document.getElementById("inputBoxNombre");
+let inputBoxApellidos = document.getElementById("inputBoxApellidos");
+let inputBoxUsername = document.getElementById("inputBoxUsername");
+let formRegistro = document.getElementById("formRegistro");
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
 const canvas = document.getElementById('canvasFotoPerfil');
@@ -7,7 +11,7 @@ let imagen = new Image();
 const canvasSize = 200;
 let isDragging = false;
 
-imagen.src = '/assets/fotoPerfil.jpg';
+imagen.src = '/assets/avatares/fotoPerfil.jpg';
 let x = (canvasSize - imagen.width) / 2;
 let y = (canvasSize - imagen.height) / 2;
 reDrawImg(false);
@@ -15,10 +19,14 @@ reDrawImg(false);
 tipo.addEventListener("change", () => {
     switch (tipo.value) {
         case "cliente":
-
+            formRegistro.insertBefore(inputBoxNombre, inputBoxUsername);
+            formRegistro.insertBefore(inputBoxApellidos, inputBoxUsername);
+            inputBoxUsername.querySelector("label").innerText = "Nombre de usuario";
             break;
         case "comerciante":
-
+            formRegistro.removeChild(inputBoxNombre);
+            formRegistro.removeChild(inputBoxApellidos);
+            inputBoxUsername.querySelector("label").innerText = "Nombre de empresa";
             break;
     }
 });
