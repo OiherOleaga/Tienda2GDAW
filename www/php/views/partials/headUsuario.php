@@ -24,7 +24,7 @@
         <div class="navegacion">
             <a href="/">Inicio</a>
             <a href="index.php">Categor&iacute;as</a>
-            <a href="index.php">Cont&aacute;ctanos</a>
+            <a href="/php/contact.php">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
             <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
