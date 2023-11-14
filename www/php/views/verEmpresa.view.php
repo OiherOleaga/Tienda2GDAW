@@ -25,9 +25,11 @@ require("./mapa.php");
 </div>
 <div class="seccion2">
     <h3>Todos los productos</h3>
-    <div class="productos">
+    <button class="btnIzquierda" data-container="gridProductos">Desplazar Izquierda</button>
+    <button class="btnDerecha" data-container="gridProductos">Desplazar Derecha</button>
+    <div class="productos" id="gridProductos">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="/php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
+            <a href="php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
@@ -46,10 +48,12 @@ require("./mapa.php");
     </div>
 </div>
 <div class="seccion3">
-    <h3>Lo m&aacute;s destacado</h3>
-    <div class="productos">
+    <h3>A mucha gente le gustan</h3>
+    <button class="btnIzquierda" data-container="gridProductos2">Desplazar Izquierda</button>
+    <button class="btnDerecha" data-container="gridProductos2">Desplazar Derecha</button>
+    <div class="productos" id="gridProductos2">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="/php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
+            <a href="index.php">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
@@ -66,6 +70,7 @@ require("./mapa.php");
             </a>
         <?php } ?>
     </div>
+    <script src="/js/desplazamineto.js"></script>
 </div>
 <div class="mapa">
     <h2>Localicazi&oacute;n del local</h2>

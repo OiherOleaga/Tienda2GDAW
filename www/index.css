@@ -233,6 +233,11 @@ form {
     padding-bottom: .3rem;
 }
 
+.btnIzquierda,
+.btnDerecha {
+    display: none;
+}
+
 .productos {
     display: grid;
     grid-auto-flow: row;
@@ -366,7 +371,7 @@ footer img {
             100%;
     }
 
-    .avatar{
+    .avatar {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -387,7 +392,7 @@ footer img {
         text-align: center;
     }
 
-    .menuDesp button{
+    .menuDesp button {
         background-color: transparent;
     }
 
@@ -459,6 +464,11 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
+    .btnDerecha,
+    .btnIzquierda {
+        display: block;
+    }
+
     .productos {
         display: grid;
         grid-template-columns: none;
@@ -472,7 +482,6 @@ footer img {
 
     .productos .caja {
         margin: 15px;
-        transition: transform .1s ease;
     }
 
     .productos .caja:hover {

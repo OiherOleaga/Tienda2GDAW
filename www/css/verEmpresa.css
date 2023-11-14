@@ -55,8 +55,6 @@ main {
     border-radius: 10px;
 }
 
-
-
 @media (min-width: 600px) {
     .datosEmpresa{
         margin: 0px 100px;
@@ -71,26 +69,13 @@ main {
 @media (min-width: 900px) {
     .datosEmpresa {
         flex-direction: row;
-        margin: 0px 100px;
     }
 
     #map {
-        width: 950px;
+        width: 900px;
         height: 700px;
         border: 1px solid lightgrey;
         box-shadow: 7px 6px 5px lightgrey;
         border-radius: 10px;
-    }
-
-    .productos {
-        margin: 0 50px;
-    }
-
-    .logoEmp {
-        width: 40%;
-    }
-
-    .logoEmp img {
-        padding: 1em;
     }
 }
