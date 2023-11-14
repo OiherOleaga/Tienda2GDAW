@@ -24,12 +24,11 @@ require("./mapa.php");
     </div>
 </div>
 <div class="seccion2">
-    <h3>Todos los productos</h3>
-    <button class="btnIzquierda" data-container="gridProductos">Desplazar Izquierda</button>
-    <button class="btnDerecha" data-container="gridProductos">Desplazar Derecha</button>
+    <h3>Lo mejor, al mejor precio</h3>
     <div class="productos" id="gridProductos">
+        <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
+            <a href="/php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
@@ -45,15 +44,15 @@ require("./mapa.php");
                 </div>
             </a>
         <?php } ?>
+        <button class="btnDerecha" data-container="gridProductos"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
     </div>
 </div>
 <div class="seccion3">
     <h3>A mucha gente le gustan</h3>
-    <button class="btnIzquierda" data-container="gridProductos2">Desplazar Izquierda</button>
-    <button class="btnDerecha" data-container="gridProductos2">Desplazar Derecha</button>
+    <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
     <div class="productos" id="gridProductos2">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="index.php">
+            <a href="/php/producto.php?idProducto=">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
@@ -69,7 +68,9 @@ require("./mapa.php");
                 </div>
             </a>
         <?php } ?>
+        <button class="btnDerecha" data-container="gridProductos2"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
     </div>
+</div>
     <script src="/js/desplazamineto.js"></script>
 </div>
 <div class="mapa">

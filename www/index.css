@@ -466,7 +466,31 @@ footer img {
 @media (min-width: 900px) {
     .btnDerecha,
     .btnIzquierda {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: none;
+        position: absolute;
+        z-index: 2;
+        border: 0;
+        cursor: pointer;
+        width: 50px;
+    }
+
+    .btnDerecha{
+        right: 37px;
+        height: 450px;
+    }
+
+    .btnIzquierda{
+        left: 37px;
+        height: 450px;
+    }
+
+    .seccion2{
+        display: flex;
+        flex-direction: column;
     }
 
     .productos {
@@ -477,7 +501,7 @@ footer img {
         overflow-x: scroll;
         scroll-behavior: smooth;
         grid-gap: 64px;
-        margin: 0px 30px;
+        margin: 0px 95px;
     }
 
     .productos .caja {
