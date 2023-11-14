@@ -387,6 +387,10 @@ footer img {
         text-align: center;
     }
 
+    .menuDesp button{
+        background-color: transparent;
+    }
+
     .menuDesp a {
         color: black;
         padding: 12px 16px;
@@ -397,6 +401,7 @@ footer img {
     .menuDesp a:hover {
         background-color: #f1f1f1;
         border-radius: 5px;
+        cursor: pointer;
     }
 
     .show {

@@ -32,7 +32,7 @@
         <div id="menuDesp" class="menuDesp">
             <a href="#">Ver perfil</a>
             <a href="#">Preferencias</a>
-            <a href="#">Cerrar Sesi&oacute;n</a>
+            <a id="cerrarSesion">Cerrar Sesi&oacute;n</a>
         </div>
     </header>
     <script src="/js/headerUsuario.js"></script>
