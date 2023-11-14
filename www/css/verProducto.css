@@ -114,8 +114,6 @@ main{
     border-radius: 10px;
 }
 
-
-
 /*TABLET Y ORDERNADOR*/
 @media (min-width: 600px) {
     .verProductoCaja {
