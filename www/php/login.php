@@ -12,16 +12,18 @@ $errorUsuario = "";
 $errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "baseDeDatos.php";
+    require "../db/clientes.php";
+    require "../db/comerciantes.php";
     try {
-        $username = strtoupper(POST("usuario"));
-        $password = /*hash('sha250',*/ POST("password");//);
-        
-        $id = select("select id from Clientes where username = upper(?) and contrasenia = ?", [$username, $password]);
+        $datos = [
+            "username" => strtoupper(POST("usuario")),
+            "contrasenia" => hash('sha256', POST("password"))
+        ];
+        $id = getIdCliente($datos); 
         $cliente = true;
         if ($id == null) {
             $cliente = false;
-            $id = select("select id from Comerciantes where nombre_empresa = upper(?) and contrasenia = ?", [$username, $password]);
+            $id = getIdComerciante($datos);
             if ($id == null) {
                 throw new ExecptionControlada("nombre o contraseña incorrecto");
             }

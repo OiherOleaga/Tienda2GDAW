@@ -11,50 +11,67 @@ $errorDev = "";
 $errorUsuario = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    try {
+    //try {
+        $usuario = [
+            "username" => POST("username"),
+            "contrasenia" => hash("sha256" , POST("contrasenia")), 
+            "correo" => POST("correo"),
+            "telefono" => POST("telefono"),
+            "direccion" => POST("direccion")
+        ];
+        $avatar = POST("avatar");
         $tipo = POST("tipo");
+
         if ($tipo == "cliente") {
-            require "../db/clientes.php";
             // TODO hacer todas las comprovaciones
-            $avatar = POST("avatar");
+            require "../db/clientes.php";
             if ($avatar == "") {
-                $urlAvatar = "/assets/fotoPerfil.jpg";
+                $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
             } else {
-                $id = getMaxIdCliente();
-                $urlAvatar = "/assets/" . hash("sha256" , "cliente" . ($id == ""? 0 : $id + 1))  . "prueva." . analizarImg($avatar);
+                $id = getMaxIdClientes();
+                $id = $id == ""? 0 : $id + 1;
+                $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
                 file_put_contents("..$urlAvatar", base64_decode($avatar));
             }
 
-            $username = POST("username");
-            $nombre = POST("nombre");
-            $apellido = POST("apellidos");
-            $contrasenia = POST("contrasenia");
-            $correo = POST("correo");
+            $usuario["avatar"] = $urlAvatar;
+            $usuario["nombre"] = POST("nombre");
+            $usuario["apellidos"] = POST("apellidos");
 
-            insertarCliente([
-                "avatar" => $urlAvatar, 
-                "username" => $username, 
-                "nombre" => $nombre, 
-                "apellidos" => $apellido, 
-                "contrasenia" => $contrasenia, 
-                "correo" => $correo
-            ]);
+            insertarCliente($usuario);
+            session_start();
+            $_SESSION["id"] = getIdCliente($usuario);
+            $_SESSION["tipoCliente"] = true;
+        } else if ($tipo == "comerciante") {
+            require "../db/comerciantes.php";
+            if ($avatar == "") {
+                $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
+            } else {
+                $id = getMaxIdComerciantes();
+                $id = $id == ""? 0 : $id + 1;
+                $urlAvatar = "/assets/Logo/" . hash("sha256" , "comerciante_asldfjkasl$id") . "." . analizarImg($avatar);
+                file_put_contents("..$urlAvatar", base64_decode($avatar));
+            }
+
+            $usuario["avatar"] = $urlAvatar;
+
+            insertarComerciante($usuario);
+            session_start();
+            $_SESSION["id"] = getIdComerciante($usuario);
+            $_SESSION["tipoCliente"] = false;
         }
-
+        
         closeCon();
-        session_start();
-        $_SESSION["id"] = $id + 1; 
-        $_SESSION["tipoCliente"] = $tipo == "cliente" ? true : false;
         header("Location: /");
         exit;
-    } catch (ExcptionControlada $e) {
+    /*} catch (ExcptionControlada $e) {
         closeCon();
         $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
         closeCon();
         $errorUsuario = "Error al registrar";
         $errorDev = $e->getMessage();
-    }
+    }*/
 }
 
 function analizarImg(&$img) {
@@ -71,4 +88,5 @@ function analizarImg(&$img) {
     }
     throw new Exception("formato imagen incorrecto");
 }
+
 require "views/registro.view.php";

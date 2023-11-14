@@ -38,7 +38,7 @@ function select($sentencia, $objeto = null)
         $objeto = [$objeto];
     }  
     if (!$stmt->execute($objeto)) {
-        throw new Exception($stmt->errorInfo()[2]);
+        throw new Exception($stmt->errorInfo()[2] . "sdlkfjasdlkj");
     } 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
