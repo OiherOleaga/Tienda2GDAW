@@ -60,9 +60,8 @@ function select($sentencia, $objeto = null)
     if (is_array($objeto) || $objeto === null) {
         $stmt->execute($objeto);
     } else {
-        $stmt->bindParam(1, $objeto);
-        $stmt->execute();
-    }
+        $stmt->execute([$objeto]);
+    } 
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 

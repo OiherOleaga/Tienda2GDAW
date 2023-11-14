@@ -9,14 +9,17 @@ require("./mapa.php");
         <img src=<?= $empresa["Avatar"] ?>>
     </div>
     <div class="datosPc">
-        <p>Nombre de la empresa:
+        <p>Nombre:
             <?= $empresa["Nombre_empresa"] ?>
         </p>
-        <p>Correo de contacto:
+        <p>Correo:
             <?= $empresa["Correo"] ?>
         </p>
-        <p>Numero de telefono:
+        <p>Telefono:
             <?= $empresa["Telefono"] ?>
+        </p>
+        <p>Direccion:
+            <?= $empresa["Direccion"] ?>
         </p>
     </div>
 </div>
@@ -67,10 +70,10 @@ require("./mapa.php");
 <div class="mapa">
     <h2>Localicazi&oacute;n del local</h2>
     <div id="map">
-        <p id="latitud" hidden>
+        <p id="latitud">
             <?= $latitude ?>
         </p>
-        <p id="longi" hidden>
+        <p id="longi">
             <?= $longitude ?>
         </p>
     </div>

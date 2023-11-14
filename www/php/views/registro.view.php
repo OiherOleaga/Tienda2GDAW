@@ -3,7 +3,7 @@
 
 <head>
     <meta http-equiv="Pragma" content="no-cache">
-    <link rel="stylesheet" href="/login.css">
+    <!--<link rel="stylesheet" href="/login.css"> -->
     <title>Login</title>
 
 </head>
@@ -26,7 +26,7 @@
                         <label>Nombre</label>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="apellido" required>
+                        <input type="text" name="apellidos" required>
                         <label>Apellido</label>
                     </div>
                     <div class="inputbox">
@@ -34,7 +34,7 @@
                         <label>Nombre de usuario</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" name="password" required>
+                        <input type="password" name="contrasenia" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="inputbox">
@@ -42,14 +42,13 @@
                         <label>Contraseña</label>
                     </div>
                     <div class="inputbox">
-                        <input type="mail" name="mail" required>
+                        <input type="mail" name="correo" required>
                         <label>Mail</label>
                     </div>
                     <div id="divFotoPerfil">
-                        <p>Elige tu foto</p>
                         <canvas id="canvasFotoPerfil" width="200" height="200"></canvas>
-                        <img src="" id="fotoPerfil" alt="fotoPerfil" onerror="ponerPredeterminado(this)">
-                        <input type="file" name="avatar" id="inputFoto" accept="image/*">
+                        <input type="hidden" name="avatar" id="outputFoto">
+                        <input type="file" id="inputFoto" accept="image/*">
                     </div>
                     <button type="submit">Crear cuenta</button>
 
