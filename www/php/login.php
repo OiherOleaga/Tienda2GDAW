@@ -40,4 +40,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     fin:
     closeCon();
 }
-require "./views/login.view.php";
+require __DIR__ . "/views/login.view.php";
