@@ -11,5 +11,6 @@ function getMaxIdClientes() {
 }
 
 function getIdCliente($datos) {
-    return select("select id from Clientes where username = upper(:username) and contrasenia = :contrasenia", $datos);
+    $id = select("select id from Clientes where username = upper(:username) and contrasenia = :contrasenia", $datos);
+    return $id == null? $id : $id[0]["id"];
 }

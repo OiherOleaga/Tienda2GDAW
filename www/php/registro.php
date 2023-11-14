@@ -5,26 +5,34 @@ if (isset($_COOKIE[session_name()])) {
     exit;
 }
 
-require "exceptionControlada.php";
 require "methods.php";
 $errorDev = "";
 $errorUsuario = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    //try {
+    try {
+        require "../db/usuarios.php";
+        // TODO hacer las comprovaciones tambien las de js
+            require "../db/clientes.php";
         $usuario = [
             "username" => POST("username"),
-            "contrasenia" => hash("sha256" , POST("contrasenia")), 
             "correo" => POST("correo"),
-            "telefono" => POST("telefono"),
-            "direccion" => POST("direccion")
+            "telefono" => POST("telefono")
         ];
+        $coincidencias = comprobarDatosUnicos($usuario);
+        if ($coincidencias != null) {
+            foreach ($coincidencias as $row) {
+                $coincidencia = $row['coincidencia'];
+                $errorUsuario .= "El " . ($coincidencia == "username"? "Nombre de usuario/Nombre de empresa" : $coincidencia) . " " . $usuario[$coincidencia] . " ya esta en uso<br>";
+            }
+            goto fin;
+        }
+        $usuario["contrasenia"] = hash("sha256" , POST("contrasenia"));
+        $usuario["direccion"] = POST("direccion");
         $avatar = POST("avatar");
         $tipo = POST("tipo");
 
         if ($tipo == "cliente") {
-            // TODO hacer todas las comprovaciones
-            require "../db/clientes.php";
             if ($avatar == "") {
                 $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
             } else {
@@ -33,14 +41,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
                 file_put_contents("..$urlAvatar", base64_decode($avatar));
             }
-
+            
             $usuario["avatar"] = $urlAvatar;
             $usuario["nombre"] = POST("nombre");
             $usuario["apellidos"] = POST("apellidos");
 
             insertarCliente($usuario);
             session_start();
-            $_SESSION["id"] = getIdCliente($usuario);
+            $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
             $_SESSION["tipoCliente"] = true;
         } else if ($tipo == "comerciante") {
             require "../db/comerciantes.php";
@@ -57,21 +65,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             insertarComerciante($usuario);
             session_start();
-            $_SESSION["id"] = getIdComerciante($usuario);
+            $_SESSION["id"] = getIdComerciante(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
             $_SESSION["tipoCliente"] = false;
         }
-        
-        closeCon();
         header("Location: /");
         exit;
-    /*} catch (ExcptionControlada $e) {
-        closeCon();
-        $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
-        closeCon();
         $errorUsuario = "Error al registrar";
-        $errorDev = $e->getMessage();
-    }*/
+        $errorDev = $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine();
+    }
+    fin:
+    closeCon();
 }
 
 function analizarImg(&$img) {
@@ -88,5 +92,4 @@ function analizarImg(&$img) {
     }
     throw new Exception("formato imagen incorrecto");
 }
-
 require "views/registro.view.php";

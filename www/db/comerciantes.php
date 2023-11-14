@@ -3,7 +3,8 @@
 require_once __DIR__ . "/baseDeDatos.php";
 
 function getIdComerciante($datos) {
-    return select("select id from Comerciantes where nombre_empresa = upper(:username) and contrasenia = :password", $datos);
+    $id = select("select id from Comerciantes where nombre_empresa = upper(:username) and contrasenia = :contrasenia", $datos);
+    return $id == null? $id : $id[0]["id"];
 }
 
 function insertarComerciante($datos) {

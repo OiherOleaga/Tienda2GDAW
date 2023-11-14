@@ -5,7 +5,6 @@ if (isset($_COOKIE[session_name()])) {
     exit;
 }
 
-require "exceptionControlada.php";
 require "methods.php";
 
 $errorUsuario = "";
@@ -25,23 +24,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $cliente = false;
             $id = getIdComerciante($datos);
             if ($id == null) {
-                throw new ExecptionControlada("nombre o contraseña incorrecto");
+                $errorUsuario = "nombre o contraseña incorrecto";
+                goto fin;
             }
         }
-        closeCon();
         session_start();
-        $_SESSION["id"] = $id[0]["id"]; 
+        $_SESSION["id"] = $id;
         $_SESSION["tipoCliente"] = $cliente;
         header("Location: /");
         exit;
-    } catch (ExecptionControlada $e) {
-        closeCon();
-        $errorUsuario = $e->getMessage();
     } catch (Exception $e) {
-        closeCon();
         $errorUsuario = "error al iniciar sesion";
-        $errorDev = $e->getMessage();
+        $errorDev = $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine();
     }
+    fin:
+    closeCon();
 }
-
 require "./views/login.view.php";
