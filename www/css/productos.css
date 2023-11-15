@@ -2,7 +2,7 @@
     display: none;
 }
 
-.pagina{
+.pagina {
     padding: 1rem 0;
 
 }
@@ -38,6 +38,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin: 10px 0;
     }
 
     .search {
@@ -49,10 +50,12 @@
     }
 
     .filtro {
-        border-bottom: 1px solid black;
+        border: 1px solid #0a3193;
+        background-color: #D4E4F6;
         width: 100%;
         padding: 1rem;
         display: flex;
+        backdrop-filter: blur(1000px);
         flex-direction: column;
         align-items: center;
         justify-content: center;
@@ -69,11 +72,10 @@
 
     .bloque {
         display: block;
-        position: relative;
-        border: 1px solid lightgray;
-        background-color: #D4E4F6;
-        border-radius: 15px;
-        height:fit-content;
+        position: sticky;
+        top: 100px;
+        border-radius: 10px;
+        height: fit-content;
     }
 
     .categorias {
@@ -88,19 +90,26 @@
 
     .categorias input {
         margin-right: 5px;
-        width: 15px;
-        height: 15px;
+        width: 17px;
+        height: 17px;
     }
 
-    .precio{
+    .precio {
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 100%;
     }
-    .precio input{
+
+    .precio input {
         width: 55px;
-        padding: 0 5px;
+        padding: 0 10px;
         height: 30px;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    .precio input:hover{
+        border:2px solid black;
     }
 }

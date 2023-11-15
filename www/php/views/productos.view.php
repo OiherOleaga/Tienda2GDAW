@@ -55,7 +55,7 @@
         </div>
         </aside>
         <div class="productos">
-            <?php for ($i = 0; $i < 10; $i++) { ?>
+            <?php for ($i = 0; $i < count($productos); $i++) { ?>
                 <a href="/php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
                     <div class="caja">
                         <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
