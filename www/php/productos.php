@@ -10,4 +10,4 @@ if (isset($_COOKIE[session_name()])) {
 } else require("views/partials/headInicio.php");
 
 $productos = consultarProductos();
-require("views/categorias.view.php");
+require("views/productos.view.php");

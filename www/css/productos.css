@@ -1,3 +1,7 @@
+main{
+    padding: 1em 0;
+}
+
 .bloque {
     display: none;
 }
@@ -83,5 +87,19 @@
 
     .categorias input {
         margin-right: 5px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .precio{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+    .precio input{
+        width: 55px;
+        padding: 0 5px;
+        height: 30px;
     }
 }
