@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'poppins', sans-serif;
+
+}
+
+.cancelar {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+}
+
+.btnCancelar:hover {
+    cursor: pointer;
+}
+
+.imagen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg {
+    animation: slide 2s ease-in-out infinite alternate;
+    background-image: linear-gradient(60deg, rgb(4, 215, 211), rgb(67, 147, 228), rgb(0, 79, 132));
+    bottom: 0;
+    left: -50%;
+    opacity: .5;
+    position: fixed;
+    right: -50%;
+    top: 0;
+    z-index: -1;
+}
+
+.bg2 {
+    animation-duration: 4s;
+}
+
+.bg3 {
+    animation-duration: 5s;
+}
+
+.content {
+    box-sizing: border-box;
+    left: 50%;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.form-box {
+    padding: 1rem;
+    width: 500px;
+    background: white;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.iniciar p {
+    color: black;
+}
+
+.inputbox {
+    position: relative;
+    margin: 15px 0;
+    width: 300px;
+    border-bottom: 2px solid black;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 1em;
+    pointer-events: none;
+    transition: .2s;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: black;
+}
+
+canvas {
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+h1 {
+    font-family: monospace;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(-25%);
+    }
+
+    100% {
+        transform: translateX(25%);
+    }
+}
+
+
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #0a3093;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.iniciar {
+    font-size: .9em;
+    color: white;
+    text-align: center;
+    margin: 25px 0 10px;
+
+}
+
+.iniciar p a {
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 1em;
+
+}
+
+.iniciar p a:hover {
+    text-decoration: underline;
+}
+
+#select {
+    border: 0;
+}
+
+#inputFoto {
+    border: none;
+}

@@ -1,0 +1,115 @@
+.bloque {
+    display: none;
+}
+
+.pagina {
+    padding: 1rem 0;
+
+}
+
+
+@media (min-width: 900px) {
+    .pagina {
+        width: 100%;
+        height: 100%;
+    }
+
+    .elementos {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 220px calc(100% - 240px);
+    }
+
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        overflow-x: hidden;
+        grid-auto-flow: row;
+        margin: 0;
+        font-size: 20px;
+        gap: 0px;
+    }
+
+    .productos a {
+        height: 90%;
+    }
+
+    form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .search {
+        padding: 0.5rem;
+    }
+
+    .buscar {
+        height: auto;
+    }
+
+    .filtro {
+        border: 1px solid #0a3193;
+        background-color: #D4E4F6;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        backdrop-filter: blur(1000px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filtro h4 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .numeroElementos {
+        opacity: .5;
+    }
+
+    .bloque {
+        display: block;
+        position: sticky;
+        top: 100px;
+        border-radius: 10px;
+        height: fit-content;
+    }
+
+    .categorias {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .categorias>* {
+        display: flex;
+        margin: .5rem 0;
+    }
+
+    .categorias input {
+        margin-right: 5px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .precio {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .precio input {
+        width: 55px;
+        padding: 0 10px;
+        height: 30px;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    .precio input:hover{
+        border:2px solid black;
+    }
+}

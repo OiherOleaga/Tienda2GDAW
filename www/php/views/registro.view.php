@@ -3,22 +3,26 @@
 
 <head>
     <meta http-equiv="Pragma" content="no-cache">
-    <!--<link rel="stylesheet" href="/login.css"> -->
+    <link rel="stylesheet" href="/css/registro.css">
     <title>Login</title>
 
 </head>
 
 <body>
-    <section>
+
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <div class="content">
         <div class="form-box">
             <div class="form-value">
-                <form action="registro.php" method="post" id="formRegistro">
-                    <h2>Crear cuenta</h2>
-                    <div>
+                <form action="registro.php" method="post" id="formRegistro" autocomplete="off">
+                    <h2>Crear tu cuenta</h2>
+                    <div class="inputbox" id="select">
                         <label for="tipo">Elige el tipo de usuario:</label>
-                        <select name="tipo" id="tipo">
-                            <option value="cliente" selected>Normal</option>
-                            <option value="comerciante">Empresa/Vendedor</option>
+                        <select name="tipo" id="tipo" class="inputbox">
+                            <option value="cliente" selected>Cliente</option>
+                            <option value="comerciante">Empresa</option>
                         </select>
                     </div>
                     <div class="inputbox" id="inputBoxNombre">
@@ -39,10 +43,10 @@
                     </div>
                     <div class="inputbox">
                         <input type="password" class="password" required>
-                        <label>Contraseña</label>
+                        <label>Confirmar contraseña</label>
                     </div>
                     <div class="inputbox">
-                        <input type="email" name="correo" required>
+                        <input type="text" name="correo" required>
                         <label>Mail</label>
                     </div>
                     <div class="inputbox">
@@ -53,22 +57,27 @@
                         <input type="text" name="direccion" required>
                         <label>Direccion</label>
                     </div>
-                    <div id="divFotoPerfil">
-                        <canvas id="canvasFotoPerfil" width="200" height="200"></canvas>
+                    <div id="divFotoPerfil" class="inputbox">
+                        <canvas id="canvasFotoPerfil" width="100" height="100"></canvas>
                         <input type="hidden" name="avatar" id="outputFoto">
-                        <input type="file" id="inputFoto" accept="image/*">
+                        <input type="file" id="inputFoto" accept="image/*" class="inputbox">
                     </div>
                     <button type="submit">Crear cuenta</button>
 
-                    <div class="register">
-                            <p>Ya tengo una cuenta <a href="login.php">Iniciar sesion</a></p>
+                    <div class="iniciar">
+                        <p> <a href="login.php">Ya tengo una cuenta Iniciar sesion</a></p>
                     </div>
                 </form>
                 <p id="errorUsuario"><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
             </div>
         </div>
-    </section>
-    <script src="/js/registro.js"></script>
+        </section>
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <script src="/js/registro.js" defer></script>
     <?php require "partials/scriptError.php" ?>
 </body>
 
