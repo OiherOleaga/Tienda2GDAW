@@ -10,11 +10,19 @@ const contexto = canvas.getContext('2d');
 let imagen = new Image();
 const canvasSize = 200;
 let isDragging = false;
-
-imagen.src = '/assets/avatares/fotoPerfil.jpg';
 let x = (canvasSize - imagen.width) / 2;
 let y = (canvasSize - imagen.height) / 2;
-reDrawImg(false);
+
+imagen.src = '/assets/avatares/fotoPerfil.jpg';
+
+imagen.onload = function () {
+    canvas.width = canvasSize;
+    canvas.height = canvasSize;
+    x = (canvasSize - imagen.width) / 2;
+    y = (canvasSize - imagen.height) / 2;
+
+    reDrawImg(false);
+};
 
 tipo.addEventListener("change", () => {
     switch (tipo.value) {
