@@ -1,0 +1,87 @@
+.bloque {
+    display: none;
+}
+
+
+@media (min-width: 900px) {
+    .pagina {
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+
+    .elementos {
+        display: grid;
+        grid-gap: 20px;
+        grid-template-columns: 220px calc(100% - 240px);
+    }
+
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        overflow-x: hidden;
+        grid-auto-flow: row;
+        margin: 0;
+        font-size: 20px;
+        gap: 0px;
+    }
+
+    .productos a {
+        height: 90%;
+    }
+
+    form {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search {
+        padding: 0.5rem;
+    }
+
+    .buscar {
+        height: auto;
+    }
+
+    .filtro {
+        border-bottom: 1px solid black;
+        width: 100%;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .filtro h4 {
+        text-align: center;
+        margin-bottom: 5px;
+    }
+
+    .numeroElementos {
+        opacity: .5;
+    }
+
+    .bloque {
+        display: block;
+        position: relative;
+        border: 1px solid lightgray;
+        background-color: #D4E4F6;
+        border-radius: 10px;
+    }
+
+    .categorias {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .categorias>* {
+        display: flex;
+        margin: .5rem 0;
+    }
+
+    .categorias input {
+        margin-right: 5px;
+    }
+}

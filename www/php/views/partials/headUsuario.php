@@ -23,7 +23,7 @@
         </div>
         <div class="navegacion">
             <a href="/">Inicio</a>
-            <a href="index.php">Categor&iacute;as</a>
+            <a href="/php/categorias.php">Categor&iacute;as</a>
             <a href="/php/contact.php">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">

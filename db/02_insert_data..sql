@@ -1,6 +1,6 @@
 INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
-    ('avatar1.jpg', 'GAME', 'contrasenia1', 'correo1@example.com', '123-456-7890', 'Dirección 1');
+    ('https://yt3.googleusercontent.com/9WgVvMb5NkRQeC2Oeu0WL9t7phgInjMq1zju6TZsvT5nLaCO9lALk_-GnL7UjsB_bo4aEbMi4g=s900-c-k-c0x00ffffff-no-rj', 'GAME', 'game', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz');
 
 
 INSERT INTO Productos (Titulo, Precio, Descripcion, Foto, ID_Comerciante)
