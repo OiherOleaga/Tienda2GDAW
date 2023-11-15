@@ -24,7 +24,7 @@ require("./mapa.php");
     </div>
 </div>
 <div class="seccion2">
-    <h3>Lo mejor, al mejor precio</h3>
+    <h3>Todos los productos</h3>
     <div class="productos" id="gridProductos">
         <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
         <?php for ($i = 0; $i < 10; $i++) { ?>
