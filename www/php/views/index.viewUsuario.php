@@ -12,7 +12,7 @@
     <div class="productos" id="gridProductos">
         <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
+            <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">

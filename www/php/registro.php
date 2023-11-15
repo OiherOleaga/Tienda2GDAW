@@ -19,14 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "correo" => POST("correo"),
             "telefono" => POST("telefono")
         ];
-        $email = "usuario@example.com";
 
         if (!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/", $usuario["correo"])) {
             $errorUsuario = "email formato incorrecto";
             goto fin;
         }
         
-        if (!preg_match("/^(\d{3}[-\s]?){1,2}\d{4}$/", $email)) {
+        if (!preg_match("/^[0-9]{9}$/", trim($usuario["telefono"]))) {
             $errorUsuario = "telefono formato incorrecto";
             goto fin;
         }
@@ -58,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usuario["apellidos"] = POST("apellidos");
             $usuario["avatar"] = $urlAvatar;
 
-            if (comprobarVacios($usuario)) {
+            if (!comprobarVacios($usuario)) {
                 $errorUsuario = "no puede haber ningun campo vacio";
                 goto fin;
             }
@@ -79,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $usuario["avatar"] = $urlAvatar;
 
-            if (comprobarVacios($usuario)) {
+            if (!comprobarVacios($usuario)) {
                 $errorUsuario = "no puede haber ningun campo vacio";
                 goto fin;
             }
@@ -104,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function comprobarVacios($datos) {
     foreach ($datos as $key => $dato) {
         $dato = trim($dato);
-        if ($dato == "")  {
+        if ($dato === "")  {
             return false;
         }
     }

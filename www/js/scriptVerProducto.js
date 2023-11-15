@@ -21,5 +21,5 @@ function ponerLike() {
     imgLike.classList.remove('reducir');
     setTimeout(() => { document.getElementById('corazon').src = "/assets/corazon.png"; }, 100);
     imgLike.classList.add('aumentar');
-
+    //fetch("/producto")
 }

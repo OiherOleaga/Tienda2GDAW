@@ -9,7 +9,8 @@ function POST($name) {
 
 function GET($name) {
     if (!isset($_GET[$name])) {
-        throw new Excption("$name no definido");
+        require __DIR__ . "../html/error-404.html";
+        exit;
     }
     return $_GET[$name];
 } 

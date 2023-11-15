@@ -14,3 +14,8 @@ function getIdCliente($datos) {
     $id = select("select id from Clientes where username = upper(:username) and contrasenia = :contrasenia", $datos);
     return $id == null? $id : $id[0]["id"];
 }
+
+function getCliente($id) {
+    $cliente = select("SELECT * FROM Clientes WHERE ID = ?", $id);
+    return $cliente == null? $cliente : $cliente[0];
+}
