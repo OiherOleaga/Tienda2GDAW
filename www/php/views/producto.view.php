@@ -1,6 +1,6 @@
-<?= require("php/mapa.php") ?>
+<?= require("./php/mapa.php") ?>
 <style>
-    <?php include('css/verProducto.css') ?>
+    <?php include('./css/verProducto.css') ?>
 </style>
 <div class="pagina">
     <div class="verProductoCaja">
@@ -35,4 +35,4 @@
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/scriptVerProducto.js"></script>
-<?php require("php/views/partials/footer.php") ?>
+<?php require("partials/footer.php") ?>

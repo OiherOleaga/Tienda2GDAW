@@ -2,7 +2,7 @@
 
 function POST($name) {
     if (!isset($_POST[$name])) {
-        throw new Excption("$name no definido");
+        throw new Exception("$name no definido");
     }
     return $_POST[$name];
 } 

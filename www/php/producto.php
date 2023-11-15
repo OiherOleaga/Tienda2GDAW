@@ -1,16 +1,16 @@
 <?php
-
+require "./db/productos.php";
 if ($_SERVER["REQUEST_METHOD"] !== "GET") {
     exit;
 }
-require "php/methods.php";
+require "./php/methods.php";
 
 if (($producto = consultarProductoID(GET("idProducto"))) === null) {
     require "html/error-404.html";
     exit;
 }
 
-require "./db/productos.php";
+
 if (isset($_COOKIE[session_name()])) {
     require "./db/clientes.php";
     
@@ -26,7 +26,7 @@ if (isset($_COOKIE[session_name()])) {
                 // hacion de like    
                 
             }
-            require("php/views/partials/headUsuario.php");
+            require("views/partials/headUsuario.php");
             require("views/producto.view.php");
             exit;
         }
