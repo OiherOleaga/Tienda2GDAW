@@ -5,6 +5,7 @@
 }
 
 .cancelar {
+    margin-left: 30px;
     display: flex;
     align-items: center;
     justify-content: end;
@@ -69,7 +70,6 @@
 
 .form-box {
     padding: 0 1rem;
-    background: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
