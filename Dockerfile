@@ -13,4 +13,8 @@ RUN docker-php-ext-install mbstring
 RUN docker-php-ext-install zip
 RUN docker-php-ext-install gd
 
+RUN echo '<FilesMatch "^[^.]+$">\n\tFallbackResource /index.php\n</FilesMatch>' >> /etc/apache2/apache2.conf
+
 RUN a2enmod rewrite
+
+CMD ["apache2-foreground"]

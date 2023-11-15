@@ -6,7 +6,7 @@ if ($uri != "/") {
     if (file_exists($path)) {
         require "$path";
     } else {
-        require "./php/error-404.php";
+        require "./html/error-404.html";
     }
     exit;
 }
