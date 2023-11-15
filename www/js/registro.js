@@ -5,6 +5,40 @@ let inputBoxUsername = document.getElementById("inputBoxUsername");
 let formRegistro = document.getElementById("formRegistro");
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
+let passwords = document.getElementsByClassName("password");
+
+
+
+tipo.addEventListener("change", () => {
+    switch (tipo.value) {
+        case "cliente":
+            formRegistro.insertBefore(inputBoxNombre, inputBoxUsername);
+            formRegistro.insertBefore(inputBoxApellidos, inputBoxUsername);
+            inputBoxUsername.querySelector("label").innerText = "Nombre de usuario";
+            break;
+        case "comerciante":
+            formRegistro.removeChild(inputBoxNombre);
+            formRegistro.removeChild(inputBoxApellidos);
+            inputBoxUsername.querySelector("label").innerText = "Nombre de empresa";
+            break;
+    }
+});
+
+formRegistro.addEventListener("submit", (e) => {
+    if (passwords[0].value !== passwords[1].value) {
+        e.preventDefault();
+        passwords[1].setAttribute("style", "background-color: #fc0324");
+        document.getElementById("errorUsuario").innerText = "las contraseñas no coinciden";
+    }
+})
+
+passwords[1].addEventListener("input", () => {
+    passwords[1].removeAttribute("style");
+})
+
+
+// codigo para foto de perfil 
+
 const canvas = document.getElementById('canvasFotoPerfil');
 const contexto = canvas.getContext('2d');
 let imagen = new Image();
@@ -23,21 +57,6 @@ imagen.onload = function () {
 
     reDrawImg(false);
 };
-
-tipo.addEventListener("change", () => {
-    switch (tipo.value) {
-        case "cliente":
-            formRegistro.insertBefore(inputBoxNombre, inputBoxUsername);
-            formRegistro.insertBefore(inputBoxApellidos, inputBoxUsername);
-            inputBoxUsername.querySelector("label").innerText = "Nombre de usuario";
-            break;
-        case "comerciante":
-            formRegistro.removeChild(inputBoxNombre);
-            formRegistro.removeChild(inputBoxApellidos);
-            inputBoxUsername.querySelector("label").innerText = "Nombre de empresa";
-            break;
-    }
-});
 
 inputFoto.addEventListener("change", () => {
     if (inputFoto.files && inputFoto.files[0]) {

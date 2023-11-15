@@ -34,11 +34,11 @@
                         <label>Nombre de usuario</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" name="contrasenia" required>
+                        <input type="password" name="contrasenia" class="password" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="inputbox">
-                        <input type="password" required>
+                        <input type="password" class="password" required>
                         <label>Contraseña</label>
                     </div>
                     <div class="inputbox">
@@ -64,7 +64,7 @@
                             <p>Ya tengo una cuenta <a href="login.php">Iniciar sesion</a></p>
                     </div>
                 </form>
-                <p><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
+                <p id="errorUsuario"><?= $errorUsuario !== "" ? $errorUsuario : ""?></p> 
             </div>
         </div>
     </section>

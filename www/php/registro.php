@@ -13,12 +13,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         require "../db/usuarios.php";
         // TODO hacer las comprovaciones tambien las de js
-            require "../db/clientes.php";
+        require "../db/clientes.php";
         $usuario = [
             "username" => POST("username"),
             "correo" => POST("correo"),
             "telefono" => POST("telefono")
         ];
+        $email = "usuario@example.com";
+
+        if (!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/", $usuario["correo"])) {
+            $errorUsuario = "email formato incorrecto";
+            goto fin;
+        }
+        
+        if (!preg_match("/^(\d{3}[-\s]?){1,2}\d{4}$/", $email)) {
+            $errorUsuario = "telefono formato incorrecto";
+            goto fin;
+        }
+
         $coincidencias = comprobarDatosUnicos($usuario);
         if ($coincidencias != null) {
             foreach ($coincidencias as $row) {
@@ -42,10 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 file_put_contents("..$urlAvatar", base64_decode($avatar));
             }
             
-            $usuario["avatar"] = $urlAvatar;
             $usuario["nombre"] = POST("nombre");
             $usuario["apellidos"] = POST("apellidos");
+            $usuario["avatar"] = $urlAvatar;
 
+            if (comprobarVacios($usuario)) {
+                $errorUsuario = "no puede haber ningun campo vacio";
+                goto fin;
+            }
             insertarCliente($usuario);
             session_start();
             $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
@@ -63,10 +79,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $usuario["avatar"] = $urlAvatar;
 
+            if (comprobarVacios($usuario)) {
+                $errorUsuario = "no puede haber ningun campo vacio";
+                goto fin;
+            }
             insertarComerciante($usuario);
             session_start();
             $_SESSION["id"] = getIdComerciante(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
             $_SESSION["tipoCliente"] = false;
+        } else {
+            $errorUsuario = "tipo usuario incorrecto";
+            goto fin;
         }
         header("Location: /");
         exit;
@@ -76,6 +99,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     fin:
     closeCon();
+}
+
+function comprobarVacios($datos) {
+    foreach ($datos as $key => $dato) {
+        $dato = trim($dato);
+        if ($dato == "")  {
+            return false;
+        }
+    }
+    return true;
 }
 
 function analizarImg(&$img) {
