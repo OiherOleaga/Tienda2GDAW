@@ -8,7 +8,7 @@ let outputFoto = document.getElementById("outputFoto");
 const canvas = document.getElementById('canvasFotoPerfil');
 const contexto = canvas.getContext('2d');
 let imagen = new Image();
-const canvasSize = 200;
+const canvasSize = 100;
 let isDragging = false;
 
 imagen.src = '/assets/avatares/fotoPerfil.jpg';

@@ -22,7 +22,7 @@
             <a href="/"><img src="/assets/logo/logo.png" alt="logo"></a>
         </div>
         <div class="botones">
-            <a href="/php/login.php"><button class="btn">Inicar Sesion o Registrarse</button></a>
+            <a href="/login"><button class="btn">Inicar Sesion o Registrarse</button></a>
         </div>
     </header>
     <main>
