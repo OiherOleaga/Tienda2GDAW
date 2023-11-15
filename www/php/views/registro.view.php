@@ -97,7 +97,7 @@
                     </div>
                     <button type="submit">Crear cuenta</button>
                     <div class="iniciar">
-                        <p> <a href="login.php">¿Ya tienes una cuenta?</a></p>
+                        <p> <a href="../login">¿Ya tienes una cuenta?</a></p>
                     </div>
                 </form>
                 <p id="errorUsuario"><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>
