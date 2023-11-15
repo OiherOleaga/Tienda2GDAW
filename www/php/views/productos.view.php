@@ -42,7 +42,13 @@
                     </div>
                     <div class="filtro">
                         <div class="ordenar">
-                            <h4>Ordenar</h4>
+                            <h4>Filtar</h4>
+                            <select>
+                                <option selected>Precio: De Bajo a Alto</option>
+                                <option>Precio: De Alto a Bajo</option>
+                                <option>Titulo: A-Z</option>
+                                <option>Titulo: Z-A</option>
+                            </select>
                         </div>
                     </div>
                 </form>
