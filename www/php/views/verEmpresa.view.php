@@ -1,15 +1,15 @@
 <?php
-require("./mapa.php");
+require("./php/mapa.php");
 ?>
 <style>
-    <?php include('../css/verEmpresa.css') ?>
+    <?php include('./css/verEmpresa.css') ?>
 </style>
 <div class="datosEmpresa">
     <div class="logoEmp">
         <img src=<?= $empresa["Avatar"] ?>>
     </div>
     <div class="datosPc">
-        <p>Nombre:
+        <p>
             <?= $empresa["Nombre_empresa"] ?>
         </p>
         <p>Correo:
@@ -28,7 +28,7 @@ require("./mapa.php");
     <div class="productos" id="gridProductos">
         <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="/php/producto.php?idProducto=<?= $productos[$i]["ID"] ?>">
+            <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
@@ -52,7 +52,7 @@ require("./mapa.php");
     <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
     <div class="productos" id="gridProductos2">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="/php/producto.php?idProducto=">
+            <a href="/producto?idProducto=">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
                     <div class="bottom">
