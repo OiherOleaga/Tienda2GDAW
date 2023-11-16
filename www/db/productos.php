@@ -15,3 +15,7 @@ function consultarProductoID($id) {
                             WHERE Productos.ID = ?", $id);
     return $producto == null? $producto : $producto[0];
 }
+
+function filtrado() {
+
+}

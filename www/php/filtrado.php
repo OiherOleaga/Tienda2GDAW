@@ -1,13 +1,15 @@
 <?php
 require "./php/methods.php";
+require "./db/baseDeDatos.php";
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $query = "SELECT * FROM Productos ";
     switch (POST_J("partida")) {
-        case "todos":
-            
-            break;
-        default:
-            header("HTTP/1.1 404 Not Found");
-            header('Content-Type: application/json');
-            die(json_encode(["error" => "404 Not Found"]));
     }
+    if (($search = POST_J("search"))) {
+        $query .= "WHERE titulo LIKE ?";
+    }
+    $search = "%" . $search . "%";
+    $producto = select($query, $search);
+    echo $producto? json_encode($producto) : "[false]";
 }
