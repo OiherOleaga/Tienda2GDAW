@@ -4,7 +4,7 @@
 </style>
 <div class="pagina">
     <div class="verProductoCaja">
-        <a href="verEmpresa.php?idEmpresa=<?= $producto["idEmpresa"] ?>">
+        <a href="verEmpresa?idEmpresa=<?= $producto["idEmpresa"] ?>">
             <div class="vendedor">
                 <div class="avatarEmpresa">
                     <img src=<?= $producto["avatar_empresa"] ?> <p><?= $producto["Nombre_empresa"] ?></p>
