@@ -31,7 +31,7 @@ if (isset($_COOKIE[session_name()])) {
                     switch ($_GET["like"]) {
                         case "add":
                             if ($like) {
-                                $error = "este usuario ya le a dado like";
+                                $error = "este usuario ya le ha dado like";
                                 break;
                             }
                             insertLike($_SESSION["id"], $producto["ProductoID"]);
