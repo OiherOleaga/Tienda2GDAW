@@ -25,7 +25,7 @@
                 </a>
             </div>
             <div class="form-value">
-                <form action="/php/login.php" method="post" autocomplete="off">
+                <form action="/login" method="post" autocomplete="off" id="formLogin">
                     <div class="imagen">
                         <svg width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg" class="Welcome__image">
                             <path fill="#d4e4f6" d="M144.925 74.026a5.57 5.57 0 00-4.224-2.903c-2.789-.278-6.69.97-8.135 3.463a4.143 4.143 0 00.256 4.687 4.848 4.848 0 002.871 1.506c.521.1 1.05.15 1.581.15a9.125 9.125 0 007.387-3.804 3.015 3.015 0 00.264-3.099z"></path>
@@ -61,15 +61,17 @@
                         <label>Contraseña</label>
                     </div>
                     <p><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>
+                    <input type="hidden" id="otraRedirecion">
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">
-                        <p><a href="/php/registro.php">¿No tienes cuenta? Registrate ahora</a></p>
+                        <p><a href="/registro" id="linkRegistro">¿No tienes cuenta? Registrate ahora</a></p>
                     </div>
                 </form>
             </div>
         </div>
     </div>
     <?php require "partials/scriptError.php" ?>
+    <script src="/js/login.js"></script>
 </body>
 
 </html>

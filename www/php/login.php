@@ -1,7 +1,11 @@
 <?php
 
 if (isset($_COOKIE[session_name()])) {
-    header("Location: /");
+    if (isset($_GET["idProducto"])) {
+        header("Location: /producto?idProducto=" . $_GET["idProducto"]);
+    } else {
+        header("Location: /");
+    }
     exit;
 }
 
@@ -9,10 +13,9 @@ require "methods.php";
 
 $errorUsuario = "";
 $errorDev = "";
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "../db/clientes.php";
-    require "../db/comerciantes.php";
+    require "./db/clientes.php";
+    require "./db/comerciantes.php";
     try {
         $datos = [
             "username" => strtoupper(POST("usuario")),
@@ -31,7 +34,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         session_start();
         $_SESSION["id"] = $id;
         $_SESSION["tipoCliente"] = $cliente;
-        header("Location: /");
+        if (isset($_POST["otraRedirecion"])) {
+            header("Location: " . $_POST["otraRedirecion"]);
+        } else {
+            header("Location: /");
+        }
         exit;
     } catch (Exception $e) {
         $errorUsuario = "error al iniciar sesion";

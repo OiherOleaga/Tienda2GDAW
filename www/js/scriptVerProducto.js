@@ -1,25 +1,33 @@
-document.getElementById('corazon').addEventListener('click', activarAnimacion);
+let imgLike = document.getElementById('corazon');
+
+imgLike.addEventListener('click', activarAnimacion);
 
 function activarAnimacion() {
-    if (document.getElementById('corazon').src === "http://localhost/assets/amor.png") {
-        ponerLike();
+    if (imgLike.src === "http://localhost/assets/amor.png") {
+        manejarLike("add", () => {
+            imgLike.classList.remove('reducir');
+            setTimeout(() => { imgLike.src = "/assets/corazon.png"; }, 100);
+            imgLike.classList.add('aumentar');
+        })
     } else {
-        eliminarLike();
+        manejarLike("remove", () => {
+            imgLike.classList.remove('aumentar');
+            setTimeout(() => { imgLike.src = "/assets/amor.png"; }, 200);
+            imgLike.classList.add('reducir');
+        })
     }
 }
 
-async function eliminarLike() {
-    let imgLike = document.getElementById('corazon');
-    imgLike.classList.remove('aumentar');
-    setTimeout(() => { document.getElementById('corazon').src = "/assets/amor.png"; }, 200);
-    imgLike.classList.add('reducir');
-
-}
-
-function ponerLike() {
-    let imgLike = document.getElementById('corazon');
-    imgLike.classList.remove('reducir');
-    setTimeout(() => { document.getElementById('corazon').src = "/assets/corazon.png"; }, 100);
-    imgLike.classList.add('aumentar');
-    //fetch("/producto")
+async function manejarLike(action, callback) {
+    let res = await (await fetch(window.location.href + "&like=" + action)).json()
+    switch (res.error) {
+        case "redirigir":
+            window.location.href = res.uri;
+            break;
+        case "ok":
+            callback();
+            break;
+        default:
+            console.log(res.error);
+    }
 }
