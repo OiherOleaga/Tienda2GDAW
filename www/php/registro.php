@@ -11,9 +11,9 @@ $errorUsuario = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
-        require "../db/usuarios.php";
+        require "./db/usuarios.php";
         // TODO hacer las comprovaciones tambien las de js
-        require "../db/clientes.php";
+        require "./db/clientes.php";
         $usuario = [
             "username" => POST("username"),
             "correo" => POST("correo"),
@@ -21,12 +21,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         ];
 
         if (!preg_match("/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/", $usuario["correo"])) {
-            $errorUsuario = "email formato incorrecto";
+            $errorUsuario = "Email formato incorrecto";
             goto fin;
         }
         
         if (!preg_match("/^[0-9]{9}$/", trim($usuario["telefono"]))) {
-            $errorUsuario = "telefono formato incorrecto";
+            $errorUsuario = "Telefono formato incorrecto";
             goto fin;
         }
 
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($coincidencias != null) {
             foreach ($coincidencias as $row) {
                 $coincidencia = $row['coincidencia'];
-                $errorUsuario .= "El " . ($coincidencia == "username"? "Nombre de usuario/Nombre de empresa" : $coincidencia) . " " . $usuario[$coincidencia] . " ya esta en uso<br>";
+                $errorUsuario .= "El " . ($coincidencia == "username"? "nombre de usuario/nombre de empresa" : $coincidencia) . " " . $usuario[$coincidencia] . " ya esta en uso<br>";
             }
             goto fin;
         }
@@ -45,12 +45,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($tipo == "cliente") {
             if ($avatar == "") {
-                $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
+                $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
             } else {
                 $id = getMaxIdClientes();
-                $id = $id == ""? 0 : $id + 1;
-                $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
-                file_put_contents("..$urlAvatar", base64_decode($avatar));
+                $id = $id == ""? 0 : $id + 2;
+                $urlAvatar = "./assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
+                file_put_contents("$urlAvatar", base64_decode($avatar));
             }
             
             $usuario["nombre"] = POST("nombre");
@@ -58,7 +58,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usuario["avatar"] = $urlAvatar;
 
             if (!comprobarVacios($usuario)) {
-                $errorUsuario = "no puede haber ningun campo vacio";
+                $errorUsuario = "No puede haber ningun campo vacio";
                 goto fin;
             }
             insertarCliente($usuario);
@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
             $_SESSION["tipoCliente"] = true;
         } else if ($tipo == "comerciante") {
-            require "../db/comerciantes.php";
+            require "./db/comerciantes.php";
             if ($avatar == "") {
                 $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
             } else {
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $usuario["avatar"] = $urlAvatar;
 
             if (!comprobarVacios($usuario)) {
-                $errorUsuario = "no puede haber ningun campo vacio";
+                $errorUsuario = "No puede haber ningun campo vacio";
                 goto fin;
             }
             insertarComerciante($usuario);
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["id"] = getIdComerciante(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
             $_SESSION["tipoCliente"] = false;
         } else {
-            $errorUsuario = "tipo usuario incorrecto";
+            $errorUsuario = "Tipo usuario incorrecto";
             goto fin;
         }
         header("Location: /");
@@ -113,7 +113,7 @@ function comprobarVacios($datos) {
 function analizarImg(&$img) {
     $extension = "";
     if ($img[10] != "/") {
-        throw new Exception("formato imagen incorrecto");
+        throw new Exception("Formato imagen incorrecto");
     }
     for ($i = 11; $i < 23; $i++) {
         if ($img[$i] == ";") {
@@ -122,6 +122,6 @@ function analizarImg(&$img) {
         }
         $extension .= $img[$i];
     }
-    throw new Exception("formato imagen incorrecto");
+    throw new Exception("Formato imagen incorrecto");
 }
 require "views/registro.view.php";
