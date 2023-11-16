@@ -1,20 +1,13 @@
 <?php
-require "../db/productos.php";
-if (isset($_COOKIE[session_name()])) {
-    require "../db/clientes.php";
-    session_start();
-    if (!isset($_SESSION["id"])) {
-        setcookie("PHPSESSID", "", time() - 3600); 
-    }
+require "./db/productos.php";
+require "./php/comprobarSesion.php";
 
-    $cliente = getCliente($_SESSION["id"]);
-    if ($cliente == null) {
-        setcookie("PHPSESSID", "", time() - 3600); 
-        require("views/partials/headInicio.php");
-    } else {
-        require("views/partials/headUsuario.php");
-    }
-} else require("views/partials/headInicio.php");
+if (($cliente = comprobarSesion())) {
+    require("php/views/partials/headUsuario.php");
+} else {
+    require("php/views/partials/headInicio.php");
+}
 
 $productos = consultarProductos();
+closeCon();
 require("views/productos.view.php");

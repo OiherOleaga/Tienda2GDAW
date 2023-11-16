@@ -11,64 +11,53 @@ if (($producto = consultarProductoID(GET("idProducto"))) === null) {
     exit;
 }
 $like = false;
-if (isset($_COOKIE[session_name()])) {
-    require "./db/clientes.php";
-    
-    session_start();
-    if (!isset($_SESSION["id"])) {
-        setcookie("PHPSESSID", "", time() - 3600); 
-    } else {
-        $cliente = getCliente($_SESSION["id"]);
-        if ($cliente == null) {
-            setcookie("PHPSESSID", "", time() - 3600); 
-        } else {
-            require "db/likes.php";
-            $like = getLike($_SESSION["id"], $producto["ProductoID"]);
-            if (isset($_GET["like"])) {
-                header('Content-Type: application/json');
-                $error = "";
-                try {
-                    switch ($_GET["like"]) {
-                        case "add":
-                            if ($like) {
-                                $error = "este usuario ya le a dado like";
-                                break;
-                            }
-                            insertLike($_SESSION["id"], $producto["ProductoID"]);
-                            $error = "ok";
-                            break;
-                        case "remove":
-                            deleteLike($_SESSION["id"], $producto["ProductoID"]);
-                            $error = "ok";
-                            break;
-                        default:
-                            header("HTTP/1.1 404 Not Found");
-                            $error = "404 Not Found";
+require "./php/comprobarSesion.php";
+
+if (($cliente = comprobarSesion())) {
+    require "db/likes.php";
+    $like = getLike($cliente["ID"], $producto["ProductoID"]);
+    if (isset($_GET["like"])) {
+        header('Content-Type: application/json');
+        $error = "";
+        try {
+            switch ($_GET["like"]) {
+                case "add":
+                    if ($like) {
+                        $error = "este usuario ya le a dado like";
+                        break;
                     }
-                } catch (Exception $e) {
-                    $error = $e->getMessage();
-                }
-                $res = [
-                    "error" => $error
-                ];
-                echo json_encode($res);
-                exit;
+                    insertLike($cliente["ID"], $producto["ProductoID"]);
+                    $error = "ok";
+                    break;
+                case "remove":
+                    deleteLike($cliente["ID"], $producto["ProductoID"]);
+                    $error = "ok";
+                    break;
+                default:
+                    header("HTTP/1.1 404 Not Found");
+                    $error = "404 Not Found";
             }
-            require("views/partials/headUsuario.php");
-            require("views/producto.view.php");
-            exit;
+        } catch (Exception $e) {
+            $error = $e->getMessage();
         }
+        $res = [
+            "error" => $error
+        ];
+        closeCon();
+        die(json_encode($res));
     } 
-} 
+    require("views/partials/headUsuario.php");
+} else {
+    if (isset($_GET["like"])) {
+        header('Content-Type: application/json');
+        $res = [
+            "error" => "redirigir",
+            "uri" => "/login?idProducto=". $producto["ProductoID"]
+        ];
+        die(json_encode($res));
+    }
 
-if (isset($_GET["like"])) {
-    header('Content-Type: application/json');
-    $res = [
-        "error" => "redirigir",
-        "uri" => "/login?idProducto=". $producto["ProductoID"]
-    ];
-    die(json_encode($res));
+    require("views/partials/headInicio.php");
 }
-
-require("views/partials/headInicio.php");
+closeCon();
 require("views/producto.view.php");

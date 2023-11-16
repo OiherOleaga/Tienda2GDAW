@@ -23,8 +23,8 @@
         </div>
         <div class="navegacion">
             <a href="/">Inicio</a>
-            <a href="/php/productos.php">Productos</a>
-            <a href="/php/contact.php">Cont&aacute;ctanos</a>
+            <a href="/productos">Productos</a>
+            <a href="/contact">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
             <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>

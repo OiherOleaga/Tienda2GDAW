@@ -1,5 +1,5 @@
 <style>
-    <?php include('../css/productos.css') ?>
+    <?php include('./css/productos.css') ?>
 </style>
 <div class="pagina">
     <div class="elementos">
@@ -9,7 +9,7 @@
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
-                            <div class="buscar"><input class="search" type="search" placeholder="" name="search"></div>
+                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search"></div>
                         </div>
                     </div>
                     <div class="filtro">
@@ -75,5 +75,6 @@
         </div>
     </div>
 </div>
+<script src="/js/productos.js"></script>
 
 <?php require("partials/footer.php") ?>

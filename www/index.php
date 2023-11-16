@@ -12,21 +12,13 @@ if ($uri != "/") {
 }
 
 require "./db/productos.php";
-if (isset($_COOKIE[session_name()])) {
-    require "./db/clientes.php";
-    session_start();
-    if (!isset($_SESSION["id"])) {
-        setcookie("PHPSESSID", "", time() - 3600); 
-    }
+require "./php/comprobarSesion.php";
 
-    $cliente = getCliente($_SESSION["id"]);
-    if ($cliente == null) {
-        setcookie("PHPSESSID", "", time() - 3600); 
-        require("php/views/partials/headInicio.php");
-    } else {
-        require("php/views/partials/headUsuario.php");
-    }
-} else require("php/views/partials/headInicio.php");
-
+if (($cliente = comprobarSesion())) {
+    require("php/views/partials/headUsuario.php");
+} else {
+    require("php/views/partials/headInicio.php");
+}
 $productos = consultarProductos();
+closeCon();
 require("php/views/index.viewUsuario.php");
