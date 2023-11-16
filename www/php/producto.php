@@ -1,5 +1,4 @@
 <?php
-
 if ($_SERVER["REQUEST_METHOD"] !== "GET") {
     exit;
 }
@@ -55,7 +54,7 @@ if (isset($_COOKIE[session_name()])) {
                 echo json_encode($res);
                 exit;
             }
-            require("php/views/partials/headUsuario.php");
+            require("views/partials/headUsuario.php");
             require("views/producto.view.php");
             exit;
         }
