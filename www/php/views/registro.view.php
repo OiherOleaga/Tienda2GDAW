@@ -50,7 +50,7 @@
                 </a>
             </div>
             <div class="form-value">
-                <form action="registro.php" method="post" id="formRegistro" autocomplete="off">
+                <form action="/registro" method="post" id="formRegistro" autocomplete="off">
                     <h2>Crear tu cuenta</h2>
                     <div class="inputbox" id="select">
                         <select name="tipo" id="tipo">
@@ -97,7 +97,7 @@
                     </div>
                     <button type="submit">Crear cuenta</button>
                     <div class="iniciar">
-                        <p> <a href="../login">¿Ya tienes una cuenta?</a></p>
+                        <p> <a href="/login">¿Ya tienes una cuenta?</a></p>
                     </div>
                 </form>
                 <p id="errorUsuario"><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>

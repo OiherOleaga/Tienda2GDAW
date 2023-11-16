@@ -37,9 +37,9 @@ CREATE TABLE Categorias (
 );
 
 CREATE TABLE Categorias_Productos (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Categorias INT,
     ID_Producto INT,
+    PRIMARY KEY (ID_Categorias, ID_Producto),
     FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID),
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
 );
@@ -54,9 +54,9 @@ CREATE TABLE Comprar (
 );
 
 CREATE TABLE Likes (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Cliente INT,
     ID_Producto INT,
+    PRIMARY KEY (ID_Cliente, ID_Producto),
     FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
 );
