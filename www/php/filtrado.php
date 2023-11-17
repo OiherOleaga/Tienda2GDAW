@@ -10,25 +10,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (($search = trim(POST_J("search")))) {
         // el like lo hace ignore case
         $palabras = explode(" ", preg_replace('/\s+/', ' ', $search));
-        $size = count($palabras);
-        $query .= "LEFT JOIN Comerciantes c ON ";
-        for ($i = 0; $i < $size; $i++) {
-            $query .= "c.nombre_empresa LIKE :p$i " . ($i < $size - 1? "OR " : "");
+        $where = "WHERE ";
+        $orderBy = "ORDER BY ";
+        for ($i = 0; $i < count($palabras); $i++) {
+            // empieza con aca con ...
+            // las categorias que mande el id 
+            $where .= "c.nombre_empresa LIKE :p$i OR p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1? "OR " : "");
+            $orderBy .=   "
+                        CASE
+                            WHEN p.titulo LIKE :p$i OR p.descripcion LIKE :p$i OR c.nombre_empresa LIKE :p$i THEN " . $size - $i . "
+                            ELSE 0
+                        END " . ($i < $size - 1? "+ " : "DESC");
             $datos["p$i"] = "%" . $palabras[$i] . "%";
         }
-        $query .= "WHERE p.id_comerciante = c.id OR "; 
-        for ($i = 0; $i < $size; $i++) {
-            $query .= "p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1? "OR " : "");
-        }
-        /*$query .= "ORDER BY ";
-        for ($i = 0; $i < $size; $i++) {
-            $query .=   "
-                        CASE
-                            WHEN p.titulo LIKE :p$i OR p.descripcion LIKE :p$i THEN $i
-                            ELSE ". $i + 1 . "
-                        END " . ($i < $size - 1? ", " : "");
-        }*/
-        die($query);
+        $query .= "LEFT JOIN Comerciantes c ON p.id_comerciante = c.id " . $where . $orderBy;
+        //die($query);
     }
     try {
         $producto = select($query, $datos);

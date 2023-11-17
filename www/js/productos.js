@@ -3,7 +3,6 @@ let todosLos
 let divProductos = document.getElementById("productos");
 filtrar(divProductos);
 search.addEventListener("input", () => filtrar(divProductos));
-
 function filtrar(divProductos) {
     history.pushState(null, null, location.pathname + "?search=" + search.value);
     let filtro = {
