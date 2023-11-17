@@ -108,7 +108,7 @@
     </div>
     </div>
 
-    <script src="/js/registro.js" defer></script>
+    <script src="/js/registro.js"></script>
     <?php require "partials/scriptError.php" ?>
 </body>
 
