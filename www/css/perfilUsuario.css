@@ -22,9 +22,9 @@ main {
     background-color: rgba(211, 211, 211, 0.411);
 }
 
-aside{
+aside {
     position: fixed;
-    width: 230px;
+    width: auto;
 }
 
 .bloque {
@@ -52,12 +52,9 @@ aside{
     align-items: center;
 }
 
-.enlaces:hover {
-    background-color: lightgray;
-    border-radius: 10px;
-}
 
-.caja h3{
+
+.caja h3 {
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
     font-size: 22px;
@@ -153,6 +150,17 @@ input:hover {
 }
 
 @media (min-width: 769px) {
+    
+    .enlaces:hover {
+        background-color: lightgray;
+        border-radius: 10px;
+    }
+
+    aside {
+        position: fixed;
+        width: 230px;
+    }
+
     .cliente img {
         margin-right: 5px;
     }
