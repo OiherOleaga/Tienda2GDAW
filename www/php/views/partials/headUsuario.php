@@ -30,7 +30,7 @@
             <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
         </div>
         <div id="menuDesp" class="menuDesp">
-            <a href="perfilUsuario/info">Ver perfil</a> 
+            <a href="perfilUsuario">Ver perfil</a> 
             <a id="cerrarSesion">Cerrar Sesi&oacute;n</a>
         </div>
     </header>
