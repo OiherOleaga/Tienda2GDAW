@@ -67,7 +67,7 @@
                                 <div class="input"><input type="text" value="<?= $cliente["username"] ?>"></div>
                             </div>
                             <div class="datos"><label>Contraseña</label>
-                                <div class="input"><input type="text" value="<?= $cliente["Contrasenia"] ?>"></div>
+                                <div class="input"><input type="text" value="<?= hash('md5',$cliente["Contrasenia"]) ?>"></div>
                             </div>
                         </div>
                     </div>

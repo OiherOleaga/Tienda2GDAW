@@ -100,7 +100,7 @@
                         <p> <a href="/login">¿Ya tienes una cuenta?</a></p>
                     </div>
                 </form>
-                <p id="errorUsuario"><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>
+                <h4 id="errorUsuario" style="color: red;"><?= $errorUsuario !== "" ? $errorUsuario : "" ?></h4>
             </div>
         </div>
     </div>
