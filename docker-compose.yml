@@ -2,22 +2,23 @@ version: "3.1"
 services:
     db:
         image: mysql
-        ports: 
+        ports:
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
             MYSQL_DATABASE: tienda
             MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            MYSQL_ROOT_PASSWORD: test
         volumes:
             - ./db:/docker-entrypoint-initdb.d
             - ./conf:/etc/mysql/conf.d
             - persistent:/var/lib/mysql
         networks:
             - default
-    www:
+
+    php:
         build: .
-        ports: 
+        ports:
             - "80:80"
         volumes:
             - ./www:/var/www/html
@@ -25,15 +26,32 @@ services:
             - db
         networks:
             - default
+
     phpmyadmin:
         image: phpmyadmin/phpmyadmin
-        links: 
+        links:
             - db:db
         ports:
             - 8000:80
-        environment: 
+        environment:
             MYSQL_USER: root
             MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            MYSQL_ROOT_PASSWORD: test
+        networks:
+            - default
+
+    node:
+        build: ./node-service # Debes tener un directorio separado para tu servicio Node.js
+        ports:
+            - "3000:3000" # Ajusta el puerto según las necesidades de tu aplicación
+        networks:
+            - default
+
 volumes:
     persistent:
+
+
+networks:
+    default:
+
+
