@@ -1,5 +1,5 @@
 <style>
-    <?php include('../css/contacto.css') ?>
+    <?php include('./css/contacto.css') ?>
 </style>
 <div class="titulo">
     <h1>Contacto</h1>
