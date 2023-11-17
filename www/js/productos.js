@@ -24,7 +24,7 @@ search.addEventListener("input", () => {
                     divProductos.innerHTML +=
                         `<a href=/producto?idProducto=${producto.ID}">
                         <div class="caja">
-                            <div class="img"><img src=${producto.Foto} ?>></div>
+                            <div class="img"><img src=${producto.Foto} ?></div>
                             <div class="bottom">
                                 <h5>
                                     ${producto.Precio}€
