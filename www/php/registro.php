@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $id = getMaxIdComerciantes();
                 $id = $id == ""? 0 : $id + 1;
                 $urlAvatar = "/assets/Logo/" . hash("sha256" , "comerciante_asldfjkasl$id") . "." . analizarImg($avatar);
-                file_put_contents("..$urlAvatar", base64_decode($avatar));
+                file_put_contents(".$urlAvatar", base64_decode($avatar));
             }
 
             $usuario["avatar"] = $urlAvatar;
