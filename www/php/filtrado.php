@@ -10,9 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (($search = trim(POST_J("search")))) {
         // el like lo hace ignore case
         $palabras = explode(" ", preg_replace('/\s+/', ' ', $search));
+        $size = count($palabras);
         $where = "WHERE ";
         $orderBy = "ORDER BY ";
-        for ($i = 0; $i < count($palabras); $i++) {
+        for ($i = 0; $i < $size; $i++) {
             // empieza con aca con ...
             // las categorias que mande el id 
             $where .= "c.nombre_empresa LIKE :p$i OR p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1? "OR " : "");
