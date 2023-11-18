@@ -1,5 +1,4 @@
 <?php
-require "./db/productos.php";
 require "./php/comprobarSesion.php";
 
 if (($cliente = comprobarSesion())) {
@@ -8,6 +7,5 @@ if (($cliente = comprobarSesion())) {
     require("php/views/partials/headInicio.php");
 }
 
-$productos = consultarProductos();
-closeCon();
+$search = isset($_GET["search"])? $_GET["search"] : "";
 require("views/productos.view.php");

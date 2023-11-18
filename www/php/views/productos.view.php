@@ -9,7 +9,7 @@
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
-                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search"></div>
+                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search" value=<?= $search ?>></div>
                         </div>
                     </div>
                     <div class="filtro">
@@ -54,24 +54,7 @@
                 </form>
         </div>
         </aside>
-        <div class="productos">
-            <?php for ($i = 0; $i < count($productos); $i++) { ?>
-                <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
-                    <div class="caja">
-                        <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
-                        <div class="bottom">
-                            <h5>
-                                <?= $productos[$i]["Precio"] . "€" ?>
-                            </h5>
-                        </div>
-                        <div class="top">
-                            <p>
-                                <?= $productos[$i]["Titulo"] ?>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            <?php } ?>
+        <div class="productos" id="productos">
         </div>
     </div>
 </div>
