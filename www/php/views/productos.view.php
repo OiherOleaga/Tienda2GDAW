@@ -15,23 +15,13 @@
                     <div class="filtro">
                         <h4>Categoria</h4>
                         <div class="categorias">
-                            <div>
-                                <input type="checkbox" name="categoria" id="tecnologia" value="tecnologia"> <label
-                                    for="tecnologia">Tecnologia</label>
-                                <p class="numeroElementos">(1)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="inmobiliaria" value="inmobiliaria"> <label
-                                    for="inmobiliaria">Inmobiliaria</label>
-                                <p class="numeroElementos">(12)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="electrdomesticos" value="electrdomesticos">
-                                <label for="electrdomesticos">Electrodomesticos</label>
-                                <p class="numeroElementos">(5)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="deporteocio" value="deporteocio"> <label
-                                    for="deporteocio">Deporte y ocio</label>
-                                <p class="numeroElementos">(10)</p>
-                            </div>
+                            <?php foreach ($categorias as $categoria) {?> 
+                                <div>
+                                    <input type="checkbox" name="categoria" id=<?= $categoria["ID"] ?>> 
+                                    <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
+                                    <p class="numeroElementos">(<?= $categoria["numeroProdcutos"]?>)</p>
+                                </div>
+                            <?php } ?> 
                         </div>
                     </div>
                     <div class="filtro">

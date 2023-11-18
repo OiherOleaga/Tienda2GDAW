@@ -16,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         for ($i = 0; $i < $size; $i++) {
             // empieza con aca con ...
             // las categorias que mande el id 
+            // que salga antes segundo los likes
             $where .= "c.nombre_empresa LIKE :p$i OR p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1? "OR " : "");
             $orderBy .=   "
                         CASE
@@ -34,4 +35,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         echo $e->getMessage();
     }
+    closeCon();
 }
