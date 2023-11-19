@@ -9,7 +9,7 @@
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
-                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search" value=<?= $search ?>></div>
+                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search" value="<?= $search ?>"></div>
                         </div>
                     </div>
                     <div class="filtro">
@@ -17,7 +17,7 @@
                         <div class="categorias">
                             <?php foreach ($categorias as $categoria) {?> 
                                 <div>
-                                    <input type="checkbox" name="categoria" id=<?= $categoria["ID"] ?>> 
+                                    <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?>> 
                                     <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
                                     <p class="numeroElementos">(<?= $categoria["numeroProdcutos"]?>)</p>
                                 </div>
@@ -27,7 +27,7 @@
                     <div class="filtro">
                         <h4>Precio</h4>
                         <div class="precio">
-                            <input type="text" inputmode="decimal" name="rangeFrom" placeholder="Min"><strong>-</strong><input type="text" name="rangeTo" placeholder="Max" inputmode="decimal">
+                            <input type="text" inputmode="decimal" id="precioMin" placeholder="Min"><strong>-</strong><input type="text" id="precioMax" placeholder="Max" inputmode="decimal">
                         </div>
                     </div>
                     <div class="filtro">

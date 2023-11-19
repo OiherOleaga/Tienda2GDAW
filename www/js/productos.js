@@ -1,13 +1,37 @@
 let search = document.getElementById("search");
-let todosLos
 let divProductos = document.getElementById("productos");
-filtrar(divProductos);
-search.addEventListener("input", () => filtrar(divProductos));
-function filtrar(divProductos) {
+let inputPrecioMin = document.getElementById("precioMin");
+let inputPrecioMax = document.getElementById("precioMax");
+inputPrecioMin.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+inputPrecioMax.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+search.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+let idCategorias = new Set();
+
+for (let categoria of document.getElementsByClassName("categoria")) {
+    categoria.addEventListener("click", () => {
+        if (categoria.checked) {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.add(categoria.id);
+        } else {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.delete(categoria.id);
+        }
+        filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+    })
+    if (categoria.checked) {
+        idCategorias.add(categoria.id);
+    }
+}
+
+filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) {
     history.pushState(null, null, location.pathname + "?search=" + search.value);
     let filtro = {
         partida: "todos",
-        search: search.value
+        search: searchValue,
+        idCategorias: Array.from(idCategorias),
+        precioMin: precioMin,
+        precioMax: precioMax
     }
     filtro = new URLSearchParams(filtro).toString();
     fetch("/filtrado", {
