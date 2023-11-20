@@ -4,12 +4,14 @@ if ($_SERVER["REQUEST_METHOD"] !== "GET") {
 }
 require "php/methods.php";
 require "./db/productos.php";
+require "./db/comerciantes.php";
 
 if (($producto = consultarProductoID(GET("idProducto"))) === null) {
     header("HTTP/1.1 404 Not Found");
     require "html/error-404.html";
     exit;
 }
+$empresa=getComerciante($producto["idEmpresa"]);
 $like = false;
 require "./php/comprobarSesion.php";
 

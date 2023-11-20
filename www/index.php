@@ -21,6 +21,7 @@ if (($cliente = comprobarSesion())) {
         case "cliente":
             require("php/views/partials/headUsuario.php");
             break;
+            /*
         case "comerciante":
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 require "php/methods.php";
@@ -32,6 +33,7 @@ if (($cliente = comprobarSesion())) {
                 ]
                 updateProduco(POST("nombre"), POST(""));
             }
+            */
             $productos = getProductosComerciante($cliente["ID"]);
             closeCon();
             require("php/views/partials/headUsuario.php");
