@@ -7,6 +7,7 @@ for(let link of favoritos){
     )
 }
 
-fetch("/perfilUsuario/info");
+
 let contenido= document.getElementsByClassName("contenido");
-contenido.innerHTML=""
+fetch("/perfilUsuario/info?peticion=js").then(respuesta=>);
+contenido.innerHTML=``;

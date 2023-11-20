@@ -357,6 +357,9 @@ footer img {
 
 /*TABLETS*/
 @media (min-width: 600px) {
+    .perfil{
+        display: none;
+    }
     header {
         flex-direction: row;
         justify-content: space-between;
