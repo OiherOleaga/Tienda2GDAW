@@ -13,7 +13,32 @@
         <img src=<?= $like ? "/assets/corazon.png" : "/assets/amor.png" ?> class="corazon" id="corazon">
     </div>
     <div class="producto">
-        <div class="foto"><img src=<?= $producto["Foto"] ?>></div>
+        <div class="container-carousel">
+            <div class="carruseles" id="slider">
+                <section class="slider-section">
+                    <img src="/assets/avatares/koala.jpg">
+                </section>
+                <section class="slider-section">
+                    <img src="/assets/avatares/gta5.jpg">
+                </section>
+                <section class="slider-section">
+                    <img src="/assets/avatares/koala.jpg">
+                </section>
+                <section class="slider-section">
+                    <img src="/assets/avatares/gta5.jpg">
+                </section>
+                <section class="slider-section">
+                    <img src="/assets/avatares/gta5.jpg">
+                </section>
+            </div>
+            <div class="btn-left">
+                <p>
+                    < </p><i class='bx bx-chevron-left'></i>
+            </div>
+            <div class="btn-right">
+                <p>></p><i class='bx bx-chevron-right'></i>
+            </div>
+        </div>
         <div class="titulo">
             <p><?= $producto["Titulo"] ?></p>
         </div>
@@ -35,4 +60,5 @@
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/scriptVerProducto.js"></script>
+<script src="/js/carrusel.js"></script>
 <?php require("partials/footer.php") ?>
