@@ -1,4 +1,4 @@
-<?php require("mapa.php") ?>
+<?php require("php/mapa.php") ?>
 <?php
 $producto = '
 <tr>
@@ -22,7 +22,7 @@ $producto = '
 
 ?>
 <style>
-    <?php include('../css/indexempresa.css') ?>
+    <?php include('css/indexempresa.css') ?>
 </style>
 
 <div class="pagina">
