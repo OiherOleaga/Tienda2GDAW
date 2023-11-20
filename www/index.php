@@ -12,6 +12,9 @@ if ($uri != "/") {
     exit;
 }
 
+
+
+
 require "./db/productos.php";
 require "./php/comprobarSesion.php";
 

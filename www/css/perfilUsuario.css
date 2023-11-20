@@ -149,6 +149,19 @@ input:hover {
     cursor: pointer;
 }
 
+.guardar {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #0a3093;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+}
+
 @media (min-width: 769px) {
     
     .enlaces:hover {
