@@ -9,35 +9,25 @@
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
-                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search"></div>
+                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search" value="<?= $search ?>"></div>
                         </div>
                     </div>
                     <div class="filtro">
                         <h4>Categoria</h4>
                         <div class="categorias">
-                            <div>
-                                <input type="checkbox" name="categoria" id="tecnologia" value="tecnologia"> <label
-                                    for="tecnologia">Tecnologia</label>
-                                <p class="numeroElementos">(1)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="inmobiliaria" value="inmobiliaria"> <label
-                                    for="inmobiliaria">Inmobiliaria</label>
-                                <p class="numeroElementos">(12)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="electrdomesticos" value="electrdomesticos">
-                                <label for="electrdomesticos">Electrodomesticos</label>
-                                <p class="numeroElementos">(5)</p>
-                            </div>
-                            <div><input type="checkbox" name="categoria" id="deporteocio" value="deporteocio"> <label
-                                    for="deporteocio">Deporte y ocio</label>
-                                <p class="numeroElementos">(10)</p>
-                            </div>
+                            <?php foreach ($categorias as $categoria) {?> 
+                                <div>
+                                    <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?>> 
+                                    <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
+                                    <p class="numeroElementos">(<?= $categoria["numeroProdcutos"]?>)</p>
+                                </div>
+                            <?php } ?> 
                         </div>
                     </div>
                     <div class="filtro">
                         <h4>Precio</h4>
                         <div class="precio">
-                            <input type="text" inputmode="decimal" name="rangeFrom" placeholder="Min"><strong>-</strong><input type="text" name="rangeTo" placeholder="Max" inputmode="decimal">
+                            <input type="text" inputmode="decimal" id="precioMin" placeholder="Min"><strong>-</strong><input type="text" id="precioMax" placeholder="Max" inputmode="decimal">
                         </div>
                     </div>
                     <div class="filtro">
@@ -54,24 +44,7 @@
                 </form>
         </div>
         </aside>
-        <div class="productos">
-            <?php for ($i = 0; $i < count($productos); $i++) { ?>
-                <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
-                    <div class="caja">
-                        <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
-                        <div class="bottom">
-                            <h5>
-                                <?= $productos[$i]["Precio"] . "€" ?>
-                            </h5>
-                        </div>
-                        <div class="top">
-                            <p>
-                                <?= $productos[$i]["Titulo"] ?>
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            <?php } ?>
+        <div class="productos" id="productos">
         </div>
     </div>
 </div>

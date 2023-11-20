@@ -1,13 +1,37 @@
 let search = document.getElementById("search");
+let divProductos = document.getElementById("productos");
+let inputPrecioMin = document.getElementById("precioMin");
+let inputPrecioMax = document.getElementById("precioMax");
+inputPrecioMin.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+inputPrecioMax.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+search.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+let idCategorias = new Set();
 
-if (search.value !== "") {
-
+for (let categoria of document.getElementsByClassName("categoria")) {
+    categoria.addEventListener("click", () => {
+        if (categoria.checked) {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.add(categoria.id);
+        } else {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.delete(categoria.id);
+        }
+        filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+    })
+    if (categoria.checked) {
+        idCategorias.add(categoria.id);
+    }
 }
-search.addEventListener("input", () => {
-    history.pushState(null, null, location.pathname + "?q=" + search.value);
+
+filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) {
+    history.pushState(null, null, location.pathname + "?search=" + search.value);
     let filtro = {
         partida: "todos",
-        search: search.value
+        search: searchValue,
+        idCategorias: Array.from(idCategorias),
+        precioMin: precioMin,
+        precioMax: precioMax
     }
     filtro = new URLSearchParams(filtro).toString();
     fetch("/filtrado", {
@@ -15,16 +39,24 @@ search.addEventListener("input", () => {
         headers: { "Content-type": "application/x-www-form-urlencoded" },
         body: filtro
     })
-        .then(res => res.json())
+        .then(async res => {
+            const contentType = res.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                console.log(await res.text());
+                throw new Error("texto");
+            } else {
+                return res.json()
+            }
+        })
         .then(productos => {
+            divProductos.innerHTML = "";
             if (productos[0]) {
-                let divProductos = document.getElementsByClassName("productos")[0]
-                divProductos.innerHTML = "";
+                console.log(productos)
                 for (let producto of productos) {
                     divProductos.innerHTML +=
                         `<a href=/producto?idProducto=${producto.ID}">
                         <div class="caja">
-                            <div class="img"><img src=${producto.Foto} ?></div>
+                            <div class="img"><img src=${producto.Foto}></div>
                             <div class="bottom">
                                 <h5>
                                     ${producto.Precio}€
@@ -41,4 +73,4 @@ search.addEventListener("input", () => {
             }
         })
         .catch(error => console.log(error))
-});
+}

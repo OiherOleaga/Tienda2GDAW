@@ -1,15 +1,22 @@
 <?php
-require "./php/methods.php";
-require "./db/baseDeDatos.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $query = "SELECT * FROM Productos ";
-    switch (POST_J("partida")) {
+    require "./db/productos.php";
+    require "./php/methods.php";
+    try {
+        $producto = filtrado(POST_J("partida"), POST_J("search"), POST_J("idCategorias"), POST_J("precioMin"), POST_J("precioMax"));
+        header('Content-Type: application/json');
+        echo $producto? json_encode($producto) : "[false]";
+    } catch (Exception $e) {
+        echo $e->getMessage();
     }
-    if (($search = POST_J("search"))) {
-        $query .= "WHERE titulo LIKE ?";
-    }
-    $search = "%" . $search . "%";
-    $producto = select($query, $search);
-    echo $producto? json_encode($producto) : "[false]";
+    closeCon();
 }
+
+/*
+"\n" .
+"\n" .
+"\n" .
+"\n" .
+"\n" .
+*/
