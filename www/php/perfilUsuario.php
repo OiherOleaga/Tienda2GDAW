@@ -1,7 +1,8 @@
 <?php
-require "./db/productos.php";
-require "./php/comprobarSesion.php";
+
+require "php/comprobarSesion.php";
 $cliente = comprobarSesion();
+require "db/productos.php";
 $productos = consultarProductos();
 
 if (isset($_GET["peticion"]) && $_GET["peticion"] == "js") {
