@@ -13,8 +13,6 @@ if ($uri != "/") {
 }
 
 
-
-
 require "./db/productos.php";
 require "./php/comprobarSesion.php";
 
