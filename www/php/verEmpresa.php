@@ -22,5 +22,5 @@ if (isset($_COOKIE[session_name()])) {
 $id = isset($_GET["idEmpresa"]) ? $_GET["idEmpresa"] : "";
 $data = ['id' => $id];
 $empresa = consultarEmpresa($data);
-$productos= consultarProductos();
+$productos= consultarProductoDeEmpresa($id);
 require "views/verEmpresa.view.php";

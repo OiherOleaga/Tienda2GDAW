@@ -2,7 +2,7 @@
     <h3>Compra y vende artículos en InfiniteChoice</h3>
     <p>una comunidad que lleva años generando impacto del bueno</p>
     <form action="/productos">
-        <div class="buscar"> <input class="search" type="search" placeholder="" name="q">
+        <div class="buscar"> <input class="search" type="search" placeholder="" name="search">
         </div>
         <input class="button" type="submit" value="Buscar">
     </form>
