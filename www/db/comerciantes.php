@@ -16,3 +16,7 @@ function insertarComerciante($datos) {
 function getMaxIdComerciantes() {
     return select("select max(id) as id from Comerciantes")[0]["id"];
 }
+
+function getComerciante($id) {
+    return select("SELECT * FROM Comerciantes WHERE id = ?", $id)[0];
+}

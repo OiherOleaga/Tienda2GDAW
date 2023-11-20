@@ -13,14 +13,35 @@ if ($uri != "/") {
 }
 
 
-require "./db/productos.php";
 require "./php/comprobarSesion.php";
+require "./db/productos.php";
 
 if (($cliente = comprobarSesion())) {
-    require("php/views/partials/headUsuario.php");
+    switch ($_SESSION["tipo"]) {
+        case "cliente":
+            require("php/views/partials/headUsuario.php");
+            break;
+        case "comerciante":
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                require "php/methods.php";
+                $datos = [
+                    "nombre" => 
+                    "correo" =>
+                    "telefono" =>
+                    "direccin" =>
+                ]
+                updateProduco(POST("nombre"), POST(""));
+            }
+            $productos = getProductosComerciante($cliente["ID"]);
+            closeCon();
+            require("php/views/partials/headUsuario.php");
+            require "php/views/index.viewEmpresa.php";
+            exit;
+    }
 } else {
     require("php/views/partials/headInicio.php");
 }
+
 $productos = consultarProductos();
 closeCon();
 require("php/views/index.viewUsuario.php");

@@ -22,9 +22,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "contrasenia" => hash('sha256', POST("password"))
         ];
         $id = getIdCliente($datos); 
-        $cliente = true;
+        $tipo = "cliente";
         if ($id == null) {
-            $cliente = false;
+            $tipo = "comerciante";
             $id = getIdComerciante($datos);
             if ($id == null) {
                 $errorUsuario = "Nombre o contraseña incorrecto";
@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         session_start();
         $_SESSION["id"] = $id;
-        $_SESSION["tipoCliente"] = $cliente;
+        $_SESSION["tipo"] = $tipo;
         if (isset($_POST["otraRedirecion"])) {
             header("Location: " . $_POST["otraRedirecion"]);
         } else {

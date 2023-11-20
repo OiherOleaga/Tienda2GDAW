@@ -10,7 +10,8 @@ let isDragging = false;
 let x = (canvasSize - imagen.width) / 2;
 let y = (canvasSize - imagen.height) / 2;
 
-imagen.src = '/assets/avatares/fotoPerfil.jpg';
+
+imagen.src = canvas.getAttribute("src") ? canvas.getAttribute("src") : '/assets/avatares/fotoPerfil.jpg';
 
 imagen.onload = function () {
     canvas.width = canvasSize;
