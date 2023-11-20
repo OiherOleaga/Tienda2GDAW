@@ -2,7 +2,8 @@
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
 if ($uri != "/") {
-    $path = "./php$uri.php";
+    $uri = explode("/", $uri);
+    $path = "./php/$uri[1].php";
     if (file_exists($path)) {
         require "$path";
     } else {
