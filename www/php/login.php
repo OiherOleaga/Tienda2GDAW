@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $cliente = false;
             $id = getIdComerciante($datos);
             if ($id == null) {
-                $errorUsuario = "nombre o contraseña incorrecto";
+                $errorUsuario = "Nombre o contraseña incorrecto";
                 goto fin;
             }
         }
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         exit;
     } catch (Exception $e) {
-        $errorUsuario = "error al iniciar sesion";
+        $errorUsuario = "Error al iniciar sesion";
         $errorDev = $e->getMessage() . $e->getCode() . $e->getFile() . $e->getLine();
     }
     fin:

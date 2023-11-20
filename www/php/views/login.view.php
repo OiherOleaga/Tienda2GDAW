@@ -60,7 +60,7 @@
                         <input type="password" name="password" required>
                         <label>Contraseña</label>
                     </div>
-                    <p><?= $errorUsuario !== "" ? $errorUsuario : "" ?></p>
+                    <h4 style="color: red;"><?= $errorUsuario !== "" ? $errorUsuario : "" ?></h4><br>
                     <input type="hidden" id="otraRedirecion">
                     <button type="submit">Iniciar sesion</button>
                     <div class="register">

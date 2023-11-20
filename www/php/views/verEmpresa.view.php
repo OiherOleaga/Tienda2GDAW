@@ -85,4 +85,4 @@ require("./php/mapa.php");
     </div>
 </div>
 <script src="/js/scriptMapa.js"></script>
-<?php require("../php/views/partials/footer.php") ?>
+<?php require("./php/views/partials/footer.php") ?>
