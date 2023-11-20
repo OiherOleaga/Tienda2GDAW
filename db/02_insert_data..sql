@@ -16,7 +16,7 @@ VALUES
     ('MAC', 27.99, 'Descripción del Producto 8', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuIhpCHI9MAaEcjRAbGTMtlX3mtp8QeGEmKQ14RSpFeVPsaTKI6ZPWdhYpMkr3NEzLDDE&usqp=CAU', 1),
     ('PlayStation 3', 34.99, 'Descripción del Producto 9', 'https://m.media-amazon.com/images/I/61AlsXa+zdL.jpg', 1),
     ('Videojuego PS5', 21.99, 'Descripción del Producto 10', 'https://m.media-amazon.com/images/I/814wINlWcrL.jpg', 1),
-    ('PlayStation 5', 399.99, 'Descripción del Producto 11', 'https://imgs.search.brave.com/Y-xvs1-KF6fuOSHXR9sltldqgok7GJlGhG9-X1STJwQ/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MjIyOTc4NDU3NzUt/NWZmM2ZlZjcxZDEz/P2l4bGliPXJiLTQu/MC4zJml4aWQ9TTN3/eE1qQTNmREI4TUh4/elpXRnlZMmg4Tkh4/OGNHeGhlWE4wWVhS/cGIyNGxNakExZkdW/dWZEQjhmREI4Zkh3/dyZ3PTEwMDAmcT04/MA.jpeg', 2);
+    ('PlayStation 5', 399.99, 'Descripción del Producto 11', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXh-Pm98JLTCgSTWazeN4XleMrLyDyMMcmMQ&usqp=CAU', 2);
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
