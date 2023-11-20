@@ -11,6 +11,14 @@ function consultarProductoDeEmpresa($id){
     return select("SELECT * FROM Productos WHERE ID_Comerciante = ?", $id);
 }
 
+function consultarProductoLikes($id){
+    return select("SELECT Productos.ID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto
+    FROM Likes
+    INNER JOIN Productos ON Likes.ID_Producto = Productos.ID
+    WHERE Likes.ID_Cliente = ?", $id);
+
+}
+
 function consultarProductoID($id) {
     $producto = select("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
                             Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
