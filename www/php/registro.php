@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             insertarCliente($usuario);
             session_start();
             $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
-            $_SESSION["tipoCliente"] = true;
+            $_SESSION["tipo"] = "cliente";
         } else if ($tipo == "comerciante") {
             require "./db/comerciantes.php";
             if ($avatar == "") {
