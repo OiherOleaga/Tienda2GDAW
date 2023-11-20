@@ -9,9 +9,9 @@ function mover(mover, IdContenedor) {
     const gridProductos = document.getElementById(IdContenedor);
     let scrollValue = gridProductos.scrollLeft;
     if (mover) {
-        scrollValue -= 650;
+        scrollValue -= 700;
     } else {
-        scrollValue += 650;
+        scrollValue += 700;
     }
     gridProductos.scrollTo({ left: scrollValue, behavior: 'smooth' });
 }

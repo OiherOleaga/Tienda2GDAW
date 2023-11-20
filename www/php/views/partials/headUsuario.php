@@ -34,6 +34,7 @@
             <a href="/perfilUsuario/info">Ver perfil</a> 
             <a id="cerrarSesion">Cerrar Sesi&oacute;n</a>
         </div>
+        <script src="/js/headerUsuario.js"></script>
     </header>
-    <script src="/js/headerUsuario.js"></script>
+    
     <main>

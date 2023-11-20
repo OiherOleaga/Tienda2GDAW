@@ -1,0 +1,158 @@
+.fotos .inputbox {
+    width: 100%;
+    align-self: center;
+}
+
+
+.canvasFotoPerfil {
+    width: 260px;
+    height: 350px;
+    border-radius: 15px;
+    align-content: center;
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.datos {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 25px 0;
+    width: 80%;
+    border-bottom: 2px solid lightgrey;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: black;
+    pointer-events: none;
+    transition: .2s;
+}
+
+input:focus~label,
+input:valid~label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 25px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: black;
+}
+
+textarea {
+    width: 80%;
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: #0a3093;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.fotos {
+    border: 1PX solid lightgrey;
+    margin: 30px 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 100%;
+    height: 50%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 7px 6px 5px lightgrey;
+}
+
+.fotos .inputbox {
+    border-bottom: 1px solid lightgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 20px;
+
+}
+
+.fotos .inputbox canvas {
+    border: 1px solid lightgrey;
+    box-shadow: 7px 6px 5px lightgrey;
+    margin: 20px;
+}
+
+.fotos .inputbox input {
+    margin-bottom: 10px;
+}
+
+.inputFoto {
+    text-align: center;
+}
+
+#descripcion {
+    height: 250px;
+    border: 1px solid lightgrey;
+    box-shadow: 7px 6px 5px lightgrey;
+
+}
+
+
+/*TABLETS*/
+@media (min-width: 600px) {
+
+    .datos {
+        width: 90%;
+    }
+
+    .fotos {
+        width: 90%;
+    }
+}
+
+@media (min-width: 900px) {
+    .datos {
+        width: 60%;
+        border: 1px solid lightgrey;
+        box-shadow: 7px 6px 5px lightgrey;
+    }
+
+    .fotos {
+        width: 80%;
+    }
+}

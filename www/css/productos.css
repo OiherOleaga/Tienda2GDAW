@@ -2,13 +2,11 @@
     display: none;
 }
 
-.pagina {
-    padding: 1rem 0;
-
-}
-
-
 @media (min-width: 900px) {
+    main {
+        padding: 0;
+    }
+
     .pagina {
         width: 100%;
         height: 100%;
@@ -17,7 +15,7 @@
     .elementos {
         display: grid;
         grid-gap: 20px;
-        grid-template-columns: 220px calc(100% - 240px);
+        grid-template-columns: 230px auto;
     }
 
     .productos {
@@ -27,6 +25,7 @@
         margin: 0;
         font-size: 20px;
         gap: 0px;
+        min-height: 100vh;
     }
 
     .productos a {
@@ -50,14 +49,13 @@
     }
 
     .filtro {
-        border: 1px solid #0a3193;
-        background-color: #D4E4F6;
         width: 100%;
         padding: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        border-bottom: 1px solid lightgray;
     }
 
     .filtro h4 {
@@ -71,10 +69,13 @@
 
     .bloque {
         display: block;
-        position: sticky;
-        top: 100px;
-        border-radius: 10px;
-        height: fit-content;
+        height: 100%;
+        border-right: 1px solid lightgray;
+    }
+
+    aside {
+        position: fixed;
+        width: 230px;
     }
 
     .categorias {
@@ -108,7 +109,7 @@
         border: 0;
     }
 
-    .precio input:hover{
-        border:2px solid black;
+    .precio input:hover {
+        border: 2px solid black;
     }
 }

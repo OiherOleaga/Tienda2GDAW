@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             } else {
                 $id = getMaxIdClientes();
                 $id = $id == ""? 0 : $id + 2;
-                $urlAvatar = "./assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
+                $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
                 file_put_contents("$urlAvatar", base64_decode($avatar));
             }
             
