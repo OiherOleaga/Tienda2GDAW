@@ -18,3 +18,5 @@ switch ($uri[2]) {
         require "views/info.view.php";
         break;
 }
+
+require("views/perfilUsuario.view.php");

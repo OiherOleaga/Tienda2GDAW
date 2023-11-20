@@ -162,6 +162,10 @@ input:hover {
     font-weight: 600;
 }
 
+.guardar:hover{
+    background-color: #051a4e;
+}
+
 @media (min-width: 769px) {
     
     .enlaces:hover {
