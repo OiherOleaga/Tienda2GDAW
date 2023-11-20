@@ -12,7 +12,7 @@ if (isset($_GET["peticion"]) && $_GET["peticion"] == "js") {
         case 'favorites':
             require "./php/views/favorites.view.php";
             break;
-        case 'config':
+        case 'configuracion':
             require "./php/views/configuracion.view.php";
             break;
         default:
