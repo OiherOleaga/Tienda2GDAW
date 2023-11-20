@@ -7,6 +7,10 @@ function consultarProductos() {
     return select("SELECT * FROM Productos");
 }
 
+function consultarProductoDeEmpresa($id){
+    return select("SELECT * FROM Productos WHERE ID_Comerciante = ?", $id);
+}
+
 function consultarProductoID($id) {
     $producto = select("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
                             Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa

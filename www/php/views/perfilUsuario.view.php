@@ -54,7 +54,7 @@
         </aside>
     </div>
     <div class="contenido">
-        <form>
+        <form method="post">
             <div class="contenedor">
                 <div class="caja">
                     <div class="cajaUsuario">
@@ -65,9 +65,6 @@
                             </div>
                             <div class="datos"><label>Usuario</label>
                                 <div class="input"><input type="text" value="<?= $cliente["username"] ?>"></div>
-                            </div>
-                            <div class="datos"><label>Contraseña</label>
-                                <div class="input"><input type="text" value="<?= hash('md5',$cliente["Contrasenia"]) ?>"></div>
                             </div>
                         </div>
                     </div>
@@ -94,6 +91,7 @@
                         </div>
                     </div>
                 </div>
+                <button type="submit" class="guardar">Guardar</button>
             </div>
         </form>
     </div>

@@ -155,6 +155,10 @@ button {
     font-weight: 600;
 }
 
+button:hover{
+    background-color: #051a4e;
+}
+
 .register {
     font-size: .9em;
     color: white;

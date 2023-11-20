@@ -6,3 +6,7 @@ for(let link of favoritos){
         }
     )
 }
+
+fetch("/perfilUsuario/info");
+let contenido= document.getElementsByClassName("contenido");
+contenido.innerHTML=""
