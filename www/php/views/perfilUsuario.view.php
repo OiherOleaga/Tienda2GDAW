@@ -74,6 +74,7 @@
                     require "./php/views/info.view.php";
                     break;
                 case 'favorites':
+                    echo "alksdj";
                     require "./php/views/favorites.view.php";
                     break;
                 case 'config':
