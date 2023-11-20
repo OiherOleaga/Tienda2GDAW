@@ -8,7 +8,7 @@ for (let link of favoritos) {
 }
 
 
-let contenido = document.getElementsByClassName("contenido")[0]
+let contenido = document.getElementsByClassName("contenido")[3]
 fetch("/perfilUsuario/info?peticion=js")
     .then(respuesta => respuesta.text())
     .then(html => contenido.innerHTML = html)

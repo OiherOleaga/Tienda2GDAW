@@ -167,6 +167,19 @@ input:hover {
 }
 
 @media (min-width: 769px) {
+
+    .productos {
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        overflow-x: hidden;
+        grid-auto-flow: row;
+        margin: 0;
+        font-size: 20px;
+        gap: 0px;
+    }
+
+    .productos a {
+        height: 90%;
+    }
     
     .enlaces:hover {
         background-color: lightgray;
