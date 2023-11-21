@@ -59,15 +59,15 @@
                         </select>
                     </div>
                     <div class="inputbox" id="inputBoxNombre">
-                        <input type="text" name="nombre" required>
+                        <input type="text" name="nombre" value="<?= postDato("nombre") ?>" required>
                         <label>Nombre</label>
                     </div>
                     <div class="inputbox" id="inputBoxApellidos">
-                        <input type="text" name="apellidos" required>
+                        <input type="text" name="apellidos" value="<?= postDato("apellidos") ?>" required>
                         <label>Apellido</label>
                     </div>
                     <div class="inputbox" id="inputBoxUsername">
-                        <input type="text" name="username" required>
+                        <input type="text" name="username" value="<?= postDato("username") ?>" required>
                         <label>Nombre de usuario</label>
                     </div>
                     <div class="inputbox">
@@ -79,15 +79,15 @@
                         <label>Confirmar contraseña</label>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="correo" required>
+                        <input type="text" name="correo" value="<?= postDato("correo") ?>" required>
                         <label>Mail</label>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="telefono" required>
+                        <input type="text" name="telefono" value="<?= postDato("telefono") ?>" required>
                         <label>Telefono</label>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="direccion" required>
+                        <input type="text" name="direccion" value="<?= postDato("direccion") ?>" required>
                         <label>Direccion</label>
                     </div>
                     <div id="divFotoPerfil" class="inputbox">

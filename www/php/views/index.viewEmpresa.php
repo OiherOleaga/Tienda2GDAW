@@ -41,6 +41,10 @@
                     <input type="text" name="direccion" value="<?= $cliente['Direccion'] ?>" required>
                     <label>Direccion</label>
                 </div>
+                <div class="inputbox" id="inputBoxDir">
+                    <input type="password" name="contrasenia" required>
+                    <label>Contraseña</label>
+                </div>
                 <button type="submit">Guardar cambios</button>
             </div>
 

@@ -20,3 +20,9 @@ function getMaxIdComerciantes() {
 function getComerciante($id) {
     return select("SELECT * FROM Comerciantes WHERE id = ?", $id)[0];
 }
+
+function updateComerciante($datos) {
+    execute("UPDATE Comerciantes 
+                SET nombre = :nombre, correo = :correo, telefono = :telefono, direccion = :direccion 
+                WHERE id = :id", $datos);
+}
