@@ -387,7 +387,7 @@ footer img {
     .menuDesp {
         position: absolute;
         right: 5px;
-        bottom: -65px;
+        bottom: -108px;
         background-color: white;
         min-width: 120px;
         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -413,7 +413,7 @@ footer img {
         cursor: pointer;
     }
 
-    .menuDesp a:hover:nth-child(2) {
+    .menuDesp a:hover:nth-child(3) {
         color: red;
     }
 
