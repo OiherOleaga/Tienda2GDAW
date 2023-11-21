@@ -7,22 +7,26 @@ let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
 let passwords = document.getElementsByClassName("password");
 
-
-
 tipo.addEventListener("change", () => {
     switch (tipo.value) {
         case "cliente":
+            sessionStorage.setItem("tipo", "0");
             formRegistro.insertBefore(inputBoxNombre, inputBoxUsername);
             formRegistro.insertBefore(inputBoxApellidos, inputBoxUsername);
             inputBoxUsername.querySelector("label").innerText = "Nombre de usuario";
             break;
         case "comerciante":
+            sessionStorage.setItem("tipo", "1");
             formRegistro.removeChild(inputBoxNombre);
             formRegistro.removeChild(inputBoxApellidos);
             inputBoxUsername.querySelector("label").innerText = "Nombre de empresa";
             break;
     }
 });
+
+tipo.selectedIndex = sessionStorage.getItem("tipo");
+tipo.dispatchEvent(new Event("change"))
+
 
 formRegistro.addEventListener("submit", (e) => {
     if (passwords[0].value !== passwords[1].value) {
@@ -44,19 +48,28 @@ const contexto = canvas.getContext('2d');
 let imagen = new Image();
 const canvasSize = 100;
 let isDragging = false;
-let x = (canvasSize - imagen.width) / 2;
-let y = (canvasSize - imagen.height) / 2;
+let x;
+let y;
 
-imagen.src = '/assets/avatares/fotoPerfil.jpg';
+if (sessionStorage.getItem("foto")) {
+    imagen.src = sessionStorage.getItem('foto');
+    let cordenadas = sessionStorage.getItem("cordenadas").split(",");
+    x = cordenadas[0];
+    y = cordenadas[1];
+    imagen.width = cordenadas[2];
+    imagen.height = cordenadas[3];
+    eventosDeMover();
+} else {
+    imagen.src = '/assets/avatares/fotoPerfil.jpg';
+    x = (canvasSize - imagen.width) / 2;
+    y = (canvasSize - imagen.height) / 2;
+}
 
-console.log(imagen.src);
 imagen.onload = function () {
     canvas.width = canvasSize;
     canvas.height = canvasSize;
-    x = (canvasSize - imagen.width) / 2;
-    y = (canvasSize - imagen.height) / 2;
 
-    reDrawImg(false);
+    reDrawImg(sessionStorage.getItem("foto") != undefined);
 };
 
 inputFoto.addEventListener("change", () => {
@@ -66,6 +79,7 @@ inputFoto.addEventListener("change", () => {
         reader.onload = function (e) {
             imagen = new Image();
             imagen.src = e.target.result;
+            sessionStorage.setItem("foto", imagen.src);
 
             imagen.onload = function () {
                 canvas.width = canvasSize;
@@ -119,6 +133,7 @@ function eventosDeMover() {
 function reDrawImg(guardar) {
     contexto.clearRect(0, 0, canvas.width, canvas.height);
     contexto.drawImage(imagen, x, y, imagen.width, imagen.height);
+    sessionStorage.setItem("cordenadas", `${x},${y},${imagen.width},${imagen.height}`);
     contexto.globalCompositeOperation = 'destination-in';
     contexto.beginPath();
     contexto.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2, 0, 2 * Math.PI, false);
