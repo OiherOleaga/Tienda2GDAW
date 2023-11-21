@@ -25,7 +25,6 @@ CREATE TABLE Productos (
     Titulo VARCHAR(255),
     Precio DECIMAL(10, 2),
     Descripcion TEXT,
-    Foto VARCHAR(255),
     Fecha DATE,
     ID_Comerciante INT,
     FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)

@@ -14,7 +14,7 @@ if ($data && $data['status']['code'] === 200) {
     $latitude = $results['geometry']['lat'];
     $longitude = $results['geometry']['lng'];
 
-    echo json_encode(['latitud' => $latitude, 'longitud' => $longitude]);
+    json_encode(['latitud' => $latitude, 'longitud' => $longitude]);
 } else {
     echo 'Error al geocodificar la dirección.';
 }

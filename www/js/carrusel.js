@@ -7,10 +7,11 @@ const btnLeft = document.querySelector(".btn-left"),
 btnLeft.addEventListener("click", e => moveToLeft())
 btnRight.addEventListener("click", e => moveToRight())
 
-
+let numFotos = document.getElementsByClassName("slider-section");
+numFotos = numFotos.length;
 let operacion = 0,
     counter = 0,
-    widthImg = (50 / sliderSection.length);
+    widthImg = (10 * numFotos / sliderSection.length);
 
 function moveToRight() {
     if (counter >= sliderSection.length - 1) {
