@@ -137,7 +137,6 @@ function getProductosComerciante($idComerciante)
 
 function consultarProductoLikes($id)
 {
-
     return select("SELECT P.ID AS ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha,
     min(F1.ID), F1.URL AS Foto
     FROM Likes L
@@ -147,5 +146,4 @@ function consultarProductoLikes($id)
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE L.ID_Cliente = ? AND F2.ID IS NULL
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $id);
-
 }
