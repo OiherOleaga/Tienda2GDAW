@@ -26,3 +26,7 @@ function POST_J($name) {
     }
     return $_POST[$name];
 }
+
+function postDato($name) {
+    return isset($_POST[$name]) ? $_POST[$name] : "";
+}

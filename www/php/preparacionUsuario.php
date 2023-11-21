@@ -15,10 +15,6 @@ function analizarImg(&$img) {
     throw new Exception("Formato imagen incorrecto");
 }
 
-function postDato($name) {
-    return isset($_POST[$name]) ? $_POST[$name] : "";
-}
-
 function preparacionUsuario($tipo, &$errorUsuario) {
     require_once "./db/usuarios.php";
     require_once "./db/comerciantes.php";
