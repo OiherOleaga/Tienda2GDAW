@@ -139,10 +139,13 @@ function consultarProductoLikes($id)
 {
 
     return select("SELECT P.ID AS ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha,
-    F.ID AS Foto, F.URL
+    min(F1.ID), F1.URL AS Foto
     FROM Likes L
     JOIN Productos P ON L.ID_Producto = P.ID
     LEFT JOIN Fotos_producto F ON P.ID = F.ID_Producto
-    WHERE L.ID_Cliente = ?", $id);
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE L.ID_Cliente = ? AND F2.ID IS NULL
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $id);
 
 }

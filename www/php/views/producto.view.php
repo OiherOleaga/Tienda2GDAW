@@ -13,21 +13,23 @@
         <img src=<?= $like ? "/assets/corazon.png" : "/assets/amor.png" ?> class="corazon" id="corazon">
     </div>
     <div class="producto">
-        <div class=" btn-left">
-            <i class="fa-solid fa-arrow-left fa-2xl"></i>
-        </div>
-        <div class="container-carousel">
-            <div class="carruseles" id="slider">
-                <?php $arrayFotos = explode(',', $producto["Fotos"]);
-                for ($x = 0; $x < count($arrayFotos); $x++) { ?>
-                    <section class="slider-section">
-                        <img src=<?= $arrayFotos[$x] ?> alt="imagen">
-                    </section>
-                <?php } ?>
+        <div class="cajaProducto">
+            <div class=" btn-left">
+                <i class="fa-solid fa-arrow-left fa-2xl"></i>
             </div>
-        </div>
-        <div class="btn-right">
-            <i class="fa-solid fa-arrow-right    fa-2xl"></i>
+            <div class="container-carousel">
+                <div class="carruseles" id="slider">
+                    <?php $arrayFotos = explode(',', $producto["Fotos"]);
+                    for ($x = 0; $x < count($arrayFotos); $x++) { ?>
+                        <section class="slider-section">
+                            <img src=<?= $arrayFotos[$x] ?> alt="imagen">
+                        </section>
+                    <?php } ?>
+                </div>
+            </div>
+            <div class="btn-right">
+                <i class="fa-solid fa-arrow-right    fa-2xl"></i>
+            </div>
         </div>
         <div class="titulo">
             <p><?= $producto["Titulo"] ?></p>

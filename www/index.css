@@ -472,7 +472,7 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
-
+   
     .btnDerecha,
     .btnIzquierda {
         display: flex;
