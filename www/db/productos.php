@@ -134,3 +134,15 @@ function getProductosComerciante($idComerciante)
 {
     return select("SELECT * FROM Productos WHERE id_comerciante = ?", $idComerciante);
 }
+
+function consultarProductoLikes($id)
+{
+
+    return select("SELECT P.ID AS ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha,
+    F.ID AS Foto, F.URL
+    FROM Likes L
+    JOIN Productos P ON L.ID_Producto = P.ID
+    LEFT JOIN Fotos_producto F ON P.ID = F.ID_Producto
+    WHERE L.ID_Cliente = ?", $id);
+
+}
