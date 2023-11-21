@@ -19,6 +19,7 @@ main {
 }
 
 .contenido {
+    min-height: 100vh;
     background-color: rgba(211, 211, 211, 0.411);
 }
 
@@ -84,7 +85,7 @@ svg {
     background-color: #fff;
     border-radius: 10px;
     border: solid 1px #ECEFF1;
-    margin-bottom: 20px;
+    margin: 20px 0px;
     padding: 1rem;
     box-shadow: 7px 9px 16px 0px rgba(0, 0, 0, 0.2);
 }
@@ -148,13 +149,30 @@ input:hover {
 .cambiarFoto {
     cursor: pointer;
 }
+.imagen{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
 
-.guardar {
+.imagen p{
+    color: gray;
+    text-align: center;
+    font-weight: 600;
+}
+
+.imagen svg{
+    display: none;
+}
+
+.guardar{
     width: 100%;
     height: 40px;
     border-radius: 40px;
     background: #0a3093;
     border: none;
+    padding: 10px;
     outline: none;
     color: white;
     cursor: pointer;
@@ -166,7 +184,10 @@ input:hover {
     background-color: #051a4e;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 700px) {
+    .imagen svg{
+        display: flex;
+    }
 
     .productos {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -180,7 +201,9 @@ input:hover {
     .productos a {
         height: 90%;
     }
-    
+    .caja{
+        margin: 20px;
+    }
     .enlaces:hover {
         background-color: lightgray;
         border-radius: 10px;
@@ -188,7 +211,7 @@ input:hover {
 
     aside {
         position: fixed;
-        width: 230px;
+        width: 200px;
     }
 
     .cliente img {
@@ -201,7 +224,7 @@ input:hover {
 
     .elementos {
         display: grid;
-        grid-template-columns: 230px auto;
+        grid-template-columns: 200px auto;
     }
 
     .datos {

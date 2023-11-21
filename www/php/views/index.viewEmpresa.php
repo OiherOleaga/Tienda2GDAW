@@ -1,36 +1,15 @@
-<?php require("php/mapa.php") ?>
-<?php
-$producto = '
-<tr>
-    <td class="imagen";>
-     <img src="https://pbs.twimg.com/profile_images/1564806912855740418/qk9kmlRp_400x400.jpg" alt="messi chiquito">
-    </td>
-    <td class="titulo";>
-     Messi enano
-    </td>
-    <td class="precio";>
-     99999€
-    </td>
-    <td class="editar";>
-        <button>Editar</button>
-    </td>
-    <td class="Borrar";>
-        <button>Borrar</button>
-    </td>
-</tr>
-';
+<?php require("./php/mapa.php") ?>
 
-?>
 <style>
-    <?php include('css/indexempresa.css') ?>
+    <?php require('./css/indexEmpresa.css') ?>
 </style>
 
 <div class="pagina">
     <div class="datosEmpresa">
-        <form>
+        <form method = "post">
             <div class="imgMapa">
                 <div id="divFotoPerfil" class="inputbox">
-                    <canvas id="canvasFotoPerfil"></canvas>
+                    <canvas id="canvasFotoPerfil" src=<?= $cliente['Avatar'] ?>></canvas>
                     <input type="hidden" name="avatar" id="outputFoto">
                     <input type="file" id="inputFoto" accept="image/*" class="inputbox">
                 </div>
@@ -47,19 +26,19 @@ $producto = '
             </div>
             <div class="datos">
                 <div class="inputbox" id="inputBoxNombre">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="nombre" value=<?= $cliente['Nombre_empresa'] ?> required>
                     <label>Nombre empresa</label>
                 </div>
                 <div class="inputbox" id="inputBoxCorreo">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="correo" value=<?= $cliente['Correo'] ?> required>
                     <label>Correo electronico</label>
                 </div>
                 <div class="inputbox" id="inputBoxTel">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="telefono" value=<?= $cliente['Telefono'] ?> required>
                     <label>Telefono</label>
                 </div>
                 <div class="inputbox" id="inputBoxDir">
-                    <input type="text" name="nombre" required>
+                    <input type="text" name="direccion" value="<?= $cliente['Direccion'] ?>" required>
                     <label>Direccion</label>
                 </div>
                 <button type="submit">Guardar cambios</button>
@@ -68,68 +47,48 @@ $producto = '
         </form>
     </div>
     <div class="tabla">
-        <table class="tablaProduct">
-            <tr>
-                <th>
-                    Imagen
-                </th>
-                <th>
-                    Nombre
-                </th>
-                <th>
-                    Precio
-                </th>
-                <th>
-                    Editar
-                </th>
-                <th>
-                    Borrar
-                </th>
-            </tr>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-            <?= $producto ?>
-
-        </table>
+        <?php if (isset($productos[0])) { ?>
+            <table class="tablaProduct">
+                <tr>
+                    <th>
+                        Imagen
+                    </th>
+                    <th>
+                        Nombre
+                    </th>
+                    <th>
+                        Precio
+                    </th>
+                    <th>
+                        Editar
+                    </th>
+                    <th>
+                        Borrar
+                    </th>
+                </tr>
+                <?php foreach ($productos as $producto) { ?>
+                    <tr>
+                        <td class="imagen";>
+                        <img src=<?= $producto['Foto'] ?> alt=<?= $producto['Titulo'] ?>>
+                        </td>
+                        <td class="titulo";>
+                            <?= $producto['Titulo'] ?> 
+                        </td>
+                        <td class="precio";>
+                            <?= $producto['Precio'] ?> 
+                        </td>
+                        <td class="editar";>
+                            <button>Editar</button>
+                        </td>
+                        <td class="Borrar";>
+                            <button>Borrar</button>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </table>
+        <?php } else { ?>
+            <h2>No hay productos</h2>
+        <?php } ?>
     </div>
 
 

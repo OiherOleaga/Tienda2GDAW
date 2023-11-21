@@ -129,3 +129,8 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
     //die($query);
     return select($query, $datos);
 }
+
+function getProductosComerciante($idComerciante)
+{
+    return select("SELECT * FROM Productos WHERE id_comerciante = ?", $idComerciante);
+}

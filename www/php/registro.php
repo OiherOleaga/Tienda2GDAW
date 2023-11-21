@@ -45,16 +45,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($tipo == "cliente") {
             if ($avatar == "") {
-                $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
+                $urlAvatar = "../assets/avatares/fotoPerfil.jpg";
             } else {
                 $id = getMaxIdClientes();
                 $id = $id == ""? 0 : $id + 2;
-                $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . analizarImg($avatar);
+                $tipoImg=analizarImg($avatar);
+                $urlAvatar = "./assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . $tipoImg;
                 file_put_contents("$urlAvatar", base64_decode($avatar));
             }
             
             $usuario["nombre"] = POST("nombre");
             $usuario["apellidos"] = POST("apellidos");
+            $urlAvatar = "/assets/avatares/" . hash("sha256" , "cliente_asldfjkasl$id") . "." . $tipoImg;
             $usuario["avatar"] = $urlAvatar;
 
             if (!comprobarVacios($usuario)) {
@@ -64,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             insertarCliente($usuario);
             session_start();
             $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
-            $_SESSION["tipoCliente"] = true;
+            $_SESSION["tipo"] = "cliente";
         } else if ($tipo == "comerciante") {
             require "./db/comerciantes.php";
             if ($avatar == "") {

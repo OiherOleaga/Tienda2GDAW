@@ -2,7 +2,7 @@
 
 $apiKey = 'b23f7cdab9c94ab39c4137d75a55da24';
 
-$ubi = "vitoria";
+$ubi = $empresa["Direccion"];
 $apiUrl = 'https://api.opencagedata.com/geocode/v1/json?q=' . urlencode($ubi) . '&key=' . $apiKey;
 
 $response = file_get_contents($apiUrl);

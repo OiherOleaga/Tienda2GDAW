@@ -357,9 +357,10 @@ footer img {
 
 /*TABLETS*/
 @media (min-width: 600px) {
-    .perfil{
+    .perfil {
         display: none;
     }
+
     header {
         flex-direction: row;
         justify-content: space-between;
@@ -410,6 +411,10 @@ footer img {
         background-color: #f1f1f1;
         border-radius: 5px;
         cursor: pointer;
+    }
+
+    .menuDesp a:hover:nth-child(2) {
+        color: red;
     }
 
     .show {
@@ -467,6 +472,7 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
+
     .btnDerecha,
     .btnIzquierda {
         display: flex;
@@ -481,17 +487,17 @@ footer img {
         width: 50px;
     }
 
-    .btnDerecha{
+    .btnDerecha {
         right: 37px;
         height: 450px;
     }
 
-    .btnIzquierda{
+    .btnIzquierda {
         left: 37px;
         height: 450px;
     }
 
-    .seccion2{
+    .seccion2 {
         display: flex;
         flex-direction: column;
     }
@@ -501,7 +507,7 @@ footer img {
         grid-template-columns: none;
         grid-auto-flow: column;
         overflow-y: hidden;
-        overflow-x: scroll;
+        overflow-x: hidden;
         scroll-behavior: smooth;
         grid-gap: 64px;
         margin: 0px 95px;
