@@ -1,9 +1,9 @@
 INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
     ('https://yt3.googleusercontent.com/9WgVvMb5NkRQeC2Oeu0WL9t7phgInjMq1zju6TZsvT5nLaCO9lALk_-GnL7UjsB_bo4aEbMi4g=s900-c-k-c0x00ffffff-no-rj', 'GAME', '6ca5cab77e702c787b4c14b3d3bf26bad43da606be6eed04ab0b9720120ae081', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz');
-    ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '12345', 'ikea@gmail.com', '123456789', 'Centro Comercial El Boulevard, Zaramaga Kalea, 1, 01013 Gasteiz');
-    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '12345', 'mercaadona@gmail.com', '873239127', 'Sierra de Andia Kalea, 10, 01010 Gasteiz');
+    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
+    ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '12345', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
+    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '12345', 'mercaadona@gmail.com', '873239127', 'Sierra de Andia Kalea, 10, 01010 Gasteiz'),
     ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '12345', 'Decathlon@gmail.com', '284328574', 'General Alava Kalea, 32, 01005 Gasteiz');
 
 
