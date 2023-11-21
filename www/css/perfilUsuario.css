@@ -149,13 +149,24 @@ input:hover {
 .cambiarFoto {
     cursor: pointer;
 }
-.cajaCerrarSesion{
+.imagen{
     display: flex;
     align-items: center;
-    justify-content: end;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.guardar, .cerrarSesion {
+.imagen p{
+    color: gray;
+    text-align: center;
+    font-weight: 600;
+}
+
+.imagen svg{
+    display: none;
+}
+
+.guardar{
     width: 100%;
     height: 40px;
     border-radius: 40px;
@@ -168,17 +179,15 @@ input:hover {
     font-size: 1em;
     font-weight: 600;
 }
-.cerrarSesion{
-    width: auto;
-}
-.cerrarSesion:hover{
-    background: rgb(255, 70, 70) ;
-}
+
 .guardar:hover{
     background-color: #051a4e;
 }
 
 @media (min-width: 700px) {
+    .imagen svg{
+        display: flex;
+    }
 
     .productos {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -202,7 +211,7 @@ input:hover {
 
     aside {
         position: fixed;
-        width: 230px;
+        width: 200px;
     }
 
     .cliente img {
@@ -215,7 +224,7 @@ input:hover {
 
     .elementos {
         display: grid;
-        grid-template-columns: 230px auto;
+        grid-template-columns: 200px auto;
     }
 
     .datos {

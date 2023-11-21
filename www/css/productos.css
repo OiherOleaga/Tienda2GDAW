@@ -112,4 +112,12 @@
     .precio input:hover {
         border: 2px solid black;
     }
+
+    .filtro select{
+        padding: 10px;
+        border-radius: 10px;
+        border-color: lightgray;
+        font-size: 16px;
+        cursor: pointer;
+    }
 }

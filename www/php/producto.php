@@ -4,18 +4,20 @@ if ($_SERVER["REQUEST_METHOD"] !== "GET") {
 }
 require "php/methods.php";
 require "./db/productos.php";
+require "./db/comerciantes.php";
 
 if (($producto = consultarProductoID(GET("idProducto"))) === null) {
     header("HTTP/1.1 404 Not Found");
     require "html/error-404.html";
     exit;
 }
+$empresa=getComerciante($producto["idEmpresa"]);
 $like = false;
 require "./php/comprobarSesion.php";
 
 if (($cliente = comprobarSesion())) {
     require "db/likes.php";
-    $like = getLike($cliente["ID"], $producto["ProductoID"]);
+    $like = getLike($cliente["ID"], $producto["ID"]);
     if (isset($_GET["like"])) {
         header('Content-Type: application/json');
         $error = "";
@@ -26,11 +28,11 @@ if (($cliente = comprobarSesion())) {
                         $error = "este usuario ya le a dado like";
                         break;
                     }
-                    insertLike($cliente["ID"], $producto["ProductoID"]);
+                    insertLike($cliente["ID"], $producto["ID"]);
                     $error = "ok";
                     break;
                 case "remove":
-                    deleteLike($cliente["ID"], $producto["ProductoID"]);
+                    deleteLike($cliente["ID"], $producto["ID"]);
                     $error = "ok";
                     break;
                 default:
@@ -52,7 +54,7 @@ if (($cliente = comprobarSesion())) {
         header('Content-Type: application/json');
         $res = [
             "error" => "redirigir",
-            "uri" => "/login?idProducto=". $producto["ProductoID"]
+            "uri" => "/login?idProducto=". $producto["ID"]
         ];
         die(json_encode($res));
     }

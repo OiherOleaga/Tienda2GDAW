@@ -69,6 +69,23 @@ function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) 
                             </div>
                         </div>
                     </a>`
+                    /*
+                    <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
+                <div class="caja">
+                    <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
+                    <div class="bottom">
+                        <h5>
+                            <?= $productos[$i]["Precio"] . "€" ?>
+                        </h5>
+                    </div>
+                    <div class="top">
+                        <p>
+                            <?= $productos[$i]["Titulo"] ?>
+                        </p>
+                    </div>
+                </div>
+            </a>
+                    */
                 }
             }
         })

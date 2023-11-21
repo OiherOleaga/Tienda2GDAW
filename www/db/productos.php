@@ -3,32 +3,65 @@
 require_once __DIR__ . "/baseDeDatos.php";
 
 
-function consultarProductos() {
-    return select("SELECT * FROM Productos");
+function consultarProductos()
+{
+    return select("SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC");
 }
 
-function consultarProductoDeEmpresa($id){
-    return select("SELECT * FROM Productos WHERE ID_Comerciante = ?", $id);
+function consultarProductoDeEmpresa($id)
+{
+    return select("SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL AND P.ID_Comerciante = ?
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC", $id);
 }
 
-function consultarProductoLikes($id){
-    return select("SELECT Productos.ID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto
-    FROM Likes
-    INNER JOIN Productos ON Likes.ID_Producto = Productos.ID
-    WHERE Likes.ID_Cliente = ?", $id);
+function consultarProductoID($id)
+{
+    $producto = select("SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        GROUP_CONCAT(F.URL) AS Fotos,
+        C.Nombre_empresa AS Nombre_empresa,
+        C.avatar AS avatar_empresa,
+        C.ID AS idEmpresa
+    FROM Productos P
+    LEFT JOIN Fotos_producto F ON P.ID = F.ID_Producto
+    LEFT JOIN Comerciantes C ON P.ID_Comerciante = C.ID
+    WHERE P.ID = ?
+    GROUP BY P.ID;", $id);
 
+    return $producto == null ? $producto : $producto[0];
 }
 
-function consultarProductoID($id) {
-    $producto = select("SELECT Productos.ID as ProductoID, Productos.Titulo, Productos.Precio, Productos.Descripcion, Productos.Foto,
-                            Comerciantes.ID as ComercianteID, Comerciantes.ID as idEmpresa, Comerciantes.Nombre_empresa, Comerciantes.Avatar as avatar_empresa
-                            FROM Productos
-                            INNER JOIN Comerciantes ON Productos.ID_Comerciante = Comerciantes.ID
-                            WHERE Productos.ID = ?", $id);
-    return $producto == null? $producto : $producto[0];
-}
-
-function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax) {
+function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
+{
     switch ($partida) {
     }
     $datos = [];
@@ -36,8 +69,8 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax) {
     $where = "";
     $orderBy = "";
     if ($search) {
-        $where .= $where == ""? "\n\tWHERE (" : "(";
-        $orderBy .= $orderBy == ""? "\nORDER BY " : "";
+        $where .= $where == "" ? "\n\tWHERE (" : "(";
+        $orderBy .= $orderBy == "" ? "\nORDER BY " : "";
         // el LIKE lo hace ignore case
         $join = "\nLEFT JOIN Comerciantes c ON p.id_comerciante = c.id ";
         $palabras = explode(" ", preg_replace('/\s+/', ' ', $search));
@@ -46,50 +79,50 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax) {
             // empieza con acaba con ...
             // las categorias que mande el id 
             // que salga antes segundo los likes
-            $where .= "c.nombre_empresa LIKE :p$i OR p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1? "OR " : ") ");
-            $orderBy .= 
-            "\nCASE" .
-            "\n     WHEN p.titulo LIKE :p$i OR p.descripcion LIKE :p$i OR c.nombre_empresa LIKE :p$i THEN " . $size - $i .
-            "\n     ELSE 0" .
-            "\nEND " . ($i < $size - 1? "+ " : "DESC");
+            $where .= "c.nombre_empresa LIKE :p$i OR p.titulo LIKE :p$i OR p.descripcion LIKE :p$i " . ($i < $size - 1 ? "OR " : ") ");
+            $orderBy .=
+                "\nCASE" .
+                "\n     WHEN p.titulo LIKE :p$i OR p.descripcion LIKE :p$i OR c.nombre_empresa LIKE :p$i THEN " . $size - $i .
+                "\n     ELSE 0" .
+                "\nEND " . ($i < $size - 1 ? "+ " : "DESC");
             $datos["p$i"] = "%" . $palabras[$i] . "%";
         }
     }
-    
+
     if ($precioMin && $precioMax) {
         $condicion = "p.precio BETWEEN :precioMin AND :precioMax ";
-        $where .= $where == ""? "\n\tWHERE $condicion" : "AND $condicion";
+        $where .= $where == "" ? "\n\tWHERE $condicion" : "AND $condicion";
         $datos["precioMin"] = $precioMin;
         $datos["precioMax"] = $precioMax;
     } else if ($precioMin) {
         $condicion = "p.precio > :precioMin ";
-        $where .= $where == ""? "\n\tWHERE $condicion" : "AND $condicion";
+        $where .= $where == "" ? "\n\tWHERE $condicion" : "AND $condicion";
         $datos["precioMin"] = $precioMin;
     } else if ($precioMax) {
         $condicion = "p.precio < :precioMax ";
-        $where .= $where == ""? "\n\tWHERE $condicion" : "AND $condicion";
+        $where .= $where == "" ? "\n\tWHERE $condicion" : "AND $condicion";
         $datos["precioMax"] = $precioMax;
     }
 
     if ($idCategorias) {
         //$where .= $where == ""? "WHERE " : "AND (";
-        $orderBy .= $orderBy == ""? "\nORDER BY " : ", ";
+        $orderBy .= $orderBy == "" ? "\nORDER BY " : ", ";
         $idCategorias = explode(",", $idCategorias);
         $datosIn = "";
         $size = count($idCategorias);
         for ($i = 0; $i < $size; $i++) {
-            $datosIn .= ":idCategoria$i" . ($i < $size - 1? ", " : "");
+            $datosIn .= ":idCategoria$i" . ($i < $size - 1 ? ", " : "");
             $datos["idCategoria$i"] = $idCategorias[$i];
         }
         $join .=
-        "\nJOIN (SELECT DISTINCT id_producto" .
-        "\n      FROM Categorias_Productos" .
-        "\n         WHERE id_categorias IN ($datosIn)) cp ON p.id = cp.id_producto";
-        $orderBy .= 
-        "\n(SELECT count(*)" .
-        "\nFROM Categorias_Productos" . 
-        "\n WHERE id_categorias IN ($datosIn) AND id_producto = p.id" .
-        "\nGROUP BY id_producto) DESC";
+            "\nJOIN (SELECT DISTINCT id_producto" .
+            "\n      FROM Categorias_Productos" .
+            "\n         WHERE id_categorias IN ($datosIn)) cp ON p.id = cp.id_producto";
+        $orderBy .=
+            "\n(SELECT count(*)" .
+            "\nFROM Categorias_Productos" .
+            "\n WHERE id_categorias IN ($datosIn) AND id_producto = p.id" .
+            "\nGROUP BY id_producto) DESC";
     }
 
     $query = "SELECT p.* FROM Productos p " . $join . $where . $orderBy;
@@ -97,6 +130,19 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax) {
     return select($query, $datos);
 }
 
-function getProductosComerciante($idComerciante) {
+function getProductosComerciante($idComerciante)
+{
     return select("SELECT * FROM Productos WHERE id_comerciante = ?", $idComerciante);
+}
+
+function consultarProductoLikes($id)
+{
+
+    return select("SELECT P.ID AS ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha,
+    F.ID AS Foto, F.URL
+    FROM Likes L
+    JOIN Productos P ON L.ID_Producto = P.ID
+    LEFT JOIN Fotos_producto F ON P.ID = F.ID_Producto
+    WHERE L.ID_Cliente = ?", $id);
+
 }

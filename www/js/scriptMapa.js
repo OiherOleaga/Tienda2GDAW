@@ -7,7 +7,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [longitud, latitud],
-    zoom: 17 // Nivel de zoom
+    zoom: 10 // Nivel de zoom
 });
 
 new mapboxgl.Marker().setLngLat([longitud, latitud]).addTo(map);

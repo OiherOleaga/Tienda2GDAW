@@ -27,7 +27,7 @@ require("./php/mapa.php");
     <h3>Todos los productos</h3>
     <div class="productos" id="gridProductos">
         <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
-        <?php for ($i = 0; $i < count($productos); $i++) { ?>
+        <?php for ($i = 0; $i < 10; $i++) { ?>
             <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
@@ -51,7 +51,7 @@ require("./php/mapa.php");
     <h3>A mucha gente le gustan</h3>
     <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
     <div class="productos" id="gridProductos2">
-    <?php for ($i = 0; $i < count($productos); $i++) { ?>
+        <?php for ($i = 0; $i < count($productos); $i++) { ?>
             <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
                 <div class="caja">
                     <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
@@ -71,7 +71,7 @@ require("./php/mapa.php");
         <button class="btnDerecha" data-container="gridProductos2"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
     </div>
 </div>
-    <script src="/js/desplazamineto.js"></script>
+<script src="/js/desplazamineto.js"></script>
 </div>
 <div class="mapa">
     <h2>Localicazi&oacute;n del local</h2>
