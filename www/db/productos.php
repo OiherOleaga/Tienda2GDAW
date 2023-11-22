@@ -132,7 +132,32 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
 
 function getProductosComerciante($idComerciante)
 {
-    return select("SELECT * FROM Productos WHERE id_comerciante = ?", $idComerciante);
+    return select(
+        "SELECT P.*, MIN(F1.ID) AS FotoID, F1.URL AS FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL and
+    id_comerciante = ?
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC",
+        $idComerciante
+    );
+
+
+    return select("SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC");
 }
 
 function consultarProductoLikes($id)
