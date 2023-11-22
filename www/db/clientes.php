@@ -19,3 +19,7 @@ function getCliente($id) {
     $cliente = select("SELECT * FROM Clientes WHERE ID = ?", $id);
     return $cliente == null? $cliente : $cliente[0];
 }
+
+function getClientes(){
+    return select("SELECT * FROM Clientes");
+}

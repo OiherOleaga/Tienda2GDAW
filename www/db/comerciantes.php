@@ -21,6 +21,10 @@ function getComerciante($id) {
     return select("SELECT * FROM Comerciantes WHERE id = ?", $id)[0];
 }
 
+function getComerciantes() {
+    return select("SELECT * FROM Comerciantes");
+}
+
 function updateComerciante($datos, $id) {
     $query = "UPDATE Comerciantes SET ";
 

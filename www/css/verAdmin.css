@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: lightgrey;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: grey;
+}
+
+::-webkit-scrollbar:vertical {
+    width: 10px;
+}
+
+body {
+    font-family: Wallie, Helvetica;
+    background-color: white;
+    color: black;
+}
+
+.cabecera{
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #D4E4F6;
+}
+
+.tablaProducto {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.tabla {
+    margin: 40px 20px;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+.tablaProducto th, .tablaProducto td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.tablaProducto th {
+    background-color:  #4393E4;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.imagen, .avatar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagen img {
+    width: 150px;
+    height: auto;
+}
+
+.avatar img{
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+}
+
+.titulo, .precio {
+    font-weight: bold;
+}
+
+.Borrar button {
+    width: 100%;
+    height: 50px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.insertar button {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(67, 144, 67);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.Borrar button:hover {
+    background-color: #c82333;
+}

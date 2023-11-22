@@ -20,6 +20,12 @@ CREATE TABLE Comerciantes (
     Direccion TEXT
 );
 
+CREATE TABLE Administradores (
+    ID INT PRIMARY KEY AUTO_INCREMENT,
+    Nombre VARCHAR(255) unique,
+    Contrasenia VARCHAR(255)
+);
+
 CREATE TABLE Productos (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     Titulo VARCHAR(255),

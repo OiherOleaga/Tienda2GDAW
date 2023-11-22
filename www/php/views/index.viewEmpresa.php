@@ -77,10 +77,10 @@
                         <img src=<?= $productos[$i]['Foto'] ?> alt=<?= $productos[$i]['Titulo'] ?>>
                         </td>
                         <td class="titulo">
-                            <?= $productos[$i]['Titulo'] ?> 
+                            <?= $productos[$i]['Titulo'] ?>
                         </td>
                         <td class="precio">
-                            <?= $productos[$i]['Precio'] ?> 
+                            <?= $productos[$i]['Precio'] ."€" ?> 
                         </td>
                         <td class="editar">
                             <button>Editar</button>
