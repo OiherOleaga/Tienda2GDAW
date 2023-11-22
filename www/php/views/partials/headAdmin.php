@@ -17,7 +17,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/"><img src="/assets/Logo/logo.png" alt="logo"></a>
+            <img src="/assets/Logo/logo.png" alt="logo">
         </div>
         <div class="botones">
             <button class="btn">Cerrar Sesion</button>
