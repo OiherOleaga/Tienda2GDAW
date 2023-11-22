@@ -80,7 +80,7 @@
                     </div>
                     <div class="inputbox">
                         <input type="text" name="correo" value="<?= postDato("correo") ?>" required>
-                        <label>Mail</label>
+                        <label>Email</label>
                     </div>
                     <div class="inputbox">
                         <input type="text" name="telefono" value="<?= postDato("telefono") ?>" required>

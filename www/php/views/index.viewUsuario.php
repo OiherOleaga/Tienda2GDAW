@@ -36,17 +36,17 @@
     <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
     <div class="productos" id="gridProductos2">
         <?php for ($i = 0; $i < 10; $i++) { ?>
-            <a href="index.php">
+            <a href="/producto?idProducto=<?= $productosFav[$i]["ID"] ?>">
                 <div class="caja">
-                    <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
+                    <div class="img"><img src=<?= $productosFav[$i]["Foto"] ?>></div>
                     <div class="bottom">
                         <h5>
-                            <?= $productos[$i]["Precio"] . "€" ?>
+                            <?= $productosFav[$i]["Precio"] . "€" ?>
                         </h5>
                     </div>
                     <div class="top">
                         <p>
-                            <?= $productos[$i]["Titulo"] ?>
+                            <?= $productosFav[$i]["Titulo"] ?>
                         </p>
                     </div>
                 </div>

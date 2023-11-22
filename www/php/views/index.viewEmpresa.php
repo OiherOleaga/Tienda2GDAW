@@ -71,21 +71,21 @@
                         Borrar
                     </th>
                 </tr>
-                <?php foreach ($productos as $producto) { ?>
+                <?php for ($i = 0; $i < count($productos); $i++) { ?>
                     <tr>
-                        <td class="imagen";>
-                        <img src=<?= $producto['Foto'] ?> alt=<?= $producto['Titulo'] ?>>
+                        <td class="imagen">
+                        <img src=<?= $productos[$i]['Foto'] ?> alt=<?= $productos[$i]['Titulo'] ?>>
                         </td>
-                        <td class="titulo";>
-                            <?= $producto['Titulo'] ?> 
+                        <td class="titulo">
+                            <?= $productos[$i]['Titulo'] ?> 
                         </td>
-                        <td class="precio";>
-                            <?= $producto['Precio'] ?> 
+                        <td class="precio">
+                            <?= $productos[$i]['Precio'] ?> 
                         </td>
-                        <td class="editar";>
+                        <td class="editar">
                             <button>Editar</button>
                         </td>
-                        <td class="Borrar";>
+                        <td class="Borrar">
                             <button>Borrar</button>
                         </td>
                     </tr>
@@ -95,9 +95,6 @@
             <h2>No hay productos</h2>
         <?php } ?>
     </div>
-
-
-
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/datosEmpresa.js"></script>

@@ -284,7 +284,6 @@ form {
 h5 {
     overflow: hidden;
     text-overflow: ellipsis;
-    display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
 }
@@ -417,6 +416,10 @@ footer img {
         color: red;
     }
 
+    .menuDesp #cerrarSesion:hover{
+        color: red;
+    }
+
     .show {
         display: block;
     }
@@ -437,6 +440,10 @@ footer img {
         flex-direction: column;
         justify-content: center;
         gap: none;
+        width: 300px;
+        height: 440px;
+        white-space: nowrap;
+
     }
 
     .productos .caja .img {

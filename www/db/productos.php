@@ -18,7 +18,31 @@ function consultarProductos()
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE F2.ID IS NULL
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
-    ORDER BY P.ID ASC");
+    ORDER BY RAND()");
+}
+
+
+function productosMasGustados()
+{
+
+    return select("SELECT 
+    P.ID AS ID,
+    P.Titulo AS Titulo,
+    P.Precio AS Precio,
+    P.Descripcion AS Descripcion,
+    P.Fecha AS ProductoFecha,
+    MIN(F1.ID) AS FotoID,
+    F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY (
+    SELECT COUNT(*)
+    FROM Likes L
+    WHERE L.ID_Producto = P.ID
+) DESC, RAND()");
 }
 
 function consultarProductoDeEmpresa($id)
@@ -117,7 +141,7 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
         $join .=
             "\nJOIN (SELECT DISTINCT id_producto" .
             "\n      FROM Categorias_Productos" .
-            "\n         WHERE id_categorias IN ($datosIn)) cp ON p.id = cp.id_producto";
+            "\n         WHERE ID_Categorias IN ($datosIn)) cp ON p.id = cp.id_producto ";
         $orderBy .=
             "\n(SELECT count(*)" .
             "\nFROM Categorias_Productos" .
@@ -125,14 +149,40 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
             "\nGROUP BY id_producto) DESC";
     }
 
-    $query = "SELECT p.* FROM Productos p " . $join . $where . $orderBy;
+    $f2 = "";
+    if ($where === "") {
+     $f2 = "WHERE F2.ID IS NULL ";
+    } else {
+        $f2 = "and F2.ID IS NULL ";
+    }
+    $query = "SELECT p.*, MIN(F1.ID) AS FotoID, F1.URL AS foto FROM Productos p " .
+        "LEFT JOIN Fotos_producto F1 ON p.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON p.ID = F2.ID_Producto AND F1.ID > F2.ID "
+        . $join
+        . $where .
+        $f2
+        . "GROUP BY p.ID, p.Titulo, p.Precio, p.Descripcion, p.Fecha, F1.URL"
+        . $orderBy;
     //die($query);
     return select($query, $datos);
 }
 
 function getProductosComerciante($idComerciante)
 {
-    return select("SELECT * FROM Productos WHERE id_comerciante = ?", $idComerciante);
+    return select("SELECT 
+    P.ID AS ID,
+    P.Titulo AS Titulo,
+    P.Precio AS Precio,
+    P.Descripcion AS Descripcion,
+    P.Fecha AS ProductoFecha,
+    MIN(F1.ID) AS FotoID,
+    F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL AND ID_Comerciante=?
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC", $idComerciante);
 }
 
 function consultarProductoLikes($id)
