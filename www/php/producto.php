@@ -11,7 +11,7 @@ if (($producto = consultarProductoID(GET("idProducto"))) === null) {
     require "html/error-404.html";
     exit;
 }
-$empresa=getComerciante($producto["idEmpresa"]);
+$empresa = getComerciante($producto["idEmpresa"]);
 $like = false;
 require "./php/comprobarSesion.php";
 
@@ -47,14 +47,19 @@ if (($cliente = comprobarSesion())) {
         ];
         closeCon();
         die(json_encode($res));
-    } 
-    require("views/partials/headUsuario.php");
+    }
+    if ($_SESSION["tipo"] == "cliente") {
+        require("php/views/partials/headUsuario.php");
+    } else {
+        require("php/views/partials/headEmpresa.php");
+    }
+
 } else {
     if (isset($_GET["like"])) {
         header('Content-Type: application/json');
         $res = [
             "error" => "redirigir",
-            "uri" => "/login?idProducto=". $producto["ID"]
+            "uri" => "/login?idProducto=" . $producto["ID"]
         ];
         die(json_encode($res));
     }

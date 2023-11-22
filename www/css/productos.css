@@ -1,8 +1,130 @@
+.productos {
+    margin-top: 5rem;
+    margin-bottom: 1rem;
+}
+
 .bloque {
-    display: none;
+    transition: transform 150ms ease-in-out;
+    background-color: white;
+    position: fixed;
+    min-height: 100vh;
+    border-right: 1px solid lightgray;
+    top: 140px;
+    width: 150px;
+    font-size: 12px;
+}
+
+form {
+    width: auto;
+}
+
+.botonesFiltro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 150px;
+    background-color: white;
+}
+
+.botonesFiltro input {
+    margin: 10px 30px;
+}
+
+.filtro {
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid lightgray;
+}
+
+.filtro h4 {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.numeroElementos {
+    opacity: .5;
+}
+
+
+.categorias {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.categorias>* {
+    display: flex;
+    margin: .5rem 0;
+}
+
+.categorias input {
+    margin-right: 5px;
+    width: 17px;
+    height: 17px;
+}
+
+.precio {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.precio input {
+    width: 55px;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+}
+
+.precio input:hover {
+    border: 2px solid black;
+}
+
+.filtro select {
+    padding: 10px;
+    border-radius: 10px;
+    border-color: lightgray;
+    font-size: 16px;
+    cursor: pointer;
+    width: 70px;
+    font-size: 12px;
+}
+
+@media (min-width: 600px) {
+    .botonesFiltro {
+        top: 100px;
+    }
+
+    .bloque {
+        top: 100px;
+        width: 230px;
+        font-size: 16px;
+    }
+
+    .filtro select {
+        width: 150px;
+    }
+
+    .categorias {
+        display: flex;
+        flex-direction: column;
+
+    }
 }
 
 @media (min-width: 900px) {
+    .botonesFiltro {
+        display: none;
+    }
+
     main {
         padding: 0;
     }
@@ -48,29 +170,18 @@
         height: auto;
     }
 
-    .filtro {
-        width: 100%;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        border-bottom: 1px solid lightgray;
-    }
-
-    .filtro h4 {
-        text-align: center;
-        margin-bottom: 5px;
-    }
-
-    .numeroElementos {
-        opacity: .5;
-    }
-
     .bloque {
-        display: block;
-        height: 100%;
+        position: relative;
         border-right: 1px solid lightgray;
+        transition: none;
+        transform: none;
+        top: 0;
+        width: auto;
+        font-size: 16px;
+    }
+
+    .filtro select {
+        font-size: 16px;
     }
 
     aside {

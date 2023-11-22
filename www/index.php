@@ -21,7 +21,6 @@ if (($cliente = comprobarSesion())) {
         case "cliente":
             require("php/views/partials/headUsuario.php");
             break;
-
         case "comerciante":
             $errorDev = "";
             $mensajeUsuario = "";
@@ -45,10 +44,9 @@ if (($cliente = comprobarSesion())) {
                     $errorDev = $e->getMessage();
                 }
             }
-
             $productos = getProductosComerciante($cliente["ID"]);
             closeCon();
-            require("php/views/partials/headUsuario.php");
+            require("php/views/partials/headEmpresa.php");
             require "php/views/index.viewEmpresa.php";
             exit;
     }

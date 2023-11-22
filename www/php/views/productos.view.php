@@ -3,7 +3,8 @@
 </style>
 <div class="pagina">
     <div class="elementos">
-        <div class="bloque">
+    <div class="botonesFiltro"><input id="btnFiltro" type="button" value="Filtros" class="button"></div> 
+        <div class="bloque" id="bloque">
             <aside>
                 <form>
                     <div class="filtro">
@@ -44,11 +45,13 @@
                 </form>
         </div>
         </aside>
+        
         <div class="productos" id="productos">
 
         </div>
     </div>
 </div>
+<script src="/js/filtroProductos.js"></script>
 <script src="/js/productos.js"></script>
 
 <?php require("partials/footer.php") ?>

@@ -99,7 +99,8 @@
 
 input:focus~label,
 input:valid~label {
-    right: -280px;
+    top: 0px;
+    opacity: 0.3;
 }
 
 .inputbox input {
@@ -108,9 +109,11 @@ input:valid~label {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
+    font-size: 15px;
     padding: 0 35px 0 5px;
     color: black;
+    margin-top: 1px;
+
 }
 
 canvas {
@@ -137,6 +140,13 @@ button {
 
 button:hover {
     background-color: #051a4e;
+}
+
+#tipo {
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    padding: .2rem;
+    cursor: pointer;
 }
 
 .iniciar {

@@ -32,7 +32,7 @@ formRegistro.addEventListener("submit", (e) => {
     if (passwords[0].value !== passwords[1].value) {
         e.preventDefault();
         passwords[1].setAttribute("style", "color: #fc0324");
-        document.getElementById("errorUsuario").innerText = "las contraseñas no coinciden";
+        document.getElementById("errorUsuario").innerText = "Las contraseñas no coinciden";
     }
 })
 

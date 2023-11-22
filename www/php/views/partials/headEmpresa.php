@@ -19,14 +19,20 @@
 <body>
     <header>
         <div class="logo">
-            <a href="/"><img src="/assets/logo/logo.png" alt="logo"></a>
+            <a href="/"><img src="/assets/Logo/logo.png" alt="logo"></a>
         </div>
         <div class="navegacion">
             <a href="/">Inicio</a>
             <a href="/productos">Productos</a>
+            <a href="/contact">Cont&aacute;ctanos</a>
         </div>
         <div class="botones">
-            <a href="/login"><button class="btn">Inicar Sesion o Registrarse</button></a>
+            <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
         </div>
+        <div id="menuDesp" class="menuDesp" style="bottom: -20px;">
+            <a id="cerrarSesion">Cerrar Sesi&oacute;n</a>
+        </div>
+        <script src="/js/headerUsuario.js"></script>
     </header>
+    
     <main>
