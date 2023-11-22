@@ -133,9 +133,9 @@ VALUES
 
 INSERT INTO Categorias (Nombre) VALUES
     ('Tecnologia'),
-    ('hogar'),
-    ('alimentacion'),
-    ('deportes');
+    ('Hogar'),
+    ('Alimentacion'),
+    ('Deportes');
 
 
 INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES

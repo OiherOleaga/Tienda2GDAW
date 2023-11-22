@@ -80,6 +80,39 @@ main {
     align-items: center;
 }
 
+@keyframes reducir {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes aumentar {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.reducir {
+    animation-name: reducir;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+}
+
+.aumentar {
+    animation-name: aumentar;
+    animation-duration: .2s;
+    animation-timing-function: ease;
+
+}
+
 .container-carousel {
     position: relative;
     width: 600px;
