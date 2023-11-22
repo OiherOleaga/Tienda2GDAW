@@ -128,7 +128,7 @@ function descargarImagen($id, $avatar) {
         $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
     } else {
         $id = $id == ""? 0 : $id + 1;
-        $urlAvatar = "/assets/Logo/" . hash("sha256" , "comerciante_asldfjkasl$id") . "." . analizarImg($avatar);
+        $urlAvatar = "/assets/avatares/" . hash("sha256" , "comerciante_asldfjkasl$id") . "." . analizarImg($avatar);
         file_put_contents(".$urlAvatar", base64_decode($avatar));
     }
     return $urlAvatar;
