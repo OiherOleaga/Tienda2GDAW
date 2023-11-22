@@ -1,9 +1,9 @@
-.productos{
+.productos {
     margin-top: 5rem;
     margin-bottom: 1rem;
 }
 
-.bloque{
+.bloque {
     transition: transform 150ms ease-in-out;
     background-color: white;
     position: fixed;
@@ -14,11 +14,11 @@
     font-size: 12px;
 }
 
-form{
+form {
     width: auto;
 }
 
-.botonesFiltro{
+.botonesFiltro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ form{
     background-color: white;
 }
 
-.botonesFiltro input{
+.botonesFiltro input {
     margin: 10px 30px;
 }
 
@@ -88,7 +88,7 @@ form{
     border: 2px solid black;
 }
 
-.filtro select{
+.filtro select {
     padding: 10px;
     border-radius: 10px;
     border-color: lightgray;
@@ -99,29 +99,29 @@ form{
 }
 
 @media (min-width: 600px) {
-    .botonesFiltro{
+    .botonesFiltro {
         top: 100px;
     }
 
-    .bloque{
+    .bloque {
         top: 100px;
         width: 230px;
         font-size: 16px;
     }
 
-    .filtro select{
+    .filtro select {
         width: 150px;
     }
 
     .categorias {
         display: flex;
         flex-direction: column;
-        
+
     }
 }
 
 @media (min-width: 900px) {
-    .botonesFiltro{
+    .botonesFiltro {
         display: none;
     }
 
@@ -180,13 +180,69 @@ form{
         font-size: 16px;
     }
 
-    .filtro select{
+    .filtro select {
         font-size: 16px;
     }
 
     aside {
         position: fixed;
         width: 230px;
+    }
+
+    .categorias {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .categorias>* {
+        display: flex;
+        margin: .5rem 0;
+    }
+
+    .categorias input {
+        margin-right: 5px;
+        width: 17px;
+        height: 17px;
+    }
+
+    .precio {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .precio input {
+        width: 55px;
+        padding: 0 10px;
+        height: 30px;
+        border-radius: 10px;
+        border: 0;
+    }
+
+    .precio input:hover {
+        border: 2px solid black;
+    }
+
+    .filtro select {
+        padding: 10px;
+        border-radius: 10px;
+        border-color: lightgray;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    #nada {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+
+    }
+
+    #nada p {
+        color: gray;
+        text-align: center;
+        font-weight: 600;
     }
 
 }

@@ -55,8 +55,8 @@
 }
 
 .content {
-    display: flex; 
-    justify-content: space-around;  
+    display: flex;
+    justify-content: space-around;
     padding: 1rem;
     background-color: white;
     border-radius: 30px;
@@ -76,7 +76,7 @@
     align-items: center;
 }
 
-#tipo{
+#tipo {
     font-size: 16px;
 }
 
@@ -94,13 +94,13 @@
     transform: translateY(-50%);
     color: black;
     pointer-events: none;
-    transition: .2s;
+    transition: all 3s ease-in-out;
 }
 
 input:focus~label,
 input:valid~label {
     top: 0px;
-    opacity: 0.3    ;
+    opacity: 0.3;
 }
 
 .inputbox input {
@@ -138,15 +138,15 @@ button {
     font-weight: 600;
 }
 
-button:hover{
+button:hover {
     background-color: #051a4e;
 }
 
-#tipo{
+#tipo {
     border-radius: 10px;
-    border: 1px solid lightgray;    
-    padding: .2rem; 
-    cursor: pointer ;
+    border: 1px solid lightgray;
+    padding: .2rem;
+    cursor: pointer;
 }
 
 .iniciar {

@@ -51,7 +51,7 @@ function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) 
         .then(productos => {
             divProductos.innerHTML = "";
             if (productos[0]) {
-                console.log(productos)
+
                 for (let producto of productos) {
                     divProductos.innerHTML +=
                         `<a href=/producto?idProducto=${producto.ID}">
@@ -87,6 +87,9 @@ function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) 
             </a>
                     */
                 }
+            }
+            if (!productos[0]) {
+                divProductos.innerHTML = '<div id="nada"><img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br/><p>Aqui no hay nada</p></div>';
             }
         })
         .catch(error => console.log(error))
