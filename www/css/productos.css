@@ -1,3 +1,7 @@
+main {
+    min-height: 100vh;
+}
+
 .productos {
     margin-top: 5rem;
     margin-bottom: 1rem;
@@ -98,7 +102,33 @@ form {
     font-size: 12px;
 }
 
+#nada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    top: 0px;
+    left: 22px;
+    z-index: -1;
+}
+
+#nada img {
+    width: 200px;
+    height: auto;
+}
+
+#nada p {
+    color: gray;
+    text-align: center;
+    font-weight: 600;
+}
+
 @media (min-width: 600px) {
+    main{
+        padding: 0;
+    }
+
     .botonesFiltro {
         top: 100px;
     }
@@ -116,8 +146,19 @@ form {
     .categorias {
         display: flex;
         flex-direction: column;
-
     }
+
+    #nada{
+        position: absolute;
+        top: 190px;
+        left: 230px;
+    }
+    
+    #nada img {
+        width: 250px;
+        height: auto;
+    }
+
 }
 
 @media (min-width: 900px) {
@@ -233,16 +274,13 @@ form {
     }
 
     #nada {
-        position: absolute;
-        top: 30%;
-        left: 50%;
-
+        top: 25%;
+        left: auto;
     }
 
-    #nada p {
-        color: gray;
-        text-align: center;
-        font-weight: 600;
+    #nada img {
+        width: 450px;
+        height: auto;
     }
 
 }

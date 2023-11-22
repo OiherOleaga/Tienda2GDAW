@@ -6,7 +6,7 @@
     <div class="botonesFiltro"><input id="btnFiltro" type="button" value="Filtros" class="button"></div> 
         <div class="bloque" id="bloque">
             <aside>
-                <form>
+                <form autocomplete="off">
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
