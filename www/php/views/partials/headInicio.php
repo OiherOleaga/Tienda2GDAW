@@ -21,6 +21,10 @@
         <div class="logo">
             <a href="/"><img src="/assets/logo/logo.png" alt="logo"></a>
         </div>
+        <div class="navegacion">
+            <a href="/">Inicio</a>
+            <a href="/productos">Productos</a>
+        </div>
         <div class="botones">
             <a href="/login"><button class="btn">Inicar Sesion o Registrarse</button></a>
         </div>

@@ -141,7 +141,7 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
         $join .=
             "\nJOIN (SELECT DISTINCT id_producto" .
             "\n      FROM Categorias_Productos" .
-            "\n         WHERE id_categorias IN ($datosIn)) cp ON p.id = cp.id_producto";
+            "\n         WHERE ID_Categorias IN ($datosIn)) cp ON p.id = cp.id_producto ";
         $orderBy .=
             "\n(SELECT count(*)" .
             "\nFROM Categorias_Productos" .
@@ -149,13 +149,18 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
             "\nGROUP BY id_producto) DESC";
     }
 
+    $f2 = "";
+    if ($where === "") {
+     $f2 = "WHERE F2.ID IS NULL ";
+    } else {
+        $f2 = "and F2.ID IS NULL ";
+    }
     $query = "SELECT p.*, MIN(F1.ID) AS FotoID, F1.URL AS foto FROM Productos p " .
         "LEFT JOIN Fotos_producto F1 ON p.ID = F1.ID_Producto
     LEFT JOIN Fotos_producto F2 ON p.ID = F2.ID_Producto AND F1.ID > F2.ID "
         . $join
-
         . $where .
-        " and F2.ID IS NULL "
+        $f2
         . "GROUP BY p.ID, p.Titulo, p.Precio, p.Descripcion, p.Fecha, F1.URL"
         . $orderBy;
     //die($query);

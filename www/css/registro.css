@@ -99,8 +99,8 @@
 
 input:focus~label,
 input:valid~label {
-    top: -5px;
-    opacity: 0;
+    top: 0px;
+    opacity: 0.2;
 }
 
 .inputbox input {
@@ -138,6 +138,13 @@ button {
 
 button:hover{
     background-color: #051a4e;
+}
+
+#tipo{
+    border-radius: 10px;
+    border: 1px solid lightgray;    
+    padding: .2rem; 
+    cursor: pointer ;
 }
 
 .iniciar {
