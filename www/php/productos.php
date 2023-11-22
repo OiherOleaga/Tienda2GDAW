@@ -5,7 +5,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     require "./db/categorias.php";
 
     if (($cliente = comprobarSesion())) {
-        require("php/views/partials/headUsuario.php");
+        if ($_SESSION["tipo"]=="cliente") {
+            require("php/views/partials/headUsuario.php");
+        }else{
+            require("php/views/partials/headEmpresa.php");
+        }
     } else {
         require("php/views/partials/headInicio.php");
     }
