@@ -149,7 +149,15 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
             "\nGROUP BY id_producto) DESC";
     }
 
-    $query = "SELECT p.* FROM Productos p " . $join . $where . $orderBy;
+    $query = "SELECT p.*, MIN(F1.ID) AS FotoID, F1.URL AS foto FROM Productos p " .
+        "LEFT JOIN Fotos_producto F1 ON p.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON p.ID = F2.ID_Producto AND F1.ID > F2.ID "
+        . $join
+
+        . $where .
+        " and F2.ID IS NULL "
+        . "GROUP BY p.ID, p.Titulo, p.Precio, p.Descripcion, p.Fecha, F1.URL"
+        . $orderBy;
     //die($query);
     return select($query, $datos);
 }
