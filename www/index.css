@@ -311,6 +311,10 @@ footer img {
     width: 120px;
 }
 
+#inputFoto {
+    display: none;
+}
+
 /*MOVILES DE PANTALLA REDUCIDA*/
 @media (max-width:350px) {
 

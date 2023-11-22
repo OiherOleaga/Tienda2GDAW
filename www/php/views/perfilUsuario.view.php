@@ -81,5 +81,5 @@
         </div>
     </div>
 </div>
-<script src="/js/verPerfil.js"></script>
+<script type="module" src="/js/verPerfil.js"></script>
 <?php require("partials/footer.php") ?>
