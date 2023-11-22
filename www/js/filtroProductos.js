@@ -16,9 +16,7 @@ function mostrarFiltros() {
 function cerrarSiClicFuera(event) {
     var bloque = document.getElementById("bloque");
     if (!bloque.contains(event.target) && event.target.id !== 'btnFiltro') {
-        // Si el clic no ocurrió dentro del bloque y no fue en el botón de filtro, cierra el contenido
         bloque.style.transform = "translateX(-600px)";
-        // Elimina el event listener después de cerrar el contenido
         document.removeEventListener('click', cerrarSiClicFuera);
     }
 }
