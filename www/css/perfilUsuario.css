@@ -69,7 +69,7 @@ aside {
     margin: 0;
 }
 
-svg {
+svg, .cliente img {
     margin-right: 10px;
 }
 
@@ -212,10 +212,6 @@ input:hover {
     aside {
         position: fixed;
         width: 200px;
-    }
-
-    .cliente img {
-        margin-right: 5px;
     }
 
     .enlaces p {
