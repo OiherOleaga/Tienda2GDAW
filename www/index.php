@@ -57,5 +57,7 @@ if (($cliente = comprobarSesion())) {
 }
 
 $productos = consultarProductos();
+
+$productosFav = productosMasGustados();
 closeCon();
 require("php/views/index.viewUsuario.php");
