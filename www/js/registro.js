@@ -31,7 +31,7 @@ tipo.dispatchEvent(new Event("change"))
 formRegistro.addEventListener("submit", (e) => {
     if (passwords[0].value !== passwords[1].value) {
         e.preventDefault();
-        passwords[1].setAttribute("style", "background-color: #fc0324");
+        passwords[1].setAttribute("style", "color: #fc0324");
         document.getElementById("errorUsuario").innerText = "las contraseñas no coinciden";
     }
 })

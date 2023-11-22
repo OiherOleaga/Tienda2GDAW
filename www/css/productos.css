@@ -113,11 +113,25 @@
         border: 2px solid black;
     }
 
-    .filtro select{
+    .filtro select {
         padding: 10px;
         border-radius: 10px;
         border-color: lightgray;
         font-size: 16px;
         cursor: pointer;
     }
+
+    #nada {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+
+    }
+
+    #nada p {
+        color: gray;
+        text-align: center;
+        font-weight: 600;
+    }
+
 }

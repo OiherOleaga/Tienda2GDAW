@@ -15,13 +15,13 @@
                     <div class="filtro">
                         <h4>Categoria</h4>
                         <div class="categorias">
-                            <?php foreach ($categorias as $categoria) {?> 
+                            <?php foreach ($categorias as $categoria) { ?>
                                 <div>
-                                    <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?>> 
+                                    <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?>>
                                     <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
-                                    <p class="numeroElementos">(<?= $categoria["numeroProdcutos"]?>)</p>
+                                    <p class="numeroElementos">(<?= $categoria["numeroProdcutos"] ?>)</p>
                                 </div>
-                            <?php } ?> 
+                            <?php } ?>
                         </div>
                     </div>
                     <div class="filtro">
@@ -45,6 +45,7 @@
         </div>
         </aside>
         <div class="productos" id="productos">
+
         </div>
     </div>
 </div>
