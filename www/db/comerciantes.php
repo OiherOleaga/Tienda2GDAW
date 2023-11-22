@@ -21,8 +21,16 @@ function getComerciante($id) {
     return select("SELECT * FROM Comerciantes WHERE id = ?", $id)[0];
 }
 
-function updateComerciante($datos) {
-    execute("UPDATE Comerciantes 
-                SET nombre = :nombre, correo = :correo, telefono = :telefono, direccion = :direccion 
-                WHERE id = :id", $datos);
+function updateComerciante($datos, $id) {
+    $query = "UPDATE Comerciantes SET ";
+
+    foreach ($datos as $key => $dato) {
+        $query .= "$key = :$key ";
+    }
+
+    $datos["id"] = $id;
+    //die($query);
+    if (count($datos) > 1) {
+        execute($query . "WHERE id = :id", $datos);
+    }
 }

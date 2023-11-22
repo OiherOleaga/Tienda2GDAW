@@ -70,7 +70,7 @@
             </div>
         </div>
     </div>
-    <?php require "partials/scriptError.php" ?>
+    <?php require "php/views/partials/scriptError.php" ?>
     <script src="/js/login.js"></script>
 </body>
 

@@ -15,9 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "./php/preparacionUsuario.php";
     try {
         $tipo = POST("tipo");
-        $usuario = preparacionUsuario($tipo, $errorUsuario);
+        $usuario = preparacionUsuarioInsert($tipo, $errorUsuario);
         if ($errorUsuario == "") {
-            $usuario["contrasenia"] = hash("sha256" , POST("contrasenia"));
             if ($tipo == "cliente") {
                 require_once "./db/clientes.php";
                 insertarCliente($usuario);

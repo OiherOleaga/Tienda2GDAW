@@ -1,3 +1,16 @@
+let inputsDatos = document.getElementsByClassName("datos")
+
+for (let input of inputsDatos) {
+    input.addEventListener("input", function () {
+        if (this.getAttribute("value1") === this.value) {
+            this.removeAttribute("name")
+        } else {
+            this.setAttribute("name", this.id);
+        }
+    })
+}
+
+
 
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
@@ -87,6 +100,7 @@ function reDrawImg(guardar) {
     contexto.globalCompositeOperation = 'source-over';
     if (guardar) {
         let extension = inputFoto.value.substring(inputFoto.value.lastIndexOf(".") + 1, inputFoto.value.length)
+        outputFoto.setAttribute("name", "avatar");
         outputFoto.value = canvas.toDataURL('image/' + extension);
     }
 }

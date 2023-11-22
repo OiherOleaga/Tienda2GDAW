@@ -23,3 +23,15 @@ function comprobarDatosUnicos($datos) {
             WHERE Telefono = :telefono OR correo = :correo OR upper(Nombre_empresa) = upper(:username)"
                 , $datos);
 }
+
+function comprobarUsernameUnico() {
+
+}
+
+function comprobarEmailUnico() {
+
+}
+
+function comprobarTelefonoUnico() {
+
+}

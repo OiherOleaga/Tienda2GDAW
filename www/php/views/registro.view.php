@@ -109,7 +109,7 @@
     </div>
 
     <script src="/js/registro.js"></script>
-    <?php require "partials/scriptError.php" ?>
+    <?php require "php/views/partials/scriptError.php" ?>
 </body>
 
 </html>

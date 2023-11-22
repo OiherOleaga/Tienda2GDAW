@@ -9,8 +9,8 @@
         <form method = "post">
             <div class="imgMapa">
                 <div id="divFotoPerfil" class="inputbox">
-                    <canvas id="canvasFotoPerfil" src=<?= $cliente['Avatar'] ?>></canvas>
-                    <input type="hidden" name="avatar" id="outputFoto">
+                    <canvas id="canvasFotoPerfil" src=<?= $empresa['Avatar'] ?>></canvas>
+                    <input type="hidden" id="outputFoto">
                     <input type="file" id="inputFoto" accept="image/*" class="inputbox">
                 </div>
                 <div class="mapa">
@@ -26,25 +26,26 @@
             </div>
             <div class="datos">
                 <div class="inputbox" id="inputBoxNombre">
-                    <input type="text" name="nombre" value=<?= $cliente['Nombre_empresa'] ?> required>
+                    <input type="text" id="username" class="datos" value=<?= $empresa['Nombre_empresa'] ?> value1=<?= $empresa['Nombre_empresa'] ?> required>
                     <label>Nombre empresa</label>
                 </div>
                 <div class="inputbox" id="inputBoxCorreo">
-                    <input type="text" name="correo" value=<?= $cliente['Correo'] ?> required>
+                    <input type="text" id="correo" class="datos" value=<?= $empresa['Correo'] ?> value1=<?= $empresa['Correo'] ?> required>
                     <label>Correo electronico</label>
                 </div>
                 <div class="inputbox" id="inputBoxTel">
-                    <input type="text" name="telefono" value=<?= $cliente['Telefono'] ?> required>
+                    <input type="text" id="telefono" class="datos" value=<?= $empresa['Telefono'] ?> value1=<?= $empresa['Telefono'] ?> required>
                     <label>Telefono</label>
                 </div>
                 <div class="inputbox" id="inputBoxDir">
-                    <input type="text" name="direccion" value="<?= $cliente['Direccion'] ?>" required>
+                    <input type="text" id="direccion" class="datos" value="<?= $empresa['Direccion'] ?>" value1="<?= $empresa['Direccion'] ?>" required>
                     <label>Direccion</label>
                 </div>
                 <div class="inputbox" id="inputBoxDir">
-                    <input type="password" name="contrasenia" required>
+                    <input type="password" id="contrasenia" value1="" class="datos">
                     <label>Contraseña</label>
                 </div>
+                <p><?= $mensajeUsuario ?></p> 
                 <button type="submit">Guardar cambios</button>
             </div>
 
@@ -100,4 +101,7 @@
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/datosEmpresa.js"></script>
+
+<?php require "php/views/partials/scriptError.php" ?>
+
 <?php require("partials/footer.php") ?>
