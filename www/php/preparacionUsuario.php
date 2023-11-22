@@ -99,6 +99,8 @@ function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
 
     switch($tipo) {
         case "cliente":
+            addUsuario($usuario, "nombre");
+            addUsuario($usuario, "apellidos");
             return preparacionCliente($usuario, $errorUsuario);
         case "comerciante":
             return preparacionComerciante($usuario, $errorUsuario);

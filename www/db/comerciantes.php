@@ -29,12 +29,12 @@ function updateComerciante($datos, $id) {
     $query = "UPDATE Comerciantes SET ";
 
     foreach ($datos as $key => $dato) {
-        $query .= "$key = :$key ";
+        $query .= "$key = :$key,";
     }
 
     $datos["id"] = $id;
-    //die($query);
+//    die($query);
     if (count($datos) > 1) {
-        execute($query . "WHERE id = :id", $datos);
+        execute(substr($query, 0, -1) . " WHERE id = :id", $datos);
     }
 }
