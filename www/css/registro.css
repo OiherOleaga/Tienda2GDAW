@@ -100,7 +100,7 @@
 input:focus~label,
 input:valid~label {
     top: 0px;
-    opacity: 0.2;
+    opacity: 0.3    ;
 }
 
 .inputbox input {
@@ -109,9 +109,11 @@ input:valid~label {
     background: transparent;
     border: none;
     outline: none;
-    font-size: 1em;
+    font-size: 15px;
     padding: 0 35px 0 5px;
     color: black;
+    margin-top: 1px;
+
 }
 
 canvas {
