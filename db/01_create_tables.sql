@@ -33,7 +33,7 @@ CREATE TABLE Productos (
     Descripcion TEXT,
     Fecha DATE,
     ID_Comerciante INT,
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Categorias (

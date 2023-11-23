@@ -32,7 +32,8 @@
                         <?= $productos[$i]['Precio'] . "€" ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a
+                            href="/php/indexAdmin.php?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -95,7 +96,7 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a href="/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -146,7 +147,8 @@
                         <?= $comerciantes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a
+                            href="/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -173,12 +175,15 @@
                         <?= $categorias[$i]['Nombre'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a
+                            href="/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
-        <div class="insertar"><button>Insertar</button></div>
+        <div class="insertar"> <a
+                href="/indexAdmin.php?accion=insertarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
+        </div>
     <?php } else { ?>
         <h2>No hay categorias</h2>
     <?php } ?>
