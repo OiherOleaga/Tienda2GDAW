@@ -24,10 +24,11 @@ function realizarAccion($accion)
             break;
         case 'borrarCategoria':
             borrarCategoriaId($_GET["id"]);
+            
             break;
     }
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 }
-
 
 if (isset($_GET["accion"])) {
     $accion = $_GET["accion"];

@@ -32,8 +32,8 @@
                         <?= $productos[$i]['Precio'] . "€" ?>
                     </td>
                     <td class="Borrar">
-                        <a
-                            href="/php/indexAdmin.php?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button>Borrar</button></a>
+                        <a href="/php/indexAdmin.php?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -96,8 +96,8 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a
-                            href="/php/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button>Borrar</button></a>
+                        <a href="/php/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -148,8 +148,8 @@
                         <?= $comerciantes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a
-                            href="/php/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button>Borrar</button></a>
+                        <a href="/php/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -176,17 +176,22 @@
                         <?= $categorias[$i]['Nombre'] ?>
                     </td>
                     <td class="Borrar">
-                        <a
-                            href="/php/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
+                        <a href="/php/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
-        <div class="insertar"> <a
-                href="/php/indexAdmin.php?accion=insertarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
+        <div id="divInsercionCategoria" style="display: none;">
+            <label for="nombreCategoria">Nombre de la categoría:</label>
+            <input type="text" id="nombreCategoria" name="nombreCategoria">
+            <button id="btnInsertarCategoriaForm" onclick="insertarCategoria()">Insertar</button>
+        </div>
+        <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>
         </div>
     <?php } else { ?>
         <h2 style="color:red;">No hay categorias</h2>
     <?php } ?>
 </div>
+<script src="/js/admin.js"></script>
 <?php require("partials/footer.php") ?>
