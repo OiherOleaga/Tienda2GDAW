@@ -215,3 +215,8 @@ function consultarProductoLikes($id)
     WHERE L.ID_Cliente = ? AND F2.ID IS NULL
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $id);
 }
+
+function borrarProductoId($id)
+{
+    return execute("DELETE CASCADE FROM Productos WHERE ID=?", $id);
+}

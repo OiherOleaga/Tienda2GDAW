@@ -19,6 +19,9 @@
         <div class="logo">
             <img src="/assets/Logo/logo.png" alt="logo">
         </div>
+        <div class="nav">
+            <p>Administraci&oacute;n de base de datos</p>
+        </div>
         <div class="botones">
             <button class="btn">Cerrar Sesion</button>
         </div>
