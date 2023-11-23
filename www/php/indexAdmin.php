@@ -10,8 +10,7 @@ $clientes = getClientes();
 $comerciantes = getComerciantes();
 $categorias = getCategorias();
 
-function realizarAccion($accion)
-{
+function realizarAccion($accion){
     switch ($accion) {
         case 'borrarProducto':
             borrarProductoId($_GET["id"]);
@@ -24,7 +23,9 @@ function realizarAccion($accion)
             break;
         case 'borrarCategoria':
             borrarCategoriaId($_GET["id"]);
-            
+            break;
+        case 'insertarCategoria':
+            insertarCategoria($_GET["nombreCategoria"]);
             break;
     }
     header('Location: ' . $_SERVER['HTTP_REFERER']);

@@ -183,9 +183,12 @@
             <?php } ?>
         </table>
         <div id="divInsercionCategoria" style="display: none;">
-            <label for="nombreCategoria">Nombre de la categoría:</label>
-            <input type="text" id="nombreCategoria" name="nombreCategoria">
-            <button id="btnInsertarCategoriaForm" onclick="insertarCategoria()">Insertar</button>
+            <form action="/php/indexAdmin.php" method="post">
+                <label for="nombreCategoria">Nombre de la categoría:</label>
+                <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
+                <input type="hidden" name="accion" value="insertar">
+                <button id="btnInsertarCategoriaForm">Insertar</button>
+            </form>
         </div>
         <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>
         </div>

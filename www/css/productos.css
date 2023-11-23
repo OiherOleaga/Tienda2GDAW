@@ -118,12 +118,6 @@ form {
     height: auto;
 }
 
-#nada p {
-    color: gray;
-    text-align: center;
-    font-weight: 600;
-}
-
 @media (min-width: 600px) {
     main{
         padding: 0;

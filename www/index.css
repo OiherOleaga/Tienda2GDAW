@@ -292,6 +292,17 @@ h5 {
     -webkit-line-clamp: 2;
 }
 
+#nada{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#nada img{
+    width: 200px;
+}
+
 .productos img {
     object-fit: cover;
     width: 180px;
@@ -437,6 +448,7 @@ footer img {
         font-size: .875rem;
         width: 210px;
         height: 45px;
+        gap: 10px;
     }
 
     .productos .caja {
@@ -476,6 +488,16 @@ footer img {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         justify-items: center;
+    }
+
+    #nada img{
+        width: 500px;
+    }
+
+    #nada p{
+        color: gray;
+        text-align: center;
+        font-weight: 600;
     }
 
     footer {
