@@ -73,16 +73,5 @@ require("./php/mapa.php");
 </div>
 <script src="/js/desplazamineto.js"></script>
 </div>
-<div class="mapa">
-    <h2>Localicazi&oacute;n del local</h2>
-    <div id="map">
-        <p id="latitud">
-            <?= $latitude ?>
-        </p>
-        <p id="longi">
-            <?= $longitude ?>
-        </p>
-    </div>
-</div>
 <script src="/js/scriptMapa.js"></script>
 <?php require("./php/views/partials/footer.php") ?>

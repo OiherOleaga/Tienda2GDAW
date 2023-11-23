@@ -118,6 +118,7 @@ button {
     background: #0a3093;
     border: none;
     outline: none;
+    margin-bottom: 10px;
     color: white;
     cursor: pointer;
     font-size: 1em;

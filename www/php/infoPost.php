@@ -6,7 +6,7 @@ try {
     if ($usuario != null) {
         require_once "db/usuarios.php";
         updateUsuario($usuario, $cliente["ID"], "Clientes");
-        $mensajeUsuario = "datos actualizados";
+        $mensajeUsuario = "Datos actualizados correctamente";
         foreach ($usuario as $key => $valor) {
             $cliente[($key == "username" ? $key : ucfirst($key))] = $valor;
         }

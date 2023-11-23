@@ -24,3 +24,7 @@ function getComerciante($id) {
 function getComerciantes() {
     return select("SELECT * FROM Comerciantes");
 }
+
+function borrarComercianteId($id) {
+    return select("DELETE FROM Comerciantes WHERE ID=?",$id);
+}

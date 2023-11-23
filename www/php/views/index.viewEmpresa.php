@@ -6,7 +6,7 @@
 
 <div class="pagina">
     <div class="datosEmpresa">
-        <form method = "post">
+        <form method="post">
             <div class="imgMapa">
                 <div id="divFotoPerfil" class="inputbox">
                     <canvas id="canvasFotoPerfil" src=<?= $empresa['Avatar'] ?>></canvas>
@@ -26,31 +26,34 @@
             </div>
             <div class="datos">
                 <div class="inputbox" id="inputBoxNombre">
-                    <input type="text" id="username" class="datos" value=<?= $empresa['Nombre_empresa'] ?> value1=<?= $empresa['Nombre_empresa'] ?> required>
+                    <input type="text" id="username" class="datos" value=<?= $empresa['Nombre_empresa'] ?>
+                        value1=<?= $empresa['Nombre_empresa'] ?> required>
                     <label>Nombre empresa</label>
                 </div>
                 <div class="inputbox" id="inputBoxCorreo">
-                    <input type="text" id="correo" class="datos" value=<?= $empresa['Correo'] ?> value1=<?= $empresa['Correo'] ?> required>
+                    <input type="text" id="correo" class="datos" value=<?= $empresa['Correo'] ?>
+                        value1=<?= $empresa['Correo'] ?> required>
                     <label>Correo electronico</label>
                 </div>
                 <div class="inputbox" id="inputBoxTel">
-                    <input type="text" id="telefono" class="datos" value=<?= $empresa['Telefono'] ?> value1=<?= $empresa['Telefono'] ?> required>
+                    <input type="text" id="telefono" class="datos" value=<?= $empresa['Telefono'] ?>
+                        value1=<?= $empresa['Telefono'] ?> required>
                     <label>Telefono</label>
                 </div>
                 <div class="inputbox" id="inputBoxDir">
-                    <input type="text" id="direccion" class="datos" value="<?= $empresa['Direccion'] ?>" value1="<?= $empresa['Direccion'] ?>" required>
+                    <input type="text" id="direccion" class="datos" value="<?= $empresa['Direccion'] ?>"
+                        value1="<?= $empresa['Direccion'] ?>" required>
                     <label>Direccion</label>
                 </div>
-                <div class="inputbox" id="inputBoxDir">
-                    <input type="password" id="contrasenia" value1="" class="datos">
-                    <label>Contraseña</label>
-                </div>
-                <p><?= $mensajeUsuario ?></p> 
+                <p>
+                    <?= $mensajeUsuario ?>
+                </p>
                 <button type="submit">Guardar cambios</button>
             </div>
 
         </form>
     </div>
+    <h2>Productos</h2>
     <div class="tabla">
         <?php if (isset($productos[0])) { ?>
             <table class="tablaProduct">
@@ -74,13 +77,13 @@
                 <?php for ($i = 0; $i < count($productos); $i++) { ?>
                     <tr>
                         <td class="imagen">
-                        <img src=<?= $productos[$i]['Foto'] ?> alt=<?= $productos[$i]['Titulo'] ?>>
+                            <img src=<?= $productos[$i]['Foto'] ?> alt=<?= $productos[$i]['Titulo'] ?>>
                         </td>
                         <td class="titulo">
                             <?= $productos[$i]['Titulo'] ?>
                         </td>
                         <td class="precio">
-                            <?= $productos[$i]['Precio'] ."€" ?> 
+                            <?= $productos[$i]['Precio'] . "€" ?>
                         </td>
                         <td class="editar">
                             <button>Editar</button>
@@ -92,7 +95,9 @@
                 <?php } ?>
             </table>
         <?php } else { ?>
-            <h2>No hay productos</h2>
+            <div id="nada"><img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
+                <p>Nada por aqui...</p>
+            </div>
         <?php } ?>
     </div>
 </div>
