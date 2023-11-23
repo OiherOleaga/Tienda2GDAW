@@ -5,22 +5,14 @@ if (!$cliente = comprobarSesion()) {
     header("Location: /");
     exit;
 }
+
 $mensajeUsuario = "";
 $errorDev = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "php/preparacionUsuario.php";
-    try {
-        $usuario = preparacionUsuarioUpdate("cliente", $mensajeUsuario);
-        if ($usuario != null) {
-            updateComerciante($usuario, $empresa["ID"]);
-            $mensajeUsuario = "datos actualizados";
-            foreach ($usuario as $key => $valor) {
-                $cliente[($key == "username" ? $key : ucfirst($key))] = $valor;
-            }
-        }
-    } catch (Exception $e) {
-        $errorUsuario = "error al cambair los datos";
-        $errorDev = $e->getMessage();
+    switch ($uri[2]) {
+        case "info":
+            require "php/infoPost.php";
+            break;
     }
 }
 require "db/productos.php";

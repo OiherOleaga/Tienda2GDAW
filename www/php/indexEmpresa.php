@@ -9,12 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $usuario = preparacionUsuarioUpdate("comerciante", $mensajeUsuario);
         if ($usuario != null) {
+            require_once "db/usuarios.php";
             if (isset($usuario["username"])) {
                 $usuario["nombre_empresa"] = $usuario["username"];
                 unset($usuario["username"]);
             }
 
-            updateComerciante($usuario, $empresa["ID"]);
+            updateUsuario($usuario, $empresa["ID"], "Comerciantes");
             $mensajeUsuario = "datos actualizados";
             foreach ($usuario as $key => $valor) {
                 $empresa[ucfirst($key)] = $valor;
@@ -30,5 +31,5 @@ $productos = getProductosComerciante($empresa["ID"]);
 closeCon();
 
 // header empresa
-require("php/views/partials/headUsuario.php");
+require("php/views/partials/headEmpresa.php");
 require "php/views/index.viewEmpresa.php";

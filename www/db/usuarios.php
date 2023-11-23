@@ -24,6 +24,20 @@ function comprobarDatosUnicos($datos) {
                 , $datos);
 }
 
+function updateUsuario($datos, $id, $tipo) {
+    $query = "UPDATE $tipo SET ";
+
+    foreach ($datos as $key => $dato) {
+        $query .= "$key = :$key,";
+    }
+
+    $datos["id"] = $id;
+//    die($query);
+    if (count($datos) > 1) {
+        execute(substr($query, 0, -1) . " WHERE id = :id", $datos);
+    }
+}
+
 function comprobarUsernameUnico() {
 
 }
