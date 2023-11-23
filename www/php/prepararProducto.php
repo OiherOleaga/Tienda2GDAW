@@ -35,7 +35,7 @@ function prepararProducto(&$errorUsuairo, &$producto, $fotos) {
         return null;
     }
     $fotos;
-    descargarImagen();
+    descargarFotoProducto($fotos, /* getMaxId(producto)*/);
     return $fotos;
 }
 
