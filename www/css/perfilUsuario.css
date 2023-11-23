@@ -53,8 +53,6 @@ aside {
     align-items: center;
 }
 
-
-
 .caja h3 {
     margin-bottom: 10px;
     border-bottom: 1px solid lightgray;
@@ -123,6 +121,13 @@ svg, .cliente img {
 .datos label {
     width: 45%;
     text-align: right;
+}
+
+.datos canvas{
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+    border-radius: 50%;
 }
 
 .datos input,
