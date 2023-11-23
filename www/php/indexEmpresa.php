@@ -31,5 +31,5 @@ $productos = getProductosComerciante($empresa["ID"]);
 closeCon();
 
 // header empresa
-require("php/views/partials/headUsuario.php");
+require("php/views/partials/headEmpresa.php");
 require "php/views/index.viewEmpresa.php";
