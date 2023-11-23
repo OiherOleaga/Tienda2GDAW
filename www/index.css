@@ -311,6 +311,10 @@ footer img {
     width: 120px;
 }
 
+#inputFoto {
+    display: none;
+}
+
 /*MOVILES DE PANTALLA REDUCIDA*/
 @media (max-width:350px) {
 
@@ -427,7 +431,6 @@ footer img {
     .btn {
         width: 140px;
         font-size: .875rem;
-        padding: 0;
         width: 210px;
         height: 45px;
     }

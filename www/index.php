@@ -22,32 +22,7 @@ if (($cliente = comprobarSesion())) {
             require("php/views/partials/headUsuario.php");
             break;
         case "comerciante":
-            $errorDev = "";
-            $mensajeUsuario = "";
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                require "php/methods.php";
-                require "php/preparacionUsuario.php";
-                try {
-                    $usuario = preparacionUsuario("comerciante", $mensajeUsuario);
-                    if ($mensajeUsuario == "") {
-                        $usuario["id"] = $_SESSION("id");
-                        if (isset($_POST["contrasenia"]) && trim($_POST["contrasenia"]) != "") {
-                            $usuario["contrasenia"] = $_POST["contrasenia"];
-                        }
-
-                        updateComerciante($usuario);
-                        $cliente = $usuario;
-                        $mensajeUsuario = "datosActualizados";
-                    }
-                } catch (Exception $e) {
-                    $errorUsuario = "error al cambair los datos";
-                    $errorDev = $e->getMessage();
-                }
-            }
-            $productos = getProductosComerciante($cliente["ID"]);
-            closeCon();
-            require("php/views/partials/headEmpresa.php");
-            require "php/views/index.viewEmpresa.php";
+            require "php/indexEmpresa.php";
             exit;
     }
 } else {

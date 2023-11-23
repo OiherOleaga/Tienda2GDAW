@@ -1,5 +1,5 @@
 document.getElementById("btnAvatar").addEventListener("click", mostrarMenu);
-var cerrarSesion= document.getElementById("cerrarSesion").addEventListener("click", cerrarSesion);
+document.getElementById("cerrarSesion").addEventListener("click", cerrarSesion);
 
 function mostrarMenu() {
   let dropdownMenu = document.getElementById("menuDesp");

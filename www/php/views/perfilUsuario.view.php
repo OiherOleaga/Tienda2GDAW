@@ -29,20 +29,6 @@
 
                     </div>
                 </a>
-                <a href="carrito" class="link">
-                    <div class="enlaces">
-                        <div class="carrito">
-                            <svg width="32px" height="32px" viewBox="0 0 40 40" fill="none"
-                                xmlns="http://www.w3.org/2000/svg" display="flex">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M27 27.145l-6.856 6.856a3.41 3.41 0 01-4.823 0L5.999 24.68a3.41 3.41 0 010-4.823L19.856 5.999A3.41 3.41 0 0122.267 5h9.322A3.41 3.41 0 0135 8.41v9.323a3.41 3.41 0 01-.999 2.411L32 22.145V32.5a2.5 2.5 0 01-5 0v-5.355zM22.267 7a1.41 1.41 0 00-.997.413L7.413 21.27a1.41 1.41 0 000 1.995l9.322 9.322c.551.55 1.444.55 1.995 0l8.27-8.27v-9.488a3.001 3.001 0 112 0v7.488l3.587-3.587a1.41 1.41 0 00.413-.997V8.41A1.41 1.41 0 0031.59 7h-9.323zM30 24.145V32.5a.5.5 0 01-1 0v-7.355l1-1zM28 13a1 1 0 100-2 1 1 0 000 2z"
-                                    fill="#253238"></path>
-                            </svg>
-                            <p>Carrito</p>
-                        </div>
-
-                    </div>
-                </a>
                 <a href="ayuda" class="link">
                     <div class="enlaces">
                         <div class="configuracion">
@@ -81,5 +67,5 @@
         </div>
     </div>
 </div>
-<script src="/js/verPerfil.js"></script>
+<script type="module" src="/js/verPerfil.js"></script>
 <?php require("partials/footer.php") ?>

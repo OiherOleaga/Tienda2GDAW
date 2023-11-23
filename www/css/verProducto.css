@@ -182,11 +182,11 @@ main {
 
 .desc {
     padding: 0 1rem;
-    text-align: justify;
     font-size: 12px;
 }
 
 .desc p {
+    text-align: center;
     white-space: pre-line;
 }
 

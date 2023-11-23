@@ -96,6 +96,8 @@ inputFoto.addEventListener("change", () => {
 });
 
 function eventosDeMover() {
+    let offsetX;
+    let offsetY;
     canvas.addEventListener("mousedown", (e) => {
         isDragging = true;
         offsetX = e.clientX - x;

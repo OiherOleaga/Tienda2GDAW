@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Pragma" content="no-cache">
     <link rel="stylesheet" href="/css/registro.css">
+    <link rel="icon" href="/assets/Logo/favicon.png">
     <title>Login</title>
 
 </head>
@@ -91,7 +92,7 @@
                         <label>Direccion</label>
                     </div>
                     <div id="divFotoPerfil" class="inputbox">
-                        <canvas id="canvasFotoPerfil" width="100" height="100"></canvas>
+                        <canvas id="canvasFotoPerfil" width="100px" height="100px"></canvas>
                         <input type="hidden" name="avatar" id="outputFoto">
                         <input type="file" id="inputFoto" accept="image/*" class="inputbox">
                     </div>
@@ -109,7 +110,7 @@
     </div>
 
     <script src="/js/registro.js"></script>
-    <?php require "partials/scriptError.php" ?>
+    <?php require "php/views/partials/scriptError.php" ?>
 </body>
 
 </html>
