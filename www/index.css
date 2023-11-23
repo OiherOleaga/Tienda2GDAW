@@ -37,6 +37,10 @@ body {
         100%;
 }
 
+main{
+    min-height: 100vh;
+}
+
 header {
     display: flex;
     position: sticky;

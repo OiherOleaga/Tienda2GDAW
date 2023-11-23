@@ -8,3 +8,8 @@ function getCategorias() {
                     LEFT JOIN Categorias_Productos cp ON cp.id_categorias = c.id
                     GROUP BY c.id");
 }
+
+function borrarCategoriaId($id)
+{
+    return execute("DELETE FROM Categorias WHERE ID=?", $id);
+}

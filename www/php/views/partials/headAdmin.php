@@ -19,8 +19,11 @@
         <div class="logo">
             <img src="/assets/Logo/logo.png" alt="logo">
         </div>
+        <div class="nav">
+            <h3>Administraci&oacute;n de base de datos</h3>
+        </div>
         <div class="botones">
-            <button class="btn">Cerrar Sesion</button>
+            <a href="/"><button class="btn">Cerrar Sesion</button></a>
         </div>
         <script src="/js/headerUsuario.js"></script>
     </header>

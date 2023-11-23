@@ -42,7 +42,7 @@ body {
 }
 
 .tabla {
-    margin: 40px 20px;
+    margin: 40px 100px;
     overflow-y: scroll;
     max-height: 600px;
 }
@@ -54,7 +54,7 @@ body {
 }
 
 .tablaProducto th {
-    background-color:  #4393E4;
+    background-color:  #0A3093;
     color: white;
     position: sticky;
     top: 0;

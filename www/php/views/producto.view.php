@@ -14,12 +14,20 @@
     </div>
     <div class="producto">
         <div class="cajaProducto">
-            <div class=" btn-left">
-                <i class="fa-solid fa-arrow-left fa-2xl"></i>
-            </div>
+            <?php
+            $arrayFotos = explode(',', $producto["Fotos"]);
+            if (count($arrayFotos) > 1) {
+            ?>
+                <div class=" btn-left">
+                    <i class="fa-solid fa-arrow-left fa-2xl"></i>
+                </div>
+            <?php
+            }
+            ?>
+
             <div class="container-carousel">
                 <div class="carruseles" id="slider">
-                    <?php $arrayFotos = explode(',', $producto["Fotos"]);
+                    <?php
                     for ($x = 0; $x < count($arrayFotos); $x++) { ?>
                         <section class="slider-section">
                             <img src=<?= $arrayFotos[$x] ?> alt="imagen">
@@ -27,9 +35,16 @@
                     <?php } ?>
                 </div>
             </div>
-            <div class="btn-right">
-                <i class="fa-solid fa-arrow-right    fa-2xl"></i>
-            </div>
+            <?php
+            if (count($arrayFotos) > 1) {
+            ?>
+                <div class="btn-right">
+                    <i class="fa-solid fa-arrow-right    fa-2xl"></i>
+                </div>
+            <?php
+            }
+            ?>
+
         </div>
         <div class="titulo">
             <p><?= $producto["Titulo"] ?></p>

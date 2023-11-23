@@ -23,3 +23,8 @@ function getCliente($id) {
 function getClientes(){
     return select("SELECT * FROM Clientes");
 }
+
+function borrarClienteId($id)
+{
+    return execute("DELETE FROM Clientes WHERE ID=?", $id);
+}

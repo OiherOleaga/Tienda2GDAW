@@ -32,13 +32,14 @@
                         <?= $productos[$i]['Precio'] . "€" ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a href="/php/indexAdmin.php?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay productos</h2>
+        <h2 style="color:red;">No hay Productos</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -95,13 +96,14 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a href="/php/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay clientes</h2>
+        <h2 style="color:red;">No hay Clientes</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -146,13 +148,14 @@
                         <?= $comerciantes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a href="/php/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay comerciantes</h2>
+        <h2 style="color:red;">No hay Comerciantes</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -173,14 +176,22 @@
                         <?= $categorias[$i]['Nombre'] ?>
                     </td>
                     <td class="Borrar">
-                        <button>Borrar</button>
+                        <a href="/php/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button
+                                class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
-        <div class="insertar"><button>Insertar</button></div>
+        <div id="divInsercionCategoria" style="display: none;">
+            <label for="nombreCategoria">Nombre de la categoría:</label>
+            <input type="text" id="nombreCategoria" name="nombreCategoria">
+            <button id="btnInsertarCategoriaForm" onclick="insertarCategoria()">Insertar</button>
+        </div>
+        <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>
+        </div>
     <?php } else { ?>
-        <h2>No hay categorias</h2>
+        <h2 style="color:red;">No hay categorias</h2>
     <?php } ?>
 </div>
+<script src="/js/admin.js"></script>
 <?php require("partials/footer.php") ?>

@@ -78,8 +78,29 @@ function consultarProductoDeEmpresa($id)
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE F2.ID IS NULL AND P.ID_Comerciante = ?
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
-    ORDER BY P.ID ASC", $id);
+    ORDER BY P.ID DESC", $id);
 }
+
+function consultarProductoDeEmpresaLikes($id)
+{
+    return select("SELECT 
+    P.ID AS ID,
+    P.Titulo AS Titulo,
+    P.Precio AS Precio,
+    P.Descripcion AS Descripcion,
+    P.Fecha AS ProductoFecha,
+    MIN(F1.ID) AS FotoID,
+    F1.URL AS Foto,
+    COUNT(L.ID_Producto) AS Likes
+FROM Productos P
+LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+LEFT JOIN Likes L ON P.ID = L.ID_Producto
+WHERE F2.ID IS NULL AND P.ID_Comerciante = ?
+GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+ORDER BY Likes DESC, rand()", $id);
+}
+
 
 function consultarProductoID($id)
 {
@@ -169,7 +190,7 @@ function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
 
     $f2 = "";
     if ($where === "") {
-     $f2 = "WHERE F2.ID IS NULL ";
+        $f2 = "WHERE F2.ID IS NULL ";
     } else {
         $f2 = "and F2.ID IS NULL ";
     }
@@ -214,4 +235,9 @@ function consultarProductoLikes($id)
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE L.ID_Cliente = ? AND F2.ID IS NULL
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $id);
+}
+
+function borrarProductoId($id)
+{
+    return execute("DELETE FROM Productos WHERE ID=?", $id);
 }
