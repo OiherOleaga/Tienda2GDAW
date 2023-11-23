@@ -24,17 +24,3 @@ function getComerciante($id) {
 function getComerciantes() {
     return select("SELECT * FROM Comerciantes");
 }
-
-function updateComerciante($datos, $id) {
-    $query = "UPDATE Comerciantes SET ";
-
-    foreach ($datos as $key => $dato) {
-        $query .= "$key = :$key,";
-    }
-
-    $datos["id"] = $id;
-//    die($query);
-    if (count($datos) > 1) {
-        execute(substr($query, 0, -1) . " WHERE id = :id", $datos);
-    }
-}
