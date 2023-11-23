@@ -82,7 +82,7 @@ CREATE TABLE Resenna_comerciante (
     FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
 );
 
-CREATE TABLE Fotos_producto (
+CREATE TABLE(
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Producto INT,
     URL VARCHAR(255),

@@ -51,18 +51,18 @@ require("./php/mapa.php");
     <h3>A mucha gente le gustan</h3>
     <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
     <div class="productos" id="gridProductos2">
-        <?php for ($i = 0; $i < count($productos); $i++) { ?>
-            <a href="/producto?idProducto=<?= $productos[$i]["ID"] ?>">
+        <?php for ($i = 0; $i < count($productosLikes); $i++) { ?>
+            <a href="/producto?idProducto=<?= $productosLikes[$i]["ID"] ?>">
                 <div class="caja">
-                    <div class="img"><img src=<?= $productos[$i]["Foto"] ?>></div>
+                    <div class="img"><img src=<?= $productosLikes[$i]["Foto"] ?>></div>
                     <div class="bottom">
                         <h5>
-                            <?= $productos[$i]["Precio"] . "€" ?>
+                            <?= $productosLikes[$i]["Precio"] . "€" ?>
                         </h5>
                     </div>
                     <div class="top">
                         <p>
-                            <?= $productos[$i]["Titulo"] ?>
+                            <?= $productosLikes[$i]["Titulo"] ?>
                         </p>
                     </div>
                 </div>
