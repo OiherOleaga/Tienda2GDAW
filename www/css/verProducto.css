@@ -130,8 +130,11 @@ main {
 }
 
 .slider-section {
-    width: calc(100% / 10);
+    display: flex;
+    width: calc(100%/(10));
     height: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .slider-section img {
@@ -173,7 +176,7 @@ main {
 
 .producto img {
     object-fit: cover;
-    width: 200px;
+    width: 183px;
     height: 200px;
     border-radius: 20px;
     margin: 0.5rem 0;
@@ -218,7 +221,7 @@ main {
     }
 
     .producto img {
-        width: 388px;
+        width: 345px;
         height: 500px;
     }
 

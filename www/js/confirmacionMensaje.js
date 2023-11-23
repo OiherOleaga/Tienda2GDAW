@@ -1,3 +1,3 @@
 function mostrarConfirmacion() {
-    alert("El mensaje se ha enviado correctamente");
+    alert("Gracias por su mensaje, intentaremos responder los antes posible.");
 }

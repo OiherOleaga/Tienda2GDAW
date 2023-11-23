@@ -78,7 +78,6 @@ svg, .cliente img {
     margin-right: auto;
     margin-left: auto;
     max-width: 1140px;
-
 }
 
 .caja {
@@ -182,6 +181,14 @@ input:hover {
 
 .guardar:hover{
     background-color: #051a4e;
+}
+
+h4{
+    font-size: 20px;
+    color: lightgreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 @media (min-width: 700px) {
