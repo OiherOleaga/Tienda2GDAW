@@ -2,18 +2,16 @@
 
 function prepararProductoInsert(&$errorUsuairo, &$producto) {
     require_once "php/methods.php";
-    require_once "php/comprobarVacion.php";
+    require_once "php/comprobarVacios.php";
 
-    $producto = [
-        "titulo" => POST("titulo"),
-        "precio" => POST("precio"),
-        "descripcion" => POST("descripcion")
-    ];
-    require_once "methods.php";
+    $producto["titulo"] = POST("titulo");
+    $producto["precio"] = POST("precio");
+    $producto["descripcion"] = POST("descripcion");
+
     $fotos = [];
-    //añadir el name si se pone foto
+
     for ($i = 0; $i < 5; $i++) {
-        postAddArray($fotos, "foto$i", $i);
+        postAddArray($fotos, "foto$i");
     }
 
     if (count($fotos) < 1) {
@@ -26,17 +24,23 @@ function prepararProductoInsert(&$errorUsuairo, &$producto) {
 
 function prepararProducto(&$errorUsuairo, &$producto, $fotos) {
     require_once "php/descargarImagen.php";
-    if (isset($producto["titulo"])) {
-        // comprobar titulo distinto
+    require_once "db/productos.php";
+    if (isset($producto["titulo"]) && tituloDistinto($producto["titulo"]) != null) {
+        $errorUsuairo = "el titulo esta ocupado";
+        return null;
+    }
+
+    if (isset($producto["precio"]) && !is_numeric($producto["precio"])) {
+        $errorUsuairo = "precio tiene que ser numerico";
+        return null;
     }
 
     if (!comprobarVacios($producto)) {
         $errorUsuario = "No puede haber ningun campo vacio";
         return null;
     }
-    $fotos;
-    descargarFotoProducto($fotos, /* getMaxId(producto)*/);
-    return $fotos;
+
+    return descargarFotoProducto($fotos, getMaxIdProducto(), $_SESSION["id"]);
 }
 
 function prepararProductoUpdate() {

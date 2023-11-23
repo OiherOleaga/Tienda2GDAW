@@ -3,28 +3,30 @@
 require "php/comprobarSesion.php";
 
 if (!comprobarSesion()) {
-    header("Location : /");
+    header("Location: /");
+    exit;
 }
 
-$mensajeUsuairo = "";
+$mensajeUsuario = "";
 $errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/productos.php";
-    require "db/fotoProducto.php";
+    require "db/fotosProducto.php";
     require "php/prepararProducto.php";
     try {
         $producto = [
             "idComerciante" => $_SESSION["id"]
         ];
-        $fotos = prepararProductoInsert($mensajeUsuairo, $producto);
+        $fotos = prepararProductoInsert($mensajeUsuario, $producto);
 
         if ($fotos) {
             insertFotoProducto($fotos, insertProducto($producto));
+            $mensajeUsuario = "producto añadido";
         }
     } catch (Exection $e) {
         $errorDev = $e->getMessage();
-        $mensajeUsuairo = "error al insertar";
+        $mensajeUsuario = "error al insertar";
     }
 }
 

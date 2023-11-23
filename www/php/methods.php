@@ -36,7 +36,7 @@ function postDato($name) {
 }
 
 function postAddArray(&$usuario, $key, $keyArray = null) {
-    if ($keyArray) {
+    if (!$keyArray) {
         $keyArray = $key;
     }
     if (isset($_POST[$key])) {

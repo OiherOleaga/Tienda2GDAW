@@ -12,16 +12,19 @@ function descargarAvatar($id, $avatar, $tipo) {
 
 function descargarImagen($img, $ruta) {
     if ($img != "") {
-        $url = $ruta "." . analizarImg($img);
+        $url = $ruta . "." . analizarImg($img);
         file_put_contents(".$url", base64_decode($img));
     }
     return $url;
 }
 
 function descargarFotoProducto($fotos, $idProducto, $idComerciante) {
-        //$id = $id == ""? 0 : $id + 1;
-    return  = descargarImagen($avatar, "/assets/avatares/" . hash("sha256" , "$tipo asldfjkasl$id"));
-        
+    $idProducto = $idProducto == ""? 0 : $idProducto + 1;
+
+    foreach ($fotos as $key => $foto) {
+        $fotos[$key] = descargarImagen($foto, "/assets/producto/" . hash("sha256" , "$idComerciante $idProducto asldfjkasl$key"));
+    }
+    return $fotos;
 }
 
 function analizarImg(&$img) {

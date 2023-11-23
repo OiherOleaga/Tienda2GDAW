@@ -22,35 +22,35 @@
             <div class="fotos">
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="foto0" class="outputFoto">
+                    <input type="hidden" id="foto0" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
 
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="foto1" class="outputFoto">
+                    <input type="hidden" id="foto1" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
 
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="foto2" class="outputFoto">
+                    <input type="hidden" id="foto2" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
 
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="foto3" class="outputFoto">
+                    <input type="hidden" id="foto3" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
 
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="foto4" class="outputFoto">
+                    <input type="hidden" id="foto4" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
             </div>
-
+            <p><?= $mensajeUsuario ?></p>
 
 
             <button type="submit">Subir Producto</button>
@@ -59,5 +59,6 @@
 </div>
 
 <script src="/js/insertarVariasFotos.js"></script>
+<?php require("php/views/partials/scriptError.php") ?>
 
 <?php require("partials/footer.php"); ?>

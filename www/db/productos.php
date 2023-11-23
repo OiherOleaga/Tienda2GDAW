@@ -244,6 +244,16 @@ function borrarProductoId($id)
 
 
 function insertProducto($producto) {
-    execute("INSERT INTO Productos (titulo, precio, descripcion, fecha, id_comerciante) VALUES (:titulo, :precio, :descripcion, NOW(), :idComerciante)", $producto);
+    execute("INSERT INTO Productos (titulo, precio, descripcion, fecha, id_comerciante) 
+            VALUES (:titulo, :precio, :descripcion, NOW(), :idComerciante)", $producto);
     return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
+}
+
+function getMaxIdProducto() {
+    $id = select("SELECT max(id) as id FROM Productos");
+    return ($id? $id[0]["id"] : 0);
+}
+
+function tituloDistinto($titulo) {
+    return select("SELECT 1 FROM Productos WHERE titulo = ?", $titulo);
 }
