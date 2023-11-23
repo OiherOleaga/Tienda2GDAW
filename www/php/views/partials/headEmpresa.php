@@ -29,7 +29,7 @@
         </div>
         <div class="botones">
             <button class="avatar" id="btnAvatar"><img src='<?= $cliente['Avatar'] ?>' alt="avatar del cliente"></button>
-            <a href="" class="btn"><i class="fa-solid fa-upload"></i>Subir Producto</a>
+            <a href="/subirProducto" class="btn"><i class="fa-solid fa-upload"></i>Subir Producto</a>
         </div>
         <div id="menuDesp" class="menuDesp" style="bottom: -20px; right:167px;">
             <a id="cerrarSesion">Cerrar Sesi&oacute;n</a>

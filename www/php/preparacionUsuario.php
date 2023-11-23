@@ -2,11 +2,12 @@
 
 
 function preparacionCliente($usuario, &$errorUsuario) {
-    require_once "./db/comerciantes.php";
     require_once "./db/clientes.php";
+    require_once "php/comprobarVacion.php";
+    require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
-        $usuario["avatar"] = descargarImagen(getMaxIdClientes(), $usuario["avatar"]);
+        $usuario["avatar"] = descargarAvatar(getMaxIdClientes(), $usuario["avatar"], "cliente");
     }
 
     if (!comprobarVacios($usuario)) {
@@ -18,10 +19,11 @@ function preparacionCliente($usuario, &$errorUsuario) {
 
 function preparacionComerciante($usuario, &$errorUsuario) {
     require_once "./db/comerciantes.php";
-    require_once "./db/clientes.php";
+    require_once "php/comprobarVacion.php";
+    require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
-        $usuario["avatar"] = descargarImagen(getMaxIdComerciantes(), $usuario["avatar"]);
+        $usuario["avatar"] = descargarAvatar(getMaxIdComerciantes(), $usuario["avatar"], "comerciante");
     }
 
     if (!comprobarVacios($usuario)) {
@@ -76,12 +78,13 @@ function preparacionUsuarioInsert($tipo, &$errorUsuario) {
 }
 
 function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
+    require_once "methods.php";
     $usuario = [];
-    addUsuario($usuario, "avatar"); 
-    addUsuario($usuario, "username"); 
-    addUsuario($usuario, "correo");
-    addUsuario($usuario, "telefono");
-    addUsuario($usuario, "direccion");
+    postAddArray($usuario, "avatar"); 
+    postAddArray($usuario, "username"); 
+    postAddArray($usuario, "correo");
+    postAddArray($usuario, "telefono");
+    postAddArray($usuario, "direccion");
 
     if (isset($_POST["contrasenia"]) && $_POST["contrasenia"] != "") {
         $usuario["contrasenia"] = hash("sha256", POST("contrasenia"));
@@ -107,44 +110,3 @@ function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
     }    
 }
 
-function addUsuario(&$usuario, $key) {
-    if (isset($_POST[$key])) {
-        $usuario[$key] = $_POST[$key];
-    }
-}
-
-function comprobarVacios($datos) {
-    foreach ($datos as $key => $dato) {
-        $dato = trim($dato);
-        if ($dato === "")  {
-            return false;
-        }
-    }
-    return true;
-}
-
-function descargarImagen($id, $avatar) {
-    if ($avatar == "") {
-        $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
-    } else {
-        $id = $id == ""? 0 : $id + 1;
-        $urlAvatar = "/assets/avatares/" . hash("sha256" , "comerciante_asldfjkasl$id") . "." . analizarImg($avatar);
-        file_put_contents(".$urlAvatar", base64_decode($avatar));
-    }
-    return $urlAvatar;
-}
-
-function analizarImg(&$img) {
-    $extension = "";
-    if ($img[10] != "/") {
-        throw new Exception("Formato imagen incorrecto");
-    }
-    for ($i = 11; $i < 23; $i++) {
-        if ($img[$i] == ";") {
-            $img = substr($img, $i + 8);
-            return $extension;
-        }
-        $extension .= $img[$i];
-    }
-    throw new Exception("Formato imagen incorrecto");
-}

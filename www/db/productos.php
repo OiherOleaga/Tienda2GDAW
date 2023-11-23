@@ -241,3 +241,9 @@ function borrarProductoId($id)
 {
     return execute("DELETE FROM Productos WHERE ID=?", $id);
 }
+
+
+function insertProducto($producto) {
+    execute("INSERT INTO Productos (titulo, precio, descripcion, fecha, id_comerciante) VALUES (:titulo, :precio, :descripcion, NOW(), :idComerciante)", $producto);
+    return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
+}
