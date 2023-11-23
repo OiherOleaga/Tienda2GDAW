@@ -38,3 +38,8 @@ function updateComerciante($datos, $id) {
         execute(substr($query, 0, -1) . " WHERE id = :id", $datos);
     }
 }
+
+function borrarComercianteId($id)
+{
+    return execute("DELETE FROM Comerciantes WHERE ID=?", $id);
+}

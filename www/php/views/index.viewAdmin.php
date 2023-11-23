@@ -39,7 +39,7 @@
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay productos</h2>
+        <h2 style="color:red;">No hay Productos</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -96,13 +96,14 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button>Borrar</button></a>
+                        <a
+                            href="/php/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay clientes</h2>
+        <h2 style="color:red;">No hay Clientes</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -148,13 +149,13 @@
                     </td>
                     <td class="Borrar">
                         <a
-                            href="/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button>Borrar</button></a>
+                            href="/php/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
     <?php } else { ?>
-        <h2>No hay comerciantes</h2>
+        <h2 style="color:red;">No hay Comerciantes</h2>
     <?php } ?>
 </div>
 <div class="tabla">
@@ -176,16 +177,16 @@
                     </td>
                     <td class="Borrar">
                         <a
-                            href="/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
+                            href="/php/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
         <div class="insertar"> <a
-                href="/indexAdmin.php?accion=insertarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
+                href="/php/indexAdmin.php?accion=insertarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button>Borrar</button></a>
         </div>
     <?php } else { ?>
-        <h2>No hay categorias</h2>
+        <h2 style="color:red;">No hay categorias</h2>
     <?php } ?>
 </div>
 <?php require("partials/footer.php") ?>

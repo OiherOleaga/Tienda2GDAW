@@ -5,20 +5,26 @@ require "../db/comerciantes.php";
 require "../db/categorias.php";
 
 
-$productos= consultarProductosAdmin();
-$clientes= getClientes();
-$comerciantes= getComerciantes();
-$categorias= getCategorias();
+$productos = consultarProductosAdmin();
+$clientes = getClientes();
+$comerciantes = getComerciantes();
+$categorias = getCategorias();
 
-function realizarAccion($accion){
+function realizarAccion($accion)
+{
     switch ($accion) {
         case 'borrarProducto':
             borrarProductoId($_GET["id"]);
             break;
         case 'borrarCliente':
-            
+            borrarClienteId($_GET["id"]);
             break;
-        
+        case 'borrarComerciante':
+            borrarComercianteId($_GET["id"]);
+            break;
+        case 'borrarCategoria':
+            borrarCategoriaId($_GET["id"]);
+            break;
     }
 }
 

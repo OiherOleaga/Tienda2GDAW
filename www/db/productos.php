@@ -239,5 +239,5 @@ function consultarProductoLikes($id)
 
 function borrarProductoId($id)
 {
-    return execute("DELETE CASCADE FROM Productos WHERE ID=?", $id);
+    return execute("DELETE FROM Productos WHERE ID=?", $id);
 }
