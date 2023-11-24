@@ -37,6 +37,10 @@ body {
         100%;
 }
 
+main {
+    min-height: 100vh;
+}
+
 header {
     display: flex;
     position: sticky;
@@ -108,8 +112,8 @@ a {
     font-weight: 700;
     border-radius: 51px;
     border: 0;
-    width: 130px;
-    padding: 1rem;
+    gap: 10px;
+    width: 180px;
     height: 40px;
     font-size: .9rem;
 }
@@ -123,6 +127,7 @@ a {
 }
 
 .avatar img {
+    border: 1px solid black ;
     border-radius: 50%;
     object-fit: cover;
     width: 55px;
@@ -288,6 +293,32 @@ h5 {
     -webkit-line-clamp: 2;
 }
 
+.ayuda p{
+    margin: 10px 0;
+
+}
+
+.ayuda p, h2, h3, h1{
+    text-align: justify;
+}
+
+#nada {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#nada img {
+    width: 200px;
+}
+
+#nada p {
+    color: gray;
+    text-align: center;
+    font-weight: 600;
+}
+
 .productos img {
     object-fit: cover;
     width: 180px;
@@ -317,7 +348,6 @@ footer img {
 
 /*MOVILES DE PANTALLA REDUCIDA*/
 @media (max-width:350px) {
-
     header,
     main,
     .btn,
@@ -356,37 +386,14 @@ footer img {
         width: 100px;
         height: 100px;
     }
+
 }
 
 /*TABLETS*/
 @media (min-width: 600px) {
-    .perfil {
-        display: none;
+    .botones{
+        gap: 30px;
     }
-
-    header {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    body {
-        display: grid;
-        grid-template:
-            "header" 100px
-            "main" auto
-            "footer" 50px/
-            100%;
-    }
-
-    .avatar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: transparent;
-        border: 0;
-        padding: .4em;
-    }
-
     .menuDesp {
         position: absolute;
         right: 5px;
@@ -420,7 +427,7 @@ footer img {
         color: red;
     }
 
-    .menuDesp #cerrarSesion:hover{
+    .menuDesp #cerrarSesion:hover {
         color: red;
     }
 
@@ -474,6 +481,10 @@ footer img {
         justify-items: center;
     }
 
+    #nada img {
+        width: 500px;
+    }
+
     footer {
         flex-direction: row;
     }
@@ -482,7 +493,33 @@ footer img {
 
 /*MODO ESCRITORIO*/
 @media (min-width: 900px) {
-   
+    .avatar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent;
+        border: 0;
+        padding: .4em;
+    }
+
+    .perfil {
+        display: none;
+    }
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    body {
+        display: grid;
+        grid-template:
+            "header" 100px
+            "main" auto
+            "footer" 50px/
+            100%;
+    }
+
     .btnDerecha,
     .btnIzquierda {
         display: flex;

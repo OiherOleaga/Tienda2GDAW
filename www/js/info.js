@@ -1,41 +1,33 @@
-let inputsDatos = document.getElementsByClassName("datos")
+let inputFoto = document.getElementById("inputFoto");
+let outputFoto = document.getElementById("outputFoto");
+
+let inputsDatos = document.getElementsByClassName("datoInput")
 
 for (let input of inputsDatos) {
+    console.log(input)
     input.addEventListener("input", function () {
-        if (this.getAttribute("value1") === this.value) {
-            this.removeAttribute("name")
+        if (input.getAttribute("value1") === input.value) {
+            input.removeAttribute("name")
         } else {
-            this.setAttribute("name", this.id);
+            input.setAttribute("name", input.id);
         }
     })
 }
 
-for (let btBorrar of document.getElementsByClassName("btBorrar")) {
-    btBorrar.addEventListener("click", () => {
-        fetch(location.pathname + "?borrar=" + btBorrar.id)
-            .then(res => res.text())
-            .then(res => {
-                if (res === "ok") {
-                    btBorrar.parentNode.parentNode.remove();
-                } else {
-                    console.log(res)
-                }
-            })
-            .catch(error => console.log(error));
-    })
-}
+document.getElementsByClassName("cambiarFoto")[0].addEventListener("click", () => {
+    inputFoto.click();
+})
 
-let inputFoto = document.getElementById("inputFoto");
-let outputFoto = document.getElementById("outputFoto");
+
+// codigo para foto de perfil 
 
 const canvas = document.getElementById('canvasFotoPerfil');
 const contexto = canvas.getContext('2d');
 let imagen = new Image();
 const canvasSize = 100;
 let isDragging = false;
-let x = (canvasSize - imagen.width) / 2;
-let y = (canvasSize - imagen.height) / 2;
-
+let x;
+let y;
 
 imagen.src = canvas.getAttribute("src") ? canvas.getAttribute("src") : '/assets/avatares/fotoPerfil.jpg';
 
@@ -49,42 +41,10 @@ imagen.onload = function () {
 };
 
 inputFoto.addEventListener("change", () => {
+    console.log("ajdslkfa")
     if (inputFoto.files && inputFoto.files[0]) {
         const reader = new FileReader();
-
-        canvas.addEventListener("mousedown", (e) => {
-            isDragging = true;
-            offsetX = e.clientX - x;
-            offsetY = e.clientY - y;
-        })
-
-        canvas.addEventListener("mousemove", (e) => {
-            if (isDragging) {
-                x = e.clientX - offsetX;
-                y = e.clientY - offsetY;
-                reDrawImg(true);
-            }
-        })
-
-        canvas.addEventListener("mouseup", () => {
-            isDragging = false;
-        })
-
-        canvas.addEventListener("mouseleave", () => {
-            isDragging = false;
-        })
-
-        canvas.addEventListener("wheel", (e) => {
-            e.preventDefault();
-
-            const scaleFactor = e.deltaY < 0 ? 1.05 : 0.95;
-
-            imagen.width *= scaleFactor;
-            imagen.height *= scaleFactor;
-
-            reDrawImg(true);
-        })
-
+        eventosDeMover();
         reader.onload = function (e) {
             imagen = new Image();
             imagen.src = e.target.result;
@@ -102,6 +62,43 @@ inputFoto.addEventListener("change", () => {
         reader.readAsDataURL(inputFoto.files[0]);
     }
 });
+
+function eventosDeMover() {
+    let offsetX;
+    let offsetY;
+    canvas.addEventListener("mousedown", (e) => {
+        isDragging = true;
+        offsetX = e.clientX - x;
+        offsetY = e.clientY - y;
+    })
+
+    canvas.addEventListener("mousemove", (e) => {
+        if (isDragging) {
+            x = e.clientX - offsetX;
+            y = e.clientY - offsetY;
+            reDrawImg(true);
+        }
+    })
+
+    canvas.addEventListener("mouseup", () => {
+        isDragging = false;
+    })
+
+    canvas.addEventListener("mouseleave", () => {
+        isDragging = false;
+    })
+
+    canvas.addEventListener("wheel", (e) => {
+        e.preventDefault();
+
+        const scaleFactor = e.deltaY < 0 ? 1.05 : 0.95;
+
+        imagen.width *= scaleFactor;
+        imagen.height *= scaleFactor;
+
+        reDrawImg(true);
+    })
+}
 
 function reDrawImg(guardar) {
     contexto.clearRect(0, 0, canvas.width, canvas.height);

@@ -68,4 +68,5 @@
     </div>
 </div>
 <script type="module" src="/js/verPerfil.js"></script>
+<?php require("php/views/partials/scriptError.php") ?>
 <?php require("partials/footer.php") ?>

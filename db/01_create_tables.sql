@@ -45,25 +45,16 @@ CREATE TABLE Categorias_Productos (
     ID_Categorias INT,
     ID_Producto INT,
     PRIMARY KEY (ID_Categorias, ID_Producto),
-    FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
-);
-
-CREATE TABLE Comprar (
-    ID INT PRIMARY KEY AUTO_INCREMENT,
-    Fecha DATE,
-    ID_Cliente INT,
-    ID_Producto INT,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+    FOREIGN KEY (ID_Categorias) REFERENCES Categorias(ID) ON DELETE CASCADE, 
+    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Likes (
     ID_Cliente INT,
     ID_Producto INT,
     PRIMARY KEY (ID_Cliente, ID_Producto),
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Resenna_producto (
@@ -73,8 +64,8 @@ CREATE TABLE Resenna_producto (
     puntuacion INT,
     comentario TEXT,
     fecha DATE,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Resenna_comerciante (
@@ -84,29 +75,20 @@ CREATE TABLE Resenna_comerciante (
     puntuacion INT,
     comentario TEXT,
     fecha DATE,
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID),
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
+    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE,
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Fotos_producto(
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Producto INT,
     URL VARCHAR(255),
-    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID)
+    FOREIGN KEY (ID_Producto) REFERENCES Productos(ID) ON DELETE CASCADE
 );
 
 CREATE TABLE Direcciones (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Comerciante INT,
     Direccion VARCHAR(255),
-    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID)
-);
-
-CREATE TABLE TarjetaCredito (
-    Numero VARCHAR(19), 
-    ID_Cliente INT,
-    FechaExpiracion DATE,
-    CVV INT,
-    PRIMARY KEY (Numero, ID_Cliente),
-    FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE
+    FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID) ON DELETE CASCADE
 );

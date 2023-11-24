@@ -76,6 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (guardar) {
                 let extension = inputFoto.value.substring(inputFoto.value.lastIndexOf(".") + 1, inputFoto.value.length);
                 outputFoto.value = canvas.toDataURL('image/' + extension);
+                outputFoto.setAttribute("name", outputFoto.id);
             }
         }
     }

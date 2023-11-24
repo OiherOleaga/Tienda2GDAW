@@ -6,11 +6,11 @@
     <div class="datos">
         <form method="post">
             <div class="inputbox" id="inputBoxTitulo">
-                <input type="text" name="Titulo" required>
+                <input type="text" name="titulo" required>
                 <label>Titulo Producto</label>
             </div>
             <div class="inputbox" id="inputBoxPrecio">
-                <input type="text" name="Precio" required>
+                <input type="text" name="precio" required>
                 <label>Precio</label>
             </div>
             <div class="cat">
@@ -25,12 +25,12 @@
             </div>
 
             <label>Descripcion</label>
-            <textarea id="descripcion" name="mensaje" required></textarea>
+            <textarea id="descripcion" name="descripcion" required></textarea>
 
-            <div class="fotos" id="contenedorFotos">
+            <div class="fotos">
                 <div class="inputbox">
                     <canvas class="canvasFotoPerfil"></canvas>
-                    <input type="hidden" name="avatar" class="outputFoto">
+                    <input type="hidden" id="foto0" class="outputFoto">
                     <input type="file" class="inputFoto" accept="image/*">
                 </div>
             </div>
@@ -43,7 +43,7 @@
     </div>
 </div>
 
-<script src="js/insertarVariasFotos.js">
-</script>
+<script src="/js/insertarVariasFotos.js"></script>
+<?php require("php/views/partials/scriptError.php") ?>
 
 <?php require("partials/footer.php"); ?>

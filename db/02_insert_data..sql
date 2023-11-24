@@ -19,8 +19,8 @@ VALUES
     ('Nintendo3DS', 12.99, 'Consola portatil Nintendo 3DS con pantalla 3D sin necesidad de gafas. Incluye dos pantallas, camara integrada y compatibilidad con juegos clasicos de Nintendo.', 1),
     ('MAC', 27.99, 'Sistema operativo macOS disenado para computadoras Mac. Incluye una interfaz intuitiva, seguridad avanzada y compatibilidad con software creativo.', 1),
     ('PlayStation 3', 34.99, 'Consola de juegos clasica con una biblioteca impresionante de titulos. Incluye un controlador inalambrico DualShock 3 y capacidad para reproduccion de Blu-ray.', 1),
-    ('Videojuego PS5', 21.99, 'Ultimo titulo de aventuras para PlayStation 5. Graficos asombrosos, jugabilidad envolvente y una historia cautivadora que te mantendra entretenido durante horas.', 1),
-    ('PlayStation 5', 399.99, 'La consola de nueva generacion de Sony con capacidad para juegos en 4K. Incluye un controlador DualSense con retroalimentacion haptica para una experiencia inmersiva.', 2),
+    ('Grand Theft Auto 5 (PS5)', 21.99, 'Ultimo titulo de aventuras para PlayStation 5. Graficos asombrosos, jugabilidad envolvente y una historia cautivadora que te mantendra entretenido durante horas.', 1),
+    ('Assassins Creed Valhalla', 399.99, 'Assassins Creed Valhalla es un videojuego desarrollado por Ubisoft Montreal y publicado por Ubisoft. Es el decimosegundo en importancia y el vigesimosegundo lanzado dentro de la saga de Assassin Creed, y sucesor al juego del 2018 Assassins Creed Odyssey.', 2),
     ('Tablet Android', 149.99, 'Tablet Android de 10 pulgadas con procesador rapido, 64GB de almacenamiento y una pantalla de alta resolucion. Perfecta para entretenimiento y productividad.', 2),
     ('Smartphone Samsung', 299.99, 'Potente smartphone Samsung con pantalla AMOLED de 6.5 pulgadas, camara triple de 48MP y bateria de larga duracion. Rendimiento excepcional para multitarea.', 2),
     ('Teclado Mecanico', 79.99, 'Teclado mecanico RGB con interruptores Cherry MX. Diseno duradero y retroiluminacion personalizable para una experiencia de escritura y juego optima.', 2),
@@ -261,10 +261,6 @@ INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
 
 -- Insertar datos en la tabla Fotos_producto
 INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
-    (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
-    (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
-    (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
-    (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
     (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
     (2, 'https://m.media-amazon.com/images/I/31KrKAKoLrL._SL500_.jpg'),
     (2, 'https://m.media-amazon.com/images/I/31KrKAKoLrL._SL500_.jpg'),

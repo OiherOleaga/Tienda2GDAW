@@ -34,3 +34,12 @@ function POST_J($name) {
 function postDato($name) {
     return isset($_POST[$name]) ? $_POST[$name] : "";
 }
+
+function postAddArray(&$usuario, $key, $keyArray = null) {
+    if (!$keyArray) {
+        $keyArray = $key;
+    }
+    if (isset($_POST[$key])) {
+        $usuario[$keyArray] = $_POST[$key];
+    }
+}

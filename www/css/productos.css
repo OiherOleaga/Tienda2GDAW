@@ -118,23 +118,12 @@ form {
     height: auto;
 }
 
-#nada p {
-    color: gray;
-    text-align: center;
-    font-weight: 600;
-}
-
 @media (min-width: 600px) {
     main{
         padding: 0;
     }
 
-    .botonesFiltro {
-        top: 100px;
-    }
-
     .bloque {
-        top: 100px;
         width: 230px;
         font-size: 16px;
     }

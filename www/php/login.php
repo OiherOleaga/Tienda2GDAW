@@ -16,6 +16,7 @@ $errorDev = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "./db/clientes.php";
     require "./db/comerciantes.php";
+    require "./db/administradores.php";
     try {
         $datos = [
             "username" => strtoupper(POST("usuario")),
@@ -27,8 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $tipo = "comerciante";
             $id = getIdComerciante($datos);
             if ($id == null) {
-                $errorUsuario = "Nombre o contraseña incorrecto";
-                goto fin;
+                $tipo = "administrador";
+                $id = getIdAdministrador($datos);
+                if ($id == null) {
+                    $errorUsuario = "Nombre o contraseña incorrecto";
+                    goto fin;
+                }
             }
         }
         session_start();
