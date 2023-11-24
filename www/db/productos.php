@@ -257,3 +257,20 @@ function getMaxIdProducto() {
 function tituloDistinto($titulo) {
     return select("SELECT 1 FROM Productos WHERE titulo = ?", $titulo);
 }
+function consultarProductosSimilares($cat)
+{
+    return select("SELECT 
+    P.ID AS ID,
+    P.Titulo AS Titulo,
+    P.Precio AS Precio,
+    P.Descripcion AS Descripcion,
+    P.Fecha AS ProductoFecha,
+    MIN(F1.ID) AS FotoID,
+    F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL AND Categoria=?
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID ASC", $cat); 
+}

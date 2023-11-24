@@ -14,7 +14,6 @@ if (($producto = consultarProductoID(GET("idProducto"))) === null) {
 $empresa = getComerciante($producto["idEmpresa"]);
 $like = false;
 require "./php/comprobarSesion.php";
-
 if (($cliente = comprobarSesion())) {
     require "db/likes.php";
     $like = getLike($cliente["ID"], $producto["ID"]);
