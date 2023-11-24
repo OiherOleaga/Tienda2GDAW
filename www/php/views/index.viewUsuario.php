@@ -1,6 +1,6 @@
 <div class="seccion1">
-    <h3>Compra y vende artículos en InfiniteChoice</h3>
-    <p>una comunidad que lleva años generando impacto del bueno</p>
+    <h3>Compra y vende artículos en <strong style="color:#0A3093;">InfiniteChoice</strong></h3>
+    <p>una comunidad vitoriana que lleva años generando impacto del bueno</p>
     <form action="/productos">
         <div class="buscar"> <input class="search" type="search" placeholder="" name="search">
         </div>

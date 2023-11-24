@@ -89,7 +89,7 @@ form {
 }
 
 .precio input:hover {
-    border: 2px solid black;
+    border: 2px solid #0A3093;
 }
 
 .filtro select {
@@ -202,7 +202,6 @@ form {
 
     .bloque {
         position: relative;
-        border-right: 1px solid lightgray;
         transition: none;
         transform: none;
         top: 0;
@@ -248,10 +247,6 @@ form {
         height: 30px;
         border-radius: 10px;
         border: 0;
-    }
-
-    .precio input:hover {
-        border: 2px solid black;
     }
 
     .filtro select {
