@@ -25,6 +25,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorUsuario = "error al cambair los datos";
         $errorDev = $e->getMessage();
     }
+} else if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if (isset($_GET["borrar"])) {
+        require_once "db/productos.php";
+        require_once "db/fotosProducto.php";
+        try {
+            borrarFotosProducto($_GET["borrar"]);
+            borrarProductoId($_GET["borrar"]);
+            echo "ok";
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
+        exit;
+    }
 }
 
 $productos = getProductosComerciante($empresa["ID"]);

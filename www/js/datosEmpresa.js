@@ -10,7 +10,20 @@ for (let input of inputsDatos) {
     })
 }
 
-
+for (let btBorrar of document.getElementsByClassName("btBorrar")) {
+    btBorrar.addEventListener("click", () => {
+        fetch(location.pathname + "?borrar=" + btBorrar.id)
+            .then(res => res.text())
+            .then(res => {
+                if (res === "ok") {
+                    btBorrar.parentNode.parentNode.remove();
+                } else {
+                    console.log(res)
+                }
+            })
+            .catch(error => console.log(error));
+    })
+}
 
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");

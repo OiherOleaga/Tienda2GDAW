@@ -89,7 +89,7 @@
                             <button>Editar</button>
                         </td>
                         <td class="Borrar">
-                            <button>Borrar</button>
+                            <button class="btBorrar" id="<?= $productos[$i]['ID'] ?>" >Borrar</button>
                         </td>
                     </tr>
                 <?php } ?>
