@@ -17,11 +17,11 @@
             <?php
             $arrayFotos = explode(',', $producto["Fotos"]);
             if (count($arrayFotos) > 1) {
-            ?>
+                ?>
                 <div class=" btn-left">
                     <i class="fa-solid fa-arrow-left fa-2xl"></i>
                 </div>
-            <?php
+                <?php
             }
             ?>
 
@@ -37,32 +37,41 @@
             </div>
             <?php
             if (count($arrayFotos) > 1) {
-            ?>
+                ?>
                 <div class="btn-right">
                     <i class="fa-solid fa-arrow-right    fa-2xl"></i>
                 </div>
-            <?php
+                <?php
             }
             ?>
 
         </div>
         <div class="titulo">
-            <p><?= $producto["Titulo"] ?></p>
+            <p>
+                <?= $producto["Titulo"] ?>
+            </p>
         </div>
         <div class="precio">
-            <h5><?= $producto["Precio"] . "€" ?></h5>
+            <h5>
+                <?= $producto["Precio"] . "€" ?>
+            </h5>
         </div>
         <div class="desc">
-            <p><?= $producto["Descripcion"] ?></p>
+            <p>
+                <?= $producto["Descripcion"] ?>
+            </p>
         </div>
     </div>
-</div>
+</div>  
 <div class="mapa">
     <div id="map">
-        <p id="latitud"> <?= $latitude ?> </p>
-        <p id="longi"> <?= $longitude ?> </p>
+        <p id="latitud">
+            <?= $latitude ?>
+        </p>
+        <p id="longi">
+            <?= $longitude ?>
+        </p>
     </div>
-</div>
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/scriptVerProducto.js"></script>

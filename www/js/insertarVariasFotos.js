@@ -80,22 +80,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     }
-
-    function agregarInputBox() {
-        var contenedorFotos = document.getElementById('contenedorFotos');
-
-        if (contenedorFotos.children.length < 5) {
-            var inputBox = document.createElement('div');
-            inputBox.className = 'inputbox';
-
-            inputBox.innerHTML = '<canvas class="canvasFotoPerfil"></canvas>' +
-                '<input type="hidden" name="avatar" class="outputFoto">' +
-                '<input type="file" class="inputFoto" accept="image/*">';
-
-            contenedorFotos.appendChild(inputBox);
-        } else {
-            alert('No se pueden agregar más de 5 fotos a un producto.');
-        }
-    }
-
 });
+
+function agregarInputBox() {
+    var contenedorFotos = document.querySelector('.fotos');
+    if (contenedorFotos.children.length < 5) {
+        var inputBox = document.createElement('div');
+        inputBox.className = 'inputbox';
+
+        inputBox.innerHTML = '<canvas class="canvasFotoPerfil"></canvas>' +
+            '<input type="hidden" name="foto' + contenedorFotos.children.length + '" class="outputFoto">' +
+            '<input type="file" class="inputFoto" accept="image/*">';
+
+        contenedorFotos.appendChild(inputBox);
+    } else {
+        alert('No se pueden agregar más de 5 fotos a un producto.');
+    }
+}  
