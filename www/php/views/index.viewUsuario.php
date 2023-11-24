@@ -74,9 +74,9 @@
             <p>Nada por aqui...</p>
         </div>
     <?php } else { ?>
-        <div class="productos" id="gridProductos2">
-            <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
-            <?php for ($i = 0; $i < 10; $i++) { ?>
+        <div class="productos" id="gridProductos3">
+            <button class="btnIzquierda" data-container="gridProductos3"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
+            <?php for ($i = 0; $i < 20; $i++) { ?>
                 <a href="/producto?idProducto=<?= $productosNuevos[$i]["ID"] ?>">
                     <div class="caja">
                         <div class="img"><img src=<?= $productosNuevos[$i]["Foto"] ?>></div>
@@ -93,7 +93,7 @@
                     </div>
                 </a>
             <?php } ?>
-            <button class="btnDerecha" data-container="gridProductos2"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
+            <button class="btnDerecha" data-container="gridProductos3"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
         <?php } ?>
         </div>
 </div>
