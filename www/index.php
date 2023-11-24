@@ -24,6 +24,9 @@ if (($cliente = comprobarSesion())) {
         case "comerciante":
             require "php/indexEmpresa.php";
             exit;
+        case "administrador":
+            require "php/indexAdmin.php";
+            exit;
     }
 } else {
     require("php/views/partials/headInicio.php");
