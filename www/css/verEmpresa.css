@@ -12,8 +12,8 @@ main {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid lightgrey;
-    box-shadow: 7px 6px 5px lightgrey;
+    border: 1px solid #0A3093;
+    box-shadow: inset 0px 0px 8px #0A3093;
     border-radius: 10px;
     gap: 10px;
     padding: 10px;

@@ -122,7 +122,8 @@ VALUES
     ('Cuerda de Escalada', 89.99, 'Cuerda de escalada resistente y duradera. Apta para escaladores principiantes y avanzados.', 5),
     ('Sudadera con Capucha para Running', 34.99, 'Sudadera con capucha transpirable y ligera. Disenada para mantenerte abrigado durante tus carreras al aire libre.', 5),
     ('Pelota de Yoga', 16.99, 'Pelota de yoga duradera para fortalecimiento y estiramientos. Ideal para mejorar la postura y la flexibilidad.', 5),
-    ('Linterna Frontal LED para Running', 24.99, 'Linterna frontal LED recargable para correr de noche. Proporciona visibilidad y seguridad durante tus carreras nocturnas.', 5);
+    ('Linterna Frontal LED para Running', 24.99, 'Linterna frontal LED recargable para correr de noche. Proporciona visibilidad y seguridad durante tus carreras nocturnas.', 5),
+    ('Grand Theft Auto VI (PS5)', 79.99, 'Ultimo titulo realizado por la compania Rockstar Games para PlayStation 5. Graficos asombrosos, jugabilidad envolvente y una historia cautivadora que te mantendra entretenido durante horas.', 1);
 
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
@@ -255,7 +256,8 @@ INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
     (4, 110),
     (4, 111),
     (4, 112),
-    (4, 113);
+    (4, 113),
+    (1, 114);
     
 
 
@@ -379,4 +381,5 @@ INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (110, 'https://m.media-amazon.com/images/I/71mIj2SQKLL._AC_UL640_FMwebp_QL65_.jpg'),
     (111, 'https://m.media-amazon.com/images/I/61n9ddi2XyL._AC_UL640_FMwebp_QL65_.jpg'),
     (112, 'https://m.media-amazon.com/images/I/810AFqNI8rL._AC_UL640_FMwebp_QL65_.jpg'),
-    (113, 'https://m.media-amazon.com/images/I/71yUEjyMaoL._AC_UL640_FMwebp_QL65_.jpg');
+    (113, 'https://m.media-amazon.com/images/I/71yUEjyMaoL._AC_UL640_FMwebp_QL65_.jpg'),
+    (114, '/assets/gta-6-box-art-concept-v0-zximuiigs08b1.png');

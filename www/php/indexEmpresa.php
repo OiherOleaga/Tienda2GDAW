@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         require_once "db/productos.php";
         require_once "db/fotosProducto.php";
         try {
-            borrarFotosProducto($_GET["borrar"]);
+            //borrarFotosProducto($_GET["borrar"]);
             borrarProductoId($_GET["borrar"]);
             echo "ok";
         } catch (Exception $e) {

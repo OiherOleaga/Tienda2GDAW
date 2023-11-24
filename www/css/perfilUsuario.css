@@ -78,13 +78,13 @@ svg, .cliente img {
     max-width: 1140px;
 }
 
-.caja {
-    background-color: #fff;
+.contenedor > .caja {
+    background-color: white;
     border-radius: 10px;
-    border: solid 1px #ECEFF1;
+    border: solid 1px #0A3093;
     margin: 20px 0px;
     padding: 1rem;
-    box-shadow: 7px 9px 16px 0px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 16px #0A3093;
 }
 
 .cajaUsuario {
@@ -126,7 +126,7 @@ svg, .cliente img {
 .datos canvas{
     width: 150px;
     height: 150px;
-    border: 1px solid black;
+    border: 1px solid #0A3093;
     border-radius: 50%;
 }
 
