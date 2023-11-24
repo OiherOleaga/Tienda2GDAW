@@ -39,10 +39,10 @@
                         <div class="datos"><label>Direccion</label>
                             <div class="input"><input type="text" class="datoInput" id="direccion" value="<?= $cliente["Direccion"] ?>" value1="<?= $cliente["Direccion"] ?>"></div>
                         </div>
-                        <h4 style="color: lightgreen;"><?= $mensajeUsuario ?> </h4>
+                        <h4 style="color: #4393E4	;"><?= $mensajeUsuario ?> </h4>
+                </div>
             </div>
+            <button type="submit" class="guardar">Guardar</button>
         </div>
-        <button type="submit" class="guardar">Guardar</button>
-    </div>
-    <script src="/js/info.js"></script>
+        <script src="/js/info.js"></script>
 </form>

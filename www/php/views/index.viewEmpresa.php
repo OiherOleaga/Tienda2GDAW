@@ -8,12 +8,14 @@
     <div class="datosEmpresa">
         <form method="post">
             <div class="imgMapa">
-                <div id="divFotoPerfil" class="inputbox">
-                    <canvas id="canvasFotoPerfil" src=<?= $empresa['Avatar'] ?>></canvas>
+                <div id="divFotoPerfil">
+                    <canvas id="canvasFotoPerfil" src="<?= $empresa['Avatar'] ?>"></canvas>
                     <input type="hidden" id="outputFoto">
                     <input type="file" id="inputFoto" accept="image/*" class="inputbox">
+                    <br>
+                    <input type="button" class="cambiarFoto" value="Cambiar Foto">
                 </div>
-                <div class="mapa">
+                <div class=" mapa">
                     <div id="map">
                         <p id="latitud">
                             <?= $latitude ?>
@@ -26,28 +28,22 @@
             </div>
             <div class="datos">
                 <div class="inputbox" id="inputBoxNombre">
-                    <input type="text" id="username" class="datos" value=<?= $empresa['Nombre_empresa'] ?>
-                        value1=<?= $empresa['Nombre_empresa'] ?> required>
+                    <input type="text" id="username" class="datos" value=<?= $empresa['Nombre_empresa'] ?> value1=<?= $empresa['Nombre_empresa'] ?> required>
                     <label>Nombre empresa</label>
                 </div>
                 <div class="inputbox" id="inputBoxCorreo">
-                    <input type="text" id="correo" class="datos" value=<?= $empresa['Correo'] ?>
-                        value1=<?= $empresa['Correo'] ?> required>
+                    <input type="text" id="correo" class="datos" value=<?= $empresa['Correo'] ?> value1=<?= $empresa['Correo'] ?> required>
                     <label>Correo electronico</label>
                 </div>
                 <div class="inputbox" id="inputBoxTel">
-                    <input type="text" id="telefono" class="datos" value=<?= $empresa['Telefono'] ?>
-                        value1=<?= $empresa['Telefono'] ?> required>
+                    <input type="text" id="telefono" class="datos" value=<?= $empresa['Telefono'] ?> value1=<?= $empresa['Telefono'] ?> required>
                     <label>Telefono</label>
                 </div>
                 <div class="inputbox" id="inputBoxDir">
-                    <input type="text" id="direccion" class="datos" value="<?= $empresa['Direccion'] ?>"
-                        value1="<?= $empresa['Direccion'] ?>" required>
+                    <input type="text" id="direccion" class="datos" value="<?= $empresa['Direccion'] ?>" value1="<?= $empresa['Direccion'] ?>" required>
                     <label>Direccion</label>
                 </div>
-                <p>
-                    <?= $mensajeUsuario ?>
-                </p>
+                <h2 style="color: #4393E4;"><?= $mensajeUsuario ?> </h2>
                 <button type="submit">Guardar cambios</button>
             </div>
 
@@ -89,7 +85,7 @@
                             <a href="/editarProducto?p=<?= $productos[$i]["ID"] ?>"><button>Editar</button></a>
                         </td>
                         <td class="Borrar">
-                            <button class="btBorrar" id="<?= $productos[$i]['ID'] ?>" >Borrar</button>
+                            <button class="btBorrar" id="<?= $productos[$i]['ID'] ?>">Borrar</button>
                         </td>
                     </tr>
                 <?php } ?>
@@ -103,7 +99,7 @@
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/datosEmpresa.js"></script>
-
+<script src="/js/indexEmpresa.js"></script>
 <?php require "php/views/partials/scriptError.php" ?>
 
 <?php require("partials/footer.php") ?>

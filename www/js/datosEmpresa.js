@@ -28,6 +28,8 @@ for (let btBorrar of document.getElementsByClassName("btBorrar")) {
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
 
+document.getElementsByClassName("cambiarFoto")[0].addEventListener("click", () => { inputFoto.click() })
+
 const canvas = document.getElementById('canvasFotoPerfil');
 const contexto = canvas.getContext('2d');
 let imagen = new Image();
