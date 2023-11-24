@@ -35,7 +35,8 @@
                 </div>
             </div>
 
-            <button type="button" onclick="agregarInputBox()">Agregar Foto</button>
+            <button id="subirFoto" type="button" onclick="agregarInputBox()"><i class="fa fa-plus" aria-hidden="true"></i>
+            </button>
 
             <button type="submit">Subir Producto</button>
         </form>

@@ -170,3 +170,8 @@ button {
 .cat * {
     margin: 4px;
 }
+
+#subirFoto {
+    width: 20%;
+    margin-bottom: 50px;
+}
