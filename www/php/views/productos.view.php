@@ -10,7 +10,7 @@
                     <div class="filtro">
                         <div class="nombre">
                             <h4>Buscador</h4>
-                            <div class="buscar"><input class="search" id="search" type="search" placeholder="" name="search" value="<?= $search ?>"></div>
+                            <div class="buscar"><input autofocus class="search" id="search" type="search" placeholder="" name="search" value="<?= $search ?>"></div>
                         </div>
                     </div>
                     <div class="filtro">

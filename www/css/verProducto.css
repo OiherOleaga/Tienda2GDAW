@@ -30,6 +30,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    text-align: center;
 }
 
 .vendedor {
@@ -177,21 +178,14 @@ main {
 
 .producto img {
     object-fit: cover;
-    width: 183px;
-    height: 200px;
+    width: 90%;
     border-radius: 20px;
     margin: 0.5rem 0;
 }
 
-
 .desc {
     padding: 0 1rem;
     font-size: 12px;
-}
-
-.desc p {
-    text-align: center;
-    white-space: pre-line;
 }
 
 .mapa {
@@ -221,11 +215,6 @@ main {
         width: 70%;
     }
 
-    .producto img {
-        width: 345px;
-        height: 500px;
-    }
-
     .vendedor {
         top: 100px;
     }
@@ -250,17 +239,13 @@ main {
 }
 /*ORDENADOR*/
 @media (min-width: 900px) {
+
     .container-carousel {
         height: auto;
     }
 
     .verProductoCaja {
         width: 50%;
-    }
-
-    .producto img {
-        width: 600px;
-        height: 600px;
     }
 
     .vendedor {
