@@ -14,14 +14,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/productos.php";
     require "db/fotosProducto.php";
     require "php/prepararProducto.php";
-    try {
-        $producto = [
-            "idComerciante" => $empresa["ID"]
-        ];
-        $fotos = prepararProductoInsert($mensajeUsuario, $producto);
+    require "db/categoriaProducto.php";
 
-        if ($fotos) {
-            insertFotoProducto($fotos, insertProducto($producto));
+    try {
+        $datos = prepararProductoInsert($mensajeUsuario);
+
+        $datos["producto"]["idComerciante"] = $empresa["ID"];
+        if ($datos) {
+            $idProducto = insertProducto($datos["producto"]);
+            insertFotoProducto($datos["fotos"], $idProducto);
+            insertCategoraiProducto($datos["categorias"], $idProducto);
             $mensajeUsuario = "producto añadido";
         }
     } catch (Exception $e) {

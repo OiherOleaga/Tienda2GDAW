@@ -18,7 +18,7 @@
 
                 <?php foreach ($categorias as $categoria) { ?>
                     <div>
-                        <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?>>
+                        <input type="checkbox" class="categoria" id=<?= $categoria["ID"] ?> name="categorias[]" value=<?= $categoria["ID"] ?>>
                         <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
                     </div>
                 <?php } ?>

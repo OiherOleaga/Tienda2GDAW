@@ -1,12 +1,14 @@
 <?php 
 
-function prepararProductoInsert(&$errorUsuairo, &$producto) {
+function prepararProductoInsert(&$errorUsuario) {
     require_once "php/methods.php";
     require_once "php/comprobarVacios.php";
 
-    $producto["titulo"] = POST("titulo");
-    $producto["precio"] = POST("precio");
-    $producto["descripcion"] = POST("descripcion");
+    $producto = [
+        "titulo" => POST("titulo"),
+        "precio" => POST("precio"),
+        "descripcion" => POST("descripcion")
+    ];
 
     $fotos = [];
 
@@ -15,23 +17,38 @@ function prepararProductoInsert(&$errorUsuairo, &$producto) {
     }
 
     if (count($fotos) < 1) {
-        $errorUsuairo = "minimo una foto";
+        $errorUsuario = "minimo una foto";
         return null;
     }
 
-    return prepararProducto($errorUsuairo, $producto, $fotos);
+    if (!isset($_POST["categorias"])) {
+        $errorUsuario = "tiene que tener minimo una categoria";
+        return null;
+    }
+    $categorias = [];
+    foreach ($_POST["categorias"] as $categoria) {
+        array_push($categorias, $categoria);
+    }
+
+    $datos = [
+        "fotos" => prepararProducto($errorUsuario, $producto, $fotos),
+        "producto" => $producto,
+        "categorias" => $categorias
+    ];
+
+    return $datos;
 }
 
-function prepararProducto(&$errorUsuairo, &$producto, $fotos) {
+function prepararProducto(&$errorUsuario, $producto, $fotos) {
     require_once "php/descargarImagen.php";
     require_once "db/productos.php";
     if (isset($producto["titulo"]) && tituloDistinto($producto["titulo"]) != null) {
-        $errorUsuairo = "el titulo esta ocupado";
+        $errorUsuario = "el titulo esta ocupado";
         return null;
     }
 
     if (isset($producto["precio"]) && !is_numeric($producto["precio"])) {
-        $errorUsuairo = "precio tiene que ser numerico";
+        $errorUsuario = "precio tiene que ser numerico";
         return null;
     }
 
