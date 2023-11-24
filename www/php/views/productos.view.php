@@ -49,6 +49,7 @@
         <div class="productos" id="productos">
 
         </div>
+        
     </div>
 </div>
 <script src="/js/filtroProductos.js"></script>

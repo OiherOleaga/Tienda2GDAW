@@ -51,7 +51,9 @@ header {
     grid-area: header;
     padding: 0 2rem;
     background-color: white;
-    border-bottom: 1px solid lightgrey;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom: 1px solid lightgray;
     z-index: 1001;
 }
 
@@ -127,7 +129,7 @@ a {
 }
 
 .avatar img {
-    border: 1px solid black ;
+    border: 1px solid #0A3093 ;
     border-radius: 50%;
     object-fit: cover;
     width: 55px;
@@ -166,6 +168,8 @@ form {
     font-size: 1.3rem;
 }
 
+
+
 .seccion1 h3 {
     padding-bottom: .3em;
 }
@@ -182,7 +186,7 @@ form {
 }
 
 .buscar:hover {
-    border: 2px solid black;
+    border: 2px solid #0A3093;
 }
 
 .search {
@@ -265,13 +269,14 @@ form {
         "img bottom";
     grid-template-columns: 195px minmax(0, 1fr);
     grid-template-rows: 1fr auto;
-    border: 1px solid lightgrey;
-    box-shadow: 7px 6px 5px lightgrey;
+    border: 1px solid lightgray;
     padding: 10px;
     column-gap: 10px;
     border-radius: 10px;
     text-align: center;
+    transition: all .2s ease-in-out;
 }
+
 
 .productos .caja .img {
     grid-area: img;
@@ -298,7 +303,7 @@ h5 {
 
 }
 
-.ayuda p, h2, h3, h1{
+.ayuda > *{
     text-align: justify;
 }
 
@@ -334,7 +339,7 @@ footer {
     justify-content: center;
     align-items: center;
     background-color: white;
-    border-top: 1px solid lightgrey;
+    border-top: 1px solid lightgray;
     flex-direction: column;
 }
 
@@ -551,6 +556,7 @@ footer img {
 
     .productos {
         display: grid;
+        padding: 10px 0;
         grid-template-columns: none;
         grid-auto-flow: column;
         overflow-y: hidden;
@@ -566,6 +572,8 @@ footer img {
 
     .productos .caja:hover {
         transform: translateY(-10px);
+        border: 2px solid #0A3093;
+        box-shadow: inset 0px 0px 7px #0A3093;
     }
 
     .botones {
