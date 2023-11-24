@@ -87,7 +87,7 @@ button {
 }
 
 .fotos {
-    border: 1PX solid lightgrey;
+
     margin: 30px 0;
     overflow-y: auto;
     overflow-x: hidden;
@@ -98,11 +98,12 @@ button {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    border: 1px solid lightgrey;
     box-shadow: 7px 6px 5px lightgrey;
 }
 
 .fotos .inputbox {
-    border-bottom: 1px solid lightgrey;
+    border-bottom: 2px dashed lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -112,8 +113,8 @@ button {
 }
 
 .fotos .inputbox canvas {
-    border: 1px solid lightgrey;
-    box-shadow: 7px 6px 5px lightgrey;
+    border: 2px solid #0a3093;
+    box-shadow: 0px 0px 14px #0a3093;
     margin: 20px;
 }
 
@@ -127,6 +128,7 @@ button {
 
 #descripcion {
     height: 250px;
+    margin-top: 20px;
     border: 1px solid lightgrey;
     box-shadow: 7px 6px 5px lightgrey;
 
@@ -148,11 +150,28 @@ button {
 @media (min-width: 900px) {
     .datos {
         width: 60%;
-        border: 1px solid lightgrey;
-        box-shadow: 7px 6px 5px lightgrey;
+        border: 2px solid #0a3093;
+        box-shadow: 0px 0px 14px #0a3093;
     }
 
     .fotos {
         width: 80%;
     }
+}
+
+.cat {
+    padding: .3em;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.cat * {
+    margin: 4px;
+}
+
+#subirFoto {
+    width: 20%;
+    margin-bottom: 50px;
 }

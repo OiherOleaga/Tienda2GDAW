@@ -1,40 +1,38 @@
 <?php
 
 require "php/comprobarSesion.php";
+require "php/methods.php";
 
 if (!comprobarSesion()) {
     header("Location: /");
     exit;
 }
 
+require "db/productos.php";
 $mensajeUsuario = "";
 $errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "db/productos.php";
     require "db/fotosProducto.php";
     require "php/prepararProducto.php";
     try {
         $producto = [
             "idComerciante" => $_SESSION["id"]
         ];
-        $fotos = prepararProductoInsert($mensajeUsuario, $producto);
+        //$fotos = prepararProductoUpdate($mensajeUsuario, $producto);
 
         if ($fotos) {
-            insertFotoProducto($fotos, insertProducto($producto));
+            //updateFotoProducto($fotos, updateProducto($producto));
             $mensajeUsuario = "producto añadido";
         }
-    } catch (Exception $e) {
+    } catch (Exection $e) {
         $errorDev = $e->getMessage();
         $mensajeUsuario = "error al insertar";
     }
 }
 
-require "./db/categorias.php";
-
-$categorias = getCategorias();
-$categorias = $categorias ? $categorias : [];
+$producto = getProducto(GET("p"), $_SESSION["id"]);
 
 
 require("views/partials/headEmpresa.php");
-require("php/views/subirProducto.view.php");
+require("php/views/editarProducto.view.php");
