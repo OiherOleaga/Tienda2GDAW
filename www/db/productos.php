@@ -21,14 +21,15 @@ function consultarProductos()
     ORDER BY RAND()");
 }
 
-function getProducto($idProducto, $idComerciante) {
+function getProducto($idProducto, $idComerciante)
+{
     $datos = [
         "idProducto" => $idProducto,
         "idComerciante" => $idComerciante
     ];
 
     return select(
-    "SELECT 
+        "SELECT 
         P.ID AS ID,
         P.Titulo AS Titulo,
         P.Precio AS Precio,
@@ -41,7 +42,9 @@ function getProducto($idProducto, $idComerciante) {
     LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE F2.ID IS NULL AND P.id = :idProducto
-    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $datos)[0];
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL",
+        $datos
+    )[0];
 }
 
 function consultarProductosAdmin()
@@ -60,6 +63,24 @@ function consultarProductosAdmin()
     WHERE F2.ID IS NULL
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
     ORDER BY P.ID");
+}
+
+function consultarProductosNuevos()
+{
+    return select("SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
+    FROM Productos P
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
+    ORDER BY P.ID DESC");
 }
 
 
@@ -266,18 +287,21 @@ function borrarProductoId($id)
 }
 
 
-function insertProducto($producto) {
+function insertProducto($producto)
+{
     execute("INSERT INTO Productos (titulo, precio, descripcion, fecha, id_comerciante) 
             VALUES (:titulo, :precio, :descripcion, NOW(), :idComerciante)", $producto);
     return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
 }
 
-function getMaxIdProducto() {
+function getMaxIdProducto()
+{
     $id = select("SELECT max(id) as id FROM Productos");
-    return ($id? $id[0]["id"] : 0);
+    return ($id ? $id[0]["id"] : 0);
 }
 
-function tituloDistinto($titulo) {
+function tituloDistinto($titulo)
+{
     return select("SELECT 1 FROM Productos WHERE titulo = ?", $titulo);
 }
 function consultarProductosSimilares($cat)
@@ -295,5 +319,5 @@ function consultarProductosSimilares($cat)
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
     WHERE F2.ID IS NULL AND Categoria=?
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
-    ORDER BY P.ID ASC", $cat); 
+    ORDER BY P.ID ASC", $cat);
 }
