@@ -3,7 +3,7 @@
 
 function preparacionCliente($usuario, &$errorUsuario) {
     require_once "./db/clientes.php";
-    require_once "php/comprobarVacion.php";
+    require_once "php/comprobarVacios.php";
     require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
@@ -19,7 +19,7 @@ function preparacionCliente($usuario, &$errorUsuario) {
 
 function preparacionComerciante($usuario, &$errorUsuario) {
     require_once "./db/comerciantes.php";
-    require_once "php/comprobarVacion.php";
+    require_once "php/comprobarVacios.php";
     require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
@@ -102,8 +102,8 @@ function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
 
     switch($tipo) {
         case "cliente":
-            addUsuario($usuario, "nombre");
-            addUsuario($usuario, "apellidos");
+            postAddArray($usuario, "nombre");
+            postAddArray($usuario, "apellidos");
             return preparacionCliente($usuario, $errorUsuario);
         case "comerciante":
             return preparacionComerciante($usuario, $errorUsuario);
