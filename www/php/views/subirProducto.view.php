@@ -1,5 +1,5 @@
 <style>
-    <?php include('../css/subirProduct.css') ?>
+    <?php include('./css/subirProduct.css') ?>
 </style>
 
 <div class="contenedor">

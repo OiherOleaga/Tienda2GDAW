@@ -28,15 +28,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $errorDev = $e->getMessage();
         $mensajeUsuario = "error al insertar";
     }
-    require "comprobarSesion.php";
-    require "../db/categorias.php";
-
-    $categorias = getCategorias();
-    $categorias = $categorias ? $categorias : [];
-    require("views/subirProductoView.php");
 }
 
+require "./db/categorias.php";
 
+$categorias = getCategorias();
+$categorias = $categorias ? $categorias : [];
 
 
 require("views/partials/headEmpresa.php");
