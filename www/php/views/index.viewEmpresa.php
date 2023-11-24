@@ -86,7 +86,7 @@
                             <?= $productos[$i]['Precio'] . "€" ?>
                         </td>
                         <td class="editar">
-                            <button>Editar</button>
+                            <a href="/editarProducto?p=<?= $productos[$i]["ID"] ?>"><button>Editar</button></a>
                         </td>
                         <td class="Borrar">
                             <button class="btBorrar" id="<?= $productos[$i]['ID'] ?>" >Borrar</button>

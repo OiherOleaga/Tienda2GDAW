@@ -21,6 +21,29 @@ function consultarProductos()
     ORDER BY RAND()");
 }
 
+function getProducto($idProducto, $idComerciante) {
+    $datos = [
+        "idProducto" => $idProducto,
+        "idComerciante" => $idComerciante
+    ];
+
+    return select(
+    "SELECT 
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
+    FROM Productos P
+    JOIN Comerciantes c ON c.id = :idComerciante
+    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
+    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
+    WHERE F2.ID IS NULL AND P.id = :idProducto
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL", $datos)[0];
+}
+
 function consultarProductosAdmin()
 {
     return select("SELECT 
