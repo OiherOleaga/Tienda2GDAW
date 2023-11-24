@@ -2,7 +2,7 @@
 
 require "php/comprobarSesion.php";
 
-if (!comprobarSesion()) {
+if (!$empresa = comprobarSesion()) {
     header("Location: /");
     exit;
 }
@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "php/prepararProducto.php";
     try {
         $producto = [
-            "idComerciante" => $_SESSION["id"]
+            "idComerciante" => $empresa["ID"]
         ];
         $fotos = prepararProductoInsert($mensajeUsuario, $producto);
 

@@ -3,7 +3,7 @@
 require "php/comprobarSesion.php";
 require "php/methods.php";
 
-if (!comprobarSesion()) {
+if (!$empresa = comprobarSesion()) {
     header("Location: /");
     exit;
 }
@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "php/prepararProducto.php";
     try {
         $producto = [
-            "idComerciante" => $_SESSION["id"]
+            "idComerciante" => $empresa["ID"]
         ];
         //$fotos = prepararProductoUpdate($mensajeUsuario, $producto);
 
@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-$producto = getProducto(GET("p"), $_SESSION["id"]);
+$producto = getProducto(GET("p"), $empresa["ID"]);
 
 
 require("views/partials/headEmpresa.php");

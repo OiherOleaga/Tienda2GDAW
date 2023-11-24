@@ -37,7 +37,7 @@
 
             <button id="subirFoto" type="button" onclick="agregarInputBox()"><i class="fa fa-plus" aria-hidden="true"></i>
             </button>
-
+            <p><?= $mensajeUsuario ?></p>
             <button type="submit">Subir Producto</button>
         </form>
     </div>
