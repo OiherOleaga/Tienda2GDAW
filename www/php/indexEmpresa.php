@@ -14,15 +14,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $usuario["nombre_empresa"] = $usuario["username"];
                 unset($usuario["username"]);
             }
-
             updateUsuario($usuario, $empresa["ID"], "Comerciantes");
-            $mensajeUsuario = "datos actualizados";
+            $mensajeUsuario = "Datos actualizados";
             foreach ($usuario as $key => $valor) {
                 $empresa[ucfirst($key)] = $valor;
             }
         }
     } catch (Exception $e) {
-        $errorUsuario = "error al cambair los datos";
+        $errorUsuario = "Error al cambair los datos";
         $errorDev = $e->getMessage();
     }
 } else if ($_SERVER["REQUEST_METHOD"] == "GET") {

@@ -38,7 +38,9 @@ form {
     align-items: center;
     flex-direction: column;
     align-content: center;
-    width: 100%;
+    width: 40%;
+    border: 0;
+    padding: 1rem 0;
 
 }
 
@@ -47,7 +49,7 @@ form {
     width: 100px;
     height: 100px;
     border-radius: 100%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 #latitud,
@@ -83,6 +85,26 @@ form {
     margin: 25px 0;
     width: 80%;
     border-bottom: 2px solid black;
+}
+
+.cambiarFoto {
+    background-color: white;
+    display: block;
+    border: 1px solid lightgray;
+    height: 60px;
+    font-size: 1rem;
+    padding: 0;
+    border-radius: 10px;
+    padding: 0.375rem 0.75rem;
+    box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.2);
+    transition: border .2s ease-in-out;
+    cursor: pointer;
+}
+
+.cambiarFoto:focus,
+.cambiarFoto:hover {
+    border: 1px solid #0A3093;
+    outline: 1px solid #0A3093;
 }
 
 .inputbox label {
@@ -265,7 +287,7 @@ th {
     }
 
     #divFotoPerfil {
-        width: 80%;
+        width: 40%;
     }
 
     .mapa {
