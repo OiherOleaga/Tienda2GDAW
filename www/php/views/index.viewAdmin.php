@@ -1,6 +1,6 @@
 <?php require("partials/headAdmin.php") ?>
 <style>
-    <?php include('../css/verAdmin.css') ?>
+    <?php include('./css/verAdmin.css') ?>
 </style>
 <div class="tabla">
     <h2>Productos</h2>
@@ -32,7 +32,7 @@
                         <?= $productos[$i]['Precio'] . "€" ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/php/indexAdmin.php?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button
+                        <a href="/indexAdmin?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button
                                 class="borrar">Borrar</button></a>
                     </td>
                 </tr>
@@ -96,7 +96,7 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/php/indexAdmin.php?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button
+                        <a href="/indexAdmin?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button
                                 class="borrar">Borrar</button></a>
                     </td>
                 </tr>
@@ -148,7 +148,7 @@
                         <?= $comerciantes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/php/indexAdmin.php?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button
+                        <a href="/indexAdmin?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button
                                 class="borrar">Borrar</button></a>
                     </td>
                 </tr>
@@ -176,14 +176,14 @@
                         <?= $categorias[$i]['Nombre'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/php/indexAdmin.php?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button
+                        <a href="/indexAdmin?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button
                                 class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
         <div id="divInsercionCategoria" style="display: none;">
-            <form action="/php/indexAdmin.php" method="post">
+            <form action="/indexAdmin" method="post">
                 <label for="nombreCategoria">Nombre de la categoría:</label>
                 <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
                 <input type="hidden" name="accion" value="insertar">

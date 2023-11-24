@@ -1,8 +1,8 @@
 <?php
-require "../db/productos.php";
-require "../db/clientes.php";
-require "../db/comerciantes.php";
-require "../db/categorias.php";
+require "./db/productos.php";
+require "./db/clientes.php";
+require "./db/comerciantes.php";
+require "./db/categorias.php";
 
 
 $productos = consultarProductosAdmin();

@@ -111,7 +111,7 @@ input:valid~label {
     color: black;
 }
 
-button {
+form button {
     width: 100%;
     height: 40px;
     border-radius: 40px;

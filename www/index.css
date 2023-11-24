@@ -114,7 +114,6 @@ a {
     border: 0;
     gap: 10px;
     width: 180px;
-    padding: 1rem;
     height: 40px;
     font-size: .9rem;
 }
@@ -128,6 +127,7 @@ a {
 }
 
 .avatar img {
+    border: 1px solid black ;
     border-radius: 50%;
     object-fit: cover;
     width: 55px;
@@ -391,9 +391,9 @@ footer img {
 
 /*TABLETS*/
 @media (min-width: 600px) {
-    
-
-
+    .botones{
+        gap: 30px;
+    }
     .menuDesp {
         position: absolute;
         right: 5px;
@@ -438,7 +438,7 @@ footer img {
     .btn {
         width: 140px;
         font-size: .875rem;
-        width: 277px;
+        width: 210px;
         height: 45px;
     }
 
