@@ -3,7 +3,7 @@
         <div class="caja">
             <div class="cajaUsuario">
                 <div class="fila">
-                    <h2>Tu Perfil</h3>
+                    <h3>Tu Perfil</h3>
                         <div class="datos">
                             <label>Foto de perfil</label>
                             <div class="input">
@@ -23,7 +23,7 @@
         <div class="caja">
             <div class="cajaUsuario">
                 <div class="fila">
-                    <h2>Datos personales</h3>
+                    <h3>Datos personales</h3>
                         <div class="datos"><label>Nombre</label>
                             <div class="input"><input type="text" class="datoInput" id="nombre" value="<?= $cliente["Nombre"] ?>" value1="<?= $cliente["Nombre"] ?>"></div>
                         </div>
