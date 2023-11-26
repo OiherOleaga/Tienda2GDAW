@@ -99,7 +99,6 @@
 </div>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/datosEmpresa.js"></script>
-<script src="/js/indexEmpresa.js"></script>
 <?php require "php/views/partials/scriptError.php" ?>
 
 <?php require("partials/footer.php") ?>

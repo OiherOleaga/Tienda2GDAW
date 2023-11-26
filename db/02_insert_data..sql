@@ -133,7 +133,7 @@ VALUES
 ('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'a', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
-VALUES ('admin', 'admin');
+VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
 
 INSERT INTO Categorias (Nombre) VALUES
     ('Tecnologia'),

@@ -30,19 +30,14 @@ function getProducto($idProducto, $idComerciante)
 
     return select(
         "SELECT 
-        P.ID AS ID,
-        P.Titulo AS Titulo,
-        P.Precio AS Precio,
-        P.Descripcion AS Descripcion,
-        P.Fecha AS ProductoFecha,
-        MIN(F1.ID) AS FotoID,
-        F1.URL AS Foto
-    FROM Productos P
-    JOIN Comerciantes c ON c.id = :idComerciante
-    LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
-    LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
-    WHERE F2.ID IS NULL AND P.id = :idProducto
-    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL",
+            P.ID AS ID,
+            P.Titulo AS Titulo,
+            P.Precio AS Precio,
+            P.Descripcion AS Descripcion,
+            P.Fecha AS ProductoFecha
+        FROM Productos P
+        JOIN Comerciantes c ON c.id = :idComerciante
+            WHERE P.id = :idProducto", 
         $datos
     )[0];
 }
@@ -292,6 +287,17 @@ function insertProducto($producto)
     execute("INSERT INTO Productos (titulo, precio, descripcion, fecha, id_comerciante) 
             VALUES (:titulo, :precio, :descripcion, NOW(), :idComerciante)", $producto);
     return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
+}
+
+function upsteProducto($producto) {
+    // falta where
+    if (!count($producto)) {
+        $update = "UPDATE Productos SET ";
+        foreach ($producto as $key => $dato) {
+            $update .= "\n $key = :key,";
+        }
+        execute(substr($update, 0, -1) , $producto);
+    }
 }
 
 function getMaxIdProducto()

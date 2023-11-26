@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", function () {
     inputFotos = document.getElementsByClassName("inputFoto");
     canvasFotos = document.getElementsByClassName("canvasFotoPerfil");
     outputFotos = document.getElementsByClassName("outputFoto");
-
-    initializeCanvas(inputFotos[0], canvasFotos[0], outputFotos[0]);
+    for (let i = 0; i < inputFotos.length; i++) {
+        initializeCanvas(inputFotos[i], canvasFotos[i], outputFotos[i]);
+    }
 });
 
 function initializeCanvas(inputFoto, canvas, outputFoto) {
@@ -18,7 +19,14 @@ function initializeCanvas(inputFoto, canvas, outputFoto) {
     let x = (canvasSize - imagen.width) / 2;
     let y = (canvasSize - imagen.height) / 2;
 
-    imagen.src = '/assets/avatares/fotoPerfil.jpg';
+    if (canvas.getAttribute("src")) {
+        imagen.src = canvas.getAttribute("src");
+        imagen.onload = function () {
+            canvas.width = canvasSize;
+            canvas.height = canvasSize;
+            reDrawImg(false);
+        };
+    }
 
     inputFoto.addEventListener("change", () => {
         if (inputFoto.files && inputFoto.files[0]) {

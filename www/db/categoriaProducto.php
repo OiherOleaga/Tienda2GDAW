@@ -11,3 +11,15 @@ function insertCategoraiProducto($categorias, $idProducto) {
     }
     execute(substr($insert, 0, -1), $datos);
 }
+
+function updateCategoraiProducto($categorias, $idProducto) {
+    // falta where
+    $update = "UPDATE Categorias_Productos SET ";
+    $datos = ["idProducto" => $idProducto];
+
+    foreach ($categorias as $index => $categoria) {
+        $insert .= "\n(:cat$index, :idProducto),";
+        $datos["cat$index"] = $categoria;
+    }
+    execute(substr($insert, 0, -1), $datos);
+}

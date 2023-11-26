@@ -57,9 +57,46 @@ function prepararProducto(&$errorUsuario, $producto, $fotos) {
         return null;
     }
 
-    return descargarFotoProducto($fotos, getMaxIdProducto(), $_SESSION["id"]);
+    if (count($fotos) > 0) {
+        return descargarFotoProducto($fotos, getMaxIdProducto(), $_SESSION["id"]);
+    }
 }
 
-function prepararProductoUpdate() {
+function prepararProductoUpdate(&$errorUsuario) {
+    require "php/methods.php";
+    $producto = [];
+    postAddArray($producto, "titulo");
+    postAddArray($producto, "direccion");
+    postAddArray($producto, "precio");
+    $fotos = [];
 
+    for ($i = 0; $i < 5; $i++) {
+        postAddArray($fotos, "foto$i");
+    }
+
+    $categorias = [];
+    if (isset($_POST["categorias"]) && isset($_POST["categoriasTodas"])) {
+        foreach ($_POST["categoriasTodas"] as $categoria) {
+            $marcado = false;
+            if ($categoria == "true") {
+                $marcado = true;
+            }
+            if (!$marcado) {
+                $errorUsuario = "tiene que tener minimo una categoria";
+                return null;
+            }
+        }
+
+        foreach ($_POST["categorias"] as $categoria) {
+            array_push($categorias, $categoria);
+        }
+    }
+
+    $datos = [
+        "fotos" => prepararProducto($errorUsuario, $producto, $fotos),
+        "producto" => $producto,
+        "categorias" => $categorias
+    ];
+
+    return $datos;
 }
