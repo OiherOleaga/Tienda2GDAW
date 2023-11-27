@@ -20,4 +20,8 @@ Una vez clonado el repositorio oficial tendras que ejecutar el [docker-compose.y
 ```
 docker compose up -d
 ```
-
+Una vez ejecutado el comando anterior poniendo 
+``` 
+localhost
+```
+en cualquier navegador podrá disfrutar de nuestra asomborsa aplicación.
