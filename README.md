@@ -16,7 +16,7 @@ docker clone https://github.com/OiherOleaga/Tienda2GDAW
 ```
 
 # ¿Que ejecuto?
-Una vez clonado el repositorio oficial tendras que ejecutar el [docker-compose.yml](https://github.com/OiherOleaga/Tienda2GDAW/blob/documentacion/docker-compose.yml)con el siguiente comando: 
+Una vez clonado el repositorio oficial tendras que ejecutar el [docker-compose.yml](https://github.com/OiherOleaga/Tienda2GDAW/blob/documentacion/docker-compose.yml) con el siguiente comando: 
 ```
 docker compose up -d
 ```
