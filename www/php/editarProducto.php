@@ -4,7 +4,7 @@ require "php/comprobarSesion.php";
 require "php/methods.php";
 require "./db/fotosProducto.php";
 
-if (!$empresa = comprobarSesion()) {
+if (!$cliente = comprobarSesion()) {
     header("Location: /");
     exit;
 }
@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $datos = prepararProductoUpdate($mensajeUsuario);
 
         if ($datos) {
-            $datos["producto"]["id_comerciante"] = $empresa["ID"];
+            $datos["producto"]["id_comerciante"] = $cliente["ID"];
             $idProducto = GET("p");
             $datos["producto"]["id"] = $idProducto;
             //print_r($datos);
@@ -42,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 require "./db/categorias.php";
-$producto = getProducto(GET("p"), $empresa["ID"]);
+$producto = getProducto(GET("p"), $cliente["ID"]);
 $categorias = getCategoriasProducto($producto["ID"]);
 $categorias = $categorias ? $categorias : [];
 $fotos = getFotosProducto($producto["ID"]);

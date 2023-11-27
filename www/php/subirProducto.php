@@ -2,13 +2,11 @@
 
 require "php/comprobarSesion.php";
 
-if (!$empresa = comprobarSesion()) {
+if (!$cliente = comprobarSesion()) {
     header("Location: /");
     exit;
 }
 
-$mensajeUsuario = "";
-$errorDev = "";
 
 /**
  * Handle HTTP POST request for adding a new product.
@@ -22,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $datos = prepararProductoInsert($mensajeUsuario);
 
-        $datos["producto"]["idComerciante"] = $empresa["ID"];
+        $datos["producto"]["idComerciante"] = $cliente["ID"];
         if ($datos) {
             $idProducto = insertProducto($datos["producto"]);
             insertFotoProducto($datos["fotos"], $idProducto);
