@@ -37,7 +37,7 @@ function getProducto($idProducto, $idComerciante)
             P.Fecha AS ProductoFecha
         FROM Productos P
         JOIN Comerciantes c ON c.id = :idComerciante
-            WHERE P.id = :idProducto", 
+            WHERE P.id = :idProducto",
         $datos
     )[0];
 }
@@ -152,15 +152,19 @@ function consultarProductoID($id)
         GROUP_CONCAT(F.URL) AS Fotos,
         C.Nombre_empresa AS Nombre_empresa,
         C.avatar AS avatar_empresa,
-        C.ID AS idEmpresa
+        C.ID AS idEmpresa,
+        CP.ID_Categorias AS idCategoria
     FROM Productos P
     LEFT JOIN Fotos_producto F ON P.ID = F.ID_Producto
     LEFT JOIN Comerciantes C ON P.ID_Comerciante = C.ID
+    LEFT JOIN Categorias_Productos CP ON P.ID = CP.ID_Producto
     WHERE P.ID = ?
-    GROUP BY P.ID;", $id);
+    GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, C.Nombre_empresa, C.avatar, C.ID, CP.ID_Categorias;", $id);
 
     return $producto == null ? $producto : $producto[0];
 }
+
+
 
 function filtrado($partida, $search, $idCategorias, $precioMin, $precioMax)
 {
@@ -289,14 +293,15 @@ function insertProducto($producto)
     return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
 }
 
-function upsteProducto($producto) {
+function upsteProducto($producto)
+{
     // falta where
     if (!count($producto)) {
         $update = "UPDATE Productos SET ";
         foreach ($producto as $key => $dato) {
             $update .= "\n $key = :key,";
         }
-        execute(substr($update, 0, -1) , $producto);
+        execute(substr($update, 0, -1), $producto);
     }
 }
 
@@ -310,20 +315,26 @@ function tituloDistinto($titulo)
 {
     return select("SELECT 1 FROM Productos WHERE titulo = ?", $titulo);
 }
-function consultarProductosSimilares($cat)
+
+
+function consultarProductosSimilares($categoria, $titulo)
 {
     return select("SELECT 
-    P.ID AS ID,
-    P.Titulo AS Titulo,
-    P.Precio AS Precio,
-    P.Descripcion AS Descripcion,
-    P.Fecha AS ProductoFecha,
-    MIN(F1.ID) AS FotoID,
-    F1.URL AS Foto
+        P.ID AS ID,
+        P.Titulo AS Titulo,
+        P.Precio AS Precio,
+        P.Descripcion AS Descripcion,
+        P.Fecha AS ProductoFecha,
+        MIN(F1.ID) AS FotoID,
+        F1.URL AS Foto
     FROM Productos P
     LEFT JOIN Fotos_producto F1 ON P.ID = F1.ID_Producto
     LEFT JOIN Fotos_producto F2 ON P.ID = F2.ID_Producto AND F1.ID > F2.ID
-    WHERE F2.ID IS NULL AND Categoria=?
+    LEFT JOIN Categorias_Productos CP ON P.ID = CP.ID_Producto
+    WHERE F2.ID IS NULL AND (CP.ID_Categorias = ? OR P.Titulo LIKE '%$titulo%')
     GROUP BY P.ID, P.Titulo, P.Precio, P.Descripcion, P.Fecha, F1.URL
-    ORDER BY P.ID ASC", $cat);
+    ORDER BY CASE
+        WHEN P.Titulo LIKE '%$titulo%' THEN 0
+        ELSE 1
+    END, P.ID DESC", $categoria);
 }

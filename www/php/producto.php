@@ -24,7 +24,7 @@ if (($cliente = comprobarSesion())) {
             switch ($_GET["like"]) {
                 case "add":
                     if ($like) {
-                        $error = "este usuario ya le a dado like";
+                        $error = "este usuario ya le ha dado like";
                         break;
                     }
                     insertLike($cliente["ID"], $producto["ID"]);
@@ -52,7 +52,6 @@ if (($cliente = comprobarSesion())) {
     } else {
         require("php/views/partials/headEmpresa.php");
     }
-
 } else {
     if (isset($_GET["like"])) {
         header('Content-Type: application/json');
@@ -65,5 +64,9 @@ if (($cliente = comprobarSesion())) {
 
     require("views/partials/headInicio.php");
 }
+$titulo = $producto["Titulo"];
+$categoria = $producto["idCategoria"];
+$productosSim = consultarProductosSimilares($categoria, $titulo);
+
 closeCon();
 require("views/producto.view.php");
