@@ -63,6 +63,7 @@
         </div>
     </div>
 </div>
+<hr>
 <div class="mapa">
     <div id="map">
         <p id="latitud">
@@ -75,14 +76,16 @@
 </div>
 </div>
 <div class="seccion3">
-    <h3>A mucha gente le gustan</h3>
+    <h3>Productos similares</h3>
     <?php if (count($productosSim) <= 0) { ?>
-        <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
+        <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg"
+                alt="orewingoer"><br>
             <p>Nada por aqui...</p>
         </div>
     <?php } else { ?>
         <div class="productos" id="gridProductos2">
-            <button class="btnIzquierda" data-container="gridProductos2"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
+            <button class="btnIzquierda" data-container="gridProductos2"><i
+                    class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
             <?php for ($i = 0; $i < 10; $i++) { ?>
                 <a href="/producto?idProducto=<?= $productosSim[$i]["ID"] ?>">
                     <div class="caja">
@@ -100,9 +103,10 @@
                     </div>
                 </a>
             <?php } ?>
-            <button class="btnDerecha" data-container="gridProductos2"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
+            <button class="btnDerecha" data-container="gridProductos2"><i
+                    class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
         <?php } ?>
-        </div>
+    </div>
 </div>
 <script src="/js/desplazamineto.js"></script>
 <script src="/js/scriptMapa.js"></script>
