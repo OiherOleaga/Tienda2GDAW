@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    font-family: Wallie, Helvetica;
+    font-family: Helvetica;
     height: 100%;
     display: grid;
     grid-template:
