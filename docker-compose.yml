@@ -40,13 +40,6 @@ services:
         networks:
             - default
 
-    node:
-        build: ./node-service
-        ports:
-            - "3000:3000"
-        networks:
-            - default
-
 volumes:
     persistent:
 

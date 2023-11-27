@@ -293,15 +293,13 @@ function insertProducto($producto)
     return select("SELECT id FROM Productos WHERE titulo = ?", $producto["titulo"])[0]["id"];
 }
 
-function upsteProducto($producto)
-{
-    // falta where
-    if (!count($producto)) {
+function updateProducto($producto) {
+    if (count($producto) > 2) {
         $update = "UPDATE Productos SET ";
         foreach ($producto as $key => $dato) {
-            $update .= "\n $key = :key,";
+            $update .= "\n $key = :$key,";
         }
-        execute(substr($update, 0, -1), $producto);
+        execute(substr($update, 0, -1) . " WHERE id = :id", $producto);
     }
 }
 

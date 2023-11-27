@@ -2,6 +2,7 @@
 let inputFotos;
 let canvasFotos;
 let outputFotos;
+let cambioFoto;
 
 /* The code `document.addEventListener("DOMContentLoaded", function () { ... })` is an event listener
 that waits for the DOM (Document Object Model) to be fully loaded before executing the code inside
@@ -10,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function () {
     inputFotos = document.getElementsByClassName("inputFoto");
     canvasFotos = document.getElementsByClassName("canvasFotoPerfil");
     outputFotos = document.getElementsByClassName("outputFoto");
+    cambioFoto = document.getElementsByClassName("cambioFoto");
     for (let i = 0; i < inputFotos.length; i++) {
-        initializeCanvas(inputFotos[i], canvasFotos[i], outputFotos[i]);
+        initializeCanvas(inputFotos[i], canvasFotos[i], outputFotos[i], cambioFoto[i]);
     }
 });
 
@@ -24,12 +26,27 @@ document.addEventListener("DOMContentLoaded", function () {
  * @param outputFoto - The `outputFoto` parameter is a reference to an HTML input element that is used
  * to display the output image.
  */
-function initializeCanvas(inputFoto, canvas, outputFoto) {
+
+function initializeCanvas(inputFoto, canvas, outputFoto, cambioFoto) {
     const contexto = canvas.getContext('2d');
     let imagen = new Image();
     const canvasSize = 600;
     let isDragging = false;
     let x, y;
+
+    if (canvas.getAttribute("src")) {
+        imagen.src = canvas.getAttribute("src");
+
+        imagen.onload = function () {
+            canvas.width = canvasSize;
+            canvas.height = canvasSize;
+
+            x = (canvasSize - imagen.width) / 2;
+            y = (canvasSize - imagen.height) / 2;
+
+            reDrawImg(false);
+        };
+    }
 
     inputFoto.addEventListener("change", () => {
         if (inputFoto.files && inputFoto.files[0]) {
@@ -115,6 +132,9 @@ function initializeCanvas(inputFoto, canvas, outputFoto) {
             let extension = inputFoto.value.substring(inputFoto.value.lastIndexOf(".") + 1, inputFoto.value.length);
             outputFoto.value = canvas.toDataURL('image/' + extension);
             outputFoto.setAttribute("name", outputFoto.id);
+            if (cambioFoto) {
+                cambioFoto.setAttribute("name", cambioFoto.id);
+            }
         }
     }
 }

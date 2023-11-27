@@ -187,7 +187,7 @@
             <label for="nombreCategoria">Nombre de la categoría:</label>
             <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
             <input type="hidden" name="accion" value="insertar">
-            <input type="submit" id="btnInsertarCategoriaForm">Insertar</input>
+            <input type="submit" id="btnInsertarCategoriaForm" value="Insertar"></input>
         </form>
     </div>
     <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>

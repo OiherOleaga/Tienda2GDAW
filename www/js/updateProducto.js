@@ -11,17 +11,18 @@ for (let input of document.getElementsByClassName("inputs")) {
     })
 }
 let categorias = document.getElementsByClassName("categorias")
-let inputHidden = document.getElementsByClassName("categoriaHidden")
+let hiddenCategoreiasTodas = document.getElementsByClassName("categoriaTodas")
+let hiddenCategoreiasCambiadas = document.getElementsByClassName("categoriaCambio")
 
 /* This code block is adding event listeners to each element in the `categorias` array. */
 for (let i = 0; i < categorias.length; i++) {
     categorias[i].addEventListener("click", function () {
         if (this.checked === this.defaultChecked) {
-            this.removeAttribute("name")
+            hiddenCategoreiasCambiadas[i].removeAttribute("name")
         } else {
-            this.setAttribute("name", this.getAttribute("n"));
+            hiddenCategoreiasCambiadas[i].setAttribute("name", this.getAttribute("n"));
         }
-        inputHidden[i].value = this.checked;
+        hiddenCategoreiasTodas[i].value = this.checked + "," + this.id;
     })
-    inputHidden[i].value = this.checked;
+    hiddenCategoreiasTodas[i].value = categorias[i].checked + "," + categorias[i].id;
 }

@@ -21,10 +21,10 @@
                     <div>
                         <input  type="checkbox" class="categorias" n="categorias[]" 
                                 id=<?= $categoria["ID"] ?> 
-                                value=<?= $categoria["ID"] ?>
                                 <?= $categoria["checked"] !== NULL? "checked": "" ?>
                         >
-                        <input type="hidden" name="categoriasTodas[]" class="categoriaHidden">
+                        <input type="hidden" name="categoriasTodas[]" class="categoriaTodas">
+                        <input type="hidden" value=<?= $categoria["ID"] ?> class="categoriaCambio">
                         <label for=<?= $categoria["ID"] ?>><?= $categoria["Nombre"] ?></label>
                     </div>
                 <?php } ?>
@@ -34,10 +34,11 @@
             <textarea id="descripcion" id="descripcion" class="inputs" value1="<?= $producto["Descripcion"] ?>" required><?= $producto["Descripcion"] ?></textarea>
 
             <div class="fotos">
-                <?php foreach ($fotos as $foto) { ?>
+                <?php foreach ($fotos as $i => $foto) { ?>
                     <div class="inputbox">
                         <canvas class="canvasFotoPerfil" src="<?= $foto["url"] ?>" ></canvas>
-                        <input type="hidden" id="foto0" class="outputFoto">
+                        <input type="hidden" id="foto<?= $i ?>" class="outputFoto">
+                        <input type="hidden" id="foto<?= $i ?>cambio" value="<?= $foto["id"] ?>" class="cambioFoto">
                         <input type="file" class="inputFoto" accept="image/*">
                     </div>
                 <?php } ?>
