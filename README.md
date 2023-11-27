@@ -10,6 +10,7 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 * [¿Que ejecuto?](#que-ejecuto)
   * [Ejecutar docker compose -d](#ejecutar-docker-compose--d)
   * [Localhost](#Localhost)
+* [Usuarios](#usuarios)
 
 # Como desplegar el repositorio
 
@@ -26,3 +27,11 @@ docker compose up -d
 ```
 ### Localhost
 Una vez ejecutado el comando anterior, poniendo "*[localhost](http://localhost)*" en cualquier navegador podrá disfrutar de nuestra asomborsa aplicación.
+
+# Usuarios
+### Clientes
+| Usuario    | Contraseña     |
+|------------|----------------|
+| David | 12345  |
+| Anartz | a  |
+| Oiher | 12345 |

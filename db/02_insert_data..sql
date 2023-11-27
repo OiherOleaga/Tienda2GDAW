@@ -128,9 +128,9 @@ VALUES
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
-('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDY0U6PEEVC3JOJYak3LJggBtxkTV9x3b2pQ&usqp=CAU', 'Oiher', 'oiherPerron', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
-('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'DavidMamalon', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
-('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'a', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDY0U6PEEVC3JOJYak3LJggBtxkTV9x3b2pQ&usqp=CAU', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
 VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
