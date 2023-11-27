@@ -17,11 +17,11 @@
             <?php
             $arrayFotos = explode(',', $producto["Fotos"]);
             if (count($arrayFotos) > 1) {
-            ?>
+                ?>
                 <div class=" btn-left">
                     <i class="fa-solid fa-arrow-left fa-2xl"></i>
                 </div>
-            <?php
+                <?php
             }
             ?>
 
@@ -37,11 +37,11 @@
             </div>
             <?php
             if (count($arrayFotos) > 1) {
-            ?>
+                ?>
                 <div class="btn-right">
                     <i class="fa-solid fa-arrow-right    fa-2xl"></i>
                 </div>
-            <?php
+                <?php
             }
             ?>
 
@@ -63,6 +63,7 @@
         </div>
     </div>
 </div>
+<hr>
 <div class="mapa">
     <div id="map">
         <p id="latitud">
@@ -73,16 +74,18 @@
         </p>
     </div>
 </div>
-
-<div class="seccion2">
+</div>
+<div class="seccion3">
     <h3>Productos similares</h3>
     <?php if (count($productosSim) <= 0) { ?>
-        <div id="nada"><img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
+        <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg"
+                alt="orewingoer"><br>
             <p>Nada por aqui...</p>
         </div>
     <?php } else { ?>
-        <div class="productos" id="gridProductos">
-            <button class="btnIzquierda" data-container="gridProductos"><i class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
+        <div class="productos" id="gridProductos2">
+            <button class="btnIzquierda" data-container="gridProductos2"><i
+                    class="fa-solid fa-arrow-left fa-beat-fade fa-2xl"></i></button>
             <?php for ($i = 0; $i < 10; $i++) { ?>
                 <a href="/producto?idProducto=<?= $productosSim[$i]["ID"] ?>">
                     <div class="caja">
@@ -100,12 +103,12 @@
                     </div>
                 </a>
             <?php } ?>
-            <button class="btnDerecha" data-container="gridProductos"><i class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
+            <button class="btnDerecha" data-container="gridProductos2"><i
+                    class="fa-solid fa-arrow-right fa-beat-fade fa-2xl"></i></button>
         <?php } ?>
-        </div>
+    </div>
 </div>
-
-
+<script src="/js/desplazamineto.js"></script>
 <script src="/js/scriptMapa.js"></script>
 <script src="/js/scriptVerProducto.js"></script>
 <script src="/js/carrusel.js"></script>

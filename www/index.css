@@ -37,10 +37,6 @@ body {
         100%;
 }
 
-main {
-    min-height: 100vh;
-}
-
 header {
     display: flex;
     position: sticky;
@@ -148,6 +144,7 @@ a {
 main {
     grid-area: main;
     padding: 0 1rem;
+    min-height: 100vh;
 }
 
 form {
