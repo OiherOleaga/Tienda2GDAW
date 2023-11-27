@@ -28,21 +28,22 @@ function select($sentencia, $objeto = null)
     $stmt = $conn->prepare($sentencia);
     if (!is_array($objeto) && $objeto !== null) {
         $objeto = [$objeto];
-    }  
+    }
     if (!$stmt->execute($objeto)) {
         throw new Exception($stmt->errorInfo()[2]);
-    } 
+    }
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
 
-function execute($sentencia, $objeto = null) {
+function execute($sentencia, $objeto = null)
+{
     global $conn;
     $stmt = $conn->prepare($sentencia);
     if (!is_array($objeto) && $objeto !== null) {
         $objeto = [$objeto];
-    }  
+    }
     if (!$stmt->execute($objeto)) {
         throw new Exception($stmt->errorInfo()[2]);
-    } 
+    }
 }
