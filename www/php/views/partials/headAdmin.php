@@ -23,8 +23,8 @@
             <h3>Administraci&oacute;n de base de datos</h3>
         </div>
         <div class="botones">
-            <a href="/"><button class="btn">Cerrar Sesion</button></a>
+            <a href="/"><button class="btn" id="cerrarSesion">Cerrar Sesion</button></a>
         </div>
-        <script src="/js/headerUsuario.js"></script>
+        <script src="/js/headerAdmin.js"></script>
     </header>
     <main>

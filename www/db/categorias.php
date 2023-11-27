@@ -10,18 +10,19 @@ function getCategorias()
                     GROUP BY c.id");
 }
 
-function getCategoriasProducto($idProducto) {
+function getCategoriasProducto($idProducto)
+{
     return select("SELECT c.*, cp.id_producto as checked
                    FROM Categorias c 
-                   LEFT JOIN Categorias_Productos cp ON cp.id_categorias = c.id AND cp.id_producto = ?", $idProducto); 
+                   LEFT JOIN Categorias_Productos cp ON cp.id_categorias = c.id AND cp.id_producto = ?", $idProducto);
 }
 
 function borrarCategoriaId($id)
 {
     return execute("DELETE FROM Categorias WHERE ID=?", $id);
-}       
+}
 
 function insertarCategoria($nombre)
 {
-    return execute("INSERT INTO Categorias (Nombre) VALUES ('?')", $nombre);
+    return execute("INSERT INTO Categorias (Nombre) VALUES (?)", $nombre);
 }

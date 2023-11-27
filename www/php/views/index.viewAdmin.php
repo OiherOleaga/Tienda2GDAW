@@ -32,8 +32,7 @@
                         <?= $productos[$i]['Precio'] . "€" ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/indexAdmin?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button
-                                class="borrar">Borrar</button></a>
+                        <a href="/indexAdmin?accion=borrarProducto&id=<?= $productos[$i]["ID"] ?>"><button class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -96,8 +95,7 @@
                         <?= $clientes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/indexAdmin?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button
-                                class="borrar">Borrar</button></a>
+                        <a href="/indexAdmin?accion=borrarCliente&id=<?= $clientes[$i]["ID"] ?>"><button class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -148,8 +146,7 @@
                         <?= $comerciantes[$i]['Direccion'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/indexAdmin?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button
-                                class="borrar">Borrar</button></a>
+                        <a href="/indexAdmin?accion=borrarComerciante&id=<?= $comerciantes[$i]["ID"] ?>"><button class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
@@ -176,25 +173,25 @@
                         <?= $categorias[$i]['Nombre'] ?>
                     </td>
                     <td class="Borrar">
-                        <a href="/indexAdmin?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button
-                                class="borrar">Borrar</button></a>
+                        <a href="/indexAdmin?accion=borrarCategoria&id=<?= $categorias[$i]["ID"] ?>"><button class="borrar">Borrar</button></a>
                     </td>
                 </tr>
             <?php } ?>
         </table>
-        <div id="divInsercionCategoria" style="display: none;">
-            <form action="/indexAdmin" method="post">
-                <label for="nombreCategoria">Nombre de la categoría:</label>
-                <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
-                <input type="hidden" name="accion" value="insertar">
-                <button id="btnInsertarCategoriaForm">Insertar</button>
-            </form>
-        </div>
-        <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>
-        </div>
+
     <?php } else { ?>
         <h2 style="color:red;">No hay categorias</h2>
     <?php } ?>
+    <div id="divInsercionCategoria" style="display: none;">
+        <form action="/indexAdmin" method="post">
+            <label for="nombreCategoria">Nombre de la categoría:</label>
+            <input type="text" id="nombreCategoria" name="nombreCategoria" placeholder="Nombre de la categoria">
+            <input type="hidden" name="accion" value="insertar">
+            <input type="submit" id="btnInsertarCategoriaForm">Insertar</input>
+        </form>
+    </div>
+    <div class="insertar"> <button id="btnInsertarCategoria">Insertar Categoría</button>
+    </div>
 </div>
 <script src="/js/admin.js"></script>
 <?php require("partials/footer.php") ?>
