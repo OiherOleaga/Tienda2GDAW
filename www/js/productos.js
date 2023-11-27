@@ -75,7 +75,7 @@ function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) 
             if (productos[0]) {
                 for (let producto of productos) {
                     divProductos.innerHTML +=
-                        `<a href=/producto?idProducto=${producto.ID}">
+                        `<a href=/producto?idProducto=${producto.ID}>
                         <div class="caja">
                             <div class="img"><img src=${producto.foto}></div>
                             <div class="bottom">
