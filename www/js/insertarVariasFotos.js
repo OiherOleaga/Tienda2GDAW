@@ -2,16 +2,18 @@
 let inputFotos;
 let canvasFotos;
 let outputFotos;
+let cambioFoto;
 document.addEventListener("DOMContentLoaded", function () {
     inputFotos = document.getElementsByClassName("inputFoto");
     canvasFotos = document.getElementsByClassName("canvasFotoPerfil");
     outputFotos = document.getElementsByClassName("outputFoto");
+    cambioFoto = document.getElementsByClassName("cambioFoto");
     for (let i = 0; i < inputFotos.length; i++) {
-        initializeCanvas(inputFotos[i], canvasFotos[i], outputFotos[i]);
+        initializeCanvas(inputFotos[i], canvasFotos[i], outputFotos[i], cambioFoto[i]);
     }
 });
 
-function initializeCanvas(inputFoto, canvas, outputFoto) {
+function initializeCanvas(inputFoto, canvas, outputFoto, cambioFoto) {
     const contexto = canvas.getContext('2d');
     let imagen = new Image();
     const canvasSize = 100;
@@ -89,6 +91,9 @@ function initializeCanvas(inputFoto, canvas, outputFoto) {
             let extension = inputFoto.value.substring(inputFoto.value.lastIndexOf(".") + 1, inputFoto.value.length);
             outputFoto.value = canvas.toDataURL('image/' + extension);
             outputFoto.setAttribute("name", outputFoto.id);
+            if (cambioFoto) {
+                cambioFoto.setAttribute("name", cambioFoto.id);
+            }
         }
     }
 }

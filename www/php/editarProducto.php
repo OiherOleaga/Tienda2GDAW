@@ -2,6 +2,7 @@
 
 require "php/comprobarSesion.php";
 require "php/methods.php";
+require "./db/fotosProducto.php";
 
 if (!$empresa = comprobarSesion()) {
     header("Location: /");
@@ -13,16 +14,23 @@ $mensajeUsuario = "";
 $errorDev = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    require "db/fotosProducto.php";
     require "php/prepararProducto.php";
+    require_once "db/productos.php";
+    require "db/categoriaProducto.php";
     try {
         $datos = prepararProductoUpdate($mensajeUsuario);
 
-        $datos["producto"]["idComerciante"] = $empresa["ID"];
-        if ($fotos) {
-            updateProducto($producto);
-            updateFotoProducto($fotos, GET("p"));
-            updateCategorias($categorias, GET("p"));
+        if ($datos) {
+            $datos["producto"]["id_comerciante"] = $empresa["ID"];
+            $idProducto = GET("p");
+            $datos["producto"]["id"] = $idProducto;
+            //print_r($datos);
+            //exit;
+            updateProducto($datos["producto"]);
+            updateFotoProducto($datos["fotoCambio"], $idProducto);
+            insertFotoProducto($datos["fotosInsert"], $idProducto);
+            insertCategoriaProducto($datos["categoriasInsert"], $idProducto);
+            deleteCategoriaProducto($datos["categoriasDelete"], $idProducto);
             $mensajeUsuario = "producto actuzlizado";
         }
     } catch (Exection $e) {
@@ -31,7 +39,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 require "./db/categorias.php";
-require "./db/fotosProducto.php";
 $producto = getProducto(GET("p"), $empresa["ID"]);
 $categorias = getCategoriasProducto($producto["ID"]);
 $categorias = $categorias ? $categorias : [];
