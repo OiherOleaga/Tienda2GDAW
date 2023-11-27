@@ -40,13 +40,6 @@ services:
         networks:
             - default
 
-    node:
-        build: ./node-service # Debes tener un directorio separado para tu servicio Node.js
-        ports:
-            - "3000:3000" # Ajusta el puerto según las necesidades de tu aplicación
-        networks:
-            - default
-
 volumes:
     persistent:
 
