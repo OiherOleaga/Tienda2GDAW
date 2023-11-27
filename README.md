@@ -8,8 +8,8 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 
 * [Como desplegar el repositorio](#como-desplegar-el-repositorio)
 * [¿Que ejecuto?](#que-ejecuto)
-**[Ejecutar docker compose -d](#ejecutar-docker-compose--d)**
-**[Localhost](#Localhost)**
+  **[Ejecutar docker compose -d](#ejecutar-docker-compose--d)**
+  **[Localhost](#Localhost)**
 
 # Como desplegar el repositorio
 
