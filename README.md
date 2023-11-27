@@ -42,7 +42,7 @@ Una vez ejecutado el comando anterior, poniendo "*[localhost](http://localhost)*
 | GEMETIK Soluciones Tecnologicas | gemetik |
 | Ikea | ikea |
 | Mercadona | mercadona |
-| Decathlon | mercadona |
+| Decathlon | decathlon |
 ### Administradores
 | Usuario    | Contraseña     |
 |------------|----------------|
