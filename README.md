@@ -13,7 +13,7 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 
 # Como desplegar el repositorio
 
-Para desplegar el repositorio lo podras hacer con este comando de docker:
+Para desplegar el repositorio lo podras reakizar con el siguiente comando de docker:
 ```
 docker clone https://github.com/OiherOleaga/Tienda2GDAW
 ```
@@ -25,4 +25,4 @@ Una vez clonado el repositorio oficial tendras que ejecutar el [docker-compose.y
 docker compose up -d
 ```
 ### Localhost
-Una vez ejecutado el comando anterior, poniendo "*localhost*" en cualquier navegador podrá disfrutar de nuestra asomborsa aplicación.
+Una vez ejecutado el comando anterior, poniendo "*[localhost](localhost)*" en cualquier navegador podrá disfrutar de nuestra asomborsa aplicación.
