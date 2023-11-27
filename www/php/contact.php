@@ -1,4 +1,8 @@
 <?php
+
+/**
+ * Check the request method and include the appropriate header based on the session.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     require "./php/comprobarSesion.php";
 

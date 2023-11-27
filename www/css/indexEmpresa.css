@@ -15,9 +15,8 @@
     margin-top: 20px;
     width: 90%;
     border-radius: 30px;
-    border: 1px solid black;
-    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.5);
-    background-color: rgba(234, 234, 234, 0.38);
+    border: solid 1px #0A3093;
+    box-shadow: inset 0px 0px 16px #0A3093;
 }
 
 form {

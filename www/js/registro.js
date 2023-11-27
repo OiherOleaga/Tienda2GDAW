@@ -7,6 +7,8 @@ let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
 let passwords = document.getElementsByClassName("password");
 
+/* The code snippet is adding an event listener to the `tipo` element, which is a select dropdown. When
+the value of the dropdown changes, the code inside the event listener is executed. */
 tipo.addEventListener("change", () => {
     switch (tipo.value) {
         case "cliente":
@@ -28,6 +30,8 @@ tipo.selectedIndex = sessionStorage.getItem("tipo");
 tipo.dispatchEvent(new Event("change"))
 
 
+/* This code snippet is adding an event listener to the `formRegistro` element, which is a form. When
+the form is submitted, the code inside the event listener is executed. */
 formRegistro.addEventListener("submit", (e) => {
     if (passwords[0].value !== passwords[1].value) {
         e.preventDefault();

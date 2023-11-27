@@ -1,5 +1,12 @@
 <?php 
 
+/**
+ * Prepares product data for insertion and performs necessary checks.
+ *
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array|null The prepared product data if successful, or null on failure.
+ */
 function prepararProductoInsert(&$errorUsuario) {
     require_once "php/methods.php";
     require_once "php/comprobarVacios.php";
@@ -45,6 +52,15 @@ function prepararProductoInsert(&$errorUsuario) {
     return $datos;
 }
 
+/**
+ * Prepares product details and photos for insertion and performs necessary checks.
+ *
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ * @param array $producto The product details to be prepared.
+ * @param array $fotos The product photos to be prepared.
+ *
+ * @return array|null The prepared product photos if successful, or null on failure.
+ */
 function prepararProducto(&$errorUsuario, $producto, $fotos) {
     require_once "php/descargarImagen.php";
     require_once "db/productos.php";
@@ -70,6 +86,13 @@ function prepararProducto(&$errorUsuario, $producto, $fotos) {
     }
 }
 
+/**
+ * Prepares product data for update and performs necessary checks.
+ *
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array|null The prepared product data if successful, or null on failure.
+ */
 function prepararProductoUpdate(&$errorUsuario) {
     require_once "php/methods.php";
     $producto = [];

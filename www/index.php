@@ -1,6 +1,9 @@
 <?php
 $uri = parse_url($_SERVER["REQUEST_URI"])["path"];
 
+/**
+ * Check if the URI is not the root ("/") and include the corresponding PHP file.
+ */
 if ($uri != "/") {
     $uri = explode("/", $uri);
     $path = "./php/$uri[1].php";
@@ -16,6 +19,9 @@ if ($uri != "/") {
 require "./php/comprobarSesion.php";
 require "./db/productos.php";
 
+/**
+ * Check if a user session is active and include the corresponding files based on user type.
+ */
 if (($cliente = comprobarSesion())) {
     switch ($_SESSION["tipo"]) {
         case "cliente":

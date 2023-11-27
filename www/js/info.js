@@ -3,6 +3,8 @@ let outputFoto = document.getElementById("outputFoto");
 
 let inputsDatos = document.getElementsByClassName("datoInput")
 
+/* The code is iterating over a collection of input elements with the class "datoInput" and adding an
+event listener to each input element. */
 for (let input of inputsDatos) {
     console.log(input)
     input.addEventListener("input", function () {
@@ -29,6 +31,9 @@ let isDragging = false;
 let x;
 let y;
 
+/* This code snippet is setting the source of the `imagen` variable to the value of the `src` attribute
+of the `canvas` element. If the `src` attribute is not present or is empty, it sets the source to
+'/assets/avatares/fotoPerfil.jpg'. */
 imagen.src = canvas.getAttribute("src") ? canvas.getAttribute("src") : '/assets/avatares/fotoPerfil.jpg';
 
 imagen.onload = function () {
@@ -40,6 +45,8 @@ imagen.onload = function () {
     reDrawImg(false);
 };
 
+/* The code snippet is adding an event listener to the `inputFoto` element. This event listener listens
+for the "change" event, which is triggered when the user selects a file using the file input field. */
 inputFoto.addEventListener("change", () => {
     console.log("ajdslkfa")
     if (inputFoto.files && inputFoto.files[0]) {
@@ -63,6 +70,11 @@ inputFoto.addEventListener("change", () => {
     }
 });
 
+/**
+ * The function "eventosDeMover" adds event listeners to the canvas element for mouse events such as
+ * mousedown, mousemove, mouseup, mouseleave, and wheel, allowing the user to drag and zoom an image on
+ * the canvas.
+ */
 function eventosDeMover() {
     let offsetX;
     let offsetY;
@@ -100,6 +112,13 @@ function eventosDeMover() {
     })
 }
 
+/**
+ * The function reDrawImg clears the canvas, draws an image, applies a circular mask, and saves the
+ * resulting image if specified.
+ * @param guardar - The "guardar" parameter is a boolean value that determines whether to save the
+ * modified image or not. If it is set to true, the function will save the image. If it is set to
+ * false, the function will not save the image.
+ */
 function reDrawImg(guardar) {
     contexto.clearRect(0, 0, canvas.width, canvas.height);
     contexto.drawImage(imagen, x, y, imagen.width, imagen.height);

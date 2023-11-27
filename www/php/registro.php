@@ -11,6 +11,10 @@ require_once "methods.php";
 $errorDev = "";
 $errorUsuario = "";
 $usuario = "";
+
+/**
+ * Handle HTTP POST request for user registration.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "./php/preparacionUsuario.php";
     try {
@@ -42,4 +46,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 require "views/registro.view.php";
-
