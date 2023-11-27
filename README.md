@@ -10,7 +10,7 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 * [¿Que ejecuto?](#que-ejecuto)
 
 # Como desplegar el repositorio
-![Logo Docker](https://assets.stickpng.com/images/62a9c7c08ff6441a2952dad3.png)
+![Logo Docker](https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png)
 Para desplegar el repositorio lo podras hacer con este comando de docker:
 ```
 docker clone https://github.com/OiherOleaga/Tienda2GDAW
