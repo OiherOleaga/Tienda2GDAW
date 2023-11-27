@@ -1,13 +1,12 @@
 INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
     ('https://yt3.googleusercontent.com/9WgVvMb5NkRQeC2Oeu0WL9t7phgInjMq1zju6TZsvT5nLaCO9lALk_-GnL7UjsB_bo4aEbMi4g=s900-c-k-c0x00ffffff-no-rj', 'GAME', '6ca5cab77e702c787b4c14b3d3bf26bad43da606be6eed04ab0b9720120ae081', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
-    ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '12345', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '12345', 'mercaadona@gmail.com', '873239127', 'mercadona vitoria'),
-    ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '12345', 'Decathlon@gmail.com', '284328574', 'Decathlon, 01005 Gasteiz');
+    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '3077f2b7cf1843036a3d1f85e8484b56790f9ab7531aa864254ea6926ebfb98c', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
+    ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '0e79172671f59f0f867c8ae23afd21d5f44d23f6f019c8328990e53e2c8e3a0d', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
+    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'Sierra de Andia Kalea, 10, 01010 Gasteiz'),
+    ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'General Alava Kalea, 32, 01005 Gasteiz');
 
 
--- Inserciones para las columnas Titulo, Precio, Descripcion, e ID_Comerciante (ID_Comerciante limitado a 1 y 2)
 INSERT INTO Productos (Titulo, Precio, Descripcion, ID_Comerciante)
 VALUES
     ('Ordenador de torre', 219.99, 'Potente ordenador de torre disenado para gamers y profesionales. Equipado con procesador Intel Core i7, 16GB de RAM y tarjeta grafica NVIDIA GeForce RTX 3080.', 1),
@@ -128,9 +127,9 @@ VALUES
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
-('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDY0U6PEEVC3JOJYak3LJggBtxkTV9x3b2pQ&usqp=CAU', 'Oiher', 'oiherPerron', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
-('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'DavidMamalon', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
-('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'a', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
+('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDY0U6PEEVC3JOJYak3LJggBtxkTV9x3b2pQ&usqp=CAU', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
 VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
