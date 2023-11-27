@@ -6,7 +6,11 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 
 # Índice
 
-* [Como desplegar el repositorio]()
+* [Como desplegar el repositorio](https://github.com/OiherOleaga/Tienda2GDAW/tree/documentacion#como-desplegar-el-repositorio)
 * ¿Que ejecuto?
 
 # Como desplegar el repositorio
+Para desplegar el repositorio lo podras hacer con este comando de docker:
+'''
+docker clone https://github.com/OiherOleaga/Tienda2GDAW/tree/documentacion#como-desplegar-el-repositorio 
+'''
