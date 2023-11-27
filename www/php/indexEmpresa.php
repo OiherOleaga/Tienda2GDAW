@@ -3,6 +3,15 @@
 $empresa = $cliente;
 $errorDev = "";
 $mensajeUsuario = "";
+/**
+ * Handles both POST and GET requests for updating user information and deleting products.
+ *
+ * @param array $empresa The array containing company information.
+ * @param string $mensajeUsuario The message to display for user feedback.
+ * @param string $errorUsuario The error message for user feedback (if any).
+ * @param string $errorDev The detailed error message for developers (if any).
+ */
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "php/methods.php";
     require "php/preparacionUsuario.php";
@@ -42,6 +51,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 $productos = getProductosComerciante($empresa["ID"]);
 closeCon();
 
-// header empresa
 require("php/views/partials/headEmpresa.php");
 require "php/views/index.viewEmpresa.php";

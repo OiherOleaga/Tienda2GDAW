@@ -75,7 +75,7 @@
 </div>
 </div>
 <div class="seccion3">
-    <h3>A mucha gente le gustan</h3>
+    <h3>Productos similares</h3>
     <?php if (count($productosSim) <= 0) { ?>
         <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
             <p>Nada por aqui...</p>

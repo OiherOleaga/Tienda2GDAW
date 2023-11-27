@@ -2,6 +2,10 @@
 let inputFotos;
 let canvasFotos;
 let outputFotos;
+
+/* The code `document.addEventListener("DOMContentLoaded", function () { ... })` is an event listener
+that waits for the DOM (Document Object Model) to be fully loaded before executing the code inside
+the function. */
 document.addEventListener("DOMContentLoaded", function () {
     inputFotos = document.getElementsByClassName("inputFoto");
     canvasFotos = document.getElementsByClassName("canvasFotoPerfil");
@@ -11,6 +15,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+/**
+ * The `initializeCanvas` function is a JavaScript function that initializes a canvas element, allows
+ * the user to upload an image, and provides functionality for dragging, zooming, and saving the image.
+ * @param inputFoto - The input element where the user can select an image file.
+ * @param canvas - The canvas parameter is the HTML canvas element on which the image will be displayed
+ * and manipulated.
+ * @param outputFoto - The `outputFoto` parameter is a reference to an HTML input element that is used
+ * to display the output image.
+ */
 function initializeCanvas(inputFoto, canvas, outputFoto) {
     const contexto = canvas.getContext('2d');
     let imagen = new Image();
@@ -93,6 +106,10 @@ function initializeCanvas(inputFoto, canvas, outputFoto) {
     }
 }
 
+/**
+ * The function "agregarInputBox" adds an input box for uploading photos to a container, with a limit
+ * of 5 photos.
+ */
 
 function agregarInputBox() {
     var contenedorFotos = document.querySelector('.fotos');

@@ -10,6 +10,11 @@ $clientes = getClientes();
 $comerciantes = getComerciantes();
 $categorias = getCategorias();
 
+/**
+ * Performs the specified action based on the value of $action.
+ *
+ * @param string $action The action to perform.
+ */
 function realizarAccion($accion){
     switch ($accion) {
         case 'borrarProducto':

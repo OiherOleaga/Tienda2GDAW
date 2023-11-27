@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Handle the processing of a POST request to filter and retrieve products.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "./db/productos.php";
     require "./php/methods.php";
@@ -12,11 +15,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     closeCon();
 }
-
-/*
-"\n" .
-"\n" .
-"\n" .
-"\n" .
-"\n" .
-*/

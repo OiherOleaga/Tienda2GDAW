@@ -1,3 +1,9 @@
+/**
+ * This JavaScript code is for a slider that moves left and right when the corresponding buttons are
+ * clicked.
+ * @returns Nothing is being returned in this code. The functions `moveToRight()` and `moveToLeft()`
+ * are event listeners for the click events on the buttons, so they are not returning any values.
+ */
 let btnLeft = document.querySelector(".btn-left"),
     btnRight = document.querySelector(".btn-right"),
     slider = document.querySelector("#slider"),

@@ -1,5 +1,5 @@
 <?php
-require("baseDeDatos.php");
+require("./db/comerciantes.php");
 require "./db/productos.php";
 if (isset($_COOKIE[session_name()])) {
     require "./db/clientes.php";
@@ -17,11 +17,7 @@ if (isset($_COOKIE[session_name()])) {
     }
 } else require("views/partials/headInicio.php");
 
-
-
-$id = isset($_GET["idEmpresa"]) ? $_GET["idEmpresa"] : "";
-$data = ['id' => $id];
-$empresa = consultarEmpresa($data);
-$productos = consultarProductoDeEmpresa($id);
-$productosLikes = consultarProductoDeEmpresaLikes($id);
+$empresa = getComerciante($_GET["idEmpresa"]);
+$productos = consultarProductoDeEmpresa($_GET["idEmpresa"]);
+$productosLikes = consultarProductoDeEmpresaLikes($_GET["idEmpresa"]);
 require "views/verEmpresa.view.php";

@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Handle HTTP GET and POST requests for product-related actions.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
     require "./php/comprobarSesion.php";
     require "./db/categorias.php";
