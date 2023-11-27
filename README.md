@@ -6,5 +6,7 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 
 # Índice
 
-* Como desplegar en repositorio
+* [Como desplegar el repositorio]()
 * ¿Que ejecuto?
+
+# Como desplegar el repositorio
