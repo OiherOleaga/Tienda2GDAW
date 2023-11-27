@@ -12,6 +12,9 @@ require "db/productos.php";
 $mensajeUsuario = "";
 $errorDev = "";
 
+/**
+ * Handle the update of a product based on POST data.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/fotosProducto.php";
     require "php/prepararProducto.php";

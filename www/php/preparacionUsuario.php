@@ -1,6 +1,13 @@
 <?php 
 
-
+/**
+ * Prepares client data for insertion or update and performs necessary checks.
+ *
+ * @param array $usuario The client data to be prepared.
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array The prepared client data.
+ */
 function preparacionCliente($usuario, &$errorUsuario) {
     require_once "./db/clientes.php";
     require_once "php/comprobarVacios.php";
@@ -17,6 +24,14 @@ function preparacionCliente($usuario, &$errorUsuario) {
     return $usuario;
 }
 
+/**
+ * Prepares merchant data for insertion or update and performs necessary checks.
+ *
+ * @param array $usuario The merchant data to be prepared.
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array The prepared merchant data.
+ */
 function preparacionComerciante($usuario, &$errorUsuario) {
     require_once "./db/comerciantes.php";
     require_once "php/comprobarVacios.php";
@@ -33,6 +48,14 @@ function preparacionComerciante($usuario, &$errorUsuario) {
     return $usuario;
 }
 
+/**
+ * Prepares user data for insertion based on the user type (client or merchant) and performs necessary checks.
+ *
+ * @param string $tipo The type of user ("cliente" or "comerciante").
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array|null The prepared user data if successful, or null on failure.
+ */
 function preparacionUsuarioInsert($tipo, &$errorUsuario) {
     require_once "methods.php";
     require_once "./db/usuarios.php";
@@ -77,6 +100,14 @@ function preparacionUsuarioInsert($tipo, &$errorUsuario) {
     }    
 }
 
+/**
+ * Prepares user data for update based on the user type (client or merchant) and performs necessary checks.
+ *
+ * @param string $tipo The type of user ("cliente" or "comerciante").
+ * @param string $errorUsuario The error message for user feedback (passed by reference).
+ *
+ * @return array|null The prepared user data if successful, or null on failure.
+ */
 function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
     require_once "methods.php";
     $usuario = [];
@@ -109,4 +140,3 @@ function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
             return preparacionComerciante($usuario, $errorUsuario);
     }    
 }
-

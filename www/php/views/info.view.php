@@ -50,8 +50,8 @@
                     </h4>
                 </div>
             </div>
-            <button type="submit" class="guardar">Guardar</button>
         </div>
+        <button type="submit" class="guardar">Guardar</button>
     </div>
 </form>
 <script src="/js/info.js"></script>

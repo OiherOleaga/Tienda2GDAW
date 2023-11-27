@@ -10,6 +10,9 @@ if (!$empresa = comprobarSesion()) {
 $mensajeUsuario = "";
 $errorDev = "";
 
+/**
+ * Handle HTTP POST request for adding a new product.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/productos.php";
     require "db/fotosProducto.php";

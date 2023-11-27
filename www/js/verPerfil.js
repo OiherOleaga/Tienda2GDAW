@@ -1,3 +1,7 @@
+/* The code is adding event listeners to a collection of elements with the class "link". When one of
+these elements is clicked, the code prevents the default behavior of the click event, pushes a new
+state to the browser history, and fetches the content of the link's href attribute with a query
+parameter "peticion=js". */
 let contenido = document.getElementsByClassName("contenido")[0]
 let favoritos = document.getElementsByClassName("link")
 

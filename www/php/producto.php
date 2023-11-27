@@ -14,6 +14,10 @@ if (($producto = consultarProductoID(GET("idProducto"))) === null) {
 $empresa = getComerciante($producto["idEmpresa"]);
 $like = false;
 require "./php/comprobarSesion.php";
+
+/**
+ * Check user session and process actions related to product likes.
+ */
 if (($cliente = comprobarSesion())) {
     require "db/likes.php";
     $like = getLike($cliente["ID"], $producto["ID"]);
@@ -64,6 +68,7 @@ if (($cliente = comprobarSesion())) {
 
     require("views/partials/headInicio.php");
 }
+
 $titulo = $producto["Titulo"];
 $categoria = $producto["idCategoria"];
 $productosSim = consultarProductosSimilares($categoria, $titulo);
