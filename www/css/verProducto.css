@@ -75,7 +75,7 @@ main {
     cursor: pointer;
 }
 
-.cajaProducto{
+.cajaProducto {
     width: -webkit-fill-available;
     display: flex;
     justify-content: center;
@@ -238,6 +238,7 @@ main {
         height: 400px;
     }
 }
+
 /*ORDENADOR*/
 @media (min-width: 900px) {
 
@@ -271,4 +272,9 @@ main {
         height: 650px;
     }
 
+}
+
+
+.seccion3 {
+    padding: 30px;
 }
