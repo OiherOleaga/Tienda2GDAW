@@ -4,4 +4,7 @@
 
 Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras encontrarte todo el codigo de nuestra pagina web.
 
-# Pasos a seguir
+# Índice
+
+* Como desplegar en repositorio
+* ¿Que ejecuto?
