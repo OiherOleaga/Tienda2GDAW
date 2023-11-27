@@ -34,6 +34,20 @@ function initializeCanvas(inputFoto, canvas, outputFoto, cambioFoto) {
     let isDragging = false;
     let x, y;
 
+    if (canvas.getAttribute("src")) {
+        imagen.src = canvas.getAttribute("src");
+
+        imagen.onload = function () {
+            canvas.width = canvasSize;
+            canvas.height = canvasSize;
+
+            x = (canvasSize - imagen.width) / 2;
+            y = (canvasSize - imagen.height) / 2;
+
+            reDrawImg(false);
+        };
+    }
+
     inputFoto.addEventListener("change", () => {
         if (inputFoto.files && inputFoto.files[0]) {
             const reader = new FileReader();
