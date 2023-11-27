@@ -1,5 +1,8 @@
 <?php
-require("baseDeDatos.php");
+/**
+ * Check if a session cookie is set and display the appropriate header.
+ */
+require("./db/comerciante.php");
 if (isset($_COOKIE[session_name()])) {
     session_start();
     $id = $_SESSION["id"];
@@ -9,7 +12,5 @@ if (isset($_COOKIE[session_name()])) {
 } else require("views/partials/headInicio.php");
 
 
-$id = isset($_GET["idEmpresa"]) ? $_GET["idEmpresa"] : "";
-$data = ['id' => $id];
-$empresa = consultarEmpresa($data);
+$empresa = getComerciante($_GET["idEmpresa"]);
 require "views/confEmpresa.view.php";

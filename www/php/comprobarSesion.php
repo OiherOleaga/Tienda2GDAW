@@ -1,7 +1,11 @@
 <?php
 
-function comprobarSesion()
-{
+/**
+ * Check if a session is active and retrieve user information based on the session.
+ *
+ * @return mixed|null Returns user information if a valid session is found; otherwise, returns null.
+ */
+function comprobarSesion() {
     if (isset($_COOKIE[session_name()])) {
 
         session_start();

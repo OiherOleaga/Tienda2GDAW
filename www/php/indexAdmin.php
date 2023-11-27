@@ -9,8 +9,13 @@ $productos = consultarProductosAdmin();
 $clientes = getClientes();
 $comerciantes = getComerciantes();
 $categorias = getCategorias();
-function realizarAccion($accion)
-{
+
+/**
+ * Performs the specified action based on the value of $action.
+ *
+ * @param string $action The action to perform.
+ */
+function realizarAccion($accion){
     switch ($accion) {
         case 'borrarProducto':
             borrarProductoId($_GET["id"]);

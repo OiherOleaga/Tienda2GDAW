@@ -1,4 +1,12 @@
 <?php
+/**
+ * Geocodes the company's address using the OpenCage Data API and retrieves latitude and longitude.
+ *
+ * @param string $apiKey The API key for accessing the OpenCage Data API.
+ * @param array $empresa The array containing company information, including the address.
+ *
+ * @return array|null Returns an array with 'latitud' and 'longitud' keys if successful, or null on failure.
+ */
 
 $apiKey = 'b23f7cdab9c94ab39c4137d75a55da24';
 

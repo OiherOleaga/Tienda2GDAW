@@ -10,6 +10,9 @@ if (!$empresa = comprobarSesion()) {
 $mensajeUsuario = "";
 $errorDev = "";
 
+/**
+ * Handle HTTP POST request for adding a new product.
+ */
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/productos.php";
     require "db/fotosProducto.php";
@@ -23,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($datos) {
             $idProducto = insertProducto($datos["producto"]);
             insertFotoProducto($datos["fotos"], $idProducto);
-            insertCategoraiProducto($datos["categorias"], $idProducto);
+            insertCategoriaProducto($datos["categorias"], $idProducto);
             $mensajeUsuario = "producto añadido";
         }
     } catch (Exception $e) {

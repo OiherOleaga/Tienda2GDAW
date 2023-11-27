@@ -9,6 +9,8 @@ let passwords = document.getElementsByClassName("password");
 
 
 
+/* The code snippet is adding an event listener to the `tipo` element, which is a select dropdown. When
+the value of the dropdown changes, the code inside the event listener is executed. */
 tipo.addEventListener("change", () => {
     switch (tipo.value) {
         case "cliente":
@@ -24,6 +26,8 @@ tipo.addEventListener("change", () => {
     }
 });
 
+/* The code snippet is adding an event listener to the `formRegistro` element, which is a form. When
+the form is submitted, the code inside the event listener is executed. */
 formRegistro.addEventListener("submit", (e) => {
     if (passwords[0].value !== passwords[1].value) {
         e.preventDefault();
@@ -32,6 +36,9 @@ formRegistro.addEventListener("submit", (e) => {
     }
 })
 
+/* The code `passwords[1].addEventListener("input", () => { passwords[1].removeAttribute("style"); })`
+is adding an event listener to the second element in the `passwords` array, which represents the
+second password input field. */
 passwords[1].addEventListener("input", () => {
     passwords[1].removeAttribute("style");
 })

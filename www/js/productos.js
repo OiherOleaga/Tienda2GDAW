@@ -7,6 +7,12 @@ inputPrecioMax.addEventListener("input", () => filtrar(divProductos, search.valu
 search.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
 let idCategorias = new Set();
 
+/* The code is adding event listeners to each element with the class "categoria". When one of these
+elements is clicked, the code checks if it is checked or not. If it is checked, it adds the
+element's id to the idCategorias set. If it is not checked, it removes the element's id from the
+idCategorias set. After updating the idCategorias set, it calls the filtrar function with the
+updated values. Additionally, if an element is already checked when the code runs, it adds its id to
+the idCategorias set. */
 for (let categoria of document.getElementsByClassName("categoria")) {
     categoria.addEventListener("click", () => {
         if (categoria.checked) {
@@ -24,6 +30,22 @@ for (let categoria of document.getElementsByClassName("categoria")) {
 }
 
 filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+/**
+ * The function `filtrar` is used to filter and display products based on search criteria such as
+ * search value, categories, and price range.
+ * @param divProductos - The divProductos parameter is the HTML element where the filtered products
+ * will be displayed. It is typically a container element such as a div or ul.
+ * @param searchValue - The search value is the keyword or phrase that the user wants to search for in
+ * the products. It is used to filter the products based on their titles or descriptions.
+ * @param idCategorias - The parameter "idCategorias" is an array of category IDs. It is used to filter
+ * the products based on their category.
+ * @param precioMin - The parameter "precioMin" represents the minimum price value for filtering the
+ * products.
+ * @param precioMax - The `precioMax` parameter represents the maximum price for filtering products. It
+ * is used in the `filtrar` function to specify the maximum price range for the products to be
+ * displayed.
+ */
+
 function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) {
     history.pushState(null, null, location.pathname + "?search=" + search.value);
     let filtro = {

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: productos.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: productos.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>let search = document.getElementById("search");
+let divProductos = document.getElementById("productos");
+let inputPrecioMin = document.getElementById("precioMin");
+let inputPrecioMax = document.getElementById("precioMax");
+inputPrecioMin.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+inputPrecioMax.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+search.addEventListener("input", () => filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value));
+let idCategorias = new Set();
+
+/* The code is adding event listeners to each element with the class "categoria". When one of these
+elements is clicked, the code checks if it is checked or not. If it is checked, it adds the
+element's id to the idCategorias set. If it is not checked, it removes the element's id from the
+idCategorias set. After updating the idCategorias set, it calls the filtrar function with the
+updated values. Additionally, if an element is already checked when the code runs, it adds its id to
+the idCategorias set. */
+for (let categoria of document.getElementsByClassName("categoria")) {
+    categoria.addEventListener("click", () => {
+        if (categoria.checked) {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.add(categoria.id);
+        } else {
+            //history.pushState(null, null, location.pathname + "?search=" + search.value);
+            idCategorias.delete(categoria.id);
+        }
+        filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+    })
+    if (categoria.checked) {
+        idCategorias.add(categoria.id);
+    }
+}
+
+filtrar(divProductos, search.value, idCategorias, inputPrecioMin.value, inputPrecioMax.value)
+/**
+ * The function `filtrar` is used to filter and display products based on search criteria such as
+ * search value, categories, and price range.
+ * @param divProductos - The divProductos parameter is the HTML element where the filtered products
+ * will be displayed. It is typically a container element such as a div or ul.
+ * @param searchValue - The search value is the keyword or phrase that the user wants to search for in
+ * the products. It is used to filter the products based on their titles or descriptions.
+ * @param idCategorias - The parameter "idCategorias" is an array of category IDs. It is used to filter
+ * the products based on their category.
+ * @param precioMin - The parameter "precioMin" represents the minimum price value for filtering the
+ * products.
+ * @param precioMax - The `precioMax` parameter represents the maximum price for filtering products. It
+ * is used in the `filtrar` function to specify the maximum price range for the products to be
+ * displayed.
+ */
+
+function filtrar(divProductos, searchValue, idCategorias, precioMin, precioMax) {
+    history.pushState(null, null, location.pathname + "?search=" + search.value);
+    let filtro = {
+        partida: "todos",
+        search: searchValue,
+        idCategorias: Array.from(idCategorias),
+        precioMin: precioMin,
+        precioMax: precioMax
+    }
+    filtro = new URLSearchParams(filtro).toString();
+    fetch("/filtrado", {
+        method: "post",
+        headers: { "Content-type": "application/x-www-form-urlencoded" },
+        body: filtro
+    })
+        .then(async res => {
+            const contentType = res.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                console.log(await res.text());
+                throw new Error("texto");
+            } else {
+                return res.json()
+            }
+        })
+        .then(productos => {
+            divProductos.innerHTML = "";
+            if (productos[0]) {
+                for (let producto of productos) {
+                    divProductos.innerHTML +=
+                        `&lt;a href=/producto?idProducto=${producto.ID}">
+                        &lt;div class="caja">
+                            &lt;div class="img">&lt;img src=${producto.foto}>&lt;/div>
+                            &lt;div class="bottom">
+                                &lt;h5>
+                                    ${producto.Precio}€
+                                &lt;/h5>
+                            &lt;/div>
+                            &lt;div class="top">
+                                &lt;p>
+                                    ${producto.Titulo}
+                                &lt;/p>
+                            &lt;/div>
+                        &lt;/div>
+                    &lt;/a>`
+                }
+            }
+            if (!productos[0]) {
+                divProductos.innerHTML = '&lt;div id="nada">&lt;img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer">&lt;br/>&lt;p>Nada por aqui...&lt;/div>';
+            }
+        })
+        .catch(error => console.log(error))
+}</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#activarAnimacion">activarAnimacion</a></li><li><a href="global.html#agregarInputBox">agregarInputBox</a></li><li><a href="global.html#btnLeft">btnLeft</a></li><li><a href="global.html#cerrarSesion">cerrarSesion</a></li><li><a href="global.html#cerrarSiClicFuera">cerrarSiClicFuera</a></li><li><a href="global.html#eventosDeMover">eventosDeMover</a></li><li><a href="global.html#filtrar">filtrar</a></li><li><a href="global.html#initializeCanvas">initializeCanvas</a></li><li><a href="global.html#manejarLike">manejarLike</a></li><li><a href="global.html#mostrarConfirmacion">mostrarConfirmacion</a></li><li><a href="global.html#mostrarFiltros">mostrarFiltros</a></li><li><a href="global.html#mostrarMenu">mostrarMenu</a></li><li><a href="global.html#mover">mover</a></li><li><a href="global.html#reDrawImg">reDrawImg</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Mon Nov 27 2023 10:16:56 GMT+0100 (hora estándar de Europa central)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
