@@ -39,6 +39,10 @@ Una vez ejecutado el comando anterior, poniendo "*[localhost](http://localhost)*
 | Usuario    | Contraseña     |
 |------------|----------------|
 | GAME | game |
+| GEMETIK Soluciones Tecnologicas | gemetik |
+| Ikea | ikea |
+| Mercadona | mercadona |
+| Decathlon | mercadona |
 ### Administradores
 | Usuario    | Contraseña     |
 |------------|----------------|
