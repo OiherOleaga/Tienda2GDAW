@@ -10,7 +10,6 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 * [¿Que ejecuto?](#que-ejecuto)
 
 # Como desplegar el repositorio
-![Logo Docker](https://upload.wikimedia.org/wikipedia/commons/7/79/Docker_%28container_engine%29_logo.png)
 
 Para desplegar el repositorio lo podras hacer con este comando de docker:
 ```
