@@ -35,3 +35,11 @@ Una vez ejecutado el comando anterior, poniendo "*[localhost](http://localhost)*
 | David | 12345  |
 | Anartz | a  |
 | Oiher | 12345 |
+### Comerciantes
+| Usuario    | Contraseña     |
+|------------|----------------|
+| GAME | game |
+### Administradores
+| Usuario    | Contraseña     |
+|------------|----------------|
+| admin | admin |
