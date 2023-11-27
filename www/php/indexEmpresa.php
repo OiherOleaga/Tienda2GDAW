@@ -11,7 +11,6 @@ $mensajeUsuario = "";
  * @param string $errorUsuario The error message for user feedback (if any).
  * @param string $errorDev The detailed error message for developers (if any).
  */
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "php/methods.php";
     require "php/preparacionUsuario.php";
