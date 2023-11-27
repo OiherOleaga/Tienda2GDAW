@@ -12,5 +12,9 @@ Bienvenido al repositorio oficial de InfiniteChoice, en este repositorio podras 
 # Como desplegar el repositorio
 Para desplegar el repositorio lo podras hacer con este comando de docker:
 ```
-docker clone https://github.com/OiherOleaga/Tienda2GDAW/tree/documentacion#como-desplegar-el-repositorio 
+docker clone https://github.com/OiherOleaga/Tienda2GDAW
 ```
+
+# ¿Que ejecuto?
+Una vez clonado el repositorio oficial tendras que ejecutar el [docker-compose.yml](https://github.com/OiherOleaga/Tienda2GDAW/blob/documentacion/docker-compose.yml)
+
