@@ -44,6 +44,11 @@
     animation-duration: 5s;
 }
 
+#canvasFotoPerfil {
+    width: 100px;
+    height: 100px;
+}
+
 @keyframes slide {
     0% {
         transform: translateX(-25%);

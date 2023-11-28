@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Download and return the URL of the user's avatar based on provided parameters.
@@ -9,11 +9,12 @@
  *
  * @return string The URL of the user's avatar.
  */
-function descargarAvatar($id, $avatar, $tipo) {
+function descargarAvatar($id, $avatar, $tipo)
+{
     if ($avatar == "") {
-        $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
+        $urlAvatar = "/assets/avatares/fotoPerfil.jpg";
     } else {
-        $urlAvatar = descargarImagen($avatar, "/assets/avatares/" . hash("sha256" , "$tipo asldfjkasl$id"));
+        $urlAvatar = descargarImagen($avatar, "/assets/avatares/" . hash("sha256", "$tipo asldfjkasl$id"));
     }
     return $urlAvatar;
 }
@@ -26,7 +27,8 @@ function descargarAvatar($id, $avatar, $tipo) {
  *
  * @return string The URL of the saved image.
  */
-function descargarImagen($img, $ruta) {
+function descargarImagen($img, $ruta)
+{
     if ($img != "") {
         $url = $ruta . "." . analizarImg($img);
         file_put_contents(".$url", base64_decode($img));
@@ -43,11 +45,12 @@ function descargarImagen($img, $ruta) {
  *
  * @return array The array containing URLs of the saved product photos.
  */
-function descargarFotoProducto($fotos, $idProducto, $idComerciante) {
-    $idProducto = $idProducto == ""? 0 : $idProducto + 1;
+function descargarFotoProducto($fotos, $idProducto, $idComerciante)
+{
+    $idProducto = $idProducto == "" ? 0 : $idProducto + 1;
 
     foreach ($fotos as $key => $foto) {
-        $fotos[$key] = descargarImagen($foto, "/assets/producto/" . hash("sha256" , "$idComerciante $idProducto asldfjkasl$key"));
+        $fotos[$key] = descargarImagen($foto, "/assets/producto/" . hash("sha256", "$idComerciante $idProducto asldfjkasl$key"));
     }
     return $fotos;
 }
@@ -61,7 +64,8 @@ function descargarFotoProducto($fotos, $idProducto, $idComerciante) {
  *
  * @throws Exception If the image format is incorrect.
  */
-function analizarImg(&$img) {
+function analizarImg(&$img)
+{
     $extension = "";
     if ($img[10] != "/") {
         throw new Exception("Formato imagen incorrecto");

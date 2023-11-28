@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /**
  * Prepares product data for insertion and performs necessary checks.
@@ -7,7 +7,8 @@
  *
  * @return array|null The prepared product data if successful, or null on failure.
  */
-function prepararProductoInsert(&$errorUsuario) {
+function prepararProductoInsert(&$errorUsuario)
+{
     require_once "php/methods.php";
     require_once "php/comprobarVacios.php";
 
@@ -38,8 +39,8 @@ function prepararProductoInsert(&$errorUsuario) {
     }
 
     $fotos = prepararProducto($errorUsuario, $producto, $fotos);
-    
-    if (!$fotos === null) {
+
+    if ($fotos === null) {
         return null;
     }
 
@@ -61,7 +62,8 @@ function prepararProductoInsert(&$errorUsuario) {
  *
  * @return array|null The prepared product photos if successful, or null on failure.
  */
-function prepararProducto(&$errorUsuario, $producto, $fotos) {
+function prepararProducto(&$errorUsuario, $producto, $fotos)
+{
     require_once "php/descargarImagen.php";
     require_once "db/productos.php";
     require_once "php/comprobarVacios.php";
@@ -93,14 +95,15 @@ function prepararProducto(&$errorUsuario, $producto, $fotos) {
  *
  * @return array|null The prepared product data if successful, or null on failure.
  */
-function prepararProductoUpdate(&$errorUsuario) {
+function prepararProductoUpdate(&$errorUsuario)
+{
     require_once "php/methods.php";
     $producto = [];
     postAddArray($producto, "titulo");
     postAddArray($producto, "descripcion");
     postAddArray($producto, "precio");
     $fotos = [];
-    $idFotoProducto= [];
+    $idFotoProducto = [];
 
     for ($i = 0; $i < 5; $i++) {
         postAddArray($fotos, "foto$i");
@@ -141,7 +144,7 @@ function prepararProductoUpdate(&$errorUsuario) {
         }
     }
     $fotos = prepararProducto($errorUsuario, $producto, $fotos);
-    
+
     if ($errorUsuario !== "") {
         return null;
     }

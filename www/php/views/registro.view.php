@@ -92,7 +92,7 @@
                         <label>Direccion</label>
                     </div>
                     <div id="divFotoPerfil" class="inputbox">
-                        <canvas id="canvasFotoPerfil" width="100px" height="100px"></canvas>
+                        <canvas id="canvasFotoPerfil"></canvas>
                         <input type="hidden" name="avatar" id="outputFoto">
                         <input type="file" id="inputFoto" accept="image/*" class="inputbox">
                     </div>

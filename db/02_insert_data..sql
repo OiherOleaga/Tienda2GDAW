@@ -376,4 +376,4 @@ INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (111, 'https://m.media-amazon.com/images/I/61n9ddi2XyL._AC_UL640_FMwebp_QL65_.jpg'),
     (112, 'https://m.media-amazon.com/images/I/810AFqNI8rL._AC_UL640_FMwebp_QL65_.jpg'),
     (113, 'https://m.media-amazon.com/images/I/71yUEjyMaoL._AC_UL640_FMwebp_QL65_.jpg'),
-    (114, '/assets/gta/gta-6-box-art-concept-v0-zximuiigs08b1.png');
+    (114, '/assets/producto/gta-6-box-art-concept-v0-zximuiigs08b1.png');

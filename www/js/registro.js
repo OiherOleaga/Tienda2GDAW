@@ -49,7 +49,7 @@ passwords[1].addEventListener("input", () => {
 const canvas = document.getElementById('canvasFotoPerfil');
 const contexto = canvas.getContext('2d');
 let imagen = new Image();
-const canvasSize = 100;
+const canvasSize = 600;
 let isDragging = false;
 let x;
 let y;

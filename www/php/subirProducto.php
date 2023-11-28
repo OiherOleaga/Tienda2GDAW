@@ -11,6 +11,8 @@ if (!$cliente = comprobarSesion()) {
 /**
  * Handle HTTP POST request for adding a new product.
  */
+$mensajeUsuario = "";
+$errorDev = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/productos.php";
     require "db/fotosProducto.php";
@@ -20,8 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     try {
         $datos = prepararProductoInsert($mensajeUsuario);
 
-        $datos["producto"]["idComerciante"] = $cliente["ID"];
         if ($datos) {
+            $datos["producto"]["idComerciante"] = $cliente["ID"];
             $idProducto = insertProducto($datos["producto"]);
             insertFotoProducto($datos["fotos"], $idProducto);
             insertCategoriaProducto($datos["categorias"], $idProducto);

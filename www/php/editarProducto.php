@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     require "db/categoriaProducto.php";
     try {
         $datos = prepararProductoUpdate($mensajeUsuario);
-
         if ($datos) {
             $datos["producto"]["id_comerciante"] = $cliente["ID"];
             $idProducto = GET("p");
@@ -36,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             deleteCategoriaProducto($datos["categoriasDelete"], $idProducto);
             $mensajeUsuario = "producto actuzlizado";
         }
-    } catch (Exection $e) {
+    } catch (Exception $e) {
         $errorDev = $e->getMessage();
         $mensajeUsuario = "error al insertar";
     }
