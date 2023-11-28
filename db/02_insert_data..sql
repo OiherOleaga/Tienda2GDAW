@@ -1,10 +1,10 @@
 INSERT INTO Comerciantes (Avatar, Nombre_empresa, Contrasenia, Correo, Telefono, Direccion)
 VALUES
-    ('https://yt3.googleusercontent.com/9WgVvMb5NkRQeC2Oeu0WL9t7phgInjMq1zju6TZsvT5nLaCO9lALk_-GnL7UjsB_bo4aEbMi4g=s900-c-k-c0x00ffffff-no-rj', 'GAME', '6ca5cab77e702c787b4c14b3d3bf26bad43da606be6eed04ab0b9720120ae081', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '3077f2b7cf1843036a3d1f85e8484b56790f9ab7531aa864254ea6926ebfb98c', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
-    ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '0e79172671f59f0f867c8ae23afd21d5f44d23f6f019c8328990e53e2c8e3a0d', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'vitoria-gasteiz, 01010 Gasteiz'),
-    ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'decathlon, 01005 Gasteiz');
+    ('/assets/avatares/d3b406f647793f414ffc66ce2250ae2503384a208055ee6bfd179bd0e051e813.png', 'GAME', '6ca5cab77e702c787b4c14b3d3bf26bad43da606be6eed04ab0b9720120ae081', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
+    ('/assets/avatares/ba80f788d31c5727daf1e7a597d55a2864fcef3090eeeec4749571085f3d7e1b.png', 'GEMETIK Soluciones Tecnologicas', '3077f2b7cf1843036a3d1f85e8484b56790f9ab7531aa864254ea6926ebfb98c', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
+    ('/assets/avatares/5bed0c1ebe37ecc115e1e7afbeb9ca2e9bc21f439051d8a9cfd553f3c1442c50.png', 'Ikea', '0e79172671f59f0f867c8ae23afd21d5f44d23f6f019c8328990e53e2c8e3a0d', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
+    ('/assets/avatares/908ca8a3ef6bd1d63cd83633b345049b0974bbf5414862d8baec1db00a667ece.webp', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'vitoria-gasteiz, 01010 Gasteiz'),
+    ('/assets/avatares/dbe1154886e4d7e24337b649ad50ed92101a38593b5e4ee452704a79957e438e.png', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'decathlon, 01005 Gasteiz');
 
 INSERT INTO Productos (Titulo, Precio, Descripcion, ID_Comerciante)
 VALUES
@@ -126,8 +126,8 @@ VALUES
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
-('/assets/avatares/8834ab8a2adf057ee05542eee6bd19e986ff2fe1d6215a740f6a29841b455376.webp', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
-('/assets/avatares/8834ab8a2adf057ee05542eee6bd19e986ff2fe1d6215a740f6a29841b455376.png', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('/assets/avatares/3f027eaed5b6f721e9023e307fdd3477cc60fbb1a15c1a3d59724ceed9c64a28.webp', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('/assets/avatares/618713c516a5dd4fa6974f8c81e6390ad795d9b483ce6755da61c318915b0f1f.png', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
 ('/assets/avatares/8834ab8a2adf057ee05542eee6bd19e986ff2fe1d6215a740f6a29841b455376.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
