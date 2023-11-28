@@ -13,7 +13,6 @@ function descargarAvatar($id, $avatar, $tipo) {
     if ($avatar == "") {
         $urlAvatar = "./assets/avatares/fotoPerfil.jpg";
     } else {
-        $id = $id == ""? 0 : $id + 1;
         $urlAvatar = descargarImagen($avatar, "/assets/avatares/" . hash("sha256" , "$tipo asldfjkasl$id"));
     }
     return $urlAvatar;

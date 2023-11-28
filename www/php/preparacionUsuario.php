@@ -9,7 +9,6 @@
  * @return array The prepared client data.
  */
 function preparacionCliente($usuario, &$errorUsuario) {
-    require_once "./db/clientes.php";
     require_once "php/comprobarVacios.php";
     require_once "php/descargarImagen.php";
 
@@ -33,7 +32,6 @@ function preparacionCliente($usuario, &$errorUsuario) {
  * @return array The prepared merchant data.
  */
 function preparacionComerciante($usuario, &$errorUsuario) {
-    require_once "./db/comerciantes.php";
     require_once "php/comprobarVacios.php";
     require_once "php/descargarImagen.php";
 
@@ -59,6 +57,8 @@ function preparacionComerciante($usuario, &$errorUsuario) {
 function preparacionUsuarioInsert($tipo, &$errorUsuario) {
     require_once "methods.php";
     require_once "./db/usuarios.php";
+    require_once "./db/comerciantes.php";
+    require_once "./db/clientes.php";
 
     $usuario = [
         "username" => POST("username"),
@@ -94,10 +94,14 @@ function preparacionUsuarioInsert($tipo, &$errorUsuario) {
         case "cliente":
             $usuario["nombre"] = POST("nombre");
             $usuario["apellidos"] = POST("apellidos");
-            $usuario["id"] = getMaxIdCliente();
+            $id = getMaxIdClientes();
+            $id = $id == ""? 0 : $id + 1;
+            $usuario["id"] = $id;
             return preparacionCliente($usuario, $errorUsuario);
         case "comerciante":
-            $usuario["id"] = getMaxIdComerciantes();
+            $id = getMaxIdComerciantes();
+            $id = $id == ""? 0 : $id + 1;
+            $usuario["id"] = $id;
             return preparacionComerciante($usuario, $errorUsuario);
     }    
 }
