@@ -14,7 +14,7 @@ function preparacionCliente($usuario, &$errorUsuario) {
     require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
-        $usuario["avatar"] = descargarAvatar(getMaxIdClientes(), $usuario["avatar"], "cliente");
+        $usuario["avatar"] = descargarAvatar($usuario["id"], $usuario["avatar"], "cliente");
     }
 
     if (!comprobarVacios($usuario)) {
@@ -38,7 +38,7 @@ function preparacionComerciante($usuario, &$errorUsuario) {
     require_once "php/descargarImagen.php";
 
     if (isset($usuario["avatar"])) {
-        $usuario["avatar"] = descargarAvatar(getMaxIdComerciantes(), $usuario["avatar"], "comerciante");
+        $usuario["avatar"] = descargarAvatar($usuario["id"], $usuario["avatar"], "comerciante");
     }
 
     if (!comprobarVacios($usuario)) {
@@ -94,8 +94,10 @@ function preparacionUsuarioInsert($tipo, &$errorUsuario) {
         case "cliente":
             $usuario["nombre"] = POST("nombre");
             $usuario["apellidos"] = POST("apellidos");
+            $usuario["id"] = getMaxIdCliente();
             return preparacionCliente($usuario, $errorUsuario);
         case "comerciante":
+            $usuario["id"] = getMaxIdComerciantes();
             return preparacionComerciante($usuario, $errorUsuario);
     }    
 }
@@ -116,6 +118,7 @@ function preparacionUsuarioUpdate($tipo, &$errorUsuario) {
     postAddArray($usuario, "correo");
     postAddArray($usuario, "telefono");
     postAddArray($usuario, "direccion");
+    $usuario["id"] = $_SESSION["id"];
 
     if (isset($_POST["contrasenia"]) && $_POST["contrasenia"] != "") {
         $usuario["contrasenia"] = hash("sha256", POST("contrasenia"));
