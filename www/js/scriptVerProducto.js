@@ -7,16 +7,16 @@ imgLike.addEventListener('click', activarAnimacion);
  * applies CSS classes to animate the image.
  */
 function activarAnimacion() {
-    if (imgLike.src === "http://localhost/assets/amor.png") {
+    if (imgLike.src === "http://localhost/assets/corazon/amor.png") {
         manejarLike("add", () => {
             imgLike.classList.remove('reducir');
-            setTimeout(() => { imgLike.src = "/assets/corazon.png"; }, 100);
+            setTimeout(() => { imgLike.src = "/assets/corazon/corazon.png"; }, 100);
             imgLike.classList.add('aumentar');
         })
     } else {
         manejarLike("remove", () => {
             imgLike.classList.remove('aumentar');
-            setTimeout(() => { imgLike.src = "/assets/amor.png"; }, 200);
+            setTimeout(() => { imgLike.src = "/assets/corazon/amor.png"; }, 200);
             imgLike.classList.add('reducir');
         })
     }

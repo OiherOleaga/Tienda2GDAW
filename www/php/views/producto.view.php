@@ -10,7 +10,7 @@
                     <img src=<?= $producto["avatar_empresa"] ?> <p><?= $producto["Nombre_empresa"] ?></p>
                 </div>
         </a>
-        <img src=<?= $like ? "/assets/corazon.png" : "/assets/amor.png" ?> class="corazon" id="corazon">
+        <img src=<?= $like ? "/assets/corazon/corazon.png" : "/assets/corazon/amor.png" ?> class="corazon" id="corazon">
     </div>
     <div class="producto">
         <div class="cajaProducto">
