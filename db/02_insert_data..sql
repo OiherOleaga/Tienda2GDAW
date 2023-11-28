@@ -6,7 +6,6 @@ VALUES
     ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'Sierra de Andia Kalea, 10, 01010 Gasteiz'),
     ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'General Alava Kalea, 32, 01005 Gasteiz');
 
-
 INSERT INTO Productos (Titulo, Precio, Descripcion, ID_Comerciante)
 VALUES
     ('Ordenador de torre', 219.99, 'Potente ordenador de torre disenado para gamers y profesionales. Equipado con procesador Intel Core i7, 16GB de RAM y tarjeta grafica NVIDIA GeForce RTX 3080.', 1),
@@ -128,7 +127,7 @@ VALUES
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
 ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDY0U6PEEVC3JOJYak3LJggBtxkTV9x3b2pQ&usqp=CAU', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
-('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('https://i.pinimg.com/originals/f5/b3/b7/f5b3b7a64c253f882bfdd4337c7721ac.jpg', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'david@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
 ('https://images3.memedroid.com/images/UPLOADED578/5fbfcb10c4a8c.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
@@ -139,7 +138,6 @@ INSERT INTO Categorias (Nombre) VALUES
     ('Hogar'),
     ('Alimentacion'),
     ('Deportes');
-
 
 INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
     (1, 1), 
@@ -259,8 +257,6 @@ INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
     (1, 114);
     
 
-
--- Insertar datos en la tabla Fotos_producto
 INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
     (2, 'https://m.media-amazon.com/images/I/31KrKAKoLrL._SL500_.jpg'),
@@ -381,4 +377,4 @@ INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (111, 'https://m.media-amazon.com/images/I/61n9ddi2XyL._AC_UL640_FMwebp_QL65_.jpg'),
     (112, 'https://m.media-amazon.com/images/I/810AFqNI8rL._AC_UL640_FMwebp_QL65_.jpg'),
     (113, 'https://m.media-amazon.com/images/I/71yUEjyMaoL._AC_UL640_FMwebp_QL65_.jpg'),
-    (114, '/assets/gta-6-box-art-concept-v0-zximuiigs08b1.png');
+    (114, '/assets/gta/gta-6-box-art-concept-v0-zximuiigs08b1.png');
