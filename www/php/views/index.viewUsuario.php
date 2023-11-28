@@ -60,7 +60,7 @@
 <div class="seccion3">
     <h3>A mucha gente le gustan</h3>
     <?php if (count($productosFav) <= 0) { ?>
-        <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
+        <div id="nada"><img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
             <p>Nada por aqui...</p>
         </div>
     <?php } else { ?>
@@ -90,7 +90,7 @@
 <div class="seccion3">
     <h3>Lo m&aacute;s reciente</h3>
     <?php if (count($productosNuevos) <= 0) { ?>
-        <div id="nada"><img src="https://es.InfiniteChoice.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
+        <div id="nada"><img src="https://es.wallapop.com/assets/images/commons/pop-no-results.svg" alt="orewingoer"><br>
             <p>Nada por aqui...</p>
         </div>
     <?php } else { ?>

@@ -6,7 +6,6 @@ let formRegistro = document.getElementById("formRegistro");
 let inputFoto = document.getElementById("inputFoto");
 let outputFoto = document.getElementById("outputFoto");
 let passwords = document.getElementsByClassName("password");
-
 /* The code snippet is adding an event listener to the `tipo` element, which is a select dropdown. When
 the value of the dropdown changes, the code inside the event listener is executed. */
 tipo.addEventListener("change", () => {
@@ -63,18 +62,24 @@ if (sessionStorage.getItem("foto")) {
     imagen.width = cordenadas[2];
     imagen.height = cordenadas[3];
     eventosDeMover();
+    imagen.onload = function () {
+        canvas.width = canvasSize;
+        canvas.height = canvasSize;
+
+        reDrawImg(true);
+    };
 } else {
     imagen.src = '/assets/avatares/fotoPerfil.jpg';
-    x = (canvasSize - imagen.width) / 2;
-    y = (canvasSize - imagen.height) / 2;
+    imagen.onload = function () {
+        x = (canvasSize - imagen.width) / 2;
+        y = (canvasSize - imagen.height) / 2;
+        canvas.width = canvasSize;
+        canvas.height = canvasSize;
+
+        reDrawImg(false);
+    };
 }
 
-imagen.onload = function () {
-    canvas.width = canvasSize;
-    canvas.height = canvasSize;
-
-    reDrawImg(sessionStorage.getItem("foto") != undefined);
-};
 
 inputFoto.addEventListener("change", () => {
     if (inputFoto.files && inputFoto.files[0]) {

@@ -23,6 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($errorUsuario == "") {
             if ($tipo == "cliente") {
                 require_once "./db/clientes.php";
+                unset($usuario["id"]);
                 insertarCliente($usuario);
                 session_start();
                 $_SESSION["id"] = getIdCliente(["username" => $usuario["username"], "contrasenia" => $usuario["contrasenia"]]);
