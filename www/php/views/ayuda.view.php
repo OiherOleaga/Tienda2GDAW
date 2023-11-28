@@ -2,7 +2,7 @@
     <div class="caja">
         <h1>Bienvenido a nuestra sección de Ayuda</h1><br>
         <div class="ayuda">
-            <h3>¿Cómo puedo comprar productos?</h3>
+            <h3>¿Qué puedo hacer?</h3>
             <p>Para comprar productos en nuestra plataforma, sigue estos sencillos pasos:</p>
             <p><strong>Explora Productos:</strong> Navega por las diversas categorías y descubre una amplia gama de
                 productos de alta calidad.</p>

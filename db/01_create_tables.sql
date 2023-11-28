@@ -56,7 +56,7 @@ CREATE TABLE Likes (
     FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE,
     FOREIGN KEY (ID_Producto) REFERENCES Productos(ID) ON DELETE CASCADE
 );
-
+/* ESTABA PLANEADO
 CREATE TABLE Resenna_producto (
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Cliente INT,
@@ -78,7 +78,7 @@ CREATE TABLE Resenna_comerciante (
     FOREIGN KEY (ID_Cliente) REFERENCES Clientes(ID) ON DELETE CASCADE,
     FOREIGN KEY (ID_Comerciante) REFERENCES Comerciantes(ID) ON DELETE CASCADE
 );
-
+*/
 CREATE TABLE Fotos_producto(
     ID INT PRIMARY KEY AUTO_INCREMENT,
     ID_Producto INT,
