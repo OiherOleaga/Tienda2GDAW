@@ -6,7 +6,6 @@ VALUES
     ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'vitoria-gasteiz, 01010 Gasteiz'),
     ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'decathlon, 01005 Gasteiz');
 
-
 INSERT INTO Productos (Titulo, Precio, Descripcion, ID_Comerciante)
 VALUES
     ('Ordenador de torre', 219.99, 'Potente ordenador de torre disenado para gamers y profesionales. Equipado con procesador Intel Core i7, 16GB de RAM y tarjeta grafica NVIDIA GeForce RTX 3080.', 1),
@@ -140,7 +139,6 @@ INSERT INTO Categorias (Nombre) VALUES
     ('Alimentacion'),
     ('Deportes');
 
-
 INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
     (1, 1), 
     (1, 2),
@@ -259,8 +257,6 @@ INSERT INTO Categorias_Productos (ID_Categorias, ID_Producto) VALUES
     (1, 114);
     
 
-
--- Insertar datos en la tabla Fotos_producto
 INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (1, 'https://media.game.es/COVERV2/3D_L/186/186150.png'),
     (2, 'https://m.media-amazon.com/images/I/31KrKAKoLrL._SL500_.jpg'),
@@ -380,4 +376,4 @@ INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (111, 'https://m.media-amazon.com/images/I/61n9ddi2XyL._AC_UL640_FMwebp_QL65_.jpg'),
     (112, 'https://m.media-amazon.com/images/I/810AFqNI8rL._AC_UL640_FMwebp_QL65_.jpg'),
     (113, 'https://m.media-amazon.com/images/I/71yUEjyMaoL._AC_UL640_FMwebp_QL65_.jpg'),
-    (114, '/assets/gta-6-box-art-concept-v0-zximuiigs08b1.png');
+    (114, '/assets/gta/gta-6-box-art-concept-v0-zximuiigs08b1.png');
