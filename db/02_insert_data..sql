@@ -3,8 +3,8 @@ VALUES
     ('https://yt3.googleusercontent.com/9WgVvMb5NkRQeC2Oeu0WL9t7phgInjMq1zju6TZsvT5nLaCO9lALk_-GnL7UjsB_bo4aEbMi4g=s900-c-k-c0x00ffffff-no-rj', 'GAME', '6ca5cab77e702c787b4c14b3d3bf26bad43da606be6eed04ab0b9720120ae081', 'game@game.es', '938706714', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
     ('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSA8Ztdbr2gx2jV953PRCt2oxJFbSGr8g5Y-xLh3xWhag&s', 'GEMETIK Soluciones Tecnologicas', '3077f2b7cf1843036a3d1f85e8484b56790f9ab7531aa864254ea6926ebfb98c', 'gemetik@gmail.com', '945009120', 'Adriano VI Kalea, 5, 01008 Gasteiz'),
     ('https://brandemia.org/contenido/subidas/2019/04/ikea-nuevo-logo.jpg', 'Ikea', '0e79172671f59f0f867c8ae23afd21d5f44d23f6f019c8328990e53e2c8e3a0d', 'ikea@gmail.com', '123456789', 'Zaramaga Kalea, 1, 01013 Gasteiz'),
-    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'Sierra de Andia Kalea, 10, 01010 Gasteiz'),
-    ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'General Alava Kalea, 32, 01005 Gasteiz');
+    ('https://www.smaver.es/wp-content/uploads/2018/08/logo-mercadona-2.jpg', 'Mercadona', '4ad243d0d98ae44f613b0e869ee91ae4e076ef7103f9372629697d1f77925074', 'mercaadona@gmail.com', '873239127', 'vitoria-gasteiz, 01010 Gasteiz'),
+    ('https://2.bp.blogspot.com/-66tJSY-P-tk/Wd-fsBKy4dI/AAAAAAAAAnk/ZGUJF6V-ikwXGKTJ1vVHhpVkWbdedupPgCLcBGAs/w1200-h630-p-k-no-nu/decathlon.gif', 'Decathlon', '71508df592b4e7185299e7fcdf1de9165e9ff4d182085df3ab3fbbbc46adecbc', 'Decathlon@gmail.com', '284328574', 'decathlon, 01005 Gasteiz');
 
 
 INSERT INTO Productos (Titulo, Precio, Descripcion, ID_Comerciante)
@@ -363,7 +363,6 @@ INSERT INTO Fotos_producto (ID_Producto, URL) VALUES
     (94, 'https://m.media-amazon.com/images/I/61ibumPwQcL._AC_UL640_FMwebp_QL65_.jpg'),
     (95, 'https://m.media-amazon.com/images/I/71XAKE2PrSL._AC_UL640_FMwebp_QL65_.jpg'),
     (96, 'https://m.media-amazon.com/images/I/71RyL9rBL9L._AC_UL640_FMwebp_QL65_.jpg'),
-    (96, 'https://www.iberobike.com/wp-content/uploads/2023/03/El-meme-de-Mikel-Landa-y-el-mono-en-la-Volta-a-Cataluna-compartido-por-Thomas-de-Gendt-landismo.jpg'),
     (97, 'https://m.media-amazon.com/images/I/71e-dZE-pWL._AC_UL640_FMwebp_QL65_.jpg'),
     (98, 'https://m.media-amazon.com/images/I/41ahrVS6iPL._AC_UL640_FMwebp_QL65_.jpg'),
     (99, 'https://m.media-amazon.com/images/I/613-lFc8OgL._AC_UL640_FMwebp_QL65_.jpg'),
