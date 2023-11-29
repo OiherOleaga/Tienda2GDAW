@@ -126,9 +126,9 @@ VALUES
 
 INSERT INTO Clientes (Avatar, Nombre, username, Apellidos, Contrasenia, Correo, Telefono, Direccion) 
 VALUES
-('/assets/avatares/3f027eaed5b6f721e9023e307fdd3477cc60fbb1a15c1a3d59724ceed9c64a28.webp', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
-('/assets/avatares/618713c516a5dd4fa6974f8c81e6390ad795d9b483ce6755da61c318915b0f1f.png', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
-('/assets/avatares/8834ab8a2adf057ee05542eee6bd19e986ff2fe1d6215a740f6a29841b455376.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
+('/assets/avatares/9f91421fa2f9e2cea041f729f07830e4a451346d9f6def16cfab814743bab3cb.webp', 'Oiher', 'Oiher', 'Oleaga Guerrero', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'oiheroleaga@email.com', '657659280', 'calle guetaria, vitoria-gasteiz'),
+('/assets/avatares/3f027eaed5b6f721e9023e307fdd3477cc60fbb1a15c1a3d59724ceed9c64a28.png', 'David', 'David', 'Moreno Alonso', '5994471abb01112afcc18159f6cc74b4f511b99806da59b3caf5a9c173cacfc5', 'davidcaca@gmail.com', '9876543210', 'coronela ibaibarriaga, vitoria-gasteiz'),
+('/assets/avatares/618713c516a5dd4fa6974f8c81e6390ad795d9b483ce6755da61c318915b0f1f.jpeg', 'Anartz', 'Anartz', 'Pagaldai', 'ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb', 'pedro@email.com', '5555555555', 'Albacete');
 
 INSERT INTO Administradores (Nombre, Contrasenia) 
 VALUES ('admin', '8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918');
